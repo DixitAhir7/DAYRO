@@ -47,11 +47,7 @@ to replace girl with meaningful art
      position: relative;
  }
 
- .email {
-     padding: 12px 138px;
- }
-
-
+ .email,
  .password {
      padding: 12px 138px;
  }
