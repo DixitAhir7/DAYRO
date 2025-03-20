@@ -14,6 +14,25 @@
 
 
 // using google api for language translation into any language
-function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
-}
+// function googleTranslateElementInit() {
+//     new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+// }
+
+// login formm script
+
+const btn = document.querySelector('button');
+const form = document.querySelector('.show-form')
+
+// btn.addEventListener('click', function () {
+//     form.innerHTML = `
+//     <form action="">
+//         <label class="d-block" for="">enter name:</label>
+//         <input type="text">
+
+//             <label class="d-block" for="">enter password</label>
+//             <input class="d-block" type="password" name="" id="p1">
+
+//                 <input style="margin-top: 5px;" type="submit" value="submit">
+//                 </form>
+//                 `
+// })

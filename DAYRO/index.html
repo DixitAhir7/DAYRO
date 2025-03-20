@@ -6,70 +6,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css-bt/bootstrap.min.css">
+    <link rel="stylesheet" href="media-css/media.css">
     <script defer src="js/script.js"></script>
     <script defer src="js-bt/bootstrap.bundle.min.js"></script>
-
-    <style>
-        /* bg-img for main page */
-        .main-img {
-            background-image: url(IMG/DALL·E\ 2025-03-20\ 14.18.45\ -\ A\ decorative\ background\ inspired\ by\ the\ culture\ of\ Gujarat\,\ India.\ The\ design\ features\ elegant\ yet\ minimalistic\ mandala\ patterns\ with\ intricate\ but\ le.PNG);
-            width: 100%;
-            height: 864px;
-            /* background-repeat: no-repeat; */
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
+<style>
+    .main-img {
+        background-image: url(IMG/Untitled\ Project\ \(1\).jpg);
+        width: 100%;
+        height: 864px;
+        /* background-repeat: no-repeat; */
+        opacity: 0.799;
+        background-color: #F5E1C4;
+    }
+
+    nav {
+        background: rgb(179, 90, 7);
+        background: linear-gradient(95deg, rgba(179, 90, 7, 0.40612741678702735) 12%, rgba(205, 75, 18, 0.5405811982996324) 17%, rgba(186, 106, 12, 0.7506652319130778) 55%, rgba(129, 70, 21, 0.7478641114648985) 57%, rgba(186, 91, 13, 0.6358192935377276) 61%, rgba(179, 90, 7, 0.7254551478794643) 85%);
+    }
+</style>
+
 <body>
+    <header>
+        <!-- main-img -->
+        <div class="main-img">
 
-    <!-- main-img -->
-    <div class="main-img">
+            <!-- navbar -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <a class="navbar-brand clr" href="#"><strong>D A Y R O</strong></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
 
-        <!-- navbar -->
-        <nav class="navbar navbar-expand-lg">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
 
-            <div class="container-fluid">
+                            <!-- this page is for charan sahitya in this i'll write whole history of charan community -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="ch/history.html"><strong>CHARAN HISTORY</strong></a>
+                            </li>
 
-                <a class="navbar-brand" href="#">DAYRO</a>
+                            <!-- page for information abot web -->
+                            <li class="nav-item"><a class="nav-link" href="webinfo/web.html">ABOUT</a>
+                            </li>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                            <!-- in this dropdown there will be all infoa about all artists-->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <strong> KALAKAR</strong>
+                                </a>
+                                <ul class="dropdown-menu bg-transparent" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " href="">Hasya Kalakar</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="">Folk singers</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto me-auto mb-2 mb-lg-0">
+                        <!-- this is for login form -->
+                        <!-- <li class="nav-item">
+                                <a class="text-decoration-none" href=""> <button class="for-br">LOGIN</button></a>
+                            </li> -->
 
-                        <!-- this page is for charan sahitya in this i'll write whole history of charan community -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="ch/history.html">CHARAN HISTORY</a>
-                        </li>
+                        <!-- modal -->
+                        <button id="openModal">Login</button>
 
-                        <!-- page for information abot web -->
-                        <li class="nav-item"><a class="nav-link" href="webinfo/web.html">ABOUT</a>
-                        </li>
-
-                        <!-- in this dropdown there will be all infoa about all artists-->
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                KALAKAR
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="">Hasya Kalakar</a></li>
-                                <li><a class="dropdown-item" href="">folk SINGERS </a></li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <div id="loginModal" class="modal">
+                            <div class="modal-content">
+                                <span class="close">&times;</span>
+                                <h2 class="text-warning text-center">Login Form</h2>
+                                <form id="loginForm" class="mt-3">
+                                    <input class="email" type="email" id="email" placeholder="enter your email"
+                                        required><br><br>
+                                    <input class="password" type="password" id="password" placeholder="enter password"
+                                        required><br><br>
+                                    <button type="submit" class="submit">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+        </div>
         </nav>
-    </div>
-    </div>
+
+    </header>
+
+
+    <section class="sec-2">
+
+    </section>
+
 </body>
 
 </html>

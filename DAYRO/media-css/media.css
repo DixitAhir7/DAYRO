@@ -1,0 +1,10 @@
+/* responsive css for bg-img for phone screen */
+
+@media (max-width:768px) {
+    .main-img {
+        background-image: url('IMG\Untitled Project (1).jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}

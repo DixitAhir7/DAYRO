@@ -1,0 +1,73 @@
+ /* bg-img for main page, 
+ bg image is not working in external file 
+
+in this 1 task is remained,
+to replace girl with meaningful art
+*/
+
+ /* general css */
+ ul,
+ li {
+     list-style: none;
+ }
+
+ a {
+     text-decoration: none;
+ }
+
+ img {
+     width: 100%;
+     display: block;
+ }
+
+ /* ==login-button css== */
+
+ /* header nav .for-br {
+     border: 1px solid black;
+     padding: 9px;
+     border-radius: 10%;
+     color: black;
+ } */
+
+
+ /*=== login form-css modal ===*/
+
+ .modal {
+     display: none;
+     position: fixed;
+     left: 0;
+     top: 0;
+ }
+
+ .modal-content {
+     margin: 15% auto;
+     padding: 20px;
+     width: 500px;
+     height: 400px;
+     position: relative;
+ }
+
+ .email {
+     padding: 12px 138px;
+ }
+
+
+ .password {
+     padding: 12px 138px;
+ }
+
+ .submit {
+     background-color: gray;
+     opacity: 0.69;
+     border-radius: 10px;
+     padding: 6px 204px;
+ }
+
+ /* close button css */
+ .close {
+     position: absolute;
+     top: 10px;
+     right: 15px;
+     font-size: 30px;
+     color: red;
+ }
