@@ -24,18 +24,35 @@ document.getElementById("loginForm").onsubmit = function (event) {
     modal.style.display = "none";
 }
 
+
+// storing userdata in localsotrage
+// this is for just pratice !don't use localstorage for personal information
+
+
+// const form = document.querySelector('#loginModal form');
+// const inputEmail = document.querySelector('.modal input:first-child');
+// const inputPassword = document.querySelector('.modal .password');
+// const submitBtn = document.querySelector('.modal button')
+
+
+// const storingData = form.addEventListener('submit', (e) => {
+//     e.preventDefault()
+
+//     let EmailValue = inputEmail.value
+//     let passwordValue = inputPassword.value
+
+//     localStorage.setItem('username:', JSON.stringify(EmailValue))
+//     localStorage.setItem('password:', JSON.stringify(passwordValue))
+
+// })
+
 /*
 if login was succesful the clearing the field
 */
 
-document.querySelector('form').addEventListener('submit', function (e) {
-    e.preventDefault()
 
-    let email = document.querySelector('header .loginModal .email').value;
-    let password = document.querySelector('header .loginModal .password').value;
-
-
-    if (email && password) {
-        document.querySelector('form').reset()
-    } else { alert('please try again') }
-})
+// function clearInputs() {
+//     document.querySelectorAll('.loginModal form input').forEach(input => {
+//         input.value = "";
+//     });
+// }

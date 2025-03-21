@@ -36,3 +36,22 @@ const form = document.querySelector('.show-form')
 //                 </form>
 //                 `
 // })
+
+
+
+// Localstorage
+
+const formStore = document.querySelector('.form form');
+const inputName = document.querySelector('form input:first-child')
+const inputPass = document.querySelector('form input:nth-child(2)')
+const submitBtn = formStore.querySelector('input:nth-child(3)');
+
+formStore.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    let username = inputName.value
+    let userpass = inputPass.value
+
+    localStorage.setItem('data', username)
+    localStorage.setItem('data', userpass)
+})
