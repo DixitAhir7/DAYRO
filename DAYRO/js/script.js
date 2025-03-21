@@ -56,3 +56,39 @@ if login was succesful the clearing the field
 //         input.value = "";
 //     });
 // }
+
+
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const toggleBtn = document.querySelector('.sidebar-toggle i');
+
+    sidebar.classList.toggle('collapsed');
+
+    // Change toggle button icon
+    if (sidebar.classList.contains('collapsed')) {
+        toggleBtn.classList.remove('fa-chevron-left');
+        toggleBtn.classList.add('fa-chevron-right');
+    } else {
+        toggleBtn.classList.remove('fa-chevron-right');
+        toggleBtn.classList.add('fa-chevron-left');
+    }
+}
+
+function toggleDropdown(element) {
+    const dropdownContent = element.nextElementSibling;
+    const dropdownIcon = element.querySelector('.dropdown-icon');
+    const isCollapsed = document.querySelector('.sidebar').classList.contains('collapsed');
+
+    if (!isCollapsed) {
+        element.parentElement.classList.toggle('active');
+        dropdownIcon.style.transform = element.parentElement.classList.contains('active')
+            ? 'rotate(180deg)'
+            : 'rotate(0)';
+    }
+}
+
+// Add mobile support
+if (window.innerWidth <= 768) {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('collapsed');
+}
