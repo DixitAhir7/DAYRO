@@ -1,28 +1,23 @@
 // this is modal script
 
+
 const modal = document.getElementById("loginModal");
-const btn = document.getElementById("openModal");
-const span = document.getElementsByClassName("close")[0];
+const openModalBtn = document.getElementById("openmodal");
+const closeModalBtn = document.querySelector(".close");
 
-btn.onclick = function () {
+openModalBtn.addEventListener("click", function () {
     modal.style.display = "block";
-}
+});
 
-span.onclick = function () {
+closeModalBtn.addEventListener("click", function () {
     modal.style.display = "none";
-}
+});
 
-window.onclick = function (event) {
-    if (event.target == modal) {
+window.addEventListener("click", function (event) {
+    if (event.target === modal) {
         modal.style.display = "none";
     }
-}
-
-document.getElementById("loginForm").onsubmit = function (event) {
-    event.preventDefault();
-    alert("Login successful!");
-    modal.style.display = "none";
-}
+});
 
 
 // storing userdata in localsotrage
@@ -58,37 +53,9 @@ if login was succesful the clearing the field
 // }
 
 
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const toggleBtn = document.querySelector('.sidebar-toggle i');
+// this is script for dropdown
 
-    sidebar.classList.toggle('collapsed');
-
-    // Change toggle button icon
-    if (sidebar.classList.contains('collapsed')) {
-        toggleBtn.classList.remove('fa-chevron-left');
-        toggleBtn.classList.add('fa-chevron-right');
-    } else {
-        toggleBtn.classList.remove('fa-chevron-right');
-        toggleBtn.classList.add('fa-chevron-left');
-    }
-}
-
-function toggleDropdown(element) {
-    const dropdownContent = element.nextElementSibling;
-    const dropdownIcon = element.querySelector('.dropdown-icon');
-    const isCollapsed = document.querySelector('.sidebar').classList.contains('collapsed');
-
-    if (!isCollapsed) {
-        element.parentElement.classList.toggle('active');
-        dropdownIcon.style.transform = element.parentElement.classList.contains('active')
-            ? 'rotate(180deg)'
-            : 'rotate(0)';
-    }
-}
-
-// Add mobile support
-if (window.innerWidth <= 768) {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.add('collapsed');
+function toggleDropdown() {
+    let submenu = document.getElementById("submenu");
+    submenu.style.display = submenu.style.display === "block" ? "none" : "block";
 }
