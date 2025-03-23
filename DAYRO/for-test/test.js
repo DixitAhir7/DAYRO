@@ -41,17 +41,39 @@ const form = document.querySelector('.show-form')
 
 // Localstorage
 
-const formStore = document.querySelector('.form form');
-const inputName = document.querySelector('form input:first-child')
-const inputPass = document.querySelector('form input:nth-child(2)')
-const submitBtn = formStore.querySelector('input:nth-child(3)');
+// const formStore = document.querySelector('.form form');
+// const inputName = document.querySelector('form input:first-child')
+// const inputPass = document.querySelector('form input:nth-child(2)')
+// const submitBtn = formStore.querySelector('input:nth-child(3)');
 
-formStore.addEventListener('submit', (e) => {
-    e.preventDefault()
+// formStore.addEventListener('submit', (e) => {
+//     e.preventDefault()
 
-    let username = inputName.value
-    let userpass = inputPass.value
+//     let username = inputName.value
+//     let userpass = inputPass.value
 
-    localStorage.setItem('data', username)
-    localStorage.setItem('data', userpass)
-})
+//     localStorage.setItem('data', username)
+//     localStorage.setItem('data', userpass)
+// })
+
+
+// storing userdata in localsotrage
+// this is for just pratice !don't use localstorage for personal information
+
+
+// const form = document.querySelector('#loginModal form');
+// const inputEmail = document.querySelector('.modal input:first-child');
+// const inputPassword = document.querySelector('.modal .password');
+// const submitBtn = document.querySelector('.modal button')
+
+
+// const storingData = form.addEventListener('submit', (e) => {
+//     e.preventDefault()
+
+//     let EmailValue = inputEmail.value
+//     let passwordValue = inputPassword.value
+
+//     localStorage.setItem('username:', JSON.stringify(EmailValue))
+//     localStorage.setItem('password:', JSON.stringify(passwordValue))
+
+// })
