@@ -14,14 +14,14 @@
     --kesri: rgb(239, 160, 14);
 }
 
-/* bg-img for main page, 
- bg image is not working in external file 
-
-in this 1 task is remained,
-to replace girl with meaningful art
-*/
 
 /* general css */
+
+a,
+button {
+    cursor: pointer;
+}
+
 ul,
 li {
     list-style: none;
@@ -43,7 +43,7 @@ img {
     position: fixed;
     left: 0;
     top: 0;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
 }
 
 .modal-content {
@@ -71,23 +71,47 @@ img {
     margin-left: 20px;
 }
 
-/* close button css */
+/*modal close button css */
 .close {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 30px;
     color: var(--red);
+    cursor: pointer;
+}
+
+.close:hover {
+    transition: 0.2s;
+    width: 40px;
+    height: 40px;
+    background-color: var(--red);
+    color: var(--wheat);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
 }
 
 
 /*=== login button css=== */
 
-.login-btn button {
-    padding: 2px 24px 2px 24px;
-}
+/* .login-btn {
+    padding: ;
+} */
 
 /* sidebar css */
+
+
+.about-web a {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 5px;
+    padding: 5px 72px 5px 72px;
+}
+
+.about-web a:hover {
+    background-color: var(--white);
+}
 
 .sidebar {
     height: 100vh;
@@ -96,6 +120,7 @@ img {
 
 /*=== dropdown css of sidebar === */
 
+
 .dropdown {
     width: 200px;
     border-radius: 5px;
@@ -103,13 +128,17 @@ img {
 
 .menu-item {
     padding: 5px;
-    cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 5px;
     margin-bottom: 5px;
 }
 
+.menu-item:hover {
+    background-color: var(--white);
+}
 
+
+/* dropdown a tags */
 #submenu {
     display: none;
     padding-left: 15px;
@@ -129,6 +158,7 @@ img {
     transition: 0.3s;
 }
 
+
 /* === charan history css === */
 
 .history-charan {
@@ -139,4 +169,19 @@ img {
 
 .history-charan a {
     color: var(--black);
+}
+
+.history-charan:hover {
+    background-color: var(--white);
+}
+
+/* user-info css */
+
+.user-info .login-btn a:hover {
+    background-color: var(--white);
+    padding: 4px 8px 4px 8px;
+}
+
+.user-info .account:hover {
+    background-color: var(--white);
 }

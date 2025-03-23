@@ -8,5 +8,4 @@ visit sidebar-demo folder
 
 -> add community history like: maharas,talvarras,vrajvani,...
 
-
-<slogan> 
+--> add sardar patel and mahatma gandhi image in home page !that's the plan for now

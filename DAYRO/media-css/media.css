@@ -1,10 +1,34 @@
-/* responsive css for bg-img for phone screen */
+/* if screen goes under 768px then it applies */
 
 @media (max-width:768px) {
-    .main-img {
-        background-image: url('IMG\Untitled Project (1).jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+
+    .sidebar {
+        width: auto;
+    }
+}
+
+@media (max-width:992px) {
+    .sidebar {
+        width: auto;
+        height: auto;
+    }
+
+    .about-web a {
+        margin: auto;
+    }
+}
+
+@media (max-width:1200px) {
+    .sidebar {
+        width: auto;
+        height: auto;
+    }
+}
+
+
+@media (max-width:1399px) {
+    .sidebar {
+        width: auto;
+        height: auto;
     }
 }
