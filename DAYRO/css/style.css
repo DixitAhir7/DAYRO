@@ -210,3 +210,10 @@ img {
     max-width: 100px;
     margin-top: 10px;
 }
+
+
+#toggleSidebar {
+    border: none;
+    background-color: var(--orange);
+    color: var(--white);
+}

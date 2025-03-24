@@ -55,3 +55,11 @@ function toggleDropdown() {
     let submenu = document.getElementById("submenu");
     submenu.style.display = submenu.style.display === "block" ? "none" : "block";
 }
+
+document.getElementById("toggleSidebar").addEventListener("click", function () {
+    document.getElementById("sidebar").style.display = "block";
+});
+
+document.getElementById("closeSidebar").addEventListener("click", function () {
+    document.getElementById("sidebar").style.display = "none";
+});

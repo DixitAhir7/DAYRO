@@ -28,11 +28,33 @@
         height: auto;
     }
 }
+        
 
+/* Hide sidebar on small screens and open it with toggle button */
 
-@media (max-width:1399px) {
+@media (max-width: 768px) {
     .sidebar {
-        width: auto;
-        height: auto;
+        display: none;
+        position: absolute;
+        width: 250px;
+        height: 100vh;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
+
+/* and if user close the sidebar in phone and get back to large screen,
+ it should stay opend in larger screens */
+
+@media (min-width: 769px) {
+    .sidebar {
+        display: block !important;
+        position: relative;
     }
 }

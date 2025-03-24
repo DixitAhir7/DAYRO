@@ -75,7 +75,7 @@
 
     
     
-    
+<!-- this represensts festivals -->
      <!-- Festivals Section  -->
     <!-- <section class="py-5 bg-light">
         <div class="container">
@@ -102,3 +102,43 @@
             </div>
         </div>
     </section> -->
+
+
+<!-- this section is for folk dances -->
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Vibrant Folk Dances</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card folk-card">
+                        <img src="../IMG/garba.jpg" class="card-img-top" alt="Garba Dance">
+                        <div class="card-body">
+                            <h5 class="card-title">Garba</h5>
+                            <p class="card-text">Performed primarily by women in circular formations during Navratri,
+                                Garba honors Goddess Durga through rhythmic movements, clapping, and singing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card folk-card">
+                        <img src="../IMG/dandiya.jpg" class="card-img-top" alt="Dandiya Raas">
+                        <div class="card-body">
+                            <h5 class="card-title">Dandiya Raas</h5>
+                            <p class="card-text">An energetic dance performed by both men and women using colorful
+                                sticks (dandiyas), originally a devotional dance to Lord Krishna.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card folk-card">
+                        <img src="../IMG/tippani.jpg" class="card-img-top" alt="Tippani Dance">
+                        <div class="card-body">
+                            <h5 class="card-title">Tippani</h5>
+                            <p class="card-text">A unique dance form performed by women construction workers, using long
+                                sticks (tippani) that are used to pound and level the ground.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
