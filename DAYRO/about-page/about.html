@@ -4,27 +4,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Gujarat Folk Culture | DAYRO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css-bt/bootstrap.min.css">
+    <link rel="stylesheet" href="../media-css/media.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script defer src="../js/script.js"></script>
+    <script defer src="../js-bt/bootstrap.bundle.min.js"></script>
     <style>
+        .hero-section {
+            background-image: url('../IMG/gujarat-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
 
+        .section-title {
+            color: #e67e22;
+            border-bottom: 2px solid #e67e22;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .folk-card {
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .folk-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .back-to-home {
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .quote-box {
+            background-color: #f9f9f9;
+            border-left: 4px solid #e67e22;
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+
+        @media (max-width:768px) {
+            .hero-section {
+                padding: 50px 0;
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- Navigation button to return to home -->
+    <div class="container mt-3">
+        <a href="../index.html" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </div>
 
-    <section class="main-section">
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container text-center">
+            <h1>Discover Gujarat's Rich Folk Culture</h1>
+            <p class="lead">A vibrant tapestry of music, dance, art, and traditions</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="quote-box">
+                    "Gujarat's folk culture is not just an art form; it's the living heritage that connects generations
+                    and tells the story of our resilient people."
+                </div>
+
+                <p class="lead">
+                    Welcome to DAYRO - your gateway to exploring the rich cultural heritage of Gujarat. This platform is
+                    dedicated to anyone curious about Gujarat's vibrant traditions, folk arts, and cultural legacy that
+                    has been preserved through generations.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Folk Music Section -->
+    <section class="py-5">
         <div class="container">
-            <p>
-                just making this web for anyone who are curious about gujrat and it' culture
-            </p>
-
-            <p>
-
-            </p>
+            <h2 class="section-title">Folk Music of Gujarat</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        Gujarat's folk music, known as <strong>Sugam Sangeet</strong>, has been passed down through
+                        generations, creating a rich musical heritage. The bardic tradition is central to Gujarati folk
+                        music, with communities like Barot, Gadhvi, and Charan serving as traditional professional folk
+                        singers.
+                    </p>
+                    <p>
+                        The music often tells stories of valor, love, devotion, and everyday life, preserving history
+                        and cultural values through melodious expressions.
+                    </p>
+                    <h5>Traditional Instruments:</h5>
+                    <ul>
+                        <li><strong>Turi</strong> - A trumpet-like wind instrument</li>
+                        <li><strong>Manjira</strong> - Small hand cymbals</li>
+                        <li><strong>Ektaro</strong> - Single-stringed instrument</li>
+                        <li><strong>Jantar</strong> - A string instrument</li>
+                        <li><strong>Dhol</strong> - Double-headed drum</li>
+                        <li><strong>Ravan Hattho</strong> - A bow instrument</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <div class="card folk-card">
+                        <img src="../IMG/folk-music.jpg" class="card-img-top" alt="Gujarati Folk Musicians"
+                            onerror="this.src='https://via.placeholder.com/400x300?text=Gujarati+Folk+Music'">
+                        <div class="card-body">
+                            <h5 class="card-title">Bhajans and Lok Geet</h5>
+                            <p class="card-text">Devotional songs (bhajans) and folk songs (lok geet) form an integral
+                                part of Gujarati musical tradition, often performed during festivals and community
+                                gatherings.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Folk Dance Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Vibrant Folk Dances</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card folk-card">
+                        <img src="../IMG/garba.jpg" class="card-img-top" alt="Garba Dance"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Garba+Dance'">
+                        <div class="card-body">
+                            <h5 class="card-title">Garba</h5>
+                            <p class="card-text">Performed primarily by women in circular formations during Navratri,
+                                Garba honors Goddess Durga through rhythmic movements, clapping, and singing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card folk-card">
+                        <img src="../IMG/dandiya.jpg" class="card-img-top" alt="Dandiya Raas"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Dandiya+Raas'">
+                        <div class="card-body">
+                            <h5 class="card-title">Dandiya Raas</h5>
+                            <p class="card-text">An energetic dance performed by both men and women using colorful
+                                sticks (dandiyas), originally a devotional dance to Lord Krishna.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card folk-card">
+                        <img src="../IMG/tippani.jpg" class="card-img-top" alt="Tippani Dance"
+                            onerror="this.src='https://via.placeholder.com/300x200?text=Tippani+Dance'">
+                        <div class="card-body">
+                            <h5 class="card-title">Tippani</h5>
+                            <p class="card-text">A unique dance form performed by women construction workers, using long
+                                sticks (tippani) that are used to pound and level the ground.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Arts and Crafts Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title">Traditional Arts & Crafts</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card mb-4 folk-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="../IMG/bandhani.jpg" class="img-fluid rounded-start" alt="Bandhani Textile"
+                                    onerror="this.src='https://via.placeholder.com/150x200?text=Bandhani'">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bandhani</h5>
+                                    <p class="card-text">A tie-dye textile art from Jamnagar, featuring intricate
+                                        patterns created by tying small portions of fabric before dyeing.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card mb-4 folk-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="../IMG/patola.jpg" class="img-fluid rounded-start" alt="Patola Silk"
+                                    onerror="this.src='https://via.placeholder.com/150x200?text=Patola'">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Patola</h5>
+                                    <p class="card-text">Double ikat woven silk textiles from Patan, known for their
+                                        geometric patterns and vibrant colors, taking months to create.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card mb-4 folk-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="../IMG/embroidery.jpg" class="img-fluid rounded-start"
+                                    alt="Gujarati Embroidery"
+                                    onerror="this.src='https://via.placeholder.com/150x200?text=Embroidery'">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Embroidery</h5>
+                                    <p class="card-text">Intricate needlework featuring mirrors, beads, and colorful
+                                        threads, with distinct styles like Kutchi, Suf, Khaarek, and Paako.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card mb-4 folk-card">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="../IMG/ajrakh.jpg" class="img-fluid rounded-start" alt="Ajrakh Block Printing"
+                                    onerror="this.src='https://via.placeholder.com/150x200?text=Ajrakh'">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Ajrakh Block Printing</h5>
+                                    <p class="card-text">Traditional block printing technique from Kachchh district,
+                                        using natural dyes and intricate wooden blocks for printing patterns.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Festivals Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title">Festivals & Celebrations</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>Navratri</h4>
+                    <p>The nine-night festival dedicated to Goddess Durga features non-stop Garba and Dandiya
+                        performances across Gujarat, with colorful attire and energetic music.</p>
+
+                    <h4>Uttarayan</h4>
+                    <p>The kite flying festival celebrated in January marks the transition of the sun into Capricorn.
+                        The skies of Gujarat fill with colorful kites as people engage in friendly competitions.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4>Rann Utsav</h4>
+                    <p>A three-month festival held in the white desert of Kutch, showcasing the region's arts, crafts,
+                        music, and dance against the backdrop of the stunning white salt desert.</p>
+
+                    <h4>Tarnetar Fair</h4>
+                    <p>A vibrant matrimonial fair featuring the Rasada folk dance, where eligible bachelors wear
+                        colorful embroidered umbrellas to attract potential brides.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="section-title">Our Mission</h2>
+                    <p class="lead">
+                        At DAYRO, we are committed to preserving and promoting the rich cultural heritage of Gujarat.
+                        Our mission is to:
+                    </p>
+                    <ul class="list-unstyled text-start">
+                        <li><i class="fa-solid fa-circle-check text-success me-2"></i> Document and archive traditional
+                            folk arts before they fade away</li>
+                        <li><i class="fa-solid fa-circle-check text-success me-2"></i> Connect folk artists with
+                            appreciative audiences</li>
+                        <li><i class="fa-solid fa-circle-check text-success me-2"></i> Educate younger generations about
+                            their cultural roots</li>
+                        <li><i class="fa-solid fa-circle-check text-success me-2"></i> Promote cultural tourism in
+                            Gujarat</li>
+                        <li><i class="fa-solid fa-circle-check text-success me-2"></i> Create a digital repository of
+                            Gujarat's folk traditions</li>
+                    </ul>
+
+                    <div class="mt-5">
+                        <a href="../index.html" class="btn btn-primary me-2">
+                            <i class="fa-solid fa-house"></i> Return to Home
+                        </a>
+                        <a href="#" class="btn btn-outline-primary">
+                            <i class="fa-solid fa-envelope"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>DAYRO</h5>
+                    <p>The Soul of Gujarat's Folk Culture</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Follow us on social media:</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2025 DAYRO - Preserving Gujarat's Cultural Heritage</p>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

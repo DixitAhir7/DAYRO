@@ -42,7 +42,6 @@ submitBtn.addEventListener("click", function () {
 if login was succesful the clearing the field
 */
 
-
 // function clearInputs() {
 //     document.querySelectorAll('.loginModal form input').forEach(input => {
 //         input.value = "";

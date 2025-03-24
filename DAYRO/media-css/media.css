@@ -5,6 +5,10 @@
     .sidebar {
         width: auto;
     }
+
+    .main-content {
+        width: 50%;
+    }
 }
 
 @media (max-width:992px) {
