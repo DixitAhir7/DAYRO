@@ -11,9 +11,6 @@
  --> add video in background with pure music,
   of combined all artists of gujrat include only main
 
-
-<!-- if this goes succeed -->
-
 --> make this site entertaining
 --> my prediction is that 90% will be seeing this in phone,
  so make it perfect responsive for phone on your own
@@ -30,3 +27,8 @@
 * Mandli
 
 --> some great history of community:maharas,talvarras etc...
+
+<!-- messages using DOM -->
+
+--> use appendchild,prepend:(for adding at bottom, for adding at top) and createelement and many more functionality...
+
