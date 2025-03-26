@@ -54,31 +54,3 @@ document.getElementById("toggleSidebar").addEventListener("click", function () {
 document.getElementById("closeSidebar").addEventListener("click", function () {
     document.getElementById("sidebar").style.display = "none";
 });
-
-
-
-// script for opening page in new tab
-document.addEventListener("DOMContentLoaded", () => {
-    const aTag = document.querySelector("header nav .about-web a");
-
-    if (aTag) {
-        aTag.addEventListener("click", (e) => {
-
-            e.preventDefault();
-
-            // getting link using href attribute
-            const URL = aTag.getAttribute("href");
-
-            if (URL) {
-                window.open(URL, "_blank");
-            } else {
-                console.error("No href attribute found on the link.");
-            }
-        });
-    } else {
-        console.error("Anchor tag not found.");
-    }
-});
-
-// script for dark mode
-
