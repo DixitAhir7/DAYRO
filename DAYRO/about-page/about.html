@@ -10,27 +10,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="about.css">
     <script defer src="../js-bt/bootstrap.bundle.min.js"></script>
-    <style>
-        /* general css */
-
-        img {
-            width: 100%;
-        }
-
-        ul,
-        ol {
-            list-style: none;
-        }
-    </style>
+    <script defer src="/theme-js/theme.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
+
+
+    <!-- theme-dark mode -->
+    <div class="theme-mode">
+        <a class="d-inline" style="padding: 2px 12px 2px 12px;">dark</a>
+    </div>
+
+
     <!-- Navigation button to return to home -->
     <!-- <div class="container mt-3">
         <a href="../index.html" class="btn btn-outline-secondary">
             <i class="fa-solid fa-arrow-left"></i> Back to Home
         </a>
     </div> -->
+
+
+
 
     <!-- Hero Section -->
     <div class="hero-section">
@@ -62,7 +63,7 @@
         <div class="container">
             <h2 class="section-title">Folk Music of Gujarat</h2>
             <div class="row">
-                <div class="col-md-6">
+                <div class="folk-music col-md-6">
                     <p>
                         Gujarat's folk music, known as <strong>Sugam Sangeet</strong>, has been passed down through
                         generations, creating a rich musical heritage. The bardic tradition is central to Gujarati folk
@@ -142,8 +143,8 @@
     <footer class="bg-dark text-white py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <h5>DAYRO</h5>
+                <div class="logo-name col-md-6">
+                    <h4>DAYRO</h4>
                     <p>The Soul of Gujarat's Folk Culture</p>
                 </div>
                 <div class="col-md-6 text-md-end">
@@ -155,7 +156,9 @@
                 </div>
             </div>
             <hr>
-            <div class="text-center">
+
+            <!-- copyright-section -->
+            <div class="footer-copyright text-center">
                 <p>&copy; 2025 DAYRO - Preserving Gujarat's Cultural Heritage</p>
             </div>
         </div>

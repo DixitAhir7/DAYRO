@@ -35,6 +35,14 @@ img {
     display: block;
 }
 
+/* theme-mode css */
+
+.dark-mode {
+    background-color: black;
+    color: white !important;
+}
+
+
 /*=== login form-css modal ===*/
 
 .modal {

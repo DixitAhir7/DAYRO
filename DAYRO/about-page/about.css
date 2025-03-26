@@ -8,6 +8,16 @@
 } */
 
 
+/* general css */
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
 /* == starting heading css ==  */
 .main-heading {
     background: linear-gradient(90deg, #ff7e00, #ff4500);
@@ -39,6 +49,7 @@
     padding: 20px;
     margin: 30px 0;
     font-style: italic;
+    color: black;
 }
 
 @media (max-width:768px) {
@@ -59,6 +70,10 @@
 }
 
 
+.logo-name h4 {
+    color: orange;
+}
+
 /* contact-me css  */
 .contact a {
     background-color: orange;
@@ -68,4 +83,9 @@
 .contact a:hover {
     background-color: white;
     color: black;
+    border: 1px solid black;
+}
+
+.theme-mode a {
+    cursor: pointer;
 }

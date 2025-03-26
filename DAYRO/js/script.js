@@ -79,3 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Anchor tag not found.");
     }
 });
+
+// script for dark mode
+

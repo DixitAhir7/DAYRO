@@ -28,7 +28,7 @@
         height: auto;
     }
 }
-        
+
 
 /* Hide sidebar on small screens and open it with toggle button */
 
@@ -56,5 +56,27 @@
     .sidebar {
         display: block !important;
         position: relative;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .modal-content {
+        width: 50%;
+        padding: 15px;
+        background-color: #fff;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        font-size: 14px;
+    }
+
+    button.submit,
+    input#reset {
+        font-size: 14px;
+    }
+
+    .bg-img{
+        display: flex;
     }
 }
