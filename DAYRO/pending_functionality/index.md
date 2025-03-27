@@ -33,3 +33,5 @@
 --> use appendchild,prepend:(for adding at bottom, for adding at top) and createelement and many more functionality...
 
 <!--review section-->
+
+--> i'll add database page to interact users with their data and history

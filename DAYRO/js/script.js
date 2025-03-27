@@ -22,6 +22,7 @@ window.addEventListener("click", function (event) {
 });
 
 
+
 // getting value 
 // alerting if user entered email and psword: login succesfull
 
@@ -44,13 +45,15 @@ function toggleDropdown() {
 }
 
 
-
 // this script is for sidebar
 
-document.getElementById("toggleSidebar").addEventListener("click", function () {
-    document.getElementById("sidebar").style.display = "block";
-});
+const sidebar = document.querySelector('.sidebar');
+const collapseBtn = document.querySelector('.sidebarToggle');
 
-document.getElementById("closeSidebar").addEventListener("click", function () {
-    document.getElementById("sidebar").style.display = "none";
-});
+document.addEventListener('DOMContentLoaded', () => {
+    collapseBtn.addEventListener('click',(e)=>{
+        e.preventDefault();
+
+        sidebar.classList.toggle('sidebar-collapse')
+    })
+})

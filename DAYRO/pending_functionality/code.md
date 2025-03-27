@@ -1,4 +1,5 @@
   <!-- Arts and Crafts Section -->
+  <!-- about page -->
     <!-- <section class="py-5">
         <div class="container">
             <h2 class="section-title">Traditional Arts & Crafts</h2>
@@ -76,6 +77,7 @@
     
     
 <!-- this represensts festivals -->
+<!-- about page -->
      <!-- Festivals Section  -->
     <!-- <section class="py-5 bg-light">
         <div class="container">
@@ -105,6 +107,7 @@
 
 
 <!-- this section is for folk dances -->
+<!-- about page -->
 
     <section class="py-5 bg-light">
         <div class="container">
@@ -146,6 +149,7 @@
 
 
  <!-- script for opening page in new tab -->
+ <!-- this is for main index.html script -->
 document.addEventListener("DOMContentLoaded", () => {
     const aTag = document.querySelector("header nav .about-web a");
 
@@ -167,3 +171,23 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Anchor tag not found.");
     }
 });
+
+
+<!-- in about page -->
+/* this is for image css */
+
+/* .hero-section {
+    background-image: url('../IMG/gujarat-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+} */
+
+
+ <!-- Navigation button to return to home -->
+ <!-- about-page -->
+    <!-- <div class="container mt-3">
+        <a href="../index.html" class="btn btn-outline-secondary">
+            <i class="fa-solid fa-arrow-left"></i> Back to Home
+        </a>
+    </div> -->

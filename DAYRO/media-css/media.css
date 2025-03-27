@@ -32,33 +32,8 @@
 
 /* Hide sidebar on small screens and open it with toggle button */
 
-@media (max-width: 768px) {
-    .sidebar {
-        display: none;
-        position: absolute;
-        width: 250px;
-        height: 100vh;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-    }
 
-    .main-content {
-        width: 100%;
-    }
-}
-
-/* and if user close the sidebar in phone and get back to large screen,
- it should stay opend in larger screens */
-
-@media (min-width: 769px) {
-    .sidebar {
-        display: block !important;
-        position: relative;
-    }
-}
-
+/* this is for modal for phone screens */
 @media screen and (max-width:768px) {
     .modal-content {
         width: 50%;
@@ -76,7 +51,7 @@
         font-size: 14px;
     }
 
-    .bg-img{
+    .bg-img {
         display: flex;
     }
 }

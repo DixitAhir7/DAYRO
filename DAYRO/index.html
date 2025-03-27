@@ -48,16 +48,14 @@
             <div class="row">
                 <!-- Sidebar for medium and larger screens -->
                 <div class="sidebar col-md-2" id="sidebar">
+
                     <a class="text-black fs-4 d-block p-3 logo text-black text-center" href="#">D A Y R O</a>
                     <nav>
                         <div class="nav-list p-3">
 
                             <!-- in about all about this web -->
-                            <div class="about-web d-flex justify-content-evenly align-items-center mb-3">
-                                <button class="btn btn-outline-dark d-md-none" id="closeSidebar">Close</button>
-                            </div>
-
-                            <div class="about-web d-flex justify-content-evenly align-items-center mb-3">
+                            <div class="about-page d-flex align-items-center mb-3">
+                                <i class="fas fa-info-circle about-icon"></i>
                                 <a class="text-black" href="about-page/about.html">ABOUT</a>
                             </div>
 
@@ -65,10 +63,12 @@
                             <div class="dropdown mb-3">
                                 <div class="menu-item d-flex justify-content-evenly align-items-center"
                                     onclick="toggleDropdown()">
+                                    <i class="fas fa-users"></i>
                                     <a class="dropbutton text-black">KALAKARO</a>
                                     <i class="fa-solid fa-caret-down icon-ddown"></i>
                                 </div>
                                 <div class="dropdown-content" id="submenu">
+
                                     <a href="#">Hasya Kalakaro</a>
                                     <a href="#">Folk Singers</a>
                                 </div>
@@ -76,6 +76,7 @@
 
                             <!-- in this charan history will be added -->
                             <div class="history-charan d-flex justify-content-evenly align-items-center">
+                                <i class="fa-solid fa-landmark"></i>
                                 <a href="ch/history.html">CHARAN HISTORY</a>
                             </div>
 
@@ -101,7 +102,7 @@
 
                 <div class="col-md-10">
                     <div class="main-content">
-                        <button class="btn btn-dark d-md-none" id="toggleSidebar">☰</button>
+                        <a href=""><i class="fas fa-bars text-black sidebarToggle"></i></a>
                         <h2 class="text-md-center">WELCOME TO DAYRO</h2>
                         <p class="text-md-center">The Soul of Gujarat's Folk Culture</p>
                     </div>
@@ -113,6 +114,7 @@
         </div>
     </header>
 
+    <!--modal -->
 
     <div id="loginModal" class="modal">
         <div class="modal-content">
