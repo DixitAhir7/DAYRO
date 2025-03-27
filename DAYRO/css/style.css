@@ -124,6 +124,8 @@ img {
     border-radius: 5px;
     text-align: center;
     transform: rotate(90deg);
+
+
 }
 
 /* sidebar css */
@@ -136,22 +138,10 @@ img {
 .sidebar {
     transition: width 0.3s ease;
     overflow: hidden;
-}
-
-.about-web a {
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    border-radius: 5px;
-    padding: 5px 72px 5px 72px;
-}
-
-.about-web a:hover {
-    background-color: var(--white);
-}
-
-.sidebar {
     height: 100vh;
     background-color: var(--kesri);
 }
+
 
 /*=== dropdown css of sidebar === */
 
@@ -188,7 +178,6 @@ img {
 
 #submenu a:hover {
     background: var(--whitesmoke);
-    transition: 0.3s;
 }
 
 /* === charan history css === */
