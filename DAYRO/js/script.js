@@ -51,7 +51,7 @@ const sidebar = document.querySelector('.sidebar');
 const collapseBtn = document.querySelector('.sidebarToggle');
 
 document.addEventListener('DOMContentLoaded', () => {
-    collapseBtn.addEventListener('click',(e)=>{
+    collapseBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
         sidebar.classList.toggle('sidebar-collapse')

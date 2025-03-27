@@ -38,8 +38,8 @@ img {
 /* theme-mode css */
 
 .dark-mode {
-    background-color: black;
-    color: white !important;
+    background-color: var(--black);
+    color: var(--white) !important;
 }
 
 
