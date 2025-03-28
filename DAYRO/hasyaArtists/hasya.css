@@ -1,0 +1,68 @@
+:root {
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+}
+
+/* general css */
+a {
+    text-decoration: none;
+}
+
+.hasya-kalakar {
+    margin-top: 76px;
+}
+
+/* artists-images css */
+
+.artist-img img {
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.artist-img:hover img {
+    transform: scale(1.1);
+    opacity: 0.78;
+}
+
+.artist-img img:nth-child(1) {
+    width: 240px;
+    height: 225px;
+}
+
+/* artist-contnet css */
+
+.artists-content {
+    display: none;
+    padding: 4px 12px 4px 12px;
+}
+
+.artist-img:hover .artists-content {
+    display: block;
+}
+
+.artists-content a {
+    color: var(--white);
+    font-size: 1.2rem;
+}
+
+.artists-content {
+    position: absolute;
+    top: 75%;
+    left: 62px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 99px;
+}
+
+.artist-img {
+    position: relative;
+}
+
+/* search-css */
+
+#search {
+    border: none;
+}
+
+input[type='reset']{
+    border: none;
+}

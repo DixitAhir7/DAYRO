@@ -45,6 +45,17 @@ img {
 
 /*=== login form-css modal ===*/
 
+/* login button */
+.user-info .login-btn button {
+    border: none;
+    background: none;
+}
+
+.user-info .login-btn button:hover {
+    background-color: var(--white);
+    border-radius: 5px;
+}
+
 .modal {
     display: none;
     position: fixed;
@@ -52,7 +63,7 @@ img {
     top: 0;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease-in-out;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     border-radius: 10px;
 }
 
@@ -124,8 +135,6 @@ img {
     border-radius: 5px;
     text-align: center;
     transform: rotate(90deg);
-
-
 }
 
 /* sidebar css */

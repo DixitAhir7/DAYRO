@@ -35,3 +35,5 @@
 <!--review section-->
 
 --> i'll add database page to interact users with their data and history
+
+<!-- search-functionality for artists -->
