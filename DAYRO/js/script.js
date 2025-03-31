@@ -62,3 +62,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// when user enter first time!
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (!localStorage.getItem("visited")) {
+        console.log("User visiting for the first time!");
+        alert("Welcome to our website for the first time!");
+
+        localStorage.setItem("visited", "true");
+
+    } else {
+        console.log("Welcome back!");
+    }
+});
+
+
+// how much time has spend in website
+
+let startTime = Date.now();
+
+window.addEventListener("beforeunload", () => {
+    const endTime = Date.now();
+    const timeSpent = endTime - startTime;
+    const timesec = timeSpent / 1000;
+    const timeMin = Math.floor(timesec / 60)
+
+    console.log(`you wasted ${timeMin} minutes`);
+});

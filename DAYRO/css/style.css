@@ -219,15 +219,17 @@ img {
 
 /* user-info css */
 
+
+/* login-btn css */
 .user-info .login-btn {
     padding: 4px 8px 4px 8px;
-    border-radius: 7px;
 }
 
-.user-info .login-btn a:hover {
+.user-info .login-btn span:hover {
     background-color: var(--white);
+    border-radius: 7px;
+    padding: 4px 8px 4px 8px;
 }
-
 
 /* account css */
 
@@ -242,6 +244,8 @@ img {
     margin-top: 10px;
 }
 
+
+/* sidebar-button */
 
 #toggleSidebar {
     border: none;
