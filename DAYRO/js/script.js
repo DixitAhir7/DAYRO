@@ -54,6 +54,11 @@ document.addEventListener('DOMContentLoaded', () => {
     collapseBtn.addEventListener('click', (e) => {
         e.preventDefault();
 
-        sidebar.classList.toggle('sidebar-collapse')
-    })
-})
+        sidebar.classList.toggle('sidebar-collapse');
+        const textElements = sidebar.querySelectorAll('.text');
+
+        textElements.forEach(textElement => {
+            textElement.style.display = sidebar.classList.contains('sidebar-collapse') ? 'none' : 'inline';
+        });
+    });
+});

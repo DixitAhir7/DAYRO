@@ -50,13 +50,13 @@
             <div class="row">
                 <!-- Sidebar for medium and larger screens -->
                 <div class="sidebar col-md-2 col-sm-1" id="sidebar">
-                    <a class="text-black fs-4 d-block p-3 logo text-black text-center" href="#">D A Y R O</a>
+                    <a class="text text-black fs-4 d-block  p-3 logo text-black text-md-center" href="">D A Y R O</a>
                     <nav>
                         <div class="nav-list p-3">
                             <!-- in about all about this web -->
                             <div class="about-page d-flex align-items-center mb-3">
                                 <i class="fas fa-info-circle about-icon"></i>
-                                <a class="text-black" href="about-page/about.html">ABOUT</a>
+                                <a class="text text-black" href="about-page/about.html">ABOUT</a>
                             </div>
 
                             <!-- dropdown for artists -->
@@ -64,7 +64,7 @@
                                 <div class="menu-item d-flex justify-content-evenly align-items-center"
                                     onclick="toggleDropdown()">
                                     <i class="fas fa-users"></i>
-                                    <sppan class="dropbutton text-black" href="">KALAKARO</span>
+                                    <sppan class="text dropbutton text-black" href="">KALAKARO</span>
                                         <i class="fa-solid fa-caret-down icon-ddown"></i>
                                 </div>
                                 <div class="dropdown-content" id="submenu">
@@ -76,7 +76,7 @@
                             <!-- in this charan history will be added -->
                             <div class="history-charan d-flex justify-content-evenly align-items-center">
                                 <i class="fa-solid fa-landmark"></i>
-                                <a href="ch/history.html">CHARAN HISTORY</a>
+                                <a href="ch/history.html" class="text">CHARAN HISTORY</a>
                             </div>
 
 
@@ -84,15 +84,23 @@
                             <hr>
                             <div class="user-info ">
                                 <div class="login-btn">
-                                    <button id="openmodal" class="mt-4 text-black border-">Login</button>
+                                    <span>
+                                        <i class="fa-solid fa-key"></i>
+                                        <button id="openmodal" class="text mt-4 text-black border-">Login</button>
+                                    </span>
+
                                 </div>
                                 <div class="account">
                                     <span class="d-inline">
                                         <i class="fa-solid fa-user"></i>
-                                        <a class="text-black" href="">Account</a>
+                                        <a class="text text-black" href="">Account</a>
                                     </span>
                                 </div>
                             </div>
+                            <span class="theme-mode">
+                                <i class="fa-solid fa-moon"></i>
+                                <a class="text text-black ms-2">dark</a>
+                            </span>
                         </div>
                     </nav>
                 </div>
@@ -105,9 +113,7 @@
                         <h2 class="text-md-center">WELCOME TO DAYRO</h2>
                         <p class="text-md-center">The Soul of Gujarat's Folk Culture</p>
                     </div>
-                    <span class="theme-mode">
-                        <a class="bg-black text-white p-1">dark</a>
-                    </span>
+
                 </div>
             </div>
         </div>
@@ -119,7 +125,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h2 class="text-warning text-center">Login</h2>
-            <div class="bg-img col-sm-7">
+            <div class="bg-img">
                 <form id="loginForm" class="mt-3">
                     <input class="email" type="email" placeholder="enter your email" required><br><br>
                     <input class="password" type="password" placeholder="enter password" required><br><br>

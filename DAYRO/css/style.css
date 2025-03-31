@@ -37,6 +37,17 @@ img {
 
 /* theme-mode css */
 
+
+.theme-mode {
+    padding: 2px 8px 2px 8px;
+}
+
+.theme-mode:hover {
+    background-color: var(--white);
+    border-radius: 5px;
+
+}
+
 .dark-mode {
     background-color: var(--black);
     color: var(--white) !important;
@@ -140,8 +151,9 @@ img {
 /* sidebar css */
 
 .sidebar-collapse {
-    width: 40px;
+    width: 60px;
 }
+
 
 
 .sidebar {
@@ -207,7 +219,7 @@ img {
 
 /* user-info css */
 
-.user-info .login-btn a {
+.user-info .login-btn {
     padding: 4px 8px 4px 8px;
     border-radius: 7px;
 }
@@ -215,6 +227,9 @@ img {
 .user-info .login-btn a:hover {
     background-color: var(--white);
 }
+
+
+/* account css */
 
 .user-info .account:hover {
     background-color: var(--white);
