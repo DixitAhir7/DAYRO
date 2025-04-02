@@ -37,3 +37,11 @@
 --> i'll add database page to interact users with their data and history
 
 <!-- search-functionality for artists -->
+<!-- slider -->
+
+<!--entertaining idea -->
+
+-> will make the feature where users can select the kalakar and they can make the selected artist call whatever they want in artist's voice;
+-> Ai: voice generator  
+
+https://www.tryparrotai.com/ai-voice-generator/donald-trump
