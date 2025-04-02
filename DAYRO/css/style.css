@@ -154,15 +154,12 @@ img {
     width: 60px;
 }
 
-
-
 .sidebar {
     transition: width 0.3s ease;
     overflow: hidden;
     height: 100vh;
     background-color: var(--kesri);
 }
-
 
 /*=== dropdown css of sidebar === */
 
@@ -219,7 +216,6 @@ img {
 
 /* user-info css */
 
-
 /* login-btn css */
 .user-info .login-btn {
     padding: 4px 8px 4px 8px;
@@ -243,7 +239,6 @@ img {
     max-width: 100px;
     margin-top: 10px;
 }
-
 
 /* sidebar-button */
 

@@ -77,3 +77,11 @@ const form = document.querySelector('.show-form')
 //     localStorage.setItem('password:', JSON.stringify(passwordValue))
 
 // })
+
+// try{
+//     console.log(hello, motherfucker);
+// }catch(e){
+//     console.log('error:', e)
+// }finally{
+//     console.log('this is finally block');
+// };
