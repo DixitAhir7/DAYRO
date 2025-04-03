@@ -1,7 +1,0 @@
-/* sidebar for phone closed by default */
-
-@media (max-width:768px) {
-    .sidebar-collapse {
-        width: 60px;
-    }
-}

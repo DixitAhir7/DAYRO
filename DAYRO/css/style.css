@@ -11,7 +11,7 @@
     --blue50: rgb(15, 23, 43);
     --whitesmoke: rgb(245, 245, 245);
     --red: rgb(255, 0, 0);
-    --kesri: rgb(239, 160, 14);
+    --kesri: rgba(248, 166, 13, 0.873);
 }
 
 /* general css */
@@ -37,22 +37,21 @@ img {
 
 /* theme-mode css */
 
-
 .theme-mode {
-    padding: 2px 8px 2px 8px;
+    margin-left: 25px;
+    max-width: 100px;
 }
 
 .theme-mode:hover {
-    background-color: var(--white);
     border-radius: 5px;
-
 }
 
+
+/* for dakr-mode turn on */
 .dark-mode {
     background-color: var(--black);
     color: var(--white) !important;
 }
-
 
 /*=== login form-css modal ===*/
 
@@ -142,49 +141,66 @@ img {
     padding: 1px 5px 1px 5px;
 }
 
-/* sidebar css */
+
+/* sidebar css and nav-list */
 
 .sidebar-collapse {
-    width: 60px;
+    width: 0 !important;
+    overflow: hidden !important;
 }
 
+
 .sidebar {
-    transition: width 0.3s ease;
+    transition: width 0.5s ease;
+    background: rgb(129, 70, 21);
+    background: linear-gradient(59deg, rgba(129, 70, 21, 0.7478641114648985) 13%, rgba(218, 147, 12, 0.9439425428374475) 36%, rgba(224, 159, 14, 1) 43%, rgba(179, 90, 7, 0.7982842795321253) 55%, rgba(179, 90, 7, 0.7254551478794643) 93%);
+    ;
     overflow: hidden;
     height: 100vh;
-    background-color: var(--kesri);
+    width: 250px;
+    padding: 25px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+/* about css */
+
+.nav-list .about-page a {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.about-page a:hover {
+    background-color: var(--white);
 }
 
 /*=== dropdown css of sidebar === */
 
-.dropdown {
+.nav-list .menu-item span {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
     width: 200px;
-    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.menu-item {
-    padding: 5px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-.menu-item:hover {
+.menu-item span:hover {
     background-color: var(--white);
 }
 
 /* dropdown a tags */
 #submenu {
     display: none;
-    padding-left: 15px;
 }
 
 #submenu a {
     display: block;
-    padding: 5px 9px;
     color: rgb(51, 51, 51);
     border-radius: 5px;
-    margin: 4px 0;
     font-size: 18px;
 }
 
@@ -194,31 +210,34 @@ img {
 
 /* === charan history css === */
 
-.history-charan {
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    padding: 5px;
-    border-radius: 5px;
-}
-
 .history-charan a {
-    color: var(--black);
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.history-charan:hover {
+.history-charan a:hover {
     background-color: var(--white);
 }
 
 /* user-info css */
 
-/* login-btn css */
-.user-info .login-btn {
-    padding: 4px 8px 4px 8px;
+.user-info {
+    margin-left: 25px;
+    margin-top: 75px;
 }
 
-.user-info .login-btn span:hover {
+
+
+/* login-btn css */
+.user-info .login-btn button {}
+
+.user-info .login-btn:hover {
     background-color: var(--white);
     border-radius: 7px;
-    padding: 4px 8px 4px 8px;
+    max-width: 100px;
 }
 
 /* account css */
@@ -228,37 +247,12 @@ img {
 }
 
 .user-info .account {
-    padding: 2px 8px 2px 8px;
     border-radius: 7px;
     max-width: 100px;
-    margin-top: 10px;
 }
 
 /* sidebar-button */
 
 #toggleSidebar {
     border: none;
-    background-color: var(--orange);
-    color: var(--white);
-}
-
-
-/* about css */
-
-.about-page {
-    padding: 5px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-    border-radius: 5px;
-}
-
-.about-page:hover {
-    background-color: var(--white);
-}
-
-.about-page a {
-    margin-left: 40px;
-}
-
-.about-icon {
-    margin-left: 20px;
 }

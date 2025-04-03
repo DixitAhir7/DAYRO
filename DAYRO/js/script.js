@@ -52,14 +52,18 @@ const collapseBtn = document.querySelector('.sidebarToggle');
 
 document.addEventListener('DOMContentLoaded', () => {
     collapseBtn.addEventListener('click', (e) => {
+
         e.preventDefault();
-
         sidebar.classList.toggle('sidebar-collapse');
-        const textElements = sidebar.querySelectorAll('.text');
 
-        textElements.forEach(textElement => {
-            textElement.style.display = sidebar.classList.contains('sidebar-collapse') ? 'none' : 'inline';
-        });
+        // changing the button on,off
+
+        if (sidebar.classList.contains('sidebar-collapse')) {
+            collapseBtn.innerHTML = `<a href=""><i class="bi bi-toggle2-off text-black fs-4"></i></a>`;
+        } else {
+            collapseBtn.innerHTML = `<a href="" class="sidebarToggle"><i class="bi bi-toggle2-on text-black fs-4"></i></a>`;
+        }
+
     });
 });
 
