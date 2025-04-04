@@ -158,9 +158,7 @@ img {
 
 .sidebar {
     transition: width 0.5s ease;
-    background: rgb(129, 70, 21);
-    background: linear-gradient(59deg, rgba(129, 70, 21, 0.7478641114648985) 13%, rgba(218, 147, 12, 0.9439425428374475) 36%, rgba(224, 159, 14, 1) 43%, rgba(179, 90, 7, 0.7982842795321253) 55%, rgba(179, 90, 7, 0.7254551478794643) 93%);
-    ;
+    background-color: var(--kesri);
     overflow: hidden;
     height: 100vh;
     width: 250px;
@@ -208,6 +206,8 @@ img {
     color: rgb(51, 51, 51);
     border-radius: 5px;
     font-size: 18px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 #submenu a:hover {
@@ -225,6 +225,24 @@ img {
 }
 
 .history-charan a:hover {
+    background-color: var(--white);
+}
+
+
+/* music-player css */
+.nav-list .music-player {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.nav-list .music-player a {
+    font-size: 17.8px;
+}
+
+.nav-list .music-player:hover {
     background-color: var(--white);
 }
 
@@ -258,8 +276,8 @@ img {
 
 /* time-spent css */
 
-.nav-list .time-spent span {
-    max-width: 100px;
+.nav-list .time-spent {
+    max-width: 133px;
     margin-left: 25px;
 }
 

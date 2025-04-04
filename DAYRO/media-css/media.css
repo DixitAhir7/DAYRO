@@ -1,0 +1,16 @@
+/* for phones like oppo,redmi */
+
+@media (max-width:400px) {
+    header .main-content h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    header .main-content p {
+        text-align: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
+}

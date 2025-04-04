@@ -40,10 +40,10 @@ submitBtn.addEventListener("click", function () {
 
 // this is script for dropdown
 
-function toggleDropdown() {
+window.toggleDropdown = function () {
     let submenu = document.getElementById("submenu");
     submenu.style.display = submenu.style.display === "block" ? "none" : "block";
-}
+};
 
 
 // this script is for sidebar
