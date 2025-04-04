@@ -94,5 +94,5 @@ window.addEventListener("beforeunload", () => {
     const timesec = timeSpent / 1000;
     const timeMin = Math.floor(timesec / 60)
 
-    console.log(`you wasted ${timeMin} minutes`);
+    console.log(`you spent ${timeMin} minutes`);
 });

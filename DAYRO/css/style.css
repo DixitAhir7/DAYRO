@@ -36,6 +36,11 @@ img {
 }
 
 /* theme-mode css */
+/* sidebar-button */
+
+#toggleSidebar {
+    border: none;
+}
 
 .theme-mode {
     margin-left: 25px;
@@ -44,6 +49,7 @@ img {
 
 .theme-mode:hover {
     border-radius: 5px;
+    background-color: var(--white);
 }
 
 
@@ -230,9 +236,7 @@ img {
 }
 
 
-
 /* login-btn css */
-.user-info .login-btn button {}
 
 .user-info .login-btn:hover {
     background-color: var(--white);
@@ -251,8 +255,15 @@ img {
     max-width: 100px;
 }
 
-/* sidebar-button */
 
-#toggleSidebar {
-    border: none;
+/* time-spent css */
+
+.nav-list .time-spent span {
+    max-width: 100px;
+    margin-left: 25px;
+}
+
+.nav-list .time-spent:hover {
+    background-color: var(--white);
+    border-radius: 7px;
 }
