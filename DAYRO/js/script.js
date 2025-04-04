@@ -1,3 +1,5 @@
+import { userTime } from "../time/time-script/time.js";
+
 // this is modal script
 
 const modal = document.getElementById("loginModal");
@@ -20,7 +22,6 @@ window.addEventListener("click", function (event) {
         modal.style.display = "none";
     }
 });
-
 
 
 // getting value 
@@ -84,15 +85,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// how much time has spend in website
-
-let startTime = Date.now();
-
-window.addEventListener("beforeunload", () => {
-    const endTime = Date.now();
-    const timeSpent = endTime - startTime;
-    const timesec = timeSpent / 1000;
-    const timeMin = Math.floor(timesec / 60)
-
-    console.log(`you spent ${timeMin} minutes`);
-});
+userTime()
