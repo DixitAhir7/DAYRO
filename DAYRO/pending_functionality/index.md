@@ -48,3 +48,6 @@ https://www.tryparrotai.com/ai-voice-generator/donald-trump
 
 --> in charan history i'll let the users write their own views and thoughts on it
 ->haryali gir song
+
+
+--> in home page live section will be added

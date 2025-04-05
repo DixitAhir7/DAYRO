@@ -285,3 +285,16 @@ img {
     background-color: var(--white);
     border-radius: 7px;
 }
+
+/* main-content css */
+
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+.main-img {
+    position: absolute;
+    top: 0;
+    opacity: 0.810;
+}
