@@ -5,12 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account</title>
+    <link rel="stylesheet" href="/css-bt/bootstrap.min.css">
+    <link rel="stylesheet" href="/js-bt/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="acc.css">
     <script defer src="acc.js"></script>
 </head>
 
 <body>
+    <div class="container-fluid">
+        <section>
 
+            <div class="account">
+                <form action="">
+                    <img class="d-block" style="border-radius: 50%;" src="img/user-default image.jpg"
+                        alt="upload your image" height="100px" width="100px">
+                    <input type="file">
+                    <input type="file" id="updateImg" class="hidden" />
+                    <a class="text-black uploadImg" href="">update image</a>
+                    <input type="submit" value="delte image">
+                </form>
+            </div>
+
+        </section>
+
+
+        <section class="user-Data">
+            <div class="user-btn">
+                <a href="loginInfo/login.html">login information</a>
+            </div>
+
+        </section>
+    </div>
 </body>
 
 </html>

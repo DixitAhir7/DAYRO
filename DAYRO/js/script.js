@@ -1,13 +1,11 @@
 import { userTime } from "../time/time-script/time.js";
-
+import { validatelogin } from "../validation-file/validate.js";
 // this is modal script
 
 const modal = document.getElementById("loginModal");
 const openModalBtn = document.getElementById("openmodal");
 const closeModalBtn = document.querySelector(".close");
-const submitBtn = document.querySelector(".submit");
-const emailInput = document.querySelector(".email");
-const passwordInput = document.querySelector(".password");
+
 
 openModalBtn.addEventListener("click", function () {
     modal.style.display = "block";
@@ -24,19 +22,9 @@ window.addEventListener("click", function (event) {
 });
 
 
-// getting value 
-// alerting if user entered email and psword: login succesfull
+// for login-validation
 
-submitBtn.addEventListener("click", function () {
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    if (!email || !password) return alert("Please enter both email and password.");
-    if (password.length < 5) return alert("Password must be at least 5 characters long.");
-
-    alert("Login Successful!");
-    modal.style.display = "none";
-});
+validatelogin()
 
 // this is script for dropdown
 
@@ -56,14 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         e.preventDefault();
         sidebar.classList.toggle('sidebar-collapse');
-
-        // changing the button on,off
-
-        if (sidebar.classList.contains('sidebar-collapse')) {
-            collapseBtn.innerHTML = `<a href=""><i class="bi bi-toggle2-off text-black fs-4"></i></a>`;
-        } else {
-            collapseBtn.innerHTML = `<a href="" class="sidebarToggle"><i class="bi bi-toggle2-on text-black fs-4"></i></a>`;
-        }
 
     });
 });
@@ -85,4 +65,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// count spending-time
 userTime()

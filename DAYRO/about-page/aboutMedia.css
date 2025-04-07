@@ -1,0 +1,17 @@
+/* for media-querry in about page */
+
+@media (max-width:1200px) {
+    .main-heading h1 {
+        font-size: 28px;
+        text-align: start;
+    }
+
+    .main-heading p {
+        font-size: 14px;
+        text-align: start;
+    }
+
+    .quote-box {
+        width: 50%;
+    }
+}

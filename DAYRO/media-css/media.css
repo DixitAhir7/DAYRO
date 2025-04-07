@@ -14,3 +14,12 @@
         text-align: center;
     }
 }
+
+
+/* sidebar collapsed by default in phones */
+@media (max-width:768px) {
+    .sidebar {
+        width: 0 !important;
+        overflow: hidden !important;
+    }
+}

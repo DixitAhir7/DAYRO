@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <script defer type="module" src="login.js"></script>
+</head>
+
+<body>
+
+
+    <div class="userloginData">
+        <p id="loginData"></p>
+    </div>
+
+    <script>
+
+        // getting data and showing it to user
+
+        const getData = localStorage.getItem('loginInfo')
+        const loginData = document.querySelector('#loginData').innerHTML = getData;
+
+    </script>
+</body>
+
+</html>

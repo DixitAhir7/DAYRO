@@ -30,11 +30,6 @@ a {
     text-decoration: none;
 }
 
-img {
-    width: 100%;
-    display: block;
-}
-
 /* theme-mode css */
 /* sidebar-button */
 
@@ -155,6 +150,12 @@ img {
     overflow: hidden !important;
 }
 
+/* text-disappear when sidebar-collapsed */
+
+.sidebar-collapse .labels {
+    opacity: 0;
+    overflow: hidden;
+}
 
 .sidebar {
     transition: width 0.5s ease;
