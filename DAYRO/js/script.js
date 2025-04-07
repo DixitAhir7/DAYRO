@@ -1,5 +1,7 @@
 import { userTime } from "../time/time-script/time.js";
 import { validatelogin } from "../validation-file/validate.js";
+
+
 // this is modal script
 
 const modal = document.getElementById("loginModal");
@@ -45,6 +47,11 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         sidebar.classList.toggle('sidebar-collapse');
 
+        // if (sidebar.classList.contains('sidebar-collapse')) {
+        //     sidebar.innerHTML = `<a class="text-black sidebarToggle" href=""><i class="bi bi-list sidebarBtn"></i></a>`
+        // }else{
+        //     sidebar.innerHTML = `<i class="bi bi-arrow-right-circle-fill"></i>`
+        // }
     });
 });
 

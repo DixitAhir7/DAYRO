@@ -7,7 +7,6 @@ const updateBtn = document.querySelector('.uploadImg');
 const deleteImg = document.querySelector('input[type="submit"]');
 
 
-
 // when user click default-img it opens file
 
 function validImage() {
