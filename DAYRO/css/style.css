@@ -167,8 +167,7 @@ a {
     display: inline-block;
     width: 70px;
     height: 70px;
-    object-fit: cover;
-    margin-right: 0px;
+    object-fit: cover;    
 }
 
 
