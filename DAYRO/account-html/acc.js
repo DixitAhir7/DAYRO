@@ -40,7 +40,6 @@ function validImage() {
         const validTypes = ['image/jpeg', 'image/png', 'image/gif'];
         if (!validTypes.includes(img.type)) {
             alert('Please choose a valid image (JPEG, PNG, GIF)');
-            imgInput.value = '';
         }
     }
 }

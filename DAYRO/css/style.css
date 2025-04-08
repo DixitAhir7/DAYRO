@@ -157,6 +157,21 @@ a {
     overflow: hidden;
 }
 
+/* Hide icons by default */
+.icons-sidebar {
+    display: none;
+}
+
+/* Show icons only when sidebar is collapsed */
+.sidebar-collapse .icons-sidebar {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-right: 0px;
+}
+
+
 .sidebar {
     transition: width 0.5s ease;
     background-color: var(--kesri);
@@ -273,7 +288,6 @@ a {
     border-radius: 7px;
     max-width: 100px;
 }
-
 
 /* time-spent css */
 

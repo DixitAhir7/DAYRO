@@ -3,12 +3,10 @@ const body = document.body;
 
 if (localStorage.getItem('dark-mode') === 'enabled') {
     document.body.classList.add('dark-mode');
-    // document.body.classList.add('')
 }
 
 theme.addEventListener('click', (e) => {
     e.preventDefault();
-
 
     document.body.classList.toggle('dark-mode');
 
