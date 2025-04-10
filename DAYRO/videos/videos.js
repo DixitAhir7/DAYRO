@@ -15,13 +15,15 @@ requestdb.onsuccess = (e) => {
     const store = transaction.objectStore('Data');
     const request = store.getAll();
 
+    // ai-logic for save video even after refresh
+
     request.onsuccess = () => {
         const allVideos = request.result;
         if (allVideos.length > 0) {
             const lastVideo = allVideos[allVideos.length - 1];
             show.src = lastVideo.video;
             show.style.display = 'block';
-        }
+        };
     };
 };
 
@@ -38,6 +40,9 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     displayVideo();
 });
+
+
+// this function is for showing selected video on display
 
 function displayVideo() {
     const db = requestdb.result;
@@ -67,6 +72,4 @@ function displayVideo() {
     } else {
         alert('Please select a video file.');
     }
-}
-
-function saveVideo() { }
+};

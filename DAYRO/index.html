@@ -80,7 +80,7 @@
                                 <img class="icons-sidebar" src="IMG/music-player-Photoroom.png" alt="">
                             </div>
 
-                            <div class="video-uploader  fw-medium d-flex justify-content-center mt-3">
+                            <div class="video-uploader  fw-medium d-flex justify-content-center text-center mt-3">
                                 <a href="videos/videos.html" class="text-black labels">upload videos</a>
                             </div>
 
@@ -131,9 +131,6 @@
                         <h2 class="text-lg-center text-md-center text-sm-center">WELCOME TO DAYRO</h2>
                         <p class="text-lg-center text-md-center text-sm-center">The Soul of Gujarat's Folk Culture</p>
                     </div>
-                    <div class="main-img">
-                        <!-- <img src="IMG/dayro.jpg" alt=""> -->
-                    </div>
                 </div>
             </div>
         </div>
@@ -155,6 +152,36 @@
             </div>
         </div>
     </div>
+
+
+
+    <script type="module">
+        const token = 'YOUR_SPOTIFY_AUTH_TOKEN'; // Replace with your token
+
+        async function fetchWebApi(endpoint, method, body) {
+            const res = await fetch(`https://api.spotify.com/${endpoint}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+                method,
+                body: JSON.stringify(body)
+            });
+            return await res.json();
+        }
+
+        async function getTopTracks() {
+            return (await fetchWebApi(
+                'v1/me/top/tracks?time_range=long_term&limit=5', 'GET'
+            )).items;
+        }
+
+        const topTracks = await getTopTracks();
+        console.log(
+            topTracks?.map(({ name, artists }) =>
+                `${name} by ${artists.map(artist => artist.name).join(', ')}`
+            )
+        );
+    </script>
 
 </body>
 

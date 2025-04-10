@@ -30,6 +30,7 @@ a {
     text-decoration: none;
 }
 
+
 /* theme-mode css */
 /* sidebar-button */
 
@@ -262,12 +263,22 @@ a {
     background-color: var(--white);
 }
 
+
+/* video-uplodaer css */
+
 .nav-list .video-uploader a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-radius: 5px;
+    font-size: 17.8px;
+}
+
+.nav-list .video-uploader:hover {
+    background-color: var(--white);
+    border-radius: 5px;
 }
 
 /* user-info css */
