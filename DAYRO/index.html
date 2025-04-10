@@ -46,7 +46,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Sidebar -->
-                <div class="sidebar col-md-2 col-sm-1" id="sidebar">
+                <div class="sidebar overflow-hidden  col-md-2 col-sm-1" id="sidebar">
                     <a class="logo labels text-black fs-4 d-block text-black text-md-center mt-2" href="">D A Y R O</a>
                     <img class="icons-sidebar" src="IMG/lion-logo-Photoroom.png" alt="logo">
                     <nav>
@@ -140,7 +140,7 @@
 
     <div id="loginModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close text-danger">&times;</span>
             <h2 class="text-warning text-center">Login</h2>
             <div class="bg-img">
                 <form id="loginForm" class="mt-3">
@@ -152,36 +152,6 @@
             </div>
         </div>
     </div>
-
-
-
-    <script type="module">
-        const token = 'YOUR_SPOTIFY_AUTH_TOKEN'; // Replace with your token
-
-        async function fetchWebApi(endpoint, method, body) {
-            const res = await fetch(`https://api.spotify.com/${endpoint}`, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-                method,
-                body: JSON.stringify(body)
-            });
-            return await res.json();
-        }
-
-        async function getTopTracks() {
-            return (await fetchWebApi(
-                'v1/me/top/tracks?time_range=long_term&limit=5', 'GET'
-            )).items;
-        }
-
-        const topTracks = await getTopTracks();
-        console.log(
-            topTracks?.map(({ name, artists }) =>
-                `${name} by ${artists.map(artist => artist.name).join(', ')}`
-            )
-        );
-    </script>
 
 </body>
 

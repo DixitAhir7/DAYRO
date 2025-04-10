@@ -134,13 +134,7 @@ a {
     top: 10px;
     right: 15px;
     font-size: 30px;
-    color: var(--red);
     cursor: pointer;
-}
-
-.close:hover {
-    background-color: var(--gray);
-    padding: 1px 5px 1px 5px;
 }
 
 
@@ -176,7 +170,6 @@ a {
 .sidebar {
     transition: width 0.5s ease;
     background-color: var(--kesri);
-    overflow: hidden;
     height: 100vh;
     width: 250px;
     padding: 25px;
