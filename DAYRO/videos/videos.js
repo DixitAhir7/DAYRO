@@ -1,46 +1,72 @@
-//video funtionality where users can add videos and have fun
+const requestdb = indexedDB.open('database', 1);
 
 const form = document.querySelector('form');
-const video = form.querySelector('form input[type="file"]');
-const displayVideo = document.querySelector('section .show-video');
 const submit = form.querySelector('input[type="submit"]');
+const videoFile = form.querySelector('input[type="file"]');
+const show = document.querySelector('section video');
+
+requestdb.onerror = (e) => console.log(e);
+
+requestdb.onsuccess = (e) => {
+    console.log('database successfully opened');
+    const db = e.target.result;
+
+    const transaction = db.transaction('Data', 'readonly');
+    const store = transaction.objectStore('Data');
+    const request = store.getAll();
+
+    request.onsuccess = () => {
+        const allVideos = request.result;
+        if (allVideos.length > 0) {
+            const lastVideo = allVideos[allVideos.length - 1];
+            show.src = lastVideo.video;
+            show.style.display = 'block';
+        }
+    };
+};
+
+requestdb.onupgradeneeded = (e) => {
+    let db = e.target.result;
+
+    if (!db.objectStoreNames.contains('Data')) {
+        const createObj = db.createObjectStore('Data', { keyPath: 'id', autoIncrement: true });
+        createObj.createIndex('videos', 'videos', { unique: true });
+    }
+};
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-
-    // window.addEventListener('DOMContentLoaded', () => {
-
-    //     // note: if file > 5 mb then it won't be store in localstorage
-
-    //     const savedVideo = localStorage.getItem('videoopened');
-    //     if (savedVideo) {
-    //         displayVideo.innerHTML = `
-    //             <video src="${JSON.parse(savedVideo)}" controls autoplay width="500"></video>
-    //         `;
-    //     }
-    // });
-
-    // video can not added again
-
-    // if (displayVideo.querySelector('video')) {
-    //     return;
-    // }
-
-    const videoFile = video.files[0];
-
-    if (videoFile) {
-        const reader = new FileReader();
-        reader.onload = (event) => {
-            const videoUrl = event.target.result;
-
-            displayVideo.innerHTML += `
-                <video src="${videoUrl}" controls autoplay width="500"></video>
-            `;
-
-            // localStorage.setItem('videoopened', JSON.stringify(videoUrl));
-        };
-        reader.readAsDataURL(videoFile);
-    } else {
-        alert('Choose at least one video');
-    }
+    displayVideo();
 });
+
+function displayVideo() {
+    const db = requestdb.result;
+    const file = videoFile.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+        const videoURL = e.target.result;
+
+        if (show) {
+            show.src = videoURL;
+            show.style.display = 'block';
+        } else {
+            console.error('Video element not found');
+        }
+
+        const transaction = db.transaction('Data', 'readwrite');
+        const storeObj = transaction.objectStore('Data');
+
+        storeObj.add({
+            video: videoURL,
+        });
+    };
+
+    if (file) {
+        reader.readAsDataURL(file);
+    } else {
+        alert('Please select a video file.');
+    }
+}
+
+function saveVideo() { }
