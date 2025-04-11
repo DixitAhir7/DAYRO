@@ -1,7 +1,6 @@
 # DAYRO Website - Pending Functionality Plan
 # makeing site more responsive and accuratae
 
-
 <!-- for better experience -->
 
 --> location of user
@@ -55,3 +54,15 @@ https://www.tryparrotai.com/ai-voice-generator/donald-trump
 <!-- video-functionality -->
 
 -> where user can add their videos: not just related to dayro like where users can have fun and all 
+
+<!-- Map -->
+# map-ideax
+
+-> example: when khavad or kirtidan share their next event then i can literaly just show the users whole road from whereever they are 
+-> show notification of artists when they share their next event
+-> save the user's lcoation and show them near by events 
+
+
+<!-- upcoming feature -->
+
+-> for-artist only

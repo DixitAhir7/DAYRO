@@ -30,11 +30,9 @@ a {
     text-decoration: none;
 }
 
-
 .navbar {
     display: none;
 }
-
 
 /* theme-mode css */
 /* sidebar-button */
@@ -142,7 +140,6 @@ a {
     cursor: pointer;
 }
 
-
 /* sidebar css and nav-list */
 
 .sidebar-collapse {
@@ -173,7 +170,7 @@ a {
 
 
 .sidebar {
-    transition: width 0.5s ease;
+    transition: width 0.3s ease-in-out;
     background-color: var(--kesri);
     height: 100vh;
     width: 250px;
@@ -182,6 +179,8 @@ a {
 }
 
 
+
+/* nav-list css  */
 /* about css */
 
 .nav-list .about-page a {
@@ -244,8 +243,9 @@ a {
 }
 
 
-/* music-player css */
-.nav-list .music-player {
+/* eventes-css */
+
+.nav-list .events a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
@@ -253,8 +253,18 @@ a {
     padding-bottom: 5px;
 }
 
+.nav-list .events:hover {
+    background-color: var(--white);
+}
+
+
+/* music-player css */
 .nav-list .music-player a {
-    font-size: 17.8px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .nav-list .music-player:hover {
@@ -271,7 +281,7 @@ a {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-    font-size: 17.8px;
+
 }
 
 .nav-list .video-uploader:hover {
@@ -329,4 +339,9 @@ a {
     position: absolute;
     top: 0;
     opacity: 0.810;
+}
+
+/* sidebar collapsed then main-content width increase */
+.sidebar-collapse .main-expand {
+    width: 90%;
 }

@@ -59,13 +59,15 @@ export function sidebarBtn() {
 
     try {
         const sidebar = document.querySelector('.sidebar');
-        const collapseBtn = document.querySelector('.sidebarToggle');
+        const collapseBtn = document.querySelector('.sidebarBtn');
+        const mainContent = document.querySelector('.main-content');
 
         document.addEventListener('DOMContentLoaded', () => {
             collapseBtn.addEventListener('click', (e) => {
 
                 e.preventDefault();
                 sidebar.classList.toggle('sidebar-collapse');
+                mainContent.classList.add('main-expand')
             });
         });
     } catch (e) {
