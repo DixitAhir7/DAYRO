@@ -3,28 +3,35 @@ const requestdb = indexedDB.open('database', 1);
 const form = document.querySelector('form');
 const submit = form.querySelector('input[type="submit"]');
 const videoFile = form.querySelector('input[type="file"]');
-const show = document.querySelector('section video');
+const videoSection = document.querySelector('section');
 
-requestdb.onerror = (e) => console.log(e);
+requestdb.onerror = (e) => console.error('IndexedDB error:', e);
 
 requestdb.onsuccess = (e) => {
-    console.log('database successfully opened');
+    console.log('Database successfully opened');
     const db = e.target.result;
 
     const transaction = db.transaction('Data', 'readonly');
     const store = transaction.objectStore('Data');
     const request = store.getAll();
 
-    // ai-logic for save video even after refresh
-
     request.onsuccess = () => {
         const allVideos = request.result;
-        if (allVideos.length > 0) {
-            const lastVideo = allVideos[allVideos.length - 1];
-            show.src = lastVideo.video;
-            show.style.display = 'block';
-        };
+        videoSection.innerHTML = '';
+
+        allVideos.forEach((videoEntry) => {
+            const videoElem = document.createElement('video');
+            videoElem.src = videoEntry.video;
+            videoElem.controls = true;
+            videoElem.style.display = 'block';
+            videoElem.style.marginBottom = '10px';
+
+            videoElem.addEventListener('play', () => pauseAllExcept(videoElem));
+
+            videoSection.appendChild(videoElem);
+        });
     };
+
 };
 
 requestdb.onupgradeneeded = (e) => {
@@ -32,7 +39,7 @@ requestdb.onupgradeneeded = (e) => {
 
     if (!db.objectStoreNames.contains('Data')) {
         const createObj = db.createObjectStore('Data', { keyPath: 'id', autoIncrement: true });
-        createObj.createIndex('videos', 'videos', { unique: true });
+        createObj.createIndex('videos', 'video', { unique: false });
     }
 };
 
@@ -40,9 +47,6 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     displayVideo();
 });
-
-
-// this function is for showing selected video on display
 
 function displayVideo() {
     const db = requestdb.result;
@@ -52,12 +56,15 @@ function displayVideo() {
     reader.onload = (e) => {
         const videoURL = e.target.result;
 
-        if (show) {
-            show.src = videoURL;
-            show.style.display = 'block';
-        } else {
-            console.error('Video element not found');
-        }
+        const videoElem = document.createElement('video');
+        videoElem.src = videoURL;
+        videoElem.controls = true;
+        videoElem.style.display = 'block';
+        videoElem.style.marginBottom = '10px';
+
+        videoElem.addEventListener('play', () => pauseAllExcept(videoElem));
+
+        videoSection.appendChild(videoElem);
 
         const transaction = db.transaction('Data', 'readwrite');
         const storeObj = transaction.objectStore('Data');
@@ -67,9 +74,19 @@ function displayVideo() {
         });
     };
 
+
     if (file) {
         reader.readAsDataURL(file);
     } else {
         alert('Please select a video file.');
     }
+}
+
+function pauseAllExcept(currentVideo) {
+    const allVideos = document.querySelectorAll('video');
+    allVideos.forEach((video) => {
+        if (video !== currentVideo) {
+            video.pause();
+        }
+    });
 };
