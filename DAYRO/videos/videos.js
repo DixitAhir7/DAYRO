@@ -3,7 +3,14 @@ const requestdb = indexedDB.open('database', 1);
 const form = document.querySelector('form');
 const submit = form.querySelector('input[type="submit"]');
 const videoFile = form.querySelector('input[type="file"]');
-const videoSection = document.querySelector('section');
+const videoSection = document.querySelector('.add-video');
+
+
+// media-querry for video
+
+const mediaQuerry = window.matchMedia("(max-width: 768px)")
+const mediaQuerry2 = window.matchMedia("(max-width: 400px)")
+
 
 requestdb.onerror = (e) => console.error('IndexedDB error:', e);
 
@@ -11,28 +18,63 @@ requestdb.onsuccess = (e) => {
     console.log('Database successfully opened');
     const db = e.target.result;
 
+    // creating storage inside indexddb
+
     const transaction = db.transaction('Data', 'readonly');
     const store = transaction.objectStore('Data');
+
+    // it'll get all video
     const request = store.getAll();
 
     request.onsuccess = () => {
         const allVideos = request.result;
+
+        // html will show the added videos
         videoSection.innerHTML = '';
 
+        /*
+        in allvideos result will shown,
+        foreach will run in every added video and it's creating video tag inside div
+        */
+
         allVideos.forEach((videoEntry) => {
+            const videoContainer = document.createElement('div');
+            videoContainer.style.marginBottom = '10px';
+
             const videoElem = document.createElement('video');
             videoElem.src = videoEntry.video;
             videoElem.controls = true;
             videoElem.style.display = 'block';
-            videoElem.style.marginBottom = '10px';
-
             videoElem.addEventListener('play', () => pauseAllExcept(videoElem));
 
-            videoSection.appendChild(videoElem);
+
+            // setting size for videos in phones
+
+            try {
+                if (mediaQuerry.matches) {
+                    videoElem.style.width = '300px'
+                    videoElem.style.height = "300px"
+                } else if (mediaQuerry2.matches) {
+                    videoElem.style.width = '300px'
+                    videoElem.style.height = "300px"
+                }
+            } catch (e) {
+                console.warn('error', e);
+            };
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.style.marginTop = '5px';
+            deleteBtn.addEventListener('click', () => deleteVideo(videoEntry.id, videoContainer));
+
+            videoContainer.appendChild(videoElem);
+            videoContainer.appendChild(deleteBtn);
+            videoSection.appendChild(videoContainer);
         });
     };
-
 };
+
+// this is for creating database objectStores
 
 requestdb.onupgradeneeded = (e) => {
     let db = e.target.result;
@@ -82,11 +124,41 @@ function displayVideo() {
     }
 }
 
+
+// it's for pausing video 
+
 function pauseAllExcept(currentVideo) {
+
+    /*
+    will get all video, and loop inside all videos,
+    only one video plays at a time
+    */
     const allVideos = document.querySelectorAll('video');
     allVideos.forEach((video) => {
         if (video !== currentVideo) {
             video.pause();
         }
     });
+};
+
+
+// clearing video
+
+function deleteVideo(id, container) {
+    const db = requestdb.result;
+    const transaction = db.transaction('Data', 'readwrite');
+    const store = transaction.objectStore('Data');
+
+
+    // deleting based on stored id in indexdb
+    const deleteRequest = store.delete(id);
+
+    deleteRequest.onsuccess = () => {
+        container.remove();
+        console.log(`Video with ID ${id} deleted.`);
+    };
+
+    deleteRequest.onerror = (e) => {
+        console.error('Delete failed', e);
+    };
 };

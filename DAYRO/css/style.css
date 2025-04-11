@@ -31,6 +31,11 @@ a {
 }
 
 
+.navbar {
+    display: none;
+}
+
+
 /* theme-mode css */
 /* sidebar-button */
 

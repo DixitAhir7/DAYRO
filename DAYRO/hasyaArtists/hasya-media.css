@@ -1,0 +1,32 @@
+/* this media-querry for hasya artists */
+
+@media (max-width:400px) {
+    .hasya-kalakar .artist-img {
+        width: 50%;
+    }
+
+    .hasya-kalakar .artist-img img {
+        width: 200px;
+        height: 165px;
+    }
+
+    .artists-content a {
+        text-align: start;
+    }
+}
+
+
+@media (max-width:600px) {
+    .hasya-kalakar .artist-img {
+        width: 50%;
+    }
+
+    .hasya-kalakar .artist-img img {
+        width: 220px;
+        height: 200px;
+    }
+
+    .artists-content a {
+        text-align: start;
+    }
+}

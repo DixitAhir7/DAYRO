@@ -1,32 +1,27 @@
-/* for phones like oppo,redmi */
+/* for phone screens */
 
-@media (max-width:400px) {
-    header .main-content h2 {
-        font-size: 22px;
-        text-align: center;
-    }
-
-    header .main-content p {
-        text-align: center;
-    }
-
-    .logo {
-        text-align: center;
-    }
-}
-
-/* sidebar collapsed by default in phones */
 @media (max-width:768px) {
-    /* .sidebar {
-        width: 0 !important;
-        overflow: hidden !important;
-    } */
-
-
-
-    .sidebar-collapse .labels {
-        opacity: 0;
-        overflow: hidden;
+    .sidebar {
+        display: none;
     }
 
+    .navbar {
+        display: block;
+    }
+
+    .sidebarToggle {
+        display: none;
+    }
+
+    .main-content {
+        margin-top: 25px;
+    }
+
+    .main-content h2 {
+        font-size: 22px;
+    }
+
+    .main-content p {
+        font-size: 15px;
+    }
 }
