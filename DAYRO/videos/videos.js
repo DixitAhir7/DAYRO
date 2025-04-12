@@ -47,8 +47,6 @@ requestdb.onsuccess = (e) => {
             videoElem.style.width = "450px"
             videoElem.style.height = "450px"
             videoElem.addEventListener('play', () => pauseAllExcept(videoElem));
-            videoElem.addEventListener('ended', playNext())
-
 
             // setting size for videos in phones
 
@@ -62,16 +60,16 @@ requestdb.onsuccess = (e) => {
                 }
             } catch (e) {
                 console.warn('error', e);
-            };
+            } finally {
+                const deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.style.marginTop = '5px';
+                deleteBtn.addEventListener('click', () => deleteVideo(videoEntry.id, videoContainer));
 
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = 'Delete';
-            deleteBtn.style.marginTop = '5px';
-            deleteBtn.addEventListener('click', () => deleteVideo(videoEntry.id, videoContainer));
-
-            videoContainer.appendChild(videoElem);
-            videoContainer.appendChild(deleteBtn);
-            videoSection.appendChild(videoContainer);
+                videoContainer.appendChild(videoElem);
+                videoContainer.appendChild(deleteBtn);
+                videoSection.appendChild(videoContainer);
+            }
         });
     };
 };
@@ -126,8 +124,7 @@ function displayVideo() {
     } else {
         alert('Please select a video file.');
     }
-}
-
+};
 
 // it's for pausing video 
 
@@ -166,5 +163,3 @@ function deleteVideo(id, container) {
         console.error('Delete failed', e);
     };
 };
-
-function playNext() { }

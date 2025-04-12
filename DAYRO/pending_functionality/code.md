@@ -74,8 +74,6 @@
         </div>
     </section> -->
 
-    
-    
 <!-- this represensts festivals -->
 <!-- about page -->
      <!-- Festivals Section  -->
@@ -146,8 +144,6 @@
             </div>
         </div>
 
-
-
  <!-- script for opening page in new tab -->
  <!-- this is for main index.html script -->
 document.addEventListener("DOMContentLoaded", () => {
@@ -170,24 +166,20 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         console.error("Anchor tag not found.");
     }
-});
+});   
+
+<!-- about music -->
+
+Gujarat's folk music, known as <strong>Sugam Sangeet</strong>, has been passed down through
+generations, creating a rich musical heritage. The bardic tradition is central to Gujarati folk
+music, with communities like Barot, Gadhvi, and Charan serving as traditional professional folk
+singers.
 
 
-<!-- in about page -->
-/* this is for image css */
+-> The music often tells stories of valor, love, devotion, and everyday life, preserving history
+and cultural values through melodious expressions.
 
-/* .hero-section {
-    background-image: url('../IMG/gujarat-banner.jpg');
-    background-size: cover;
-    background-position: center;
-    padding: 100px 0;
-} */
-
-
- <!-- Navigation button to return to home -->
- <!-- about-page -->
-    <!-- <div class="container mt-3">
-        <a href="../index.html" class="btn btn-outline-secondary">
-            <i class="fa-solid fa-arrow-left"></i> Back to Home
-        </a>
-    </div> -->
+-> <h5>Traditional Instruments:</h5>
+<!-- all instrument name and details -->
+<li>Manjira: Small hand cymbals</li>
+<li>Dhol: Double-headed drum</li>

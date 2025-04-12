@@ -28,26 +28,19 @@
 
 --> some great history of community:maharas,talvarras etc...
 
-<!-- messages using DOM -->
-
---> use appendchild,prepend:(for adding at bottom, for adding at top) and createelement and many more functionality...
-
 <!--review section-->
 
 --> i'll add database page to interact users with their data and history
 
 <!-- search-functionality for artists -->
-<!-- slider -->
 
 <!--entertaining idea -->
 
 -> will make the feature where users can select the kalakar and they can make the selected artist call whatever they want in artist's voice;
 -> Ai: voice generator  
 
-https://www.tryparrotai.com/ai-voice-generator/donald-trump
-
 --> in charan history i'll let the users write their own views and thoughts on it
-->haryali gir song
+* haryali gir song
 
 --> in home page live section will be added
 
@@ -56,7 +49,7 @@ https://www.tryparrotai.com/ai-voice-generator/donald-trump
 -> where user can add their videos: not just related to dayro like where users can have fun and all 
 
 <!-- Map -->
-# map-ideax
+# map-idea
 
 -> example: when khavad or kirtidan share their next event then i can literaly just show the users whole road from whereever they are 
 -> show notification of artists when they share their next event
@@ -64,5 +57,7 @@ https://www.tryparrotai.com/ai-voice-generator/donald-trump
 
 
 <!-- upcoming feature -->
-
 -> for-artist only
+
+<!-- for readers who are preparing for govt. exams -->
+# for-readers

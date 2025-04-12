@@ -145,6 +145,7 @@ a {
 .sidebar-collapse {
     width: 0 !important;
     overflow: hidden !important;
+    padding: 0 !important;
 }
 
 /* text-disappear when sidebar-collapsed */
@@ -155,21 +156,23 @@ a {
 }
 
 /* Hide icons by default */
-.icons-sidebar {
-    display: none;
-}
 
-/* Show icons only when sidebar is collapsed */
-.sidebar-collapse .icons-sidebar {
-    display: inline-block;
-    object-fit: cover;
+.icons-sidebar {
     width: 30px;
     height: 30px;
     display: none;
 }
 
+/* Show icons only when sidebar is collapsed */
+
+/* .sidebar-collapse .icons-sidebar {
+    display: block;
+    object-fit: cover;
+} */
+
 
 .sidebar {
+    pointer-events: auto;
     transition: width 0.2s ease-in-out;
     background-color: var(--kesri);
     height: 100vh;
@@ -177,7 +180,6 @@ a {
     padding: 25px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
 
 
 /* nav-list css  */
@@ -248,7 +250,6 @@ a {
     background-color: var(--white);
 }
 
-
 /* eventes-css */
 
 .nav-list .events a {
@@ -302,8 +303,11 @@ a {
     margin-top: 75px;
 }
 
-
 /* login-btn css */
+
+.user-info .login-btn button{
+    font-size: 18px;
+}
 
 .user-info .login-btn:hover {
     background-color: var(--white);
