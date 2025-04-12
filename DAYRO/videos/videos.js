@@ -29,7 +29,6 @@ requestdb.onsuccess = (e) => {
     request.onsuccess = () => {
         const allVideos = request.result;
 
-        // html will show the added videos
         videoSection.innerHTML = '';
 
         /*
@@ -45,7 +44,10 @@ requestdb.onsuccess = (e) => {
             videoElem.src = videoEntry.video;
             videoElem.controls = true;
             videoElem.style.display = 'block';
+            videoElem.style.width = "450px"
+            videoElem.style.height = "450px"
             videoElem.addEventListener('play', () => pauseAllExcept(videoElem));
+            videoElem.addEventListener('ended', playNext())
 
 
             // setting size for videos in phones
@@ -101,6 +103,8 @@ function displayVideo() {
         const videoElem = document.createElement('video');
         videoElem.src = videoURL;
         videoElem.controls = true;
+        videoElem.style.width = "450px"
+        videoElem.style.height = "450px"
         videoElem.style.display = 'block';
         videoElem.style.marginBottom = '10px';
 
@@ -162,3 +166,5 @@ function deleteVideo(id, container) {
         console.error('Delete failed', e);
     };
 };
+
+function playNext() { }
