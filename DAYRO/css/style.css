@@ -122,12 +122,10 @@ a {
     border-radius: 7px;
 }
 
-
 #loginForm input[type="email"],
 [type="password"] {
-    /* border: none; */
+    border: none;
     background: transparent;
-
 }
 
 /*modal close button css */
@@ -264,20 +262,20 @@ a {
     background-color: var(--white);
 }
 
+/* for-artist-css */
 
-/* music-player css */
-.nav-list .music-player a {
+.for-artist a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-radius: 5px;
 }
 
-.nav-list .music-player:hover {
+.for-artist:hover {
     background-color: var(--white);
 }
-
 
 /* video-uplodaer css */
 
@@ -288,7 +286,6 @@ a {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-
 }
 
 .nav-list .video-uploader:hover {
@@ -305,7 +302,7 @@ a {
 
 /* login-btn css */
 
-.user-info .login-btn button{
+.user-info .login-btn button {
     font-size: 18px;
 }
 

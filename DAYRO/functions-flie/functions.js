@@ -3,40 +3,45 @@
 // login-form validation
 
 export function validatelogin() {
-    const submitBtn = document.querySelector(".submit");
-    const emailInput = document.querySelector(".email");
-    const passwordInput = document.querySelector(".password");
-    const modal = document.getElementById("loginModal");
-
     try {
-        submitBtn.addEventListener("click", function () {
+        const submitBtn = document.querySelector(".submit");
+        const emailInput = document.querySelector(".email");
+        const passwordInput = document.querySelector(".password");
+        const modal = document.getElementById("loginModal");
+        const loginBtn = document.querySelector('.user-info .login-btn');
 
-            let obj = {
-                emailvalue: emailInput.value,
-                passwordvalue: passwordInput.value
+        submitBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            let emailValue = emailInput.value.trim();
+            let passwordValue = passwordInput.value.trim();
+
+            if (!emailValue || !passwordValue) {
+                alert("Please enter both email and password.");
+                return;
             }
 
-            if (!obj.emailvalue || !obj.passwordvalue) {
-                return alert("Please enter both email and password.");
+            if (passwordValue.length < 5) {
+                alert("Password must be at least 5 characters long.");
+                return;
             }
 
             // saving data and sending it to login-page
-
-            if (obj.emailvalue && obj.passwordvalue) {
-                localStorage.setItem('loginInfo', JSON.stringify(obj));
-                window.location.href = "login.html";
-                console.log('login succesful');
-                return false;
-            }
-
-            if (obj.passwordvalue.length < 5) {
-                return alert("Password must be at least 5 characters long.");
-            }
-
-            modal.style.display = "none";
+            let obj = {
+                emailvalue: emailValue,
+                passwordvalue: passwordValue,
+            };
+            localStorage.setItem("loginInfo", JSON.stringify(obj));
+            console.log("login succesful");
         });
-    } catch (e) {
-        console.log('got login error', e);
+
+        if (localStorage.getItem('loginInfo')) {
+            loginBtn.style.display = "none";
+        }
+        modal.style.display = "none";
+
+    } catch (error) {
+        console.error("Login error:", error.message);
     }
 }
 

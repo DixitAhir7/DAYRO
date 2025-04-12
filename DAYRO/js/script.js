@@ -1,4 +1,3 @@
-import { userTime } from "../time/time-script/time.js";
 import { validatelogin } from "../functions-flie/functions.js";
 import { dropdownBtn } from "../functions-flie/functions.js";
 import { sidebarBtn } from "../functions-flie/functions.js";
@@ -11,4 +10,3 @@ validatelogin() // for login-validation
 dropdownBtn(); // for dropdown
 sidebarBtn(); // sidebar-script
 firstTime(); //user visiting first-time
-userTime() // count spending-time
