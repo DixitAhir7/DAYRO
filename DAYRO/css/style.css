@@ -12,6 +12,10 @@
     --whitesmoke: rgb(245, 245, 245);
     --red: rgb(255, 0, 0);
     --kesri: rgba(248, 166, 13, 0.873);
+    --accent: #f9c74f;
+    --bg-light: #fff5e1;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    --text-dark: #333;
 }
 
 /* general css */
@@ -71,71 +75,131 @@ a {
     border-radius: 5px;
 }
 
+/* Modal Background */
 .modal {
     display: none;
     position: fixed;
-    left: 0;
     top: 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    animation: fadeIn 0.3s ease-in-out;
-    backdrop-filter: blur(5px);
-    border-radius: 10px;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.modal-content {
-    margin: 15% auto;
-    padding: 20px;
-    max-width: 500px;
+    left: 0;
     width: 100%;
-    height: auto;
-    position: relative;
+    height: 100%;
+    background: var(--bg-overlay);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
-.email,
-.password {
-    padding: 12px 138px;
+/* Modal Content Box */
+.modal-content {
+    background-color: var(--bg-light);
+    margin: 10% auto;
+    padding: 30px 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: slideDown 0.4s ease;
+    text-align: center;
+}
+
+/* Title */
+.modal-content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--accent);
+    font-weight: bold;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Input Fields */
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+    width: 80%;
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+#loginForm input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 5px var(--accent);
+}
+
+/* Buttons */
+.submit,
+#reset {
+    margin-top: 15px;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    opacity: 0.9;
 }
 
 .submit {
-    background-color: var(--gray);
-    opacity: 0.69;
-    border-radius: 10px;
-    padding: 6px 140px;
+    background-color: var(--accent);
+    color: #fff;
+    font-weight: bold;
+}
+
+.submit:hover {
+    background-color: #f8961e;
+    opacity: 1;
 }
 
 #reset {
-    padding: 2px 22px 2px;
-    margin-left: 20px;
-    background-color: var(--gray);
-    border-radius: 7px;
+    margin-left: 15px;
+    background-color: #eee;
+    color: var(--text-dark);
 }
 
-#loginForm input[type="email"],
-[type="password"] {
-    border: none;
-    background: transparent;
+#reset:hover {
+    background-color: #ddd;
 }
 
-/*modal close button css */
-
+/* Close Button */
 .close {
     position: absolute;
     top: 10px;
     right: 15px;
-    font-size: 30px;
+    font-size: 25px;
+    color: red;
     cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.close:hover {
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+    }
+
+    to {
+        transform: translateY(0);
+    }
 }
 
 /* sidebar css and nav-list */

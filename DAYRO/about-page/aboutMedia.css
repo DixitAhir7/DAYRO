@@ -1,8 +1,8 @@
 /* for media-querry in about page */
 
 @media (max-width:1200px) {
-    .main-heading h1 {
-        font-size: 28px;
+    .main-heading h2 {
+        font-size: 24px;
         text-align: start;
     }
 
@@ -12,6 +12,48 @@
     }
 
     .quote-box {
-        width: 50%;
+        width: 100%;
+        font-size: 14px;
+    }
+}
+
+
+@media (max-width:400px) {
+    .quote-box {
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+
+
+    .mission-section p {
+        font-size: 18px !important;
+    }
+
+    .logo-name {
+        display: flex !important;
+        padding-left: 4px !important;
+    }
+
+}
+
+@media (max-width:768px) {
+    .image-card {
+        position: relative;
+    }
+
+    .card-body {
+        position: absolute;
+        top: 72%;
+    }
+}
+
+@media (max-width:400px) {
+    .image-card {
+        position: relative;
+    }
+
+    .card-body {
+        position: absolute;
+        top: 60%;
     }
 }
