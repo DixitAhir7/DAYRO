@@ -15,8 +15,28 @@
         width: 100%;
         font-size: 14px;
     }
+
+    .card-body h5 {
+        font-size: 16px;
+    }
+
+    .card-body p {
+        font-size: 12px;
+    }
+
 }
 
+
+@media (max-width:993px) {
+    .image-card {
+        position: relative;
+    }
+
+    .card-body {
+        position: absolute;
+        top: 52%;
+    }
+}
 
 @media (max-width:400px) {
     .quote-box {

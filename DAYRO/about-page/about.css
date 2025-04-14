@@ -55,3 +55,12 @@ body {
     position: absolute;
     top: 53%;
 }
+
+.image-card-2 {
+    position: relative;
+}
+
+.card-body-2 {
+    position: absolute;
+    top: 70%;
+}
