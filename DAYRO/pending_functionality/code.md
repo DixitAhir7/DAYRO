@@ -202,3 +202,24 @@ and cultural values through melodious expressions.
     }
     localStorage.setItem("startTime", Date.now());
 } -->
+
+
+# for sharing apps
+
+<button onclick="shareDayro()">Share</button>
+
+<script>
+  function shareDayro() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Check out this Dayro Event!',
+        text: 'Gujarati Dayro Event - Enjoy the folk vibes!',
+        url: window.location.href,
+      })
+      .then(() => console.log('Shared successfully'))
+      .catch((error) => console.log('Error sharing', error));
+    } else {
+      alert("Sharing not supported on this browser. Copy the link manually.");
+    }
+  }
+</script>

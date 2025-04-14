@@ -2,8 +2,9 @@
     --orange: rgb(230, 126, 34);
 }
 
-body {
-    background-color: rgba(0, 0, 0, 0.899);
+
+img {
+    width: 100%;
 }
 
 /*  main heading css  */
@@ -31,18 +32,6 @@ body {
         padding: 50px 0;
         font-size: 1.2rem;
     }
-}
-
-/* contact-me css  */
-.contact a {
-    background-color: var(--orange);
-    color: var(--white);
-}
-
-.contact a:hover {
-    background-color: white;
-    color: var(--black);
-    border: 1px solid black;
 }
 
 /* bhajan-santvani card css */

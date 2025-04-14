@@ -50,12 +50,6 @@ a {
     max-width: 100px;
 }
 
-.theme-mode:hover {
-    border-radius: 5px;
-    background-color: var(--white);
-}
-
-
 /* for dakr-mode turn on */
 .dark-mode {
     background-color: var(--black);

@@ -63,3 +63,5 @@
 # for-readers
 
 --> gamdu bole ane saher sambhde:sairam dave
+
+-> adding social media sharing where users can share to apps whereever they want to 

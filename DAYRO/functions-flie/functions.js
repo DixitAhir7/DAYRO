@@ -37,8 +37,10 @@ export function validatelogin() {
 
         if (localStorage.getItem('loginInfo')) {
             loginBtn.style.display = "none";
+
         }
         modal.style.display = "none";
+
 
     } catch (error) {
         console.error("Login error:", error.message);
