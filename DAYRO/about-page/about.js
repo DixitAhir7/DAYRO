@@ -1,11 +1,22 @@
-// user-selected color
+// purpose modal script
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const form = document.querySelector('form');
-//     const inputColor = form.querySelector('input[type="color"]');
+try {
+    function openPurposeModal() {
+        const purposeModal = document.querySelector('.btnmodal');
+        const openPurposeModal = document.querySelector('.my-purpose');
 
-//     form.addEventListener('submit', (e) => {
-//         e.preventDefault();
-//         document.body.style.backgroundColor = inputColor.value;
-//     });
-// });
+        purposeModal.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            openPurposeModal.classList.toggle('active')
+        })
+    }
+    openPurposeModal();
+    closeModal();
+
+    function closeModal() {
+        document.querySelector('.my-purpose').classList.remove('active');
+    }
+} catch (e) {
+    console.log('while opening modal:', e);
+}
