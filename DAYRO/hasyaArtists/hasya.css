@@ -14,6 +14,10 @@ a {
 
 /* artists-images css */
 
+.no-result {
+    display: none;
+}
+
 .artist-img img {
     border-radius: 50%;
     transition: transform 0.3s ease;
