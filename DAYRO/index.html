@@ -40,66 +40,11 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="navbar-phone container-fluid">
-            <a class="navbar-brand" href="index.html">D A Y R O</a>
-            <img class="icons-sidebar" src="IMG/lion-logo-Photoroom.png" alt="">
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" data-bs-toggle="dropdown">
-                            Kalakaro
-                        </a>
-                        <img class="icons-sidebar" src="IMG/harmonium-logo for kalakaro-Photoroom.png" alt="">
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="hasyaArtists/hasya.html">Hasya Kalakaro</a></li>
-                            <li><a class="dropdown-item" href="folk-singers/folksinger.html">Folk Singers</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="ch/history.html">Charan history</a>
-                        <img class="icons-sidebar" src="IMG/pillar-charan_history-Photoroom.png" alt="">
-                    </li>
-
-                    <li>
-                        <a class="nav-link" href="events/event.html">Events</a>
-                    </li>
-
-                    <li>
-                        <a class="nav-link" href="">For Artist</a>
-                    </li>
-
-                    <li>
-                        <a class="nav-link" href="videos/videos.html">Upload videos</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="about-page/about.html">About DAYRO</a>
-                        <img class="icons-sidebar" src="IMG/about-png-Photoroom.png" alt="">
-                    </li>
-
-                    <li>
-                        <a class="nav-link login-btn" id="navmodal" href="" data-bs-toggle="modal">login</a>
-                    </li>
-                    <li>
-                        <a class="nav-link" href="">Account</a>
-                    </li>
-                    <li>
-                        <a class="nav-link theme" href="">Dark</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
     <header>
         <div class="container-fluid">
             <div class="row">
                 <!-- Sidebar -->
-                <div class="sidebar sidebar-collapse overflow-hidden  col-md-2 col-sm-1" id="sidebar">
+                <div class="sidebar sidebar-collapse overflow-hidden col-md-2 " id="sidebar">
                     <a class="logo labels text-black fs-4 d-block text-black text-md-center mt-2" href="">D A Y R O</a>
                     <img class="icons-sidebar" src="IMG/lion-logo-Photoroom.png" alt="logo">
                     <nav>
@@ -146,13 +91,13 @@
                             </div>
                             <!-- in this i'll store user's account data :) -->
 
-                            <hr class="mt-5">
+                            <hr class="mt-lg-5">
                             <div class="user-info">
                                 <div class="login-btn">
                                     <span>
                                         <i class="bi bi-door-open-fill icons-sidebar"></i>
                                         <button id="sidebarmodal" data-bs-toggle="modal"
-                                            class="text-black">Login</button>
+                                            class="text-black labels">Login</button>
                                     </span>
                                 </div>
                                 <div class="account">
@@ -179,10 +124,13 @@
 
                 <!-- in this main-content or video will be added according to the plan -->
 
-                <div class="col-lg-10 col-md-7">
+                <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="main-content">
-                        <!-- <i class="bi bi-arrow-right-circle-fill"></i> -->
-                        <a class="text-black sidebarToggle fs-4" href=""><i class="bi bi-list sidebarBtn"></i></a>
+                        <div class="display-icon">
+                            <a class="close-sidebar text-decoration-none text-black" href=""><i
+                                    class="bi bi-x-circle-fill"></i></a>
+                            <a class="text-black sidebarToggle fs-4" href=""><i class="bi bi-list sidebarBtn"></i></a>
+                        </div>
                         <h2 class="text-lg-center text-md-center">WELCOME TO DAYRO</h2>
                         <p class="text-lg-center text-md-center">The Soul of Gujarat's Folk Culture</p>
                     </div>

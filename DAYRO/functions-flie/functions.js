@@ -63,16 +63,39 @@ export function sidebarBtn() {
 
     try {
         const sidebar = document.querySelector('.sidebar');
-        const collapseBtn = document.querySelector('.sidebarBtn');
+        const collapseBtn = document.querySelector('.sidebarToggle');
         const mainContent = document.querySelector('.main-content');
+        const displayIcon = document.querySelector('.display-icon');
+        const closeBtn = document.querySelector('.close-sidebar');
 
         document.addEventListener('DOMContentLoaded', () => {
-            collapseBtn.addEventListener('click', (e) => {
+            updateIcon();
 
+            collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 sidebar.classList.toggle('sidebar-collapse');
-                mainContent.classList.add('main-expand')
+                mainContent.classList.toggle('main-expand');
+                updateIcon();
             });
+
+            closeBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                sidebar.classList.add('sidebar-collapse');
+                mainContent.classList.remove('main-expand');
+                updateIcon();
+            });
+
+            function updateIcon() {
+                const isCollapsed = sidebar.classList.contains('sidebar-collapse');
+
+                if (isCollapsed) {
+                    collapseBtn.style.display = 'inline-block';
+                    closeBtn.style.display = 'none';
+                } else {
+                    collapseBtn.style.display = 'none';
+                    closeBtn.style.display = 'inline-block';
+                }
+            }
         });
     } catch (e) {
         console.info("sidebar didn't opened", e);

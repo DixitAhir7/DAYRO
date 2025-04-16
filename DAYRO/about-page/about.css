@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Heebo:wght@100..900&family=Hind+Mysuru:wght@300;400;500;600;700&family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Teko&display=swap');
+
 :root {
     --orange: rgb(230, 126, 34);
 }
@@ -76,6 +78,10 @@ img {
     opacity: 1;
 }
 
+body.modal-open {
+    overflow: hidden;
+}
+
 .purpose-modal {
     border-radius: 16px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
@@ -94,8 +100,12 @@ img {
     border-top-right-radius: 16px;
 }
 
+.purpose-content span {
+    font-size: 20px;
+}
+
 .close-btn {
-    font-size: 1.5rem;
+    font-size: 36px;
     line-height: 1;
 }
 
