@@ -6,6 +6,7 @@
 /* general css */
 a {
     text-decoration: none;
+    color: var(--white);
 }
 
 .hasya-kalakar {
@@ -33,7 +34,6 @@ a {
 }
 
 /* artist-contnet css */
-
 .artists-content {
     display: none;
     padding: 4px 12px 4px 12px;
@@ -68,4 +68,44 @@ a {
 
 input[type='reset'] {
     border: none;
+}
+
+/* modal information only css */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+/* footer css */
+footer {
+    background-color: rgba(0, 0, 0, 0.748);
+    margin: 40px 12px 40px 12px;
+    padding: 20px 0px 8px 0px;
 }

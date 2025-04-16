@@ -91,7 +91,7 @@ export function sidebarBtn() {
                 if (isCollapsed) {
                     collapseBtn.style.display = 'inline-block';
                     closeBtn.style.display = 'none';
-                } else {
+                } else if (!isCollapsed) {
                     collapseBtn.style.display = 'none';
                     closeBtn.style.display = 'inline-block';
                 }
@@ -105,16 +105,20 @@ export function sidebarBtn() {
 // when user enter first time!
 
 export function firstTime() {
-    document.addEventListener("DOMContentLoaded", () => {
+    try {
+        document.addEventListener("DOMContentLoaded", () => {
 
-        if (!localStorage.getItem("visited")) {
-            console.log("User visiting for the first time!");
-            localStorage.setItem("visited", "true");
-        } else {
-            console.log("Welcome back!");
-        }
-    });
-}
+            if (!localStorage.getItem("visited")) {
+                console.log("User visiting for the first time!");
+                localStorage.setItem("visited", "true");
+            } else {
+                console.log("Welcome back!");
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
+};
 
 // this is modal script
 export function popUp() {
@@ -135,4 +139,124 @@ export function popUp() {
     } catch (e) {
         console.warn(e);
     };
+};
+
+
+// hasya-artists script //
+
+// when user search footer stays as it is
+export function positionapplywhensearch() {
+    try {
+        const searchInput = document.querySelector("input[type='text']");
+        const footer = document.querySelector("footer");
+
+        searchInput.addEventListener("input", () => {
+            const value = searchInput.value.trim();
+
+            if (value) {
+                footer.style.position = "fixed";
+                footer.style.bottom = "0";
+                footer.style.width = "100%";
+            } else {
+                footer.style.position = "static";
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+// if user wants to see it again
+export function ifuserwants() {
+    try {
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("infoModal");
+            const openBtn = document.querySelector('footer #ifuserwants');
+            let closeBtn = document.querySelector(".close");
+
+            if (openBtn) {
+                openBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    modal.style.display = "block";
+                });
+            } closeBtn.onclick = function () {
+                modal.style.display = "none";
+            };
+        });
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+
+// script for modal information only
+
+export function showFirsttimeonly() {
+    try {
+        document.addEventListener('DOMContentLoaded', () => {
+            let modal = document.getElementById("infoModal");
+            let closeBtn = document.querySelector(".close");
+
+            if (!localStorage.getItem('visitedcomedypage')) {
+                modal.style.display = "block";
+
+                localStorage.setItem('visitedcomedypage', 'true');
+
+                closeBtn.onclick = function () {
+                    modal.style.display = "none";
+                };
+
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                };
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+
+
+const form = document.querySelector('form');
+const inputSearch = form.querySelector('input[type="text"]');
+const result = document.querySelector('.no-result');
+const content = document.querySelectorAll('.artist-img');
+const iNPUT_SUBMIT = document.createElement('input');
+iNPUT_SUBMIT.type = "submit";
+iNPUT_SUBMIT.value = "Search";
+form.appendChild(iNPUT_SUBMIT);
+
+// Script for searching artists with images
+
+export function displayImages() {
+    try {
+        form.addEventListener('input', (e) => {
+            e.preventDefault();
+
+            const search = inputSearch.value.toLowerCase().trim();
+            let found = false;
+
+            content.forEach((divImg) => {
+                const img = divImg.querySelector("img");
+                const altText = img.getAttribute('alt').toLowerCase();
+                if (altText.includes(search)) {
+                    divImg.style.display = "block";
+                    found = true;
+                } else {
+                    divImg.style.display = "none";
+                }
+            });
+
+            if (!found) {
+                result.style.display = "block";
+            } else {
+                result.style.display = "none";
+            }
+        });
+    } catch (e) {
+        console.log(e);
+    }
 };
