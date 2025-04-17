@@ -10,6 +10,8 @@
     <script defer src="/js-bt/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="kalakar-media.css">
     <link rel="stylesheet" href="kalakar.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+
 </head>
 
 <body>
@@ -22,6 +24,12 @@
             <input type="text" placeholder="search">
         </form>
     </section>
+
+
+    <!-- search suggestions pending -->
+    <!-- <div class="search-sugestions">
+
+    </div> -->
 
     <div class="show-content">
 
@@ -37,6 +45,7 @@
                 <option value="kalakaro">kalakaro</option>
                 <option value="hasya kalakaro">hasya kalakaro</option>
                 <option value="folk singers">folk singers</option>
+                <option value="singers">singers</option>
             </select>
             <input type="submit" value="sort">
         </form>
@@ -47,7 +56,6 @@
     <div class="show-tutorial p-3">
         <a class="text-decoration-none text-black bg-body-secondary " href="">How To Use</a>
     </div>
-
 
     <!-- data type for sorting -->
     <section class="kalakro">
@@ -63,9 +71,38 @@
                 <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="folk">
                     <img class="img-fluid" src="kalakaro-img/kirtidan-gadhvi.jpeg" alt="kirtidan Gadhvi">
                     <div class="artists-content mt-3">
-                        <a href="mayaAhir/Mayaahir.html">kirtidan Gadhvi</a>
+                        <a href="">kirtidan Gadhvi</a>
                     </div>
                 </div>
+
+                <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="folk">
+                    <img class="img-fluid" src="kalakaro-img/ishardan.jpeg" alt="Ishardan Gadhvi">
+                    <div class="artists-content mt-3">
+                        <a href="">Ishardan Gadhvi</a>
+                    </div>
+                </div>
+
+                <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="folk">
+                    <img class="img-fluid" src="kalakaro-img/devayatkhavad1-1670688076.jpg" alt="Devayt Khavad">
+                    <div class="artists-content mt-3">
+                        <a href="">Devayt Khavad</a>
+                    </div>
+                </div>
+
+                <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="folk">
+                    <img class="img-fluid" src="kalakaro-img/brijraj.jpeg" alt="Brijraj Gadhvi">
+                    <div class="artists-content mt-3">
+                        <a href="">Brijraj Gadhvi</a>
+                    </div>
+                </div>
+
+                <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="folk">
+                    <img class="img-fluid" src="kalakaro-img/bhikhudan.jpg" alt="Bhikhudan Gadhvi">
+                    <div class="artists-content mt-3">
+                        <a href="">Bhikhudan Gadhvi</a>
+                    </div>
+                </div>
+
                 <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="hasya">
                     <img class="img-fluid" src="kalakaro-img/Screenshot 2025-03-28 144041.png" alt="Dhirubhai Sarvaiya">
                     <div class="artists-content mt-3">
@@ -79,6 +116,28 @@
                         <a href="">Sairam Dave</a>
                     </div>
                 </div>
+
+                <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="folk">
+                    <img class="img-fluid sairam" src="kalakaro-img/Rajbha-768x432.jpg" alt="Rajbha Gadhvi">
+                    <div class="artists-content mt-3">
+                        <a href="">Rajbha Gadhvi</a>
+                    </div>
+                </div>
+
+                <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="singers">
+                    <img class="img-fluid sairam" src="kalakaro-img/geeta-rabari.png" alt="Geeta Rabari">
+                    <div class="artists-content mt-3">
+                        <a href="">Geeta Rabari</a>
+                    </div>
+                </div>
+
+                <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="singers">
+                    <img class="img-fluid sairam" src="kalakaro-img/kinja dave.jpeg" alt="Kinjal Dave">
+                    <div class="artists-content mt-3">
+                        <a href="">Kinjal Dave</a>
+                    </div>
+                </div>
+
                 <div class="artist-img col-lg-4 col-md-6 col-sm-6" data-type="folk">
                     <img class="img-fluid sairam" src="kalakaro-img/osman-mir.jpeg" alt="Osman Mir">
                     <div class="artists-content mt-4">
@@ -93,6 +152,19 @@
                     </div>
                 </div>
 
+                <div class="artist-img mt-3 col-lg-4 col-md-6 col-sm-6" data-type="folk">
+                    <img class="img-fluid" src="kalakaro-img/rajgadhvi.jpeg" alt="Raj Gadhvi">
+                    <div class="artists-content mt-3">
+                        <a href="">Raj Gadhvi</a>
+                    </div>
+                </div>
+
+                <div class="artist-img mt-3 col-lg-4 col-md-6 col-sm-6" data-type="folk">
+                    <img class="img-fluid" src="kalakaro-img/hemant.jpeg" alt="Hemant Chauhan">
+                    <div class="artists-content mt-3">
+                        <a href="">Hemant Chauhan</a>
+                    </div>
+                </div>
 
                 <div class="artist-img mt-3 col-lg-4 col-md-6 col-sm-6" data-type="hasya">
                     <img class="img-fluid" src="kalakaro-img/hitesh.jpeg" alt="Hitesh Antala">

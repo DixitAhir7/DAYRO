@@ -57,12 +57,7 @@ function displayImages() {
                     divImg.style.display = "none";
                 }
             });
-
-            if (!found) {
-                result.style.display = "block";
-            } else {
-                result.style.display = "none";
-            }
+            !found ? result.style.display = 'block' : 'none';
         });
     } catch (e) {
         console.log(e);
@@ -71,9 +66,7 @@ function displayImages() {
 
 displayImages();
 
-
 // script for sorting based on type of artists
-
 
 function sortingArtists() {
     try {
@@ -81,7 +74,6 @@ function sortingArtists() {
         const select = document.querySelector('#selected');
         const allartist = document.querySelectorAll('.artist-img');
 
-        
 
         sortform.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -94,6 +86,8 @@ function sortingArtists() {
                 } else if (selectvalue === "hasya kalakaro" && type === "hasya") {
                     artist.style.display = "block";
                 } else if (selectvalue === "folk singers" && type === "folk") {
+                    artist.style.display = "block";
+                } else if (selectvalue === 'singers' && type === "singers") {
                     artist.style.display = "block";
                 } else {
                     artist.style.display = "none";
