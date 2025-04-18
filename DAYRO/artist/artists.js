@@ -7,10 +7,8 @@ const videoSection = document.querySelector('.add-video');
 
 
 // media-querry for video
-
 const mediaQuerry = window.matchMedia("(max-width: 768px)")
 const mediaQuerry2 = window.matchMedia("(max-width: 400px)")
-
 
 requestdb.onerror = (e) => console.error('IndexedDB error:', e);
 
@@ -75,7 +73,6 @@ requestdb.onsuccess = (e) => {
 };
 
 // this is for creating database objectStores
-
 requestdb.onupgradeneeded = (e) => {
     let db = e.target.result;
 

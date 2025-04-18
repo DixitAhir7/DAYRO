@@ -76,3 +76,34 @@ footer {
     margin: 40px 12px 0px 0px;
     padding: 20px 0px 8px 0px;
 }
+
+
+/* search suggestions css */
+
+.show-suggestions {
+    border: 1px solid #ccc;
+    max-width: 300px;
+    margin-top: 5px;
+    padding: 5px;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+}
+
+.show-suggestions div {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.suggestion-item {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: white;
+}
+
+.show-suggestions div:hover {
+    background-color: #f0f0f0;
+}

@@ -1,17 +1,13 @@
-/* this media-querry for hasya artists */
+/* this media-querry artists */
 
 @media (max-width:400px) {
-    .hasya-kalakar .artist-img {
+    .kalakro .artist-img {
         width: 50%;
     }
 
-    .hasya-kalakar .artist-img img {
-        width: 200px;
-        height: 165px;
-    }
-
-    .artists-content a {
-        text-align: start;
+    .kalakro .artist-img img {
+        width: 100px;
+        height: 65px;
     }
 }
 

@@ -3,11 +3,11 @@
 // when user search footer stays as it is
 function positionapplywhensearch() {
     try {
-        const searchInput = document.querySelector("input[type='text']");
+        const inputSearch = document.querySelector('input[type="text"]');
         const footer = document.querySelector("footer");
 
-        searchInput.addEventListener("input", () => {
-            const value = searchInput.value.trim();
+        inputSearch.addEventListener("input", () => {
+            const value = inputSearch.value.trim();
 
             if (value) {
                 footer.style.position = "fixed";
@@ -66,6 +66,50 @@ function displayImages() {
 
 displayImages();
 
+
+// suggestions for searching artist
+
+try {
+    function showsuggestions() {
+        const inputSearchsuggestion = document.querySelector('input[type="text"]');
+        const img = document.querySelectorAll("img");
+        const showsuggestions = document.querySelector('.show-suggestions');
+
+        inputSearchsuggestion.addEventListener('input', (e) => {
+            e.preventDefault();
+            const searchvalue = inputSearchsuggestion.value.toLowerCase().trim();
+            showsuggestions.innerHTML = "";
+
+            const altdata = [];
+
+            img.forEach(images => {
+                const getdata = images.getAttribute('alt');
+                altdata.push(getdata);
+            });
+
+            const filterednames = altdata.filter(data => {
+                return data.toLowerCase().includes(searchvalue.toLowerCase());
+            });
+
+            filterednames.slice(0, 5).forEach(match => {
+                const suggestion = document.createElement('div');
+                suggestion.textContent = match;
+                suggestion.classList.add('suggestion-item');
+
+                // when i click on suggestion then it adds back to search
+                suggestion.addEventListener('click', (e) => {
+                    inputSearchsuggestion.value = match;
+                    showsuggestions.innerHTML = "";
+                });
+                showsuggestions.appendChild(suggestion);
+            })
+        });
+    }
+
+    showsuggestions();
+} catch (e) { console.log('suggestion error:', e); };
+
+
 // script for sorting based on type of artists
 
 function sortingArtists() {
@@ -73,11 +117,17 @@ function sortingArtists() {
         const sortform = document.querySelector('.sortForm');
         const select = document.querySelector('#selected');
         const allartist = document.querySelectorAll('.artist-img');
-
+        const footerPosition = document.querySelector('footer');
 
         sortform.addEventListener('submit', (e) => {
             e.preventDefault();
             const selectvalue = select.value;
+
+            if (selectvalue) {
+                footerPosition.style.position = "fixed";
+                footerPosition.style.bottom = "0";
+                footerPosition.style.width = "100%";
+            }
 
             allartist.forEach(artist => {
                 const type = artist.getAttribute('data-type');
@@ -88,6 +138,8 @@ function sortingArtists() {
                 } else if (selectvalue === "folk singers" && type === "folk") {
                     artist.style.display = "block";
                 } else if (selectvalue === 'singers' && type === "singers") {
+                    artist.style.display = "block";
+                } else if (selectvalue === "santvani" && type === "santvani") {
                     artist.style.display = "block";
                 } else {
                     artist.style.display = "none";
