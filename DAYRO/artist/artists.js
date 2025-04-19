@@ -160,3 +160,5 @@ function deleteVideo(id, container) {
         console.error('Delete failed', e);
     };
 };
+
+deleteVideo();

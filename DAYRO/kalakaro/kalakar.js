@@ -82,6 +82,8 @@ try {
 
             const altdata = [];
 
+            if (!searchvalue) return;
+
             img.forEach(images => {
                 const getdata = images.getAttribute('alt');
                 altdata.push(getdata);

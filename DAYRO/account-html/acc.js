@@ -57,7 +57,7 @@ function updateImage() {
 
     updateBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        updateImg.click();
+        updateImg.click();  
     });
 
     updateImg.addEventListener('change', () => {
@@ -89,8 +89,6 @@ function deleteImage() {
 
         const defaultImagePath = "account-html/img/user-default image.jpg";
         defaultImg.src = defaultImagePath;
-
-        localStorage.setItem('deleteImg', JSON.stringify(defaultImagePath));
 
         imgInput.value = '';
         updateImg.value = '';

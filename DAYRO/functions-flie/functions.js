@@ -4,7 +4,7 @@
 export function validatelogin() {
     try {
         const form = document.querySelector('#loginModal form');
-        const emailInput = document.querySelector("input[type='email]");
+        const emailInput = document.querySelector(".email");
         const passwordInput = document.querySelector("input[type='password']");
         const modal = document.getElementById("loginModal");
         const loginBtn = document.querySelector('.user-info .login-btn');
@@ -79,7 +79,7 @@ export function sidebarBtn() {
                 if (isCollapsed) {
                     collapseBtn.style.display = 'inline-block';
                     closeBtn.style.display = 'none';
-                } else  {
+                } else {
                     collapseBtn.style.display = 'none';
                     closeBtn.style.display = 'inline-block';
                 }
