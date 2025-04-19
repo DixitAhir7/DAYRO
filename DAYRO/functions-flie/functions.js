@@ -54,7 +54,6 @@ export function sidebarBtn() {
         const sidebar = document.querySelector('.sidebar');
         const collapseBtn = document.querySelector('.sidebarToggle');
         const mainContent = document.querySelector('.main-content');
-        const displayIcon = document.querySelector('.display-icon');
         const closeBtn = document.querySelector('.close-sidebar');
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -80,7 +79,7 @@ export function sidebarBtn() {
                 if (isCollapsed) {
                     collapseBtn.style.display = 'inline-block';
                     closeBtn.style.display = 'none';
-                } else if (!isCollapsed) {
+                } else  {
                     collapseBtn.style.display = 'none';
                     closeBtn.style.display = 'inline-block';
                 }
