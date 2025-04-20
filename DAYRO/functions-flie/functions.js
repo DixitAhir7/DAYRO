@@ -32,11 +32,18 @@ export function validatelogin() {
             };
             localStorage.setItem("loginInfo", JSON.stringify(obj));
             alert("login succesful");
+            if (localStorage.getItem('loginInfo')) {
+                loginBtn.style.display = "none";
+            }
         });
 
-        if (localStorage.getItem('loginInfo')) {
-            loginBtn.style.display = "none";
-        }
+        window.addEventListener('DOMContentLoaded', (e) => {
+
+            const getlogininfo = localStorage.getItem('loginInfo')
+            if (getlogininfo) {
+                loginBtn.style.display = "none";
+            }
+        })
 
         modal.style.display = "none";
 
