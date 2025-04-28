@@ -6,7 +6,6 @@
 /* general css */
 a {
     text-decoration: none;
-    color: var(--white);
 }
 
 .kalakro {
@@ -34,30 +33,9 @@ a {
 }
 
 /* artist-contnet css */
-.artists-content {
-    display: none;
-    padding: 4px 12px 4px 12px;
-}
-
-.artist-img:hover .artists-content {
-    display: block;
-}
-
 .artists-content a {
-    color: var(--white);
-    font-size: 14px;
-}
-
-.artists-content {
-    position: absolute;
-    top: 75%;
-    left: 62px;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 99px;
-}
-
-.artist-img {
-    position: relative;
+    color: var(--black);
+    font-size: 20px;
 }
 
 /* search-css */
@@ -76,7 +54,6 @@ footer {
     margin: 40px 12px 0px 0px;
     padding: 20px 0px 8px 0px;
 }
-
 
 /* search suggestions css */
 
