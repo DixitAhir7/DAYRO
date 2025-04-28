@@ -355,6 +355,20 @@ a {
     max-width: 100px;
 }
 
+/* logout css */
+
+.user-info .Logout button {
+    font-size: 18px;
+    border: none;
+    background: none;
+}
+
+.user-info .Logout:hover {
+    background-color: var(--white);
+    border-radius: 7px;
+    max-width: 100px;
+}
+
 /* account css */
 
 .user-info .account:hover {

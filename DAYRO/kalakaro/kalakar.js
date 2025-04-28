@@ -1,6 +1,6 @@
-// hasya-artists script //
+// artists script //
 
-// when user search footer stays as it is
+// while searching footer stays as it is
 function positionapplywhensearch() {
     try {
         const inputSearch = document.querySelector('input[type="text"]');
@@ -37,7 +37,6 @@ form.appendChild(iNPUT_SUBMIT);
 
 
 // Script for searching artists with images
-
 function displayImages() {
     try {
         form.addEventListener('submit', (e) => {

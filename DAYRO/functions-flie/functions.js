@@ -8,6 +8,7 @@ export function validatelogin() {
         const passwordInput = document.querySelector("input[type='password']");
         const modal = document.getElementById("loginModal");
         const loginBtn = document.querySelector('.user-info .login-btn');
+        const logoutBtn = document.querySelector('.user-info .Logout button');
 
         form.addEventListener("submit", function (event) {
             event.preventDefault();
@@ -31,14 +32,18 @@ export function validatelogin() {
                 passwordvalue: passwordValue,
             };
             localStorage.setItem("loginInfo", JSON.stringify(obj));
-            alert("login succesful");
+
+            // login-out buttons handling
+
             if (localStorage.getItem('loginInfo')) {
                 loginBtn.style.display = "none";
             }
+            if (localStorage.getItem('loginInfo')) {
+                logoutBtn.style.display = "block";
+            }
         });
 
-        window.addEventListener('DOMContentLoaded', (e) => {
-
+        window.addEventListener('DOMContentLoaded', () => {
             const getlogininfo = localStorage.getItem('loginInfo')
             if (getlogininfo) {
                 loginBtn.style.display = "none";
