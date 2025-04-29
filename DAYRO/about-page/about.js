@@ -7,18 +7,40 @@ try {
 
         purposeModal.addEventListener('click', (e) => {
             e.preventDefault();
-
             openPurposeModal.classList.toggle('active');
-            document.body.classList.add('modal-open')
-        })
+
+            if (openPurposeModal.classList.contains('active')) {
+                document.body.classList.add('modal-open');
+                localStorage.setItem('purposemodal', 'open');
+            } else {
+                document.body.classList.remove('modal-open');
+                localStorage.setItem('purposemodal', 'closed');
+            }
+        });
     }
-    openPurposeModal();
-    closeModal();
 
     function closeModal() {
-        document.querySelector('.my-purpose').classList.remove('active');
-        document.body.classList.remove('modal-open')
+        const openPurposeModal = document.querySelector('.my-purpose');
+        openPurposeModal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+        localStorage.setItem('purposemodal', 'closed');
     }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const openPurposeModalDiv = document.querySelector('.my-purpose');
+        const savedModalState = localStorage.getItem('purposemodal');
+
+        if (savedModalState === 'open') {
+            openPurposeModalDiv.classList.add('active');
+            document.body.classList.add('modal-open');
+        } else {
+            openPurposeModalDiv.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+    });
+
+    openPurposeModal();
+
 } catch (e) {
     console.log('while opening modal:', e);
 }

@@ -22,7 +22,7 @@ function positionapplywhensearch() {
     }
 };
 
-positionapplywhensearch();
+// positionapplywhensearch();
 
 // searching scrpt for artists
 const form = document.querySelector('form');
@@ -118,38 +118,33 @@ function sortingArtists() {
         const sortform = document.querySelector('.sortForm');
         const select = document.querySelector('#selected');
         const allartist = document.querySelectorAll('.artist-img');
-        const footerPosition = document.querySelector('footer');
+        // const footerPosition = document.querySelector('footer');
 
         sortform.addEventListener('submit', (e) => {
             e.preventDefault();
             const selectvalue = select.value;
 
-            if (selectvalue) {
-                footerPosition.style.position = "fixed";
-                footerPosition.style.bottom = "0";
-                footerPosition.style.width = "100%";
-            }
-
             allartist.forEach(artist => {
                 const type = artist.getAttribute('data-type');
-                if (selectvalue === "kalakaro") {
-                    artist.style.display = "block";
-                } else if (selectvalue === "hasya kalakaro" && type === "hasya") {
-                    artist.style.display = "block";
-                } else if (selectvalue === "folk singers" && type === "folk") {
-                    artist.style.display = "block";
-                } else if (selectvalue === 'singers' && type === "singers") {
-                    artist.style.display = "block";
-                } else if (selectvalue === "santvani" && type === "santvani") {
-                    artist.style.display = "block";
-                } else {
-                    artist.style.display = "none";
-                }
+                if (selectvalue === "kalakaro") { artist.style.display = "block"; }
+                else if (selectvalue === "hasya kalakaro" && type === "hasya") artist.style.display = "block";
+                else if (selectvalue === "folk singers" && type === "folk") artist.style.display = "block";
+                else if (selectvalue === "singers" && type === "singers") artist.style.display = "block";
+                else if (selectvalue === "santvani" && type === "santvani") artist.style.display = "block";
+                else { artist.style.display = "none"; }
             });
         });
-    } catch (e) {
-        console.warn('sorting error:', e);
-    };
+    } catch (e) { console.warn('sorting error:', e); };
 };
 
 sortingArtists();
+
+
+// for adding atribute in all images loading
+try {
+    function loadImg() {
+        const allimages = document.querySelectorAll('img');
+        allimages.forEach((imagesdata) => { imagesdata.setAttribute('loading', 'lazy'); })
+    };
+    loadImg();
+} catch (e) { console.log('while adding loading atribute:', e); }

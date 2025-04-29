@@ -77,10 +77,6 @@ footer {
     cursor: pointer;
 }
 
-.suggestion-item:hover {
-    background-color: white;
-}
-
 .show-suggestions div:hover {
     background-color: #f0f0f0;
 }

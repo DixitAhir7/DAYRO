@@ -34,7 +34,6 @@ export function validatelogin() {
             localStorage.setItem("loginInfo", JSON.stringify(obj));
 
             // login-out buttons handling
-
             if (localStorage.getItem('loginInfo')) {
                 loginBtn.style.display = "none";
             }
@@ -70,7 +69,6 @@ export function sidebarBtn() {
 
         document.addEventListener('DOMContentLoaded', () => {
             updateIcon();
-
             collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 sidebar.classList.toggle('sidebar-collapse');
@@ -122,21 +120,26 @@ export function firstTime() {
 
 // this is modal script
 export function popUp() {
-
     try {
         document.addEventListener("DOMContentLoaded", () => {
+
+            if (localStorage.getItem('modalOpen') === 'true') {
+                document.getElementById('loginModal').style.display = 'block';
+            }
+
             document.querySelectorAll('.login-btn').forEach(button => {
                 button.addEventListener('click', () => {
                     document.getElementById('loginModal').style.display = 'block';
+                    localStorage.setItem('modalOpen', 'true');
                 });
             });
 
             document.querySelector('.close').addEventListener('click', () => {
                 document.getElementById('loginModal').style.display = 'none';
+                localStorage.setItem('modalOpen', 'false');
             });
         });
-
     } catch (e) {
         console.warn(e);
-    };
+    }
 };

@@ -94,7 +94,6 @@ function displayVideo() {
 
     reader.onload = (e) => {
         const videoURL = e.target.result;
-
         const videoElem = document.createElement('video');
         videoElem.src = videoURL;
         videoElem.controls = true;
@@ -102,9 +101,8 @@ function displayVideo() {
         videoElem.style.height = "450px"
         videoElem.style.display = 'block';
         videoElem.style.marginBottom = '10px';
-
         videoElem.addEventListener('play', () => pauseAllExcept(videoElem));
-
+        if (videoElem) { form.reset() };
         videoSection.appendChild(videoElem);
 
         const transaction = db.transaction('Data', 'readwrite');
