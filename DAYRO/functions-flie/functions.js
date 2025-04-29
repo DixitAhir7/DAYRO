@@ -16,6 +16,10 @@ export function validatelogin() {
             let emailValue = emailInput.value.trim();
             let passwordValue = passwordInput.value.trim();
 
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            // const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+
             if (!emailValue || !passwordValue) {
                 alert("Please enter both email and password.");
                 return;
@@ -25,6 +29,7 @@ export function validatelogin() {
                 alert("Password must be at least 5 characters long.");
                 return;
             }
+            if (emailValue === emailRegex) console.log('login succesful');
 
             // saving data and sending it to login-page
             let obj = {
@@ -36,8 +41,6 @@ export function validatelogin() {
             // login-out buttons handling
             if (localStorage.getItem('loginInfo')) {
                 loginBtn.style.display = "none";
-            }
-            if (localStorage.getItem('loginInfo')) {
                 logoutBtn.style.display = "block";
             }
         });
@@ -46,6 +49,8 @@ export function validatelogin() {
             const getlogininfo = localStorage.getItem('loginInfo')
             if (getlogininfo) {
                 loginBtn.style.display = "none";
+                logoutBtn.style.display = "block";
+                localStorage.setItem('logout', 'added')
             }
         })
 
@@ -56,11 +61,9 @@ export function validatelogin() {
     }
 }
 
-
 // this script is for sidebar
 
 export function sidebarBtn() {
-
     try {
         const sidebar = document.querySelector('.sidebar');
         const collapseBtn = document.querySelector('.sidebarToggle');

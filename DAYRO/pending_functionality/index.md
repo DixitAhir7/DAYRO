@@ -16,7 +16,6 @@
  so make it perfect responsive for phone on your own
 
  <!-- language -->
-
 --> adding gujrati language
 
 <!-- importance of gir contribution to DAYRO -->

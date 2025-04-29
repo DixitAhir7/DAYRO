@@ -244,6 +244,19 @@ a {
 /* about css */
 
 
+.readers {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    &:hover {
+        background-color: var(--white);
+    }
+}
+
 .nav-list a {
     font-size: 18px;
 }
@@ -255,14 +268,13 @@ a {
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
+
+    &:hover {
+        background-color: var(--white);
+    }
 }
 
-.about-page a:hover {
-    background-color: var(--white);
-}
-
-/*=== dropdown css of sidebar === */
-
+/* all artists css */
 .nav-list .menu-item a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
@@ -270,12 +282,26 @@ a {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 18px;
+
+    &:hover {
+        background-color: var(--white);
+    }
 }
 
-.menu-item a:hover {
-    background-color: var(--white);
-}
+/* Religional History css*/
 
+.ReligionalHistory {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    width: 200px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
+
+    &:hover {
+        background-color: var(--white);
+    }
+}
 
 /* === charan history css === */
 
@@ -285,24 +311,10 @@ a {
     width: 200px;
     padding-top: 5px;
     padding-bottom: 5px;
-}
 
-.history-charan a:hover {
-    background-color: var(--white);
-}
-
-/* eventes-css */
-
-.nav-list .events a {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 5px;
-    width: 200px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.nav-list .events:hover {
-    background-color: var(--white);
+    &:hover {
+        background-color: var(--white);
+    }
 }
 
 /* for-artist-css */
@@ -314,26 +326,10 @@ a {
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-}
 
-.for-artist:hover {
-    background-color: var(--white);
-}
-
-/* video-uplodaer css */
-
-.nav-list .video-uploader a {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 5px;
-    width: 200px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 5px;
-}
-
-.nav-list .video-uploader:hover {
-    background-color: var(--white);
-    border-radius: 5px;
+    &:hover {
+        background-color: var(--white);
+    }
 }
 
 /* user-info css */
@@ -347,12 +343,12 @@ a {
 
 .user-info .login-btn button {
     font-size: 18px;
-}
 
-.user-info .login-btn:hover {
-    background-color: var(--white);
-    border-radius: 7px;
-    max-width: 100px;
+    &:hover {
+        background-color: var(--white);
+        border-radius: 7px;
+        max-width: 100px;
+    }
 }
 
 /* logout css */
@@ -361,12 +357,11 @@ a {
     font-size: 18px;
     border: none;
     background: none;
-}
 
-.user-info .Logout:hover {
-    background-color: var(--white);
-    border-radius: 7px;
-    max-width: 100px;
+    &:hover {
+        background-color: var(--white);
+        border-radius: 7px;
+    }
 }
 
 /* account css */
@@ -385,11 +380,11 @@ a {
 .nav-list .time-spent {
     max-width: 133px;
     margin-left: 25px;
-}
 
-.nav-list .time-spent:hover {
-    background-color: var(--white);
-    border-radius: 7px;
+    &:hover {
+        background-color: var(--white);
+        border-radius: 7px;
+    }
 }
 
 /* main-content css */
