@@ -371,13 +371,13 @@ a {
 
 /* account css */
 
-.user-info .account:hover {
-    background-color: var(--white);
-}
-
 .user-info .account {
     border-radius: 7px;
     max-width: 100px;
+
+    &:hover {
+        background-color: var(--white);
+    }
 }
 
 /* time-spent css */
