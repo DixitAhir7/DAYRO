@@ -57,7 +57,7 @@ function updateImage() {
 
     updateBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        updateImg.click();  
+        updateImg.click();
     });
 
     updateImg.addEventListener('change', () => {
@@ -77,8 +77,6 @@ function updateImage() {
     });
 }
 updateImage();
-
-
 
 function deleteImage() {
     deleteImg.addEventListener('click', (e) => {

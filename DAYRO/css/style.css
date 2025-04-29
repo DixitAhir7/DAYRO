@@ -34,10 +34,6 @@ a {
     text-decoration: none;
 }
 
-.navbar {
-    display: none;
-}
-
 /* theme-mode css */
 /* sidebar-button */
 
@@ -62,11 +58,11 @@ a {
 .user-info .login-btn button {
     border: none;
     background: none;
-}
 
-.user-info .login-btn button:hover {
-    background-color: var(--white);
-    border-radius: 5px;
+    &:hover {
+        background-color: var(--white);
+        border-radius: 5px;
+    }
 }
 
 /* Modal Background */
@@ -134,20 +130,20 @@ a {
 .submit {
     background-color: var(--accent);
     color: black;
-}
 
-.submit:hover {
-    background-color: #f8961e;
+    &:hover {
+        background-color: #f8961e;
+    }
 }
 
 #reset {
     margin-left: 15px;
     background-color: #eee;
     color: var(--text-dark);
-}
 
-#reset:hover {
-    background-color: rgb(221, 221, 221);
+    &:hover{
+        background-color: rgb(221, 221, 221);
+    }
 }
 
 /* Close Button */
@@ -159,10 +155,10 @@ a {
     color: var(--red);
     cursor: pointer;
     transition: transform 0.2s ease;
-}
 
-.close:hover {
-    transform: scale(1.5);
+    &:hover{
+        transform: scale(1.5);
+    }
 }
 
 /* Animations */
@@ -222,7 +218,6 @@ a {
     position: fixed;
     z-index: 100;
     pointer-events: auto;
-    transition: width 0.2s ease-in-out;
     background-color: var(--kesri);
     height: 100vh;
     width: 250px;
@@ -242,7 +237,6 @@ a {
 
 /* nav-list css  */
 /* about css */
-
 
 .readers {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
