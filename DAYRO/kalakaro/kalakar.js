@@ -110,7 +110,6 @@ try {
     showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };
 
-
 // script for sorting based on type of artists
 
 function sortingArtists() {

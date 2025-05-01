@@ -68,3 +68,14 @@ footer {
 .show-suggestions div:hover {
     background-color: #f0f0f0;
 }
+
+/* default suggestions */
+
+.default-suggestions {
+    border: 1px solid #ccc;
+    max-width: 200px;
+    margin-top: 5px;
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+}
