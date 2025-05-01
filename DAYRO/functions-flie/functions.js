@@ -16,20 +16,12 @@ export function validatelogin() {
             let emailValue = emailInput.value.trim();
             let passwordValue = passwordInput.value.trim();
 
-            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             // const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
 
             if (!emailValue || !passwordValue) {
                 alert("Please enter both email and password.");
                 return;
             }
-
-            if (passwordValue.length < 5) {
-                alert("Password must be at least 5 characters long.");
-                return;
-            }
-            if (emailValue === emailRegex) console.log('login succesful');
 
             // saving data and sending it to login-page
             let obj = {
@@ -146,3 +138,19 @@ export function popUp() {
         console.warn(e);
     }
 };
+
+// logout function
+const logoutButton = document.querySelector('.Logout button');
+
+try {
+    logoutButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        const userans_logout = prompt('are you sure? (yes,no)');
+        if (userans_logout === 'yes'.toLowerCase()) {
+            localStorage.removeItem('loginInfo');
+        }
+    })
+
+} catch (e) {
+    console.log('logout button error:', e);
+}

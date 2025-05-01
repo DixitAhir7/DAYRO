@@ -116,13 +116,34 @@ a {
     box-shadow: 0 0 5px var(--accent);
 }
 
+/* background-img for login page */
+
+.bg-img::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url('/IMG/main-bg.avif');
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.modal-content {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
 /* Buttons */
 .submit,
 #reset {
     margin-top: 10px;
     padding: 8px 24px;
     border: none;
-    cursor: pointer;
     border-radius: 10px;
     font-size: 1rem;
 }
@@ -141,7 +162,7 @@ a {
     background-color: #eee;
     color: var(--text-dark);
 
-    &:hover{
+    &:hover {
         background-color: rgb(221, 221, 221);
     }
 }
@@ -153,10 +174,9 @@ a {
     right: 55px;
     font-size: 28px;
     color: var(--red);
-    cursor: pointer;
     transition: transform 0.2s ease;
 
-    &:hover{
+    &:hover {
         transform: scale(1.5);
     }
 }
@@ -230,7 +250,7 @@ a {
 .display-icon .close-sidebar {
     position: absolute;
     top: 10px;
-    left: 250px;
+    left: 255px;
     font-size: 1.2rem;
     z-index: 1001;
 }
@@ -251,10 +271,31 @@ a {
     }
 }
 
+/* this is dropdown for history */
+.ReligionalHistory {
+    user-select: none;
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.dropdown-content a {
+    padding: 5px 10px;
+    color: black;
+}
+
+.show {
+    display: flex;
+}
+
 .nav-list a {
     font-size: 18px;
 }
 
+/* about page css */
 .nav-list .about-page a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
@@ -330,7 +371,7 @@ a {
 
 .user-info {
     margin-left: 25px;
-    margin-top: 75px;
+    margin-top: 45px;
 }
 
 /* login-btn css */

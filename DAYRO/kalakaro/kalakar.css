@@ -38,16 +38,6 @@ a {
     font-size: 20px;
 }
 
-/* search-css */
-
-#search {
-    border: none;
-}
-
-input[type='reset'] {
-    border: none;
-}
-
 /* footer css */
 footer {
     background-color: rgba(0, 0, 0, 0.748);
@@ -56,9 +46,7 @@ footer {
 }
 
 /* search suggestions css */
-
 .show-suggestions {
-    border: 1px solid #ccc;
     max-width: 300px;
     margin-top: 5px;
     padding: 5px;
