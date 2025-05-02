@@ -58,8 +58,26 @@ export function sidebarBtn() {
             updateIcon();
             collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                sidebar.classList.toggle('sidebar-collapse');
+                const issidebaropen = sidebar.classList.toggle('sidebar-collapse');
+                if (issidebaropen) {
+                    localStorage.setItem('sidebar', 'collapsed');
+                } else {
+                    localStorage.setItem('sidebar', 'expanded');
+                }
                 mainContent.classList.toggle('main-expand');
+                updateIcon();
+            });
+
+            // sidebar stays as it is on exploring to any page
+            window.addEventListener('DOMContentLoaded', () => {
+                const sidebar = document.querySelector('.sidebar');
+                const sidebarState = localStorage.getItem('sidebar');
+
+                if (sidebarState === 'expanded') {
+                    sidebar.classList.remove('sidebar-collapse');
+                } else {
+                    sidebar.classList.add('sidebar-collapse');
+                }
                 updateIcon();
             });
 

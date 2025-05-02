@@ -128,6 +128,8 @@ function suggestionDefault() {
                     inputSearchsuggestion.value = getalt;
                 });
                 defaultsuggestions.appendChild(suggestionItem);
+                defaultsuggestions.style.maxHeight = '350px';
+                defaultsuggestions.style.overflowY = 'auto';
             }
         });
     });
