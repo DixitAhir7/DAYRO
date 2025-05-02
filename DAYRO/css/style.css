@@ -99,7 +99,7 @@ a {
 }
 
 /* Input Fields */
-#loginForm input[type="email"],
+.email,
 #loginForm input[type="password"] {
     width: 80%;
     padding: 12px 20px;

@@ -16,6 +16,17 @@ export function validatelogin() {
             let emailValue = emailInput.value.trim();
             let passwordValue = passwordInput.value.trim();
 
+            let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*?#&]{8,}$/;
+            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            if (!emailRegex.test(emailValue)) {
+                console.log('please check the email and password');
+            }
+
+            if (!passwordRegex.test(passwordValue)) {
+                console.log('please check password');
+            }
+
             // saving data and sending it to login-page
             let obj = {
                 emailvalue: emailValue,
