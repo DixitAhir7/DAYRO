@@ -98,7 +98,7 @@ try {
                 suggestion.classList.add('suggestion-item');
 
                 // when i click on suggestion then it adds back to search
-                suggestion.addEventListener('click', (e) => {
+                suggestion.addEventListener('click', () => {
                     inputSearchsuggestion.value = match;
                     showsuggestions.innerHTML = "";
                 });
@@ -109,6 +109,38 @@ try {
 
     showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };
+
+// default suggestions in search
+
+function suggestionDefault() {
+    const defaultsuggestions = document.querySelector('.default-suggestions');
+    const inputSearchsuggestion = document.querySelector('input[type="text"]');
+
+    inputSearchsuggestion.addEventListener('focus', () => {
+        const imagesalt = document.querySelectorAll('img');
+        defaultsuggestions.innerHTML = '';
+        imagesalt.forEach((imgdata) => {
+            const getalt = imgdata.getAttribute('alt');
+            if (getalt) {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.textContent = getalt;
+                suggestionItem.addEventListener('click', () => {
+                    inputSearchsuggestion.value = getalt;
+                });
+                defaultsuggestions.appendChild(suggestionItem);
+            }
+        });
+    });
+
+    // when i click outside it should remove and after found also...
+    document.addEventListener('click', (event) => {
+        if (!defaultsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) {
+            defaultsuggestions.innerHTML = '';
+        }
+    });
+}
+suggestionDefault();
+
 
 // script for sorting based on type of artists
 

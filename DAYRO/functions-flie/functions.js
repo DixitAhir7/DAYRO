@@ -3,7 +3,7 @@
 
 export function validatelogin() {
     try {
-        const form = document.querySelector('#loginModal form');
+        const form = document.querySelector('form');
         const emailInput = document.querySelector(".email");
         const passwordInput = document.querySelector("input[type='password']");
         const modal = document.getElementById("loginModal");
@@ -15,13 +15,6 @@ export function validatelogin() {
 
             let emailValue = emailInput.value.trim();
             let passwordValue = passwordInput.value.trim();
-
-            // const strongPasswordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-            if (!emailValue || !passwordValue) {
-                alert("Please enter both email and password.");
-                return;
-            }
 
             // saving data and sending it to login-page
             let obj = {
@@ -45,7 +38,6 @@ export function validatelogin() {
                 localStorage.setItem('logout', 'added')
             }
         })
-
         modal.style.display = "none";
 
     } catch (error) {

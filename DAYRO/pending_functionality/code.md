@@ -246,35 +246,6 @@ and cultural values through melodious expressions.
 // default suggestions in kalakr
 
 
-function suggestionDefault() {
-    const defaultsuggestions = document.querySelector('.default-suggestions');
-    const inputSearchsuggestion = document.querySelector('input[type="text"]');
 
-    inputSearchsuggestion.addEventListener('focus', () => {
-        const imagesalt = document.querySelectorAll('img');
-        defaultsuggestions.innerHTML = '';
-        imagesalt.forEach((imgdata) => {
-            const getalt = imgdata.getAttribute('alt');
-            if (getalt) {
-                const suggestionItem = document.createElement('div');
-                suggestionItem.textContent = getalt;
-                suggestionItem.addEventListener('click', () => {
-                    inputSearchsuggestion.value = getalt;
-                });
-                defaultsuggestions.appendChild(suggestionItem);
-            }
-        });
-
-        document.addEventListener('click', (e) => {
-            const input = document.querySelector('input[type="text"]');
-            const defaultsuggestions = document.getElementById('.default-suggestions');
-
-            if (!input.contains(e.target) && !defaultsuggestions.contains(e.target)) {
-                defaultsuggestions.classList.add('hidden'); 
-            }
-        });
-    })
-}
-suggestionDefault();
 
 </script>
