@@ -81,7 +81,7 @@ function viewedit() {
 
 // animation for header
 
-const words = ['views', 'thoughts', 'stories'];
+const words = ['views', 'stories', 'thoughts'];
 const highlight = document.getElementById('dynamic-text');
 let index = 0;
 
