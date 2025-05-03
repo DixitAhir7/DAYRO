@@ -57,7 +57,6 @@ function deleteviews() {
 function undoviews() {
     const undobtn = document.querySelector('#undoview');
     const displayhtml = document.querySelector('.displayuserviews p');
-    const viewstextarea = document.querySelector('.usersviews textarea');
 
     undobtn.addEventListener('click', (e) => {
         e.preventDefault();
