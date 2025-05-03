@@ -3,7 +3,7 @@
 
 export function validatelogin() {
     try {
-        const form = document.querySelector('form');
+        const form = document.querySelector('#loginForm');
         const emailInput = document.querySelector(".email");
         const passwordInput = document.querySelector("input[type='password']");
         const modal = document.getElementById("loginModal");
@@ -16,23 +16,10 @@ export function validatelogin() {
             let emailValue = emailInput.value.trim();
             let passwordValue = passwordInput.value.trim();
 
-            let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*?#&]{8,}$/;
-            let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-
-            // if (!emailRegex.test(emailValue)) {
-            //     alert('please check the email and password');
-            // }
-
-            // if (!passwordRegex.test(passwordValue)) {
-            //     alert('please check password');
-            // } else {
-            //     alert('logged in')
-            // }
-
             // saving data and sending it to login-page
             let obj = {
-                emailvalue: emailValue,
-                passwordvalue: passwordValue,
+                emailInputstore: emailValue,
+                passwordInputstore: passwordValue,
             };
             localStorage.setItem("loginInfo", JSON.stringify(obj));
 
@@ -150,6 +137,9 @@ export function popUp() {
 
             if (localStorage.getItem('modalOpen') === 'true') {
                 document.getElementById('loginModal').style.display = 'block';
+            } else {
+                document.getElementById('loginModal').style.display = 'none';
+
             }
 
             document.querySelectorAll('.login-btn').forEach(button => {

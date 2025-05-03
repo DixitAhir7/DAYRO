@@ -9,7 +9,7 @@ try {
             e.preventDefault();
             const textareavalue = viewstextarea.value.trim();
             if (textareavalue) {
-                displayhtml.innerHTML += textareavalue;
+                displayhtml.innerHTML += `${textareavalue} <br>`;
                 displayhtml.style.display = 'block';
                 localStorage.setItem('deletedview', JSON.stringify(textareavalue));
                 viewstextarea.value = null;
@@ -21,7 +21,23 @@ try {
     submittingviews();
     deleteviews();
     undoviews();
-} catch (e) { console.log('error while submitting views'); }
+    viewedit();
+} catch (e) { console.log('error while submitting views', e); };
+
+// function appendview() {
+//     // const getdeletedview = ;
+//     const viewstextarea = document.querySelector('.usersviews textarea');
+//     const displayhtml = document.querySelector('.displayuserviews p');
+//     const textareavalue = viewstextarea.value.trim();
+//     let deletedviewCount = localStorage.getItem('deletedview');
+
+//     deletedviewCount++;
+
+//     if (deletedviewCount > 1) {
+//         displayhtml.innerHTML += `${textareavalue} <br>`;
+//     }
+//     localStorage.setItem('deletedview', (deletedviewCount));
+// }
 
 // to delete the view
 function deleteviews() {
@@ -48,10 +64,21 @@ function undoviews() {
         const getdeletedview = localStorage.getItem('deletedview');
         if (getdeletedview) {
             displayhtml.innerHTML = getdeletedview;
-            viewstextarea.value = getdeletedview;
         }
     })
 };
+
+function viewedit() {
+    const editbtn = document.querySelector('#viewedit');
+    const viewstextarea = document.querySelector('.usersviews textarea');
+
+    editbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const getdeletedview = localStorage.getItem('deletedview');
+        viewstextarea.value = getdeletedview;
+    });
+    submittingviews();
+}
 
 // animation for header
 

@@ -26,7 +26,6 @@ requestdb.onsuccess = (e) => {
 
     request.onsuccess = () => {
         const allVideos = request.result;
-
         videoSection.innerHTML = '';
 
         /*
