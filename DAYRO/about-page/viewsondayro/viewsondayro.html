@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>views on dayro</title>
+    <script defer src="/js-bt/bootstrap.bundle.min.js"></script>
+    <script defer src="viewsondayro.js"></script>
+    <link rel="stylesheet" href="viewsondayro.css">
+    <link rel="stylesheet" href="/css-bt/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        
+        <!-- animation header -->
+        <div class="infoaboutviews">
+            share your <span id="dynamic-text" class="highlight">views</span> about Dayro
+        </div>
+
+        <!-- for open source where users can add their views on dayro -->
+        <div class="usersviews mt-4">
+            <form>
+                <textarea id="custom" placeholder="enter your views about dayro"
+                    style="width: 30%;height: 100px;"></textarea>
+            </form>
+        </div>
+
+        <!-- displaying views -->
+        <div class="displayuserviews">
+            <p></p>
+            <button id="viewssubmit">submit</button>
+            <button id="deleteviews">delete</button>
+            <button id="undoview">undo</button>
+        </div>
+    </div>
+</body>
+
+</html>

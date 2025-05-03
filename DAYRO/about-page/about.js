@@ -42,14 +42,5 @@ try {
     openPurposeModal();
 
 } catch (e) {
-    console.log('while opening modal:', e);
+    console.warn('while opening modal:', e);
 }
-
-
-// summary tag clickable
-
-// const faq = document.getElementById('faq');
-// faq.addEventListener('toggle', (e) => {
-//     e.preventDefault();
-//     console.log(faq.open ? 'opened' : 'close');
-// })

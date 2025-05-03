@@ -8,7 +8,7 @@ function positionapplywhensearch() {
 
         inputSearch.addEventListener("input", () => {
             const value = inputSearch.value.trim();
-
+            
             if (value) {
                 footer.style.position = "fixed";
                 footer.style.bottom = "0";
@@ -141,7 +141,7 @@ function suggestionDefault() {
         }
     });
 }
-suggestionDefault();
+// suggestionDefault();
 
 
 // script for sorting based on type of artists

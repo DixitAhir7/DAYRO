@@ -19,13 +19,15 @@ export function validatelogin() {
             let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?#&])[A-Za-z\d@$!%*?#&]{8,}$/;
             let emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-            if (!emailRegex.test(emailValue)) {
-                console.log('please check the email and password');
-            }
+            // if (!emailRegex.test(emailValue)) {
+            //     alert('please check the email and password');
+            // }
 
-            if (!passwordRegex.test(passwordValue)) {
-                console.log('please check password');
-            }
+            // if (!passwordRegex.test(passwordValue)) {
+            //     alert('please check password');
+            // } else {
+            //     alert('logged in')
+            // }
 
             // saving data and sending it to login-page
             let obj = {
@@ -69,15 +71,21 @@ export function sidebarBtn() {
             updateIcon();
             collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                const issidebaropen = sidebar.classList.toggle('sidebar-collapse');
+                sidebar.classList.remove('sidebar-collapse');
+
+                mainContent.classList.toggle('main-expand');
+                updateIcon();
+                savingstate();
+            });
+
+            function savingstate() {
+                const issidebaropen = sidebar.classList.contains('sidebar-collapse');
                 if (issidebaropen) {
                     localStorage.setItem('sidebar', 'collapsed');
                 } else {
                     localStorage.setItem('sidebar', 'expanded');
                 }
-                mainContent.classList.toggle('main-expand');
-                updateIcon();
-            });
+            }
 
             // sidebar stays as it is on exploring to any page
             window.addEventListener('DOMContentLoaded', () => {
@@ -97,6 +105,7 @@ export function sidebarBtn() {
                 sidebar.classList.add('sidebar-collapse');
                 mainContent.classList.remove('main-expand');
                 updateIcon();
+                savingstate();
             });
 
             function updateIcon() {
@@ -174,4 +183,23 @@ try {
 
 } catch (e) {
     console.log('logout button error:', e);
+}
+
+// manual translation
+const select = document.querySelector('select');
+const darktag = document.querySelector('.theme-mode a');
+
+export function translateguj() {
+    select.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const selectvalue = select.value;
+        if (selectvalue == 'ગુજરાતી') {
+            darktag.textContent = 'શ્યામ';
+            localStorage.setItem('language', 'gujrati');
+        } else if (selectvalue === 'english') {
+            darktag.textContent = 'dark';
+            localStorage.setItem('language', 'english');
+        }
+    })
 }

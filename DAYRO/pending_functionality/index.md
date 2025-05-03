@@ -1,5 +1,5 @@
 # DAYRO Website - Pending Functionality Plan
-# makeing site more responsive and accuratae
+# makeing site responsive and accuratae
 
 <!-- for better experience -->
 
