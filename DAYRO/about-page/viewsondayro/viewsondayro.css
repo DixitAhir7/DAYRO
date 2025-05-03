@@ -5,13 +5,13 @@
     display: inline-block;
     transition: all 0.4s ease;
     opacity: 0;
-    transform: translateY(2px);
+    transform: translateX(-20px);
 }
 
 .highlight.active {
     color: rgb(255, 166, 0);
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .highlight::after {
@@ -22,6 +22,7 @@
     width: 100%;
     height: 2px;
     background: gray;
+    transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
 }
@@ -29,6 +30,7 @@
 .highlight.active::after {
     transform: scaleX(1);
 }
+
 
 .infoaboutviews,
 span {

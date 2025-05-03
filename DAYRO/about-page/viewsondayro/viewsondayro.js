@@ -54,6 +54,7 @@ function undoviews() {
 };
 
 // animation for header
+
 const words = ['views', 'thoughts', 'stories'];
 const highlight = document.getElementById('dynamic-text');
 let index = 0;
@@ -69,4 +70,4 @@ function updateText() {
 }
 
 updateText();
-setInterval(updateText, 3000);
+setInterval(updateText, 2500);
