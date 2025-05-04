@@ -1,8 +1,9 @@
 # DAYRO Website - Pending Functionality Plan
 # makeing site responsive and accuratae
 
-<!-- for better experience -->
+* sidebar for every page
 
+<!-- for better experience -->
 --> location of user
 --> uesr data
 --> first target of site is to make this,
@@ -53,7 +54,6 @@
 -> example: when khavad or kirtidan share their next event then i can literaly just show the users whole road from whereever they are 
 -> show notification of artists when they share their next event
 -> save the user's lcoation and show them near by events 
-
 
 <!-- upcoming feature -->
 -> for-artist only
