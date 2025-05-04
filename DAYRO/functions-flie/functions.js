@@ -192,4 +192,37 @@ export function translateguj() {
             localStorage.setItem('language', 'english');
         }
     })
+};
+
+export function shareDayro() {
+    const sharebtn = document.querySelector('#forshare');
+    sharebtn.addEventListener('click', (E) => {
+        E.preventDefault();
+        if (navigator.share) {
+            navigator.share({
+                url: window.location.href,
+            })
+                .then(() => console.log('Shared successfully'))
+                .catch((error) => console.log('Error sharing', error));
+        } else {
+            console.log('error while sharing');
+        }
+    })
+};
+
+// hoverbackground in sidebar
+export function addhoverbackground() {
+    const sidebarelements = document.querySelectorAll('nav a');
+
+    sidebarelements.forEach(elements => {
+        elements.addEventListener('mouseenter', () => {
+            elements.style.color = 'black';
+            elements.style.backgroundColor = 'white';
+        });
+
+        elements.addEventListener('mouseleave', () => {
+            elements.style.color = '';
+            elements.style.backgroundColor = '';
+        });
+    })
 }

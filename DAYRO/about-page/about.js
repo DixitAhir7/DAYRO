@@ -62,6 +62,3 @@ function addanimationclass() {
 
 addanimationclass();
 
-function fetchsidebar(){
-    fetch('')
-}

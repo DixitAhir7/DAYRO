@@ -1,11 +1,4 @@
 /* for media-querry in about page */
-
-@media (max-width:1400px) {
-    .image-card-2 img {
-        height: 259px;
-    }
-}
-
 @media (max-width:1200px) {
     .main-heading h2 {
         font-size: 24px;
@@ -26,7 +19,8 @@
         font-size: 16px;
     }
 
-    .card-body p {
+    .card-body p,
+    .card-body-2 p {
         font-size: 12px;
     }
 
@@ -46,11 +40,14 @@
     .card-body-2 h5 {
         font-size: 16px;
     }
+}
 
-    .card-body-2 p {
-        font-size: 12px;
+@media (max-width:576px) {
+
+    .quote-box p,
+    .main-content-heading p {
+        padding: 8px;
     }
-
 }
 
 @media (max-width:993px) {
@@ -82,24 +79,7 @@
         display: flex !important;
         padding-left: 4px !important;
     }
-}
 
-@media (max-width:768px) {
-    .image-card {
-        position: relative;
-    }
-
-    .card-body {
-        position: absolute;
-        top: 72%;
-    }
-
-    .image-card-2 img {
-        height: 514px;
-    }
-}
-
-@media (max-width:400px) {
     .image-card {
         position: relative;
     }
@@ -116,5 +96,20 @@
     .purpose-content span {
         font-size: 12px;
         text-align: center;
+    }
+}
+
+@media (max-width:768px) {
+    .image-card {
+        position: relative;
+    }
+
+    .card-body {
+        position: absolute;
+        top: 72%;
+    }
+
+    .image-card-2 img {
+        height: 514px;
     }
 }

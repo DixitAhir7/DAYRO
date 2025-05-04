@@ -1,7 +1,9 @@
-import { firstTime, popUp, sidebarBtn, validatelogin,translateguj } from "../functions-flie/functions.js";
+import { firstTime, popUp, sidebarBtn, validatelogin, translateguj, shareDayro, addhoverbackground } from "../functions-flie/functions.js";
 
-popUp(); //modal script
-validatelogin() // for login-validation
-sidebarBtn(); // sidebar-script
+popUp();
+validatelogin()
+sidebarBtn();
 firstTime(); //user visiting first-time
 translateguj(); //translate fun
+shareDayro(); //sharing functionlity
+addhoverbackground();

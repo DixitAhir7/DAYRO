@@ -30,8 +30,10 @@ ul,
 li {
     list-style: none;
 }
-button{
+
+button {
     border: none;
+    background: none;
 }
 
 /* theme-mode css */
@@ -53,17 +55,6 @@ button{
 }
 
 /*=== login form-css modal ===*/
-
-/* login button */
-.user-info .login-btn button {
-    border: none;
-    background: none;
-
-    &:hover {
-        background-color: var(--white);
-        border-radius: 5px;
-    }
-}
 
 /* Modal Background */
 .modal {
@@ -259,17 +250,13 @@ button{
 /* nav-list css  */
 /* about css */
 
-.readers {
+.readers a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
-
-    &:hover {
-        background-color: var(--white);
-    }
 }
 
 /* this is dropdown for history */
@@ -305,9 +292,7 @@ button{
     padding-top: 5px;
     padding-bottom: 5px;
 
-    &:hover {
-        background-color: var(--white);
-    }
+    &:hover {}
 }
 
 /* all artists css */
@@ -319,38 +304,18 @@ button{
     padding-bottom: 5px;
     font-size: 18px;
 
-    &:hover {
-        background-color: var(--white);
-    }
+    &:hover {}
 }
 
 /* Religional History css*/
 
-.ReligionalHistory {
+.ReligionalHistory a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 18px;
-
-    &:hover {
-        background-color: var(--white);
-    }
-}
-
-/* === charan history css === */
-
-.history-charan a {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 5px;
-    width: 200px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-
-    &:hover {
-        background-color: var(--white);
-    }
 }
 
 /* for-artist-css */
@@ -362,10 +327,6 @@ button{
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 5px;
-
-    &:hover {
-        background-color: var(--white);
-    }
 }
 
 /* user-info css */
@@ -377,34 +338,21 @@ button{
 
 /* login-btn css */
 
-.user-info .login-btn button {
+.user-info .login-btn button,
+.user-info .Logout button {
     font-size: 18px;
 
     &:hover {
-        background-color: var(--white);
         border-radius: 7px;
         max-width: 100px;
     }
 }
 
-/* logout css */
-
-.user-info .Logout button {
-    font-size: 18px;
-    border: none;
-    background: none;
-
-    &:hover {
-        background-color: var(--white);
-        border-radius: 7px;
-    }
-}
-
 /* account css */
 
-.user-info .account a {
+.user-info .account a,
+.user-info .share button {
     border-radius: 7px;
-    max-width: 100px;
 
     &:hover {
         background-color: var(--white);
@@ -419,8 +367,4 @@ option {
     cursor: pointer;
     border-radius: 7px;
     font-size: 18px;
-
-    &:hover {
-        background-color: var(--white);
-    }
 }
