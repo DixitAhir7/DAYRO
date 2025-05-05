@@ -1,3 +1,5 @@
+import { preventloading } from '../functions-flie/functions.js'
+preventloading();
 // artists script //
 
 // while searching footer stays as it is
@@ -181,14 +183,3 @@ try {
     };
     loadImg();
 } catch (e) { console.log('while adding loading atribute:', e); }
-
-
-// function to prevent page from reloading
-
-function preventloading() {
-    const allatags = document.querySelectorAll('a');
-    allatags.forEach((tags) => {
-        tags.href = 'javascript:void()'
-    })
-}
-preventloading();

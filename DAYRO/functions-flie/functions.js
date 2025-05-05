@@ -145,32 +145,6 @@ export function firstTime() {
     } catch (e) { console.log(e); }
 };
 
-// this is modal script
-export function popUp() {
-    try {
-        const gettingmodal = document.getElementById('loginModal').style.display
-        document.addEventListener("DOMContentLoaded", () => {
-
-            if (localStorage.getItem('modalOpen') === 'true') { gettingmodal = 'block'; }
-            else { document.getElementById('loginModal').style.display = 'none'; }
-
-            document.querySelectorAll('.login-btn').forEach(button => {
-                button.addEventListener('click', () => {
-                    document.getElementById('loginModal').style.display = 'block';
-                    localStorage.setItem('modalOpen', 'true');
-                });
-            });
-
-            document.querySelector('.close').addEventListener('click', () => {
-                document.getElementById('loginModal').style.display = 'none';
-                localStorage.setItem('modalOpen', 'false');
-            });
-        });
-    } catch (e) {
-        console.warn(e);
-    }
-};
-
 // logout function
 const logoutButton = document.querySelector('.Logout button');
 
@@ -237,4 +211,4 @@ export function addhoverbackground() {
             elements.style.backgroundColor = '';
         });
     })
-}
+};
