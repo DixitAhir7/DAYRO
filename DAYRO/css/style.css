@@ -90,6 +90,101 @@ button {
     z-index: 1001;
 }
 
+/* Modal Overlay */
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 9999;
+    left: 600px;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Modal Content */
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem 2rem 2rem 2rem;
+    width: 350px;
+    max-width: 90vw;
+    position: relative;
+    animation: popIn 0.2s cubic-bezier(.68, -0.55, .27, 1.55);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 38px;
+    right: 22px;
+    font-size: 1.7rem;
+    color: #e11d48;
+    cursor: pointer;
+}
+
+/* Heading */
+.modal-content h2 {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+/* Form Background */
+.loginbg {
+    background: linear-gradient(135deg, #f0f4f8 60%, #e0e7ef 100%);
+    border-radius: 12px;
+    padding: 1.5rem 1rem;
+}
+
+/* Form Inputs */
+#loginForm input[type="text"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0 1rem 0;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.1s, box-shadow 0.1s;
+
+    &:focus {
+        border: 1.5px solid #6366f1;
+        outline: none;
+        box-shadow: 0 0 0 2px #6366f133;
+    }
+}
+
+/* Buttons */
+#loginForm .submit,
+#loginForm #reset {
+    width: 48%;
+    padding: 0.7rem 0;
+    margin: 0.5rem 1% 0 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#loginForm .submit {
+    background: orange;
+}
+
 /* nav-list css  */
 /* about css */
 
@@ -177,14 +272,13 @@ button {
 
 /* login-btn css */
 
-.user-info .login-btn button,
+.user-info .login-btn a,
 .user-info .Logout button {
     font-size: 18px;
 
     &:hover {
         background-color: var(--white);
         border-radius: 7px;
-        max-width: 100px;
     }
 }
 

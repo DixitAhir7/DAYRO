@@ -66,6 +66,25 @@ export class Loginvalidation {
     }
 };
 
+// function for loginmodal
+export function popup() {
+    const modal = document.querySelector('#loginModal');
+    const sidebarloginbtn = document.querySelector('#sidebarmodal');
+    const sidebarclosebtn = document.querySelector('.close');
+
+    sidebarloginbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'block';
+        localStorage.setItem('modal', 'opened');
+    })
+
+    sidebarclosebtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'none';
+        localStorage.setItem('modal', 'closed');
+    })
+}
+
 // this script is for sidebar
 
 export function sidebarBtn() {
