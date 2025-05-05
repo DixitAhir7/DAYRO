@@ -112,7 +112,7 @@ button {
     padding: 2.5rem 2rem 2rem 2rem;
     width: 350px;
     position: relative;
-    animation: popIn 0.1s cubic-bezier(.68, -0.55, .27, 1.55);
+    animation: popIn 0.2s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
 @keyframes popIn {
@@ -159,7 +159,7 @@ button {
     border: 1px solid #cbd5e1;
     border-radius: 8px;
     font-size: 1rem;
-    transition: border 0.1s, box-shadow 0.1s;
+    transition: border 0.2s, box-shadow 0.2s;
 
     &:focus {
         border: 1.5px solid #6366f1;
@@ -168,7 +168,7 @@ button {
     }
 }
 
-/* Buttons */
+/* loginout buttons */
 #loginForm .submit,
 #loginForm #reset {
     width: 48%;
@@ -181,8 +181,16 @@ button {
     cursor: pointer;
 }
 
+#loginForm .submit:hover {
+    background-color: var(--kesri);
+}
+
 #loginForm .submit {
-    background: orange;
+    background: white;
+}
+
+#loginForm #reset:hover {
+    background-color: white;
 }
 
 /* nav-list css  */
