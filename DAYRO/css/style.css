@@ -101,6 +101,7 @@ button {
     top: 0;
     width: 100vw;
     height: 100vh;
+    backdrop-filter: blur(6px);
 }
 
 /* Modal Content */
@@ -110,9 +111,8 @@ button {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     padding: 2.5rem 2rem 2rem 2rem;
     width: 350px;
-    max-width: 90vw;
     position: relative;
-    animation: popIn 0.2s cubic-bezier(.68, -0.55, .27, 1.55);
+    animation: popIn 0.1s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
 @keyframes popIn {
