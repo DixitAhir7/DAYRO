@@ -1,0 +1,57 @@
+/* @media (max-width:576px) {
+    .sidebar {
+        width: 150px;
+    }
+} */
+
+/* media for login modal */
+
+@media (max-width: 1200px),
+(max-width:1250px),
+(max-width:1300px) {
+    .modal {
+        left: 290px;
+        top: 0;
+        width: 39vw;
+        height: 100vh;
+    }
+}
+
+@media (max-width: 992px) {
+    .modal {
+        left: 200px;
+        top: 0;
+        width: 48vw;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .modal-content {
+        width: 100%;
+        padding: 2rem 1.2rem 1.5rem;
+        border-radius: 12px;
+    }
+
+    .close {
+        top: 20px;
+        right: 22px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .modal {
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        padding: 1rem;
+    }
+
+    .modal-content {
+        width: 100%;
+        height: auto;
+        padding: 2rem 1.2rem 1.5rem;
+        border-radius: 12px;
+    }
+}

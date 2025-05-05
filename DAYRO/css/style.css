@@ -90,18 +90,18 @@ button {
     z-index: 1001;
 }
 
-/* Modal Overlay */
+/* login modal css */
+
 .modal {
     display: flex;
     align-items: center;
     justify-content: center;
     position: fixed;
     z-index: 9999;
-    left: 600px;
-    top: 0;
+    left: 540px;
+    top: 40px;
     width: 100vw;
     height: 100vh;
-    backdrop-filter: blur(6px);
 }
 
 /* Modal Content */
@@ -110,9 +110,10 @@ button {
     border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     padding: 2.5rem 2rem 2rem 2rem;
-    width: 350px;
+    width: 450px;
+    height: 600px;
     position: relative;
-    animation: popIn 0.2s cubic-bezier(.68, -0.55, .27, 1.55);
+    animation: popIn 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
 @keyframes popIn {
@@ -131,9 +132,9 @@ button {
 .close {
     position: absolute;
     top: 38px;
-    right: 22px;
+    right: 39px;
     font-size: 1.7rem;
-    color: #e11d48;
+    color: #d70b37;
     cursor: pointer;
 }
 
@@ -145,7 +146,7 @@ button {
 
 /* Form Background */
 .loginbg {
-    background: linear-gradient(135deg, #f0f4f8 60%, #e0e7ef 100%);
+    background-color: rgba(128, 128, 128, 0.404);
     border-radius: 12px;
     padding: 1.5rem 1rem;
 }
@@ -154,7 +155,7 @@ button {
 #loginForm input[type="text"],
 #loginForm input[type="password"] {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.5rem 0.8rem;
     margin: 0.5rem 0 1rem 0;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
@@ -172,7 +173,7 @@ button {
 #loginForm .submit,
 #loginForm #reset {
     width: 48%;
-    padding: 0.7rem 0;
+    padding: 0.5rem 0.6rem;
     margin: 0.5rem 1% 0 0;
     border: none;
     border-radius: 8px;

@@ -1,10 +1,11 @@
+import { addanimationclass } from '../functions-flie/functions.js';
+addanimationclass();
 // purpose modal script
 
 try {
     function openPurposeModal() {
         const purposeModal = document.querySelector('.btnmodal');
         const openPurposeModal = document.querySelector('.my-purpose');
-        const forAnimationdiv = document.querySelector('.purpose-modal');
 
         purposeModal.addEventListener('click', (e) => {
             e.preventDefault();
@@ -12,7 +13,6 @@ try {
 
             if (openPurposeModal.classList.contains('active')) {
                 document.body.classList.add('modal-open');
-                forAnimationdiv.classList.add('animate__backInDown')
                 localStorage.setItem('purposemodal', 'open');
             } else {
                 document.body.classList.remove('modal-open');
@@ -46,19 +46,3 @@ try {
 } catch (e) {
     console.warn('while opening modal:', e);
 }
-
-// function for adding animation class
-// *checks html elements
-function addanimationclass() {
-    document.querySelectorAll('*').forEach(el => {
-        for (let cls of el.classList) {
-            if (cls.startsWith('animate__')) {
-                el.classList.add('animate__animated');
-                break;
-            }
-        }
-    });
-}
-
-addanimationclass();
-

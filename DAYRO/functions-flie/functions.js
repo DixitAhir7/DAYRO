@@ -231,3 +231,16 @@ export function addhoverbackground() {
         });
     })
 };
+
+// function for adding animation class
+// *checks html elements
+export function addanimationclass() {
+    document.querySelectorAll('*').forEach(el => {
+        for (let cls of el.classList) {
+            if (cls.startsWith('animate__')) {
+                el.classList.add('animate__animated');
+                break;
+            }
+        }
+    });
+}

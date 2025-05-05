@@ -1,28 +1,26 @@
-import { preventloading } from '../functions-flie/functions.js'
-preventloading();
 // artists script //
 
 // while searching footer stays as it is
-function positionapplywhensearch() {
-    try {
-        const inputSearch = document.querySelector('input[type="text"]');
-        const footer = document.querySelector("footer");
+// function positionapplywhensearch() {
+//     try {
+//         const inputSearch = document.querySelector('input[type="text"]');
+//         const footer = document.querySelector("footer");
 
-        inputSearch.addEventListener("input", () => {
-            const value = inputSearch.value.trim();
+//         inputSearch.addEventListener("input", () => {
+//             const value = inputSearch.value.trim();
 
-            if (value) {
-                footer.style.position = "fixed";
-                footer.style.bottom = "0";
-                footer.style.width = "100%";
-            } else {
-                footer.style.position = "static";
-            }
-        });
-    } catch (e) {
-        console.log(e);
-    }
-};
+//             if (value) {
+//                 footer.style.position = "fixed";
+//                 footer.style.bottom = "0";
+//                 footer.style.width = "100%";
+//             } else {
+//                 footer.style.position = "static";
+//             }
+//         });
+//     } catch (e) {
+//         console.log(e);
+//     }
+// };
 
 // positionapplywhensearch();
 
@@ -66,7 +64,6 @@ function displayImages() {
 };
 
 displayImages();
-
 
 // suggestions for searching artist
 
