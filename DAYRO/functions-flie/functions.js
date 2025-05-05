@@ -1,49 +1,70 @@
 // all validation here
 // login-form validation
 
-export function validatelogin() {
-    try {
-        const form = document.querySelector('#loginForm');
-        const emailInput = document.querySelector(".email");
-        const passwordInput = document.querySelector("input[type='password']");
-        const modal = document.getElementById("loginModal");
-        const loginBtn = document.querySelector('.user-info .login-btn');
-        const logoutBtn = document.querySelector('.user-info .Logout button');
+export class Loginvalidation {
 
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
+    getemail() {
+        const getemailvalue = localStorage.getItem('loginInfo');
+        if (getemailvalue) {
+            const parsedemail = JSON.parse(getemailvalue);
+            return parsedemail.emailInputstore
+        }
+    };
 
-            let emailValue = emailInput.value.trim();
-            let passwordValue = passwordInput.value.trim();
+    getvalue() {
+        return this.getemail()
+    };
 
-            // saving data and sending it to login-page
-            let obj = {
-                emailInputstore: emailValue,
-                passwordInputstore: passwordValue,
-            };
-            localStorage.setItem("loginInfo", JSON.stringify(obj));
 
-            // login-out buttons handling
-            if (localStorage.getItem('loginInfo')) {
-                loginBtn.style.display = "none";
-                logoutBtn.style.display = "block";
-            }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            const getlogininfo = localStorage.getItem('loginInfo')
-            if (getlogininfo) {
-                loginBtn.style.display = "none";
-                logoutBtn.style.display = "block";
-                localStorage.setItem('logout', 'added')
-            }
-        })
-        modal.style.display = "none";
-
-    } catch (error) {
-        console.error("Login error:", error.message);
+    getlogoutinfo() {
+        const logoutstore = localStorage.getItem('logout');
+        return logoutstore
     }
-}
+
+    validatelogin() {
+        try {
+            const form = document.querySelector('#loginForm');
+            const emailInput = document.querySelector(".email");
+            const passwordInput = document.querySelector("input[type='password']");
+            const modal = document.getElementById("loginModal");
+            const loginBtn = document.querySelector('.user-info .login-btn');
+            const logoutBtn = document.querySelector('.user-info .Logout button');
+
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+
+                let emailValue = emailInput.value.trim();
+                let passwordValue = passwordInput.value.trim();
+
+                // saving data and sending it to login-page
+                let obj = {
+                    emailInputstore: emailValue,
+                    passwordInputstore: passwordValue,
+                };
+                localStorage.setItem("loginInfo", JSON.stringify(obj));
+
+                // login-out buttons handling
+                if (localStorage.getItem('loginInfo')) {
+                    loginBtn.style.display = "none";
+                    logoutBtn.style.display = "block";
+                }
+            });
+
+            window.addEventListener('DOMContentLoaded', () => {
+                const getlogininfo = localStorage.getItem('loginInfo')
+                if (getlogininfo) {
+                    loginBtn.style.display = "none";
+                    logoutBtn.style.display = "block";
+                    localStorage.setItem('logout', 'added')
+                }
+            })
+            modal.style.display = "none";
+
+        } catch (error) {
+            console.error("Login error:", error.message);
+        }
+    }
+};
 
 // this script is for sidebar
 
@@ -59,7 +80,6 @@ export function sidebarBtn() {
             collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 sidebar.classList.remove('sidebar-collapse');
-
                 mainContent.classList.toggle('main-expand');
                 updateIcon();
                 savingstate();
@@ -72,7 +92,7 @@ export function sidebarBtn() {
                 } else {
                     localStorage.setItem('sidebar', 'expanded');
                 }
-            }
+            };
 
             // sidebar stays as it is on exploring to any page
             window.addEventListener('DOMContentLoaded', () => {
@@ -117,30 +137,22 @@ export function sidebarBtn() {
 export function firstTime() {
     try {
         document.addEventListener("DOMContentLoaded", () => {
-
             if (!localStorage.getItem("visited")) {
                 console.log("User visiting for the first time!");
                 localStorage.setItem("visited", "true");
-            } else {
-                console.log("Welcome back!");
-            }
+            } else { console.log("Welcome back!"); }
         });
-    } catch (e) {
-        console.log(e);
-    }
+    } catch (e) { console.log(e); }
 };
 
 // this is modal script
 export function popUp() {
     try {
+        const gettingmodal = document.getElementById('loginModal').style.display
         document.addEventListener("DOMContentLoaded", () => {
 
-            if (localStorage.getItem('modalOpen') === 'true') {
-                document.getElementById('loginModal').style.display = 'block';
-            } else {
-                document.getElementById('loginModal').style.display = 'none';
-
-            }
+            if (localStorage.getItem('modalOpen') === 'true') { gettingmodal = 'block'; }
+            else { document.getElementById('loginModal').style.display = 'none'; }
 
             document.querySelectorAll('.login-btn').forEach(button => {
                 button.addEventListener('click', () => {

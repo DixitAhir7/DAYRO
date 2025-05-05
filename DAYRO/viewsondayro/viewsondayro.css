@@ -9,7 +9,7 @@
 }
 
 .highlight.active {
-    color: rgb(255, 166, 0);
+    color: rgb(228, 153, 13);
     opacity: 1;
     transform: translateX(0);
 }
@@ -34,4 +34,14 @@
 .infoaboutviews,
 span {
     font-size: 25px;
+}
+
+/* buttons css of views */
+
+.btnsfordisplay button {
+    background-color: rgba(255, 166, 0, 0.867);
+
+    &:hover {
+        background-color: whitesmoke;
+    }
 }

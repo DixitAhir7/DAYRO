@@ -227,9 +227,17 @@ and cultural values through melodious expressions.
   content.style.display = "block";
 });
 
-// default suggestions in kalakr
+// viewsondayro: for appending views
 
-
-
+function appendview() {
+    const viewstextarea = document.querySelector('.usersviews textarea');
+    const displayhtml = document.querySelector('.displayuserviews p');
+    const textareavalue = viewstextarea.value.trim();
+    let deletedviewCount = localStorage.getItem('deletedview');
+    if (deletedviewCount > 1) {
+        displayhtml.innerHTML += `${textareavalue} <br>`;
+    }
+    localStorage.setItem('deletedview', (deletedviewCount));
+}
 
 </script>

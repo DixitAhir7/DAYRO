@@ -1,3 +1,6 @@
+import { Loginvalidation } from '../functions-flie/functions.js';
+import { Imageupload } from '../account-html/accountjs/acc.js';
+
 // user-views on dayro
 try {
     function submittingviews() {
@@ -11,6 +14,8 @@ try {
             if (textareavalue) {
                 displayhtml.innerHTML += `${textareavalue} <br>`;
                 displayhtml.style.display = 'block';
+                extractingemail();
+                extractingimage();
                 localStorage.setItem('deletedview', JSON.stringify(textareavalue));
                 viewstextarea.value = null;
             } else {
@@ -24,31 +29,20 @@ try {
     viewedit();
 } catch (e) { console.log('error while submitting views', e); };
 
-// function appendview() {
-//     // const getdeletedview = ;
-//     const viewstextarea = document.querySelector('.usersviews textarea');
-//     const displayhtml = document.querySelector('.displayuserviews p');
-//     const textareavalue = viewstextarea.value.trim();
-//     let deletedviewCount = localStorage.getItem('deletedview');
-
-//     deletedviewCount++;
-
-//     if (deletedviewCount > 1) {
-//         displayhtml.innerHTML += `${textareavalue} <br>`;
-//     }
-//     localStorage.setItem('deletedview', (deletedviewCount));
-// }
-
 // to delete the view
 function deleteviews() {
     const displayhtml = document.querySelector('.displayuserviews p');
     const viewstextarea = document.querySelector('.usersviews textarea');
     const deletebtn = document.querySelector('#deleteviews');
+    const atagforemail = document.querySelector('.displayuserviews a');
+    const imgtagforimage = document.querySelector('.displayuserviews img');
 
     deletebtn.addEventListener('click', (e) => {
         e.preventDefault();
         viewstextarea.value = null;
         displayhtml.innerHTML = '';
+        atagforemail.innerHTML = '';
+        imgtagforimage.style.display = 'none';
         localStorage.getItem('deletedview');
     })
 };
@@ -79,8 +73,45 @@ function viewedit() {
     submittingviews();
 }
 
-// animation for header
+// displaying email 
+function extractingemail() {
+    const atagforemail = document.querySelector('.displayuserviews a');
+    const useremail = new Loginvalidation();
+    useremail.getemail();
+    const emailvalue = useremail.getvalue();
+    // atagforemail.href = useremail;
+    atagforemail.innerHTML = emailvalue;
 
+    // if user haven't loggedin then show random names
+    const royalNames = ["Aryavir", "Rajendra", "Vikrant", "Samrat", "Mahadevan", "Yuvraj", "Raghunandan", "Veerendra", , "Suryadev", "Indrajeet", "Harshvardhan", "Karanveer", "Rudransh", "Adityanandan", "Parthiv", "Rajas", "Pradyumna", "Janardan", "Rajdeep", "Bhavya", "Pratikraj", "Kirtan", "Smitraj", "Jaydev", "Tirth", "Ramendra", "Bhishma", "Arindam", "Shatrughna", "Dasharath", "Suryansh", "Raghavendra", "KrishnaKant", "Vibhishan", "Vasudev", "Dhananjay", "Nakulraj", "Yudhveer", "Bharata", "Balaram", "Shreeval", "Vasuman", "Viduraj", "Achyut", "Aniruddh", "Shaurya", "Tejaswin", "Veeraj", "Rudraansh", "Rajhans", "Dheeraj", "Tanmayraj", "Veerang", "Aayansh", "Virendra", "Aryanraj", "Devraj", "Riyan", "Arnavraj", "Kavyansh", "Yuvansh", "Aviraj", "Niranjay", "Divyaraj", "Hemraj", "Rishiraj", "Shubhransh", "Mitradev", "Omraj", "Shravanraj", "Amarjeet", "Harinarayan", "Someshwar", "Devarshi", "Sahastrajit", "Manvendra", "Vrajraj", "Hridayraj", "Shivtej", "Govindraj"]
+
+    if (useremail.getlogoutinfo() && royalNames.length > 0) {
+        const randomIndex = Math.floor(Math.random() * royalNames.length);
+        const randomName = royalNames[randomIndex];
+        atagforemail.innerHTML = randomName;
+    } else {
+        const ptagforlogout = document.createElement('p');
+        ptagforlogout.className = 'nameerror';
+        document.body.appendChild(ptagforlogout);
+        ptagforlogout.innerHTML = "sorry i didn't find any names"
+        ptagforlogout.innerHTML = atagforemail.innerHTML;
+    }
+};
+
+
+// function for dispaly image in views
+function extractingimage() {
+    const imgtagforimage = document.querySelector('.displayuserviews img');
+    let extractimg = new Imageupload();
+    extractimg.displayimage();
+    if (extractimg) {
+        imgtagforimage.style.display = 'block';
+        // parse: converting data in js object
+        imgtagforimage.src = JSON.parse(localStorage.getItem('base64str'));
+    }
+};
+
+// animation for header
 const words = ['views', 'stories', 'thoughts'];
 const highlight = document.getElementById('dynamic-text');
 let index = 0;

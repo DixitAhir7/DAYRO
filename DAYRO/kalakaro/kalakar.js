@@ -8,7 +8,7 @@ function positionapplywhensearch() {
 
         inputSearch.addEventListener("input", () => {
             const value = inputSearch.value.trim();
-            
+
             if (value) {
                 footer.style.position = "fixed";
                 footer.style.bottom = "0";
@@ -181,3 +181,14 @@ try {
     };
     loadImg();
 } catch (e) { console.log('while adding loading atribute:', e); }
+
+
+// function to prevent page from reloading
+
+function preventloading() {
+    const allatags = document.querySelectorAll('a');
+    allatags.forEach((tags) => {
+        tags.href = 'javascript:void()'
+    })
+}
+preventloading();

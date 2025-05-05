@@ -103,8 +103,7 @@ button {
 
 #loginForm input:focus {
     outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 5px var(--accent);
+    border-color: orangered;
 }
 
 /* background-img for login page */
@@ -124,8 +123,7 @@ button {
 .modal-content {
     position: relative;
     z-index: 1;
-    background-color: white;
-    padding: 20px;
+    padding: 16px;
     border-radius: 10px;
 }
 
@@ -133,7 +131,7 @@ button {
 .submit,
 #reset {
     margin-top: 10px;
-    padding: 8px 24px;
+    padding: 6px 16px;
     border: none;
     border-radius: 10px;
     font-size: 1rem;
@@ -291,8 +289,6 @@ button {
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
-
-    &:hover {}
 }
 
 /* all artists css */
@@ -303,8 +299,6 @@ button {
     padding-top: 5px;
     padding-bottom: 5px;
     font-size: 18px;
-
-    &:hover {}
 }
 
 /* Religional History css*/
@@ -343,6 +337,7 @@ button {
     font-size: 18px;
 
     &:hover {
+        background-color: var(--white);
         border-radius: 7px;
         max-width: 100px;
     }
@@ -360,11 +355,20 @@ button {
 }
 
 /* translate css */
-
 .user-info .translate select,
 option {
     background: none;
     cursor: pointer;
     border-radius: 7px;
     font-size: 18px;
+
+    &:hover {
+        background-color: var(--white);
+    }
+}
+
+/* main-content css */
+
+main {
+    margin-left: 280px;
 }

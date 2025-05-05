@@ -1,7 +1,9 @@
-import { firstTime, popUp, sidebarBtn, validatelogin, translateguj, shareDayro, addhoverbackground } from "../functions-flie/functions.js";
+import { firstTime, popUp, sidebarBtn, Loginvalidation, translateguj, shareDayro, addhoverbackground } from "../functions-flie/functions.js";
 
 popUp();
-validatelogin()
+const useremail = new Loginvalidation();
+useremail.validatelogin();
+
 sidebarBtn();
 firstTime(); //user visiting first-time
 translateguj(); //translate fun
