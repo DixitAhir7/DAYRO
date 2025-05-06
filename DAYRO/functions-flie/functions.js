@@ -4,7 +4,7 @@
 export class Loginvalidation {
 
     getemail() {
-        const getemailvalue = localStorage.getItem('loginInfo');
+        const getemailvalue = localStorage.getItem('login');
         if (getemailvalue) {
             const parsedemail = JSON.parse(getemailvalue);
             return parsedemail.emailInputstore
@@ -32,6 +32,7 @@ export class Loginvalidation {
             const passworderror = document.querySelector('#passworderror');
             const passworderrorregex = document.querySelector('#passwordregex');
             const emailregexerror = document.querySelector('#emailregex');
+            const seepassword = document.querySelector('#toggleIcon');
 
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
@@ -41,8 +42,7 @@ export class Loginvalidation {
 
                 const obj = { emailvaluestore: emailValue, passwordValuestore: passwordValue };
                 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
-
+                // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
                 // email validation
                 if (!obj.emailvaluestore) {
@@ -55,29 +55,50 @@ export class Loginvalidation {
                     emailregexerror.style.display = 'block';
                 } else if (obj.emailvaluestore) {
                     emailerror.style.display = 'none';
+                    emailregexerror.style.display = 'none';
                 }
 
                 // password validation
                 if (!obj.passwordValuestore) {
                     passworderror.style.display = 'block';
                     passworderror.innerHTML = 'please set strong password'
-                } else if (!passwordRegex.test(obj.emailvaluestore)) {
-                    passworderror.innerHTML = '';
-                    passworderror.style.display = 'none';
-                    passworderrorregex.innerHTML = 'please include this:aA0@ 8-characters ';
-                    passworderrorregex.style.display = 'block';
                 } else if (obj.passwordValuestore) {
                     passworderror.style.display = 'none';
+                }
+
+                // conformation of logininfo
+                if (emailRegex.test(obj.emailvaluestore) && obj.passwordValuestore) {
+                    console.log('login succesful welcome');
+                    localStorage.setItem('login', JSON.stringify(obj.emailvaluestore));
+                    loginBtn.style.display = "none";
+                    logoutBtn.style.display = "block";
+                    localStorage.removeItem('logout');
+                }
+            });
+
+            // show password
+            seepassword.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pwdInput = passwordInput;
+                if (pwdInput.type === 'password') {
+                    pwdInput.type = 'text';
+                } else {
+                    pwdInput.type = 'password';
+                    seepassword.innerHTML = '👁️';
                 }
             });
 
             // on refresh
             window.addEventListener('DOMContentLoaded', () => {
-                const getlogininfo = localStorage.getItem('loginInfo')
+                const getlogininfo = localStorage.getItem('login')
+                const logoutinfo = localStorage.getItem('logout');
                 if (getlogininfo) {
                     loginBtn.style.display = "none";
                     logoutBtn.style.display = "block";
-                    localStorage.setItem('logout', 'added')
+                }
+                if (logoutinfo) {
+                    loginBtn.style.display = "block";
+                    logoutBtn.style.display = "none";
                 }
             })
             modal.style.display = "none";
@@ -87,6 +108,27 @@ export class Loginvalidation {
     }
 };
 
+// logout function
+function logouthandle() {
+    const loginBtn = document.querySelector('.user-info .login-btn');
+    const logoutButton = document.querySelector('.Logout button');
+    try {
+        logoutButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const userans_logout = prompt('are you sure? (yes,no)');
+            if (userans_logout === 'yes'.toLowerCase().trim()) {
+                loginBtn.style.display = 'block';
+                localStorage.setItem('logout', 'added')
+                localStorage.removeItem('login');
+                logoutButton.style.display = 'none';
+            }
+        })
+    } catch (e) {
+        console.log('logout button error:', e);
+    }
+}
+
+logouthandle()
 // function for loginmodal
 export function popup() {
     const modal = document.querySelector('#loginModal');
@@ -159,11 +201,11 @@ export function sidebarBtn() {
                 const isCollapsed = sidebar.classList.contains('sidebar-collapse');
 
                 if (isCollapsed) {
-                    collapseBtn.style.display = 'inline-block';
-                    closeBtn.style.display = 'none';
-                } else {
+                    collapseBtn.style.display = 'block';
+                    closeBtn.style.display = 'none'
+                } else if (!isCollapsed) {
                     collapseBtn.style.display = 'none';
-                    closeBtn.style.display = 'inline-block';
+                    closeBtn.style.display = 'block'
                 }
             }
         });
@@ -184,22 +226,6 @@ export function firstTime() {
         });
     } catch (e) { console.log(e); }
 };
-
-// logout function
-const logoutButton = document.querySelector('.Logout button');
-
-try {
-    logoutButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        const userans_logout = prompt('are you sure? (yes,no)');
-        if (userans_logout === 'yes'.toLowerCase()) {
-            localStorage.removeItem('loginInfo');
-        }
-    })
-
-} catch (e) {
-    console.log('logout button error:', e);
-}
 
 // manual translation
 const select = document.querySelector('select');

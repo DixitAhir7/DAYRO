@@ -85,7 +85,10 @@ try {
 
             const altdata = [];
 
-            if (!searchvalue) return;
+            if (!searchvalue) {
+                showsuggestions.style.display = 'none'
+                return
+            };
 
             img.forEach(images => {
                 const getdata = images.getAttribute('alt');

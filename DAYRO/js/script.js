@@ -11,4 +11,4 @@ translateguj(); //translate fun
 shareDayro(); //sharing functionlity
 addhoverbackground(); //hover background
 addanimationclass(); //animate css class auto
-themechange();
+themechange(); //dark theme

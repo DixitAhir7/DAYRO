@@ -37,10 +37,11 @@
 input[type=""] {
     border-radius: 10px;
     text-align: center;
+    width: 60%;
+    margin-left: 180px;
 }
 
 /* dropdown for kalakars css */
-
 .sort-artsits select,
 .sort-artsits input[type="submit"] {
     margin-top: 15px;
@@ -56,9 +57,9 @@ input[type=""] {
     position: absolute;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.83);
-    color: white; 
+    color: white;
     border-radius: 8px;
-    margin-left: 10px;
+    margin-left: 40%;
 }
 
 .show-suggestions div {

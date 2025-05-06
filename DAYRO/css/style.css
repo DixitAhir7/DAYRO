@@ -25,7 +25,8 @@ button {
     cursor: pointer;
     text-decoration: none;
 }
-a{
+
+a {
     color: black;
 }
 
@@ -181,6 +182,16 @@ button {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
+}
+
+/* see password css */
+.password input[type="password"] {
+    position: relative;
+}
+
+.password span {
+    position: absolute;
+    left: 80%;
 }
 
 #loginForm .submit:hover {

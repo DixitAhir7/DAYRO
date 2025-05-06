@@ -275,3 +275,13 @@ function suggestionDefault() {
 }
 suggestionDefault();
 </script>
+
+<!-- script for password regex -->
+<script>
+    else if (!passwordRegex.test(obj.emailvaluestore)) {
+                    passworderror.innerHTML = '';
+                    passworderror.style.display = 'none';
+                    passworderrorregex.innerHTML = 'please include this:aA0@ 8-characters ';
+                    passworderrorregex.style.display = 'block';
+                }
+</script>

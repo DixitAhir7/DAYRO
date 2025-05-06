@@ -61,8 +61,12 @@ requestdb.onsuccess = (e) => {
                 const deleteBtn = document.createElement('button');
                 deleteBtn.textContent = 'Delete';
                 deleteBtn.style.marginTop = '5px';
-                deleteBtn.addEventListener('click', () => deleteVideo(videoEntry.id, videoContainer));
-
+                deleteBtn.addEventListener('click', () => {
+                    const askusertodelete = prompt('are you sure?')
+                    if (askusertodelete.trim().toLowerCase() === 'yes') {
+                        deleteVideo(videoEntry.id, videoContainer)
+                    } else if (askusertodelete.trim().toLowerCase() === 'no') return;
+                })
                 videoContainer.appendChild(videoElem);
                 videoContainer.appendChild(deleteBtn);
                 videoSection.appendChild(videoContainer);
@@ -143,7 +147,6 @@ function deleteVideo(id, container) {
     const db = requestdb.result;
     const transaction = db.transaction('Data', 'readwrite');
     const store = transaction.objectStore('Data');
-
 
     // deleting based on stored id in indexdb
     const deleteRequest = store.delete(id);
