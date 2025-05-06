@@ -19,6 +19,6 @@ export function themechange() {
             }
         });
     } catch (e) {
-        console.log('error of dark theme:', e);
+        console.warn('error of dark theme:', e);
     }
 };
