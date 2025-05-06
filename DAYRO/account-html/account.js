@@ -2,7 +2,6 @@ import { Imageupload, deleteImage, updateImage, } from '../account-html/accountj
 
 // functions for useraccimages
 const accountimg = new Imageupload();
-accountimg.displayimage();
 accountimg.validImage();
 
 deleteImage();

@@ -1,8 +1,13 @@
 import { addanimationclass } from '../functions-flie/functions.js';
+import { themechange } from '../theme-js/theme.js';
 addanimationclass();
+themechange();
 // purpose modal script
 
 try {
+    const openPurposeModalDiv = document.querySelector('.my-purpose');
+    const savedModalState = localStorage.getItem('purposemodal');
+
     function openPurposeModal() {
         const purposeModal = document.querySelector('.btnmodal');
         const openPurposeModal = document.querySelector('.my-purpose');
@@ -12,37 +17,24 @@ try {
             openPurposeModal.classList.toggle('active');
 
             if (openPurposeModal.classList.contains('active')) {
-                document.body.classList.add('modal-open');
                 localStorage.setItem('purposemodal', 'open');
-            } else {
-                document.body.classList.remove('modal-open');
-                localStorage.setItem('purposemodal', 'closed');
-            }
+            } else { localStorage.setItem('purposemodal', 'closed'); }
         });
     }
 
     function closeModal() {
-        const openPurposeModal = document.querySelector('.my-purpose');
-        openPurposeModal.classList.remove('active');
-        document.body.classList.remove('modal-open');
-        localStorage.setItem('purposemodal', 'closed');
+        const closebtn = document.querySelector('.close-btn');
+        closebtn.addEventListener('click', (e) => {
+            const openPurposeModal = document.querySelector('.my-purpose');
+            openPurposeModal.classList.remove('active');
+            localStorage.setItem('purposemodal', 'closed');
+        })
     }
-
     window.addEventListener('DOMContentLoaded', () => {
-        const openPurposeModalDiv = document.querySelector('.my-purpose');
-        const savedModalState = localStorage.getItem('purposemodal');
-
-        if (savedModalState === 'open') {
-            openPurposeModalDiv.classList.add('active');
-            openPurposeModalDiv.classList.add('modal-open');
-        } else {
-            openPurposeModalDiv.classList.remove('active');
-            document.body.classList.remove('modal-open');
-        }
+        if (savedModalState === 'open') { openPurposeModalDiv.classList.add('active'); }
     });
 
     openPurposeModal();
+    closeModal()
 
-} catch (e) {
-    console.warn('while opening modal:', e);
-}
+} catch (e) { console.warn('while opening modal:', e); }

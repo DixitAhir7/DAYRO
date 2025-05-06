@@ -38,7 +38,7 @@ export class Imageupload {
                     };
                     reader.readAsDataURL(img);
                 });
-            });
+            }); ``
         } catch (e) { console.log('while uploading image', e); }
     }
     displayimage() {

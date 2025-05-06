@@ -33,6 +33,7 @@ const show_content = document.querySelector('.show-content');
 const iNPUT_SUBMIT = document.createElement('input');
 iNPUT_SUBMIT.type = "submit";
 iNPUT_SUBMIT.value = "Search";
+iNPUT_SUBMIT.style.borderRadius = '10px'
 form.appendChild(iNPUT_SUBMIT);
 
 
@@ -54,6 +55,9 @@ function displayImages() {
                     found = true;
                 } else {
                     divImg.style.display = "none";
+                    // const errortag = document.createElement('p');
+                    // errortag.className = 'searcherror';
+                    // document.body.appendChild(errortag);
                 }
             });
             !found ? result.style.display = 'block' : 'none';
@@ -75,7 +79,8 @@ try {
 
         inputSearchsuggestion.addEventListener('input', (e) => {
             e.preventDefault();
-            const searchvalue = inputSearchsuggestion.value.toLowerCase().trim();
+            showsuggestions.style.display = 'block';
+            let searchvalue = inputSearchsuggestion.value.toLowerCase().trim();
             showsuggestions.innerHTML = "";
 
             const altdata = [];
@@ -100,48 +105,23 @@ try {
                 suggestion.addEventListener('click', () => {
                     inputSearchsuggestion.value = match;
                     showsuggestions.innerHTML = "";
+                    showsuggestions.style.display = 'none'
                 });
                 showsuggestions.appendChild(suggestion);
             })
+
+            document.addEventListener('click', (event) => {
+                if (!showsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) {
+                    showsuggestions.innerHTML = '';
+                    showsuggestions.style.display = 'none';
+                    searchvalue.value = '';
+                }
+            });
         });
     }
 
     showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };
-
-// default suggestions in search
-
-function suggestionDefault() {
-    const defaultsuggestions = document.querySelector('.default-suggestions');
-    const inputSearchsuggestion = document.querySelector('input[type="text"]');
-
-    inputSearchsuggestion.addEventListener('focus', () => {
-        const imagesalt = document.querySelectorAll('img');
-        defaultsuggestions.innerHTML = '';
-        imagesalt.forEach((imgdata) => {
-            const getalt = imgdata.getAttribute('alt');
-            if (getalt) {
-                const suggestionItem = document.createElement('div');
-                suggestionItem.textContent = getalt;
-                suggestionItem.addEventListener('click', () => {
-                    inputSearchsuggestion.value = getalt;
-                });
-                defaultsuggestions.appendChild(suggestionItem);
-                defaultsuggestions.style.maxHeight = '350px';
-                defaultsuggestions.style.overflowY = 'auto';
-            }
-        });
-    });
-
-    // when i click outside it should remove and after found also...
-    document.addEventListener('click', (event) => {
-        if (!defaultsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) {
-            defaultsuggestions.innerHTML = '';
-        }
-    });
-}
-// suggestionDefault();
-
 
 // script for sorting based on type of artists
 

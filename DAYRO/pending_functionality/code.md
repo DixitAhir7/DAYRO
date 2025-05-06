@@ -241,3 +241,37 @@ function appendview() {
 }
 
 </script>
+
+
+<!-- script for default suggestions -->
+
+<script>
+    // default suggestions in search
+
+function suggestionDefault() {
+    const defaultsuggestions = document.querySelector('.default-suggestions');
+    const inputSearchsuggestion = document.querySelector('input[type="text"]');
+
+    inputSearchsuggestion.addEventListener('focus', () => {
+        const imagesalt = document.querySelectorAll('img');
+        defaultsuggestions.innerHTML = '';
+        imagesalt.forEach((imgdata) => {
+            const getalt = imgdata.getAttribute('alt');
+            if (getalt) {
+                const suggestionItem = document.createElement('div');
+                suggestionItem.textContent = getalt;
+                suggestionItem.addEventListener('click', () => {
+                    inputSearchsuggestion.value = getalt;
+                });
+                defaultsuggestions.appendChild(suggestionItem);
+                defaultsuggestions.style.maxHeight = '350px';
+                defaultsuggestions.style.overflowY = 'auto';
+            }
+        });
+    });
+
+    // when i click outside it should remove and after found also...
+
+}
+suggestionDefault();
+</script>

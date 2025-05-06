@@ -25,6 +25,9 @@ button {
     cursor: pointer;
     text-decoration: none;
 }
+a{
+    color: black;
+}
 
 ul,
 li {
@@ -72,7 +75,6 @@ button {
 .sidebar {
     position: fixed;
     z-index: 100;
-    pointer-events: auto;
     background-color: var(--kesri);
     height: 100vh;
     width: 250px;

@@ -7,6 +7,7 @@
 img {
     width: 100%;
 }
+
 /*  main heading css  */
 
 .main-heading h2 {
@@ -31,27 +32,6 @@ img {
     margin-bottom: 20px;
 }
 
-
-/* bhajan-santvani card css */
-
-.image-card {
-    position: relative;
-}
-
-.card-body {
-    position: absolute;
-    top: 53%;
-}
-
-.image-card-2 {
-    position: relative;
-}
-
-.card-body-2 {
-    position: absolute;
-    top: 70%;
-}
-
 /* my-purpose modal css */
 
 .my-purpose {
@@ -72,10 +52,6 @@ img {
 .my-purpose.active {
     visibility: visible;
     opacity: 1;
-}
-
-body.modal-open {
-    overflow: hidden;
 }
 
 .purpose-modal {

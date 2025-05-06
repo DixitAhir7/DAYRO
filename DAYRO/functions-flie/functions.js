@@ -223,6 +223,7 @@ export function addhoverbackground() {
         elements.addEventListener('mouseenter', () => {
             elements.style.color = 'black';
             elements.style.backgroundColor = 'white';
+            elements.style.borderRadius = '7px';
         });
 
         elements.addEventListener('mouseleave', () => {

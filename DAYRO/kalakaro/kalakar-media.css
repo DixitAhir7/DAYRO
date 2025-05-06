@@ -1,27 +1,17 @@
 /* this media-querry artists */
 @media (max-width:400px) {
-    .kalakro .artist-img {
-        width: 50%;
-    }
-
     .kalakro .artist-img img {
-        width: 100px;
-        height: 65px;
-    }
-}
-
-
-@media (max-width:600px) {
-    .hasya-kalakar .artist-img {
-        width: 50%;
-    }
-
-    .hasya-kalakar .artist-img img {
-        width: 220px;
-        height: 200px;
+        width: 140px;
+        height: 130px;
     }
 
     .artists-content a {
-        text-align: start;
+        font-size: 16px;
+    }
+}
+
+@media (max-width:576px) {
+    .kalakro .artist-img {
+        width: 50%;
     }
 }
