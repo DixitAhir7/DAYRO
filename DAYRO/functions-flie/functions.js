@@ -15,7 +15,6 @@ export class Loginvalidation {
         return this.getemail()
     };
 
-
     getlogoutinfo() {
         const logoutstore = localStorage.getItem('logout');
         return logoutstore
@@ -25,31 +24,54 @@ export class Loginvalidation {
         try {
             const form = document.querySelector('#loginForm');
             const emailInput = document.querySelector(".email");
-            const passwordInput = document.querySelector("input[type='password']");
+            const passwordInput = document.querySelector("#loginModal input[type='password']");
             const modal = document.getElementById("loginModal");
             const loginBtn = document.querySelector('.user-info .login-btn');
             const logoutBtn = document.querySelector('.user-info .Logout button');
+            const emailerror = document.querySelector('#emailerror');
+            const passworderror = document.querySelector('#passworderror');
+            const passworderrorregex = document.querySelector('#passwordregex');
+            const emailregexerror = document.querySelector('#emailregex');
 
             form.addEventListener("submit", function (event) {
                 event.preventDefault();
 
-                let emailValue = emailInput.value.trim();
-                let passwordValue = passwordInput.value.trim();
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value.trim();
 
-                // saving data and sending it to login-page
-                let obj = {
-                    emailInputstore: emailValue,
-                    passwordInputstore: passwordValue,
-                };
-                localStorage.setItem("loginInfo", JSON.stringify(obj));
+                const obj = { emailvaluestore: emailValue, passwordValuestore: passwordValue };
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
-                // login-out buttons handling
-                if (localStorage.getItem('loginInfo')) {
-                    loginBtn.style.display = "none";
-                    logoutBtn.style.display = "block";
+
+                // email validation
+                if (!obj.emailvaluestore) {
+                    emailerror.style.display = 'block';
+                    emailerror.innerHTML = 'please enter valid email'
+                } else if (!emailRegex.test(obj.emailvaluestore)) {
+                    emailerror.innerHTML = '';
+                    emailerror.style.display = 'none';
+                    emailregexerror.innerHTML = 'please check your email ex:royal@gmail.com';
+                    emailregexerror.style.display = 'block';
+                } else if (obj.emailvaluestore) {
+                    emailerror.style.display = 'none';
+                }
+
+                // password validation
+                if (!obj.passwordValuestore) {
+                    passworderror.style.display = 'block';
+                    passworderror.innerHTML = 'please set strong password'
+                } else if (!passwordRegex.test(obj.emailvaluestore)) {
+                    passworderror.innerHTML = '';
+                    passworderror.style.display = 'none';
+                    passworderrorregex.innerHTML = 'please include this:aA0@ 8-characters ';
+                    passworderrorregex.style.display = 'block';
+                } else if (obj.passwordValuestore) {
+                    passworderror.style.display = 'none';
                 }
             });
 
+            // on refresh
             window.addEventListener('DOMContentLoaded', () => {
                 const getlogininfo = localStorage.getItem('loginInfo')
                 if (getlogininfo) {
@@ -59,7 +81,6 @@ export class Loginvalidation {
                 }
             })
             modal.style.display = "none";
-
         } catch (error) {
             console.error("Login error:", error.message);
         }
