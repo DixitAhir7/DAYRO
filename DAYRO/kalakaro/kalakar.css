@@ -33,12 +33,10 @@
 
 /* search css */
 
-.search-sec form input[type="text"],
-input[type=""] {
+
+.search-sec form input[type="text"] {
     border-radius: 10px;
     text-align: center;
-    width: 60%;
-    margin-left: 180px;
 }
 
 /* dropdown for kalakars css */

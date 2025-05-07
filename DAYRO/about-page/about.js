@@ -30,9 +30,6 @@ try {
             localStorage.setItem('purposemodal', 'closed');
         })
     }
-    window.addEventListener('DOMContentLoaded', () => {
-        if (savedModalState === 'open') { openPurposeModalDiv.classList.add('active'); }
-    });
 
     openPurposeModal();
     closeModal()

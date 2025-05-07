@@ -84,7 +84,6 @@ export class Loginvalidation {
                     pwdInput.type = 'text';
                 } else {
                     pwdInput.type = 'password';
-                    seepassword.innerHTML = '👁️';
                 }
             });
 
@@ -225,25 +224,6 @@ export function firstTime() {
             } else { console.log("Welcome back!"); }
         });
     } catch (e) { console.log(e); }
-};
-
-// manual translation
-const select = document.querySelector('select');
-const darktag = document.querySelector('.theme-mode a');
-
-export function translateguj() {
-    select.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        const selectvalue = select.value;
-        if (selectvalue == 'ગુજરાતી') {
-            darktag.textContent = 'શ્યામ';
-            localStorage.setItem('language', 'gujrati');
-        } else if (selectvalue === 'english') {
-            darktag.textContent = 'dark';
-            localStorage.setItem('language', 'english');
-        }
-    })
 };
 
 export function shareDayro() {

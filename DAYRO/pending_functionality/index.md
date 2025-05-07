@@ -26,7 +26,7 @@
 * lokSahitya,
 * Mandli
 
---> some great history of community:maharas,talvarras etc...
+--> some great history of community:maharas,talvarras etc..
 
 <!--review section-->
 

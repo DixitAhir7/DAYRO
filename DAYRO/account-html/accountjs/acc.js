@@ -25,8 +25,8 @@ export class Imageupload {
                     let img = imgInput.files[0];
                     const validTypes = ['image/jpeg', 'image/png', 'image/gif'];
 
-                    if (!img || !validTypes.includes(img.type)) {
-                        console.warn('Please choose a valid image (JPEG, PNG, GIF)');
+                    if (!img | !validTypes.includes(img.type)) {
+                        console.info('Please choose a valid image (JPEG, PNG, GIF)');
                         return;
                     }
 
@@ -38,7 +38,7 @@ export class Imageupload {
                     };
                     reader.readAsDataURL(img);
                 });
-            }); ``
+            });
         } catch (e) { console.log('while uploading image', e); }
     }
     displayimage() {

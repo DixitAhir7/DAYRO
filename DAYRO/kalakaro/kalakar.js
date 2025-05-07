@@ -48,16 +48,13 @@ function displayImages() {
 
             content.forEach((divImg) => {
                 const img = divImg.querySelector("img");
-                const altText = img.getAttribute('alt').toLowerCase();
+                const altText = img.getAttribute('alt').toLowerCase().trim();
 
                 if (altText.includes(search)) {
                     divImg.style.display = "block";
                     found = true;
                 } else {
                     divImg.style.display = "none";
-                    // const errortag = document.createElement('p');
-                    // errortag.className = 'searcherror';
-                    // document.body.appendChild(errortag);
                 }
             });
             !found ? result.style.display = 'block' : 'none';
@@ -96,7 +93,7 @@ try {
             });
 
             const filterednames = altdata.filter(data => {
-                return data.toLowerCase().includes(searchvalue.toLowerCase());
+                return data.toLowerCase().includes(searchvalue.toLowerCase().trim());
             });
 
             filterednames.slice(0, 5).forEach(match => {
@@ -117,7 +114,6 @@ try {
                 if (!showsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) {
                     showsuggestions.innerHTML = '';
                     showsuggestions.style.display = 'none';
-                    searchvalue.value = '';
                 }
             });
         });
