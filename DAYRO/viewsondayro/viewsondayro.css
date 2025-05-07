@@ -31,15 +31,20 @@
     transform: scaleX(1);
 }
 
+.usersviews textarea{
+    width: 30%;
+    height: 100px;
+}
+
+/* views textarea css */
 .infoaboutviews,
 span {
     font-size: 25px;
 }
 
 /* buttons css of views */
-
 .btnsfordisplay button {
-    background-color: rgba(255, 166, 0, 0.867);
+    background-color: rgba(255, 166, 0, 0.618);
 
     &:hover {
         background-color: whitesmoke;

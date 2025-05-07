@@ -96,7 +96,7 @@ try {
                 return data.toLowerCase().includes(searchvalue.toLowerCase().trim());
             });
 
-            filterednames.slice(0, 5).forEach(match => {
+            filterednames.slice(0, altdata.length).forEach(match => {
                 const suggestion = document.createElement('div');
                 suggestion.textContent = match;
                 suggestion.classList.add('suggestion-item');

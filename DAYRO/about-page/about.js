@@ -5,9 +5,6 @@ themechange();
 // purpose modal script
 
 try {
-    const openPurposeModalDiv = document.querySelector('.my-purpose');
-    const savedModalState = localStorage.getItem('purposemodal');
-
     function openPurposeModal() {
         const purposeModal = document.querySelector('.btnmodal');
         const openPurposeModal = document.querySelector('.my-purpose');
@@ -18,6 +15,7 @@ try {
 
             if (openPurposeModal.classList.contains('active')) {
                 localStorage.setItem('purposemodal', 'open');
+                document.body.classList.toggle('modal-open')
             } else { localStorage.setItem('purposemodal', 'closed'); }
         });
     }
@@ -30,7 +28,6 @@ try {
             localStorage.setItem('purposemodal', 'closed');
         })
     }
-
     openPurposeModal();
     closeModal()
 

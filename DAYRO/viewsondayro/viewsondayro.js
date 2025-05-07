@@ -1,5 +1,5 @@
 import { Loginvalidation } from '../functions-flie/functions.js';
-import { Imageupload } from '../account-html/accountjs/acc.js';
+import { Imageupload } from '../account/accountjs/acc.js';
 
 // user-views on dayro
 try {
@@ -83,7 +83,7 @@ function extractingemail() {
     atagforemail.innerHTML = emailvalue;
 
     // if user haven't loggedin then show random names
-    const royalNames = ["Aryavir", "Rajendra", "Vikrant", "Samrat", "Mahadevan", "Yuvraj", "Raghunandan", "Veerendra", , "Suryadev", "Indrajeet", "Harshvardhan", "Karanveer", "Rudransh", "Adityanandan", "Parthiv", "Rajas", "Pradyumna", "Janardan", "Rajdeep", "Bhavya", "Pratikraj", "Kirtan", "Smitraj", "Jaydev", "Tirth", "Ramendra", "Bhishma", "Arindam", "Shatrughna", "Dasharath", "Suryansh", "Raghavendra", "KrishnaKant", "Vibhishan", "Vasudev", "Dhananjay", "Nakulraj", "Yudhveer", "Bharata", "Balaram", "Shreeval", "Vasuman", "Viduraj", "Achyut", "Aniruddh", "Shaurya", "Tejaswin", "Veeraj", "Rudraansh", "Rajhans", "Dheeraj", "Tanmayraj", "Veerang", "Aayansh", "Virendra", "Aryanraj", "Devraj", "Riyan", "Arnavraj", "Kavyansh", "Yuvansh", "Aviraj", "Niranjay", "Divyaraj", "Hemraj", "Rishiraj", "Shubhransh", "Mitradev", "Omraj", "Shravanraj", "Amarjeet", "Harinarayan", "Someshwar", "Devarshi", "Sahastrajit", "Manvendra", "Vrajraj", "Hridayraj", "Shivtej", "Govindraj"]
+    const royalNames = ["Aryavir", "Rajendra", "Vikrant", "Samrat", "Mahadevan", "Raghunandan", "Veerendra", "Suryadev", "Indrajeet", "Harshvardhan", "Karanveer", "Rudransh", "Adityanandan", "Parthiv", "Rajas", "Pradyumna", "Janardan", "Rajdeep", "Bhavya", "Pratikraj", "Kirtan", "Smitraj", "Tirth", "Ramendra", "Bhishma", "Arindam", "Shatrughna", "Dasharath", "Suryansh", "Raghavendra", "KrishnaKant", "Vibhishan", "Vasudev", "Nakulraj", "Yudhveer", "Bharata", "Balaram", "Shreeval", "Vasuman", "Viduraj", "Achyut", "Shaurya", "Rudraansh", "Dheeraj", "Tanmayraj", "Veerang", "Aryanraj", "Devraj", "Arnavraj", "Divyaraj", "Shubhransh", "Mitradev", "Shravanraj", "Amarjeet", "Harinarayan", "Someshwar", "Devarshi", "Sahastrajit", "Vrajraj", "Hridayraj", "Shivtej"]
 
     if (useremail.getlogoutinfo() && royalNames.length > 0) {
         const randomIndex = Math.floor(Math.random() * royalNames.length);

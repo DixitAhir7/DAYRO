@@ -1,0 +1,26 @@
+/* media querry for views */
+
+@media (max-width:576px) {
+    .usersviews textarea {
+        /* field-sizing: content; */
+        width: 90%;
+        height: 60px;
+        text-align: center;
+        margin-left: 14px;
+    }
+
+    .btnsfordisplay {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btnsfordisplay button {
+        margin-left: 4px;
+    }
+
+    .infoaboutviews,
+    span {
+        font-size: 20px;
+        text-align: center;
+    }
+}

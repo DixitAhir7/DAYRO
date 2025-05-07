@@ -272,3 +272,19 @@ export function addanimationclass() {
         }
     });
 }
+
+// hiding text when sidebar collapsed
+export function labels() {
+    const allatags = document.querySelectorAll('a');
+    allatags.forEach((atags) => { atags.classList.add('labels') })
+};
+
+// adding fontweight 
+export function fontweight() {
+    const atags_font = document.querySelectorAll(' a');
+    atags_font.forEach((tag, index) => {
+        if (![0, 4, 5, 8, 9, 10].includes(Number(index))) {
+            tag.classList.add('fw-medium');
+        }
+    })
+};
