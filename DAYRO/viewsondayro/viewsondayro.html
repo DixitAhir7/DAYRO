@@ -32,14 +32,30 @@
         <div class="displayuserviews">
             <img src="" style="width: 60px; height: 50px; display: none; border-radius: 50%;" class="displayimg" alt="">
             <a class="displayemail text-black" href=""></a>
-            <p></p>
+            <p id="view"></p>
+
         </div>
 
         <div class="btnsfordisplay">
             <button id="viewssubmit">submit</button>
             <button id="deleteviews">delete</button>
-            <button id="undoview">undo</button>
             <button id="viewedit">edit</button>
+            <button id="viewreply">reply</button>
+        </div>
+
+        <!-- to reply -->
+
+        <div class="replydiv mt-3">
+            <form>
+                <textarea style="display: none;" placeholder="reply"></textarea>
+                <p id="viewreplytouser"></p>
+            </form>
+
+        </div>
+
+        <div class="replydivbtns">
+            <button id="submitreply">submit</button>
+            <button id="deletereply">delete</button>
         </div>
     </div>
 </body>

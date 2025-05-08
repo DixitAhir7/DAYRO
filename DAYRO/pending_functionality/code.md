@@ -285,3 +285,23 @@ suggestionDefault();
                     passworderrorregex.style.display = 'block';
                 }
 </script>
+
+
+<!-- script for views undo -->
+
+<script>
+    // user can bring back the deleted text
+function undoviews() {
+    const undobtn = document.querySelector('#undoview');
+    const displayhtml = document.querySelector('.displayuserviews p');
+
+    undobtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const getdeletedview = localStorage.getItem('deletedview');
+        if (getdeletedview) {
+            displayhtml.innerHTML = getdeletedview;
+        }
+    })
+};
+
+</script>

@@ -31,7 +31,7 @@
     transform: scaleX(1);
 }
 
-.usersviews textarea{
+textarea {
     width: 30%;
     height: 100px;
 }
@@ -43,10 +43,16 @@ span {
 }
 
 /* buttons css of views */
-.btnsfordisplay button {
+button {
     background-color: rgba(255, 166, 0, 0.618);
 
     &:hover {
         background-color: whitesmoke;
     }
+}
+
+/* reply buttons */
+
+.replydivbtns button {
+    display: none;
 }

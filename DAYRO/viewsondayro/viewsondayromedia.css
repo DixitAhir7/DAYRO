@@ -1,7 +1,9 @@
 /* media querry for views */
 
 @media (max-width:576px) {
-    .usersviews textarea {
+
+    .usersviews textarea,
+    .replydiv textarea {
         /* field-sizing: content; */
         width: 90%;
         height: 60px;
@@ -9,12 +11,14 @@
         margin-left: 14px;
     }
 
-    .btnsfordisplay {
+    .btnsfordisplay,
+    .replydivbtns {
         display: flex;
         justify-content: center;
     }
 
-    .btnsfordisplay button {
+    .btnsfordisplay button,
+    .replydivbtns button {
         margin-left: 4px;
     }
 

@@ -19,10 +19,6 @@
 }
 
 /* general css */
-img {
-    width: 100%;
-}
-
 a,
 button {
     cursor: pointer;
@@ -46,7 +42,6 @@ button {
 /* theme-mode css */
 
 .theme-mode {
-    margin-left: 25px;
     max-width: 100px;
 }
 

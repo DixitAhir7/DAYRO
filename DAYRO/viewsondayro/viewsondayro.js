@@ -14,10 +14,13 @@ try {
             if (textareavalue) {
                 displayhtml.innerHTML += `${textareavalue} <br>`;
                 displayhtml.style.display = 'block';
+                reply()
                 extractingemail();
                 extractingimage();
                 localStorage.setItem('deletedview', JSON.stringify(textareavalue));
                 viewstextarea.value = null;
+            } else if (!textareavalue) {
+                displayhtml.innerHTML = 'please enter something';
             } else {
                 return 'failed to add value'
             }
@@ -25,7 +28,6 @@ try {
     };
     submittingviews();
     deleteviews();
-    undoviews();
     viewedit();
 } catch (e) { console.log('error while submitting views', e); };
 
@@ -47,20 +49,6 @@ function deleteviews() {
     })
 };
 
-// user can bring back the deleted text
-function undoviews() {
-    const undobtn = document.querySelector('#undoview');
-    const displayhtml = document.querySelector('.displayuserviews p');
-
-    undobtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const getdeletedview = localStorage.getItem('deletedview');
-        if (getdeletedview) {
-            displayhtml.innerHTML = getdeletedview;
-        }
-    })
-};
-
 function viewedit() {
     const editbtn = document.querySelector('#viewedit');
     const viewstextarea = document.querySelector('.usersviews textarea');
@@ -70,7 +58,6 @@ function viewedit() {
         const getdeletedview = localStorage.getItem('deletedview');
         viewstextarea.value = getdeletedview;
     });
-    submittingviews();
 }
 
 // displaying email 
@@ -110,6 +97,52 @@ function extractingimage() {
         imgtagforimage.src = JSON.parse(localStorage.getItem('base64str'));
     }
 };
+
+
+// reply function
+function reply() {
+    const replybtn = document.querySelector('.btnsfordisplay #viewreply');
+    const replytextarea = document.querySelector('.replydiv textarea');
+    const deletereplybtn = document.querySelector('.replydivbtns #deletereply');
+    const submitreply = document.querySelector('.replydivbtns #submitreply');
+
+    replybtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        submitreply.style.display = 'inline-block';
+        replytextarea.style.display = 'block';
+        deletereplybtn.style.display = 'inline-block';
+    })
+}
+
+function addreply() {
+    const submitreply = document.querySelector('.replydivbtns #submitreply');
+    const displayreply = document.querySelector('.replydiv #viewreplytouser');
+    const replytextarea = document.querySelector('.replydiv textarea');
+    submitreply.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (replytextarea.value) {
+            displayreply.innerHTML = replytextarea.value;
+        }
+        deletereply();
+    })
+}
+
+addreply();
+
+// to delete reply
+function deletereply() {
+    const displayreply = document.querySelector('.replydiv #viewreplytouser');
+    const replytextarea = document.querySelector('.replydiv textarea');
+    const deletereplybtn = document.querySelector('.replydivbtns #deletereply');
+
+    deletereplybtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (replytextarea) {
+            replytextarea.value = '';
+            displayreply.innerHTML = '';
+        }
+    })
+}
 
 // animation for header
 const words = ['views', 'stories', 'thoughts'];

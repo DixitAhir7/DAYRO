@@ -1,5 +1,6 @@
 import { addanimationclass } from '../functions-flie/functions.js';
 import { themechange } from '../theme-js/theme.js';
+
 addanimationclass();
 themechange();
 // purpose modal script
