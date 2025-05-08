@@ -28,6 +28,7 @@ try {
     };
     submittingviews();
     deleteviews();
+    undoviews();
     viewedit();
 } catch (e) { console.log('error while submitting views', e); };
 
@@ -46,6 +47,20 @@ function deleteviews() {
         atagforemail.innerHTML = '';
         imgtagforimage.style.display = 'none';
         localStorage.getItem('deletedview');
+    })
+};
+
+// user can bring back the deleted text
+function undoviews() {
+    const undobtn = document.querySelector('#undoview');
+    const displayhtml = document.querySelector('.displayuserviews p');
+
+    undobtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const getdeletedview = localStorage.getItem('deletedview');
+        if (getdeletedview) {
+            displayhtml.innerHTML = getdeletedview;
+        }
     })
 };
 

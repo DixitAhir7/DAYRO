@@ -20,60 +20,65 @@
             <div class="row">
                 <!-- Sidebar -->
                 <div class="sidebar col-md-2" id="sidebar">
-                    <a class="logo fs-4 d-block" href="">D A Y R O</a>
+                    <div class="logo-div">
+                        <a class="logo fs-4 d-block" href="">D A Y R O</a>
+                    </div>
+
                     <nav>
-                        <div class="nav-list mt-4">
-                            <div class="readers d-flex justify-content-center mt-3">
-                                <a class="text-center " href="readers/reader.html">For Readers</a>
-                            </div>
+                        <div class="sidebarmaintags">
+                            <div class="nav-list mt-4">
+                                <div class="readers d-flex justify-content-center mt-3">
+                                    <a class="text-center" href="readers/reader.html">For Readers</a>
+                                </div>
 
-                            <div class="menu-item d-flex justify-content-center mt-3">
-                                <a class="text-center" href="kalakaro/kalakar.html">Kalakaro</a>
-                            </div>
+                                <div class="menu-item d-flex justify-content-center mt-3">
+                                    <a class="text-center" href="kalakaro/kalakar.html">Kalakaro</a>
+                                </div>
 
-                            <!-- for history of some communities:maharas,talvarras
+                                <!-- for history of some communities:maharas,talvarras
                             in this include city history too 
                             -->
-                            <div class="ReligionalHistory d-flex justify-content-center text-center mt-3"
-                                onclick="toggleDropdown()">
-                                <a class="">History</a>
-                            </div>
-                            <div id="historyDropdown" class="dropdown-content">
-                                <a href="community/communities.html">Community History</a>
-                                <a href="cityhistory/cityhistory.html">City History</a>
+                                <div class="ReligionalHistory d-flex justify-content-center text-center mt-3"
+                                    onclick="toggleDropdown()">
+                                    <a>History</a>
+                                </div>
+                                <div id="historyDropdown" class="dropdown-content">
+                                    <a href="community/communities.html">Community History</a>
+                                    <a href="cityhistory/cityhistory.html">City History</a>
 
-                                <script>
-                                    function toggleDropdown() {
-                                        document.getElementById("historyDropdown").classList.toggle("show");
-                                    }
-                                </script>
+                                    <script>
+                                        function toggleDropdown() {
+                                            document.getElementById("historyDropdown").classList.toggle("show");
+                                        }
+                                    </script>
+                                </div>
+
+                                <div class="for-artist d-flex justify-content-center text-center mt-3">
+                                    <a class="" href="artist/artists.html">For Artist</a>
+                                </div>
+
+                                <!-- in about all about this web -->
+                                <div class="about-page d-flex justify-content-center mt-3">
+                                    <i class="fas fa-info-circle about-icon"></i>
+                                    <a class="" href="about-page/about.html">About dayro</a>
+                                </div>
                             </div>
 
-                            <div class="for-artist d-flex justify-content-center text-center mt-3">
-                                <a class="" href="artist/artists.html">For Artist</a>
-                            </div>
-
-                            <!-- in about all about this web -->
-                            <div class="about-page d-flex justify-content-center mt-3">
-                                <i class="fas fa-info-circle about-icon"></i>
-                                <a class="" href="about-page/about.html">About dayro</a>
-                            </div>
-
-                            <hr class="mt-lg-5">
+                            <hr class="">
                             <div class="user-info">
                                 <div class="login-btn">
-                                    <a id="sidebarmodal" class="">Login</a>
+                                    <a id="sidebarmodal">Login</a>
                                 </div>
 
                                 <div class="Logout">
                                     <span>
-                                        <button style="display: none;" class="">Logout</button>
+                                        <button style="display: none;">Logout</button>
                                     </span>
                                 </div>
 
                                 <!-- in this i'll store user's account data :) -->
                                 <div class="account">
-                                    <a class="" href="account/acc.html">Account</a>
+                                    <a href="account/acc.html">Account</a>
                                 </div>
 
                                 <!-- for_share button -->
@@ -105,22 +110,41 @@
         <a class="sidebarToggle fs-4"><i class="bi bi-list sidebarBtn"></i></a>
     </div>
 
-    <!-- in this main-content or video will be added according to the plan -->
+    <!-- in this i'll add daily news about Gujrat's culture and everything if possible -->
     <main>
         <div class="main-content">
-            <div class="content">
-                <p>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi perferendis ab culpa esse, error
-                    eaque deserunt placeat eveniet soluta. Similique numquam cumque rerum minima! Vero adipisci quae,
-                    maxime nemo ipsum autem quisquam sapiente atque illum minus deserunt sequi, nulla perferendis alias
-                    vel! Tenetur beatae dignissimos, architecto doloribus qui alias reprehenderit fuga necessitatibus
-                    sed tempore soluta! Fuga pariatur modi quas dolore veritatis aliquid tempora perspiciatis, commodi
-                    dolor molestias ad deleniti ut at nihil necessitatibus minima vero fugit et nulla hic soluta.
-                    Nostrum minus explicabo commodi quia maiores assumenda, enim corrupti aperiam veniam vero, adipisci
-                    corporis eum consequatur excepturi et exercitationem. Assumenda.
-                </p>
+            <div class="images-content">
+                <img src="IMG/hq720.JPG">
+                <img src="IMG/New Project.jpg">
             </div>
         </div>
+        <style>
+            .images-content img {
+                width: 300px;
+                margin-top: 50px;
+            }
+
+            .images-content {
+                position: absolute;
+                top: 50%;
+            }
+
+            .main-content .images-content img {
+                position: relative;
+                transform: translateY(-50%);
+                animation: spin 12s linear infinite reverse;
+            }
+
+            @keyframes spin {
+                0% {
+                    left: -100px;
+                }
+
+                100% {
+                    left: 100vw;
+                }
+            }
+        </style>
     </main>
 
     <!--modal -->

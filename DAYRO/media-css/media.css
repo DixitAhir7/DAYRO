@@ -54,4 +54,37 @@
         padding: 2rem 1.2rem 1.5rem;
         border-radius: 12px;
     }
+
+    .sidebar {
+        width: 100%;
+        background-color: rgba(248, 166, 13, 0.925);
+    }
+
+    .logo-div {
+        display: flex;
+        justify-content: center;
+    }
+
+    main {
+        margin-left: 30px;
+    }
+
+    .display-icon .close-sidebar {
+        left: 320px;
+        margin-top: 10px;
+    }
+
+    .user-info .account,
+    .user-info .Logout,
+    .user-info .login-btn,
+    .user-info .share,
+    .user-info .translate {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-list a {
+        width: 250px !important;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
+    }
 }

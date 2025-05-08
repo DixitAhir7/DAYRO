@@ -59,6 +59,10 @@ button {
     padding: 0 !important;
 }
 
+.sidebar-collapse.overflow {
+    overflow: hidden;
+}
+
 /* text-disappear when sidebar-collapsed */
 
 .sidebar-collapse .labels {
@@ -300,7 +304,7 @@ button {
 /* account css */
 
 .user-info .account a,
-.user-info .share button {
+.user-info .share a {
     border-radius: 7px;
     font-size: 18px;
 

@@ -26,7 +26,7 @@ export class Loginvalidation {
             const emailInput = document.querySelector(".email");
             const passwordInput = document.querySelector("#loginModal input[type='password']");
             const modal = document.getElementById("loginModal");
-            const loginBtn = document.querySelector('.user-info .login-btn');
+            const loginBtn = document.querySelector('.user-info .login-btn a');
             const logoutBtn = document.querySelector('.user-info .Logout button');
             const emailerror = document.querySelector('#emailerror');
             const passworderror = document.querySelector('#passworderror');
@@ -71,7 +71,7 @@ export class Loginvalidation {
                     console.log('login succesful welcome');
                     localStorage.setItem('login', JSON.stringify(obj.emailvaluestore));
                     loginBtn.style.display = "none";
-                    logoutBtn.style.display = "block";
+                    logoutBtn.style.display = "inline-block";
                     localStorage.removeItem('logout');
                 }
             });
@@ -93,10 +93,10 @@ export class Loginvalidation {
                 const logoutinfo = localStorage.getItem('logout');
                 if (getlogininfo) {
                     loginBtn.style.display = "none";
-                    logoutBtn.style.display = "block";
+                    logoutBtn.style.display = "inline-block";
                 }
                 if (logoutinfo) {
-                    loginBtn.style.display = "block";
+                    loginBtn.style.display = "inline-block";
                     logoutBtn.style.display = "none";
                 }
             })
@@ -116,7 +116,7 @@ function logouthandle() {
             e.preventDefault();
             const userans_logout = prompt('are you sure? (yes,no)');
             if (userans_logout === 'yes'.toLowerCase().trim()) {
-                loginBtn.style.display = 'block';
+                loginBtn.style.display = 'inline';
                 localStorage.setItem('logout', 'added')
                 localStorage.removeItem('login');
                 logoutButton.style.display = 'none';
@@ -153,26 +153,23 @@ export function sidebarBtn() {
     try {
         const sidebar = document.querySelector('.sidebar');
         const collapseBtn = document.querySelector('.sidebarToggle');
-        const mainContent = document.querySelector('.main-content');
         const closeBtn = document.querySelector('.close-sidebar');
+        const overflowclass = 'overflow';
+        const sidebarclass = 'sidebar-collapse';
 
         document.addEventListener('DOMContentLoaded', () => {
             updateIcon();
             collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                sidebar.classList.remove('sidebar-collapse');
-                mainContent.classList.toggle('main-expand');
+                sidebar.classList.remove(sidebarclass);
+                sidebar.classList.remove(overflowclass);
                 updateIcon();
                 savingstate();
             });
 
             function savingstate() {
-                const issidebaropen = sidebar.classList.contains('sidebar-collapse');
-                if (issidebaropen) {
-                    localStorage.setItem('sidebar', 'collapsed');
-                } else {
-                    localStorage.setItem('sidebar', 'expanded');
-                }
+                const issidebaropen = sidebar.classList.contains(sidebarclass);
+                if (issidebaropen) { localStorage.setItem('sidebar', 'collapsed'); } else { localStorage.setItem('sidebar', 'expanded'); }
             };
 
             // sidebar stays as it is on exploring to any page
@@ -181,9 +178,11 @@ export function sidebarBtn() {
                 const sidebarState = localStorage.getItem('sidebar');
 
                 if (sidebarState === 'expanded') {
-                    sidebar.classList.remove('sidebar-collapse');
+                    sidebar.classList.remove(sidebarclass);
+                    sidebar.classList.remove(overflowclass);
                 } else {
-                    sidebar.classList.add('sidebar-collapse');
+                    sidebar.classList.add(sidebarclass);
+                    sidebar.classList.add(overflowclass);
                 }
                 updateIcon();
             });
@@ -191,20 +190,18 @@ export function sidebarBtn() {
             closeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 sidebar.classList.add('sidebar-collapse');
-                mainContent.classList.remove('main-expand');
                 updateIcon();
                 savingstate();
             });
 
             function updateIcon() {
                 const isCollapsed = sidebar.classList.contains('sidebar-collapse');
-
                 if (isCollapsed) {
-                    collapseBtn.style.display = 'block';
+                    collapseBtn.style.display = 'inline';
                     closeBtn.style.display = 'none'
                 } else if (!isCollapsed) {
                     collapseBtn.style.display = 'none';
-                    closeBtn.style.display = 'block'
+                    closeBtn.style.display = 'inline'
                 }
             }
         });
@@ -214,7 +211,6 @@ export function sidebarBtn() {
 };
 
 // when user enter first time!
-
 export function firstTime() {
     try {
         document.addEventListener("DOMContentLoaded", () => {
@@ -226,6 +222,8 @@ export function firstTime() {
     } catch (e) { console.log(e); }
 };
 
+
+// share function
 export function shareDayro() {
     const sharebtn = document.querySelector('#forshare');
     sharebtn.addEventListener('click', (E) => {
