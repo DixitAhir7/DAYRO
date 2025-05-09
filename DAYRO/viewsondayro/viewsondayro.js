@@ -12,6 +12,7 @@ try {
             e.preventDefault();
             const textareavalue = viewstextarea.value.trim();
             if (textareavalue) {
+                displayhtml.innerHTML = '';
                 displayhtml.innerHTML += `${textareavalue} <br>`;
                 displayhtml.style.display = 'block';
                 reply()

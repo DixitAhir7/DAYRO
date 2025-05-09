@@ -48,11 +48,13 @@ export class Loginvalidation {
                 if (!obj.emailvaluestore) {
                     emailerror.style.display = 'block';
                     emailerror.innerHTML = 'please enter valid email'
+                    emailerror.style.color = 'white'
                 } else if (!emailRegex.test(obj.emailvaluestore)) {
                     emailerror.innerHTML = '';
                     emailerror.style.display = 'none';
                     emailregexerror.innerHTML = 'please check your email ex:royal@gmail.com';
                     emailregexerror.style.display = 'block';
+                    emailregexerror.style.color = 'white'
                 } else if (obj.emailvaluestore) {
                     emailerror.style.display = 'none';
                     emailregexerror.style.display = 'none';
@@ -62,6 +64,7 @@ export class Loginvalidation {
                 if (!obj.passwordValuestore) {
                     passworderror.style.display = 'block';
                     passworderror.innerHTML = 'please set strong password'
+                    passworderror.style.color = 'white'
                 } else if (obj.passwordValuestore) {
                     passworderror.style.display = 'none';
                 }
@@ -80,11 +83,8 @@ export class Loginvalidation {
             seepassword.addEventListener('click', (e) => {
                 e.preventDefault();
                 const pwdInput = passwordInput;
-                if (pwdInput.type === 'password') {
-                    pwdInput.type = 'text';
-                } else {
-                    pwdInput.type = 'password';
-                }
+                if (pwdInput.type === 'password') pwdInput.type = 'text';
+                else pwdInput.type = 'password';
             });
 
             // on refresh
@@ -169,7 +169,8 @@ export function sidebarBtn() {
 
             function savingstate() {
                 const issidebaropen = sidebar.classList.contains(sidebarclass);
-                if (issidebaropen) { localStorage.setItem('sidebar', 'collapsed'); } else { localStorage.setItem('sidebar', 'expanded'); }
+
+                issidebaropen ? localStorage.setItem('sidebar', 'collapsed') : localStorage.setItem('sidebar', 'expanded')
             };
 
             // sidebar stays as it is on exploring to any page
@@ -277,11 +278,11 @@ export function labels() {
     allatags.forEach((atags) => { atags.classList.add('labels') })
 };
 
-// adding fontweight 
+// addingclass
 export function fontweight() {
     const atags_font = document.querySelectorAll(' a');
     atags_font.forEach((tag, index) => {
-        if (![0, 4, 5, 8, 9, 10].includes(Number(index))) {
+        if (![0, 4, 5, 8, 9, 10, 11, 12].includes(Number(index))) {
             tag.classList.add('fw-medium');
         }
     })

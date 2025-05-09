@@ -14,9 +14,9 @@ export class Imageupload {
             window.addEventListener('DOMContentLoaded', () => {
                 // Load saved image from localStorage
                 let savedImage = localStorage.getItem('base64str');
-                if (savedImage) {
-                    defaultImg.src = JSON.parse(savedImage);
-                }
+
+                savedImage ? defaultImg.src = JSON.parse(savedImage) : 'faild to add image'
+
                 // Click image to trigger file input
                 defaultImg.addEventListener('click', () => imgInput.click());
 
@@ -54,9 +54,8 @@ export function updateImage() {
     try {
         window.addEventListener('DOMContentLoaded', () => {
             let updatedImgsave = localStorage.getItem('updatedImg');
-            if (updatedImgsave) {
-                defaultImg.src = JSON.parse(updatedImgsave);
-            }
+            updatedImgsave ? defaultImg.src = JSON.parse(updatedImgsave) : 'failed to update image'
+
         });
 
         updateBtn.addEventListener('click', (e) => {

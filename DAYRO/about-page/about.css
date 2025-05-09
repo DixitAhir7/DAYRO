@@ -109,3 +109,15 @@ strong {
 .purpose-content span {
     font-weight: bold;
 }
+
+/* welcome-section */
+.welcome-section .welocme-message,
+.heading,
+.welcome-quote {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.width-33 {
+    width: 33%;
+}

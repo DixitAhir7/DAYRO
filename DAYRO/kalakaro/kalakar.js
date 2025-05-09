@@ -129,7 +129,6 @@ function sortingArtists() {
         const sortform = document.querySelector('.sortForm');
         const select = document.querySelector('#selected');
         const allartist = document.querySelectorAll('.artist-img');
-        // const footerPosition = document.querySelector('footer');
 
         sortform.addEventListener('submit', (e) => {
             e.preventDefault();
