@@ -1,29 +1,3 @@
-// artists script //
-
-// while searching footer stays as it is
-// function positionapplywhensearch() {
-//     try {
-//         const inputSearch = document.querySelector('input[type="text"]');
-//         const footer = document.querySelector("footer");
-
-//         inputSearch.addEventListener("input", () => {
-//             const value = inputSearch.value.trim();
-
-//             if (value) {
-//                 footer.style.position = "fixed";
-//                 footer.style.bottom = "0";
-//                 footer.style.width = "100%";
-//             } else {
-//                 footer.style.position = "static";
-//             }
-//         });
-//     } catch (e) {
-//         console.log(e);
-//     }
-// };
-
-// positionapplywhensearch();
-
 // searching scrpt for artists
 const form = document.querySelector('form');
 const inputSearch = form.querySelector('input[type="text"]');

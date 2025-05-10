@@ -24,77 +24,75 @@
                 </div>
 
                 <nav>
-                    <div class="sidebarmaintags">
-                        <div class="nav-list mt-4">
-                            <div class="readers d-flex justify-content-center mt-3">
-                                <a class="text-center" href="readers/reader.html">For Readers</a>
-                            </div>
-
-                            <div class="menu-item d-flex justify-content-center mt-3">
-                                <a class="text-center" href="kalakaro/kalakar.html">Kalakaro</a>
-                            </div>
-
-                            <!-- for history of some communities:maharas,talvarras
-                            in this include city history too 
-                            -->
-                            <div class="ReligionalHistory d-flex justify-content-center text-center mt-3"
-                                onclick="toggleDropdown()">
-                                <a>History</a>
-                            </div>
-                            <div id="historyDropdown" class="dropdown-content">
-                                <a href="community/communities.html">Community History</a>
-                                <a href="cityhistory/cityhistory.html">City History</a>
-
-                                <script>
-                                    function toggleDropdown() {
-                                        document.getElementById("historyDropdown").classList.toggle("show");
-                                    }
-                                </script>
-                            </div>
-
-                            <div class="for-artist d-flex justify-content-center text-center mt-3">
-                                <a class="" href="artist/artists.html">For Artist</a>
-                            </div>
-
-                            <!-- in about all about this web -->
-                            <div class="about-page d-flex justify-content-center mt-3">
-                                <i class="fas fa-info-circle about-icon"></i>
-                                <a class="" href="about-page/about.html">About dayro</a>
-                            </div>
+                    <div class="nav-list mt-4">
+                        <div class="readers d-flex justify-content-center mt-3">
+                            <a class="text-center" href="readers/reader.html">For Readers</a>
                         </div>
 
-                        <hr class="">
-                        <div class="user-info">
-                            <div class="login-btn">
-                                <a id="sidebarmodal">Login</a>
-                            </div>
+                        <div class="menu-item d-flex justify-content-center mt-3">
+                            <a class="text-center" href="kalakaro/kalakar.html">Kalakaro</a>
+                        </div>
 
-                            <div class="Logout">
-                                <span>
-                                    <button style="display: none;">Logout</button>
-                                </span>
-                            </div>
+                        <!-- for history of some communities:maharas,talvarras
+                            in this include city history too 
+                            -->
+                        <div class="ReligionalHistory d-flex justify-content-center text-center mt-3"
+                            onclick="toggleDropdown()">
+                            <a>History</a>
+                        </div>
+                        <div id="historyDropdown" class="dropdown-content">
+                            <a href="community/communities.html">Community History</a>
+                            <a href="cityhistory/cityhistory.html">City History</a>
 
-                            <!-- in this i'll store user's account data :) -->
-                            <div class="account">
-                                <a href="account/acc.html">Account</a>
-                            </div>
+                            <script>
+                                function toggleDropdown() {
+                                    document.getElementById("historyDropdown").classList.toggle("show");
+                                }
+                            </script>
+                        </div>
 
-                            <!-- for_share button -->
-                            <div class="share">
-                                <a title="sharing is caring" id="forshare">share</a>
-                            </div>
+                        <div class="for-artist d-flex justify-content-center text-center mt-3">
+                            <a class="" href="artist/artists.html">For Artist</a>
+                        </div>
 
-                            <!-- translator -->
-                            <div class="translate">
-                                <form>
-                                    <select class="border-0">
-                                        <option value="language">language</option>
-                                        <option class="guj" value="ગુજરાતી">ગુજરાતી</option>
-                                        <option value="english">english</option>
-                                    </select>
-                                </form>
-                            </div>
+                        <!-- in about all about this web -->
+                        <div class="about-page d-flex justify-content-center mt-3">
+                            <i class="fas fa-info-circle about-icon"></i>
+                            <a class="" href="about-page/about.html">About dayro</a>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="user-info">
+                        <div class="login-btn">
+                            <a id="sidebarmodal">Login</a>
+                        </div>
+
+                        <div class="Logout">
+                            <span>
+                                <button style="display: none;">Logout</button>
+                            </span>
+                        </div>
+
+                        <!-- in this i'll store user's account data :) -->
+                        <div class="account">
+                            <a href="account/acc.html">Account</a>
+                        </div>
+
+                        <!-- for_share button -->
+                        <div class="share">
+                            <a title="sharing is caring" id="forshare">share</a>
+                        </div>
+
+                        <!-- translator -->
+                        <div class="translate">
+                            <form>
+                                <select class="border-0">
+                                    <option value="language">language</option>
+                                    <option class="guj" value="ગુજરાતી">ગુજરાતી</option>
+                                    <option value="english">english</option>
+                                </select>
+                            </form>
                         </div>
                     </div>
                 </nav>
@@ -105,17 +103,29 @@
     <!-- sidebar icons -->
     <div class="display-icon">
         <a class="close-sidebar"><i class="bi bi-x-circle-fill"></i></a>
-        <a class="sidebarToggle fs-4"><i class="bi bi-list sidebarBtn"></i></a>
+        <a class="sidebarToggle fs-4"><i class="bi bi-list"></i></a>
     </div>
 
     <!-- in this i'll add daily news about Gujrat's culture and everything if possible -->
-    <!-- <main>
-        <div class="news-content">
-            <div class="image-text"><img src="" alt=""><span>first</span></div>
-            <div class="image-text"><img src="" alt=""><span>second</span></div>
-            <div class="image-text"><img src="" alt=""><span>third</span></div>
+    <main>
+        <div class="news-wrapper">
+            <div class="news-content">
+                <div class="image-text">
+                    <img src="" alt="">
+                    <span>first</span>
+                </div>
+                <div class="image-text">
+                    <img src="" alt="">
+                    <span>second</span>
+                </div>
+                <div class="image-text">
+                    <img src="" alt="">
+                    <span>third</span>
+                </div>
+            </div>
         </div>
-    </main> -->
+    </main>
+
 
     <!--login modal -->
     <div id="loginModal" class="modal">

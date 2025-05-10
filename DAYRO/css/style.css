@@ -82,12 +82,12 @@ button {
 }
 
 /* close button of sidebar */
-.display-icon .close-sidebar {
+.display-icon .close-sidebar i {
     position: absolute;
     top: 10px;
-    left: 255px;
+    left: 242px;
     font-size: 1.2rem;
-    z-index: 1001;
+    z-index: 999;
 }
 
 /* login modal css */
@@ -132,7 +132,7 @@ button {
 .close {
     position: absolute;
     top: 38px;
-    right: 39px;
+    right: 32px;
     font-size: 1.7rem;
     color: #d70b37;
     cursor: pointer;
@@ -333,21 +333,29 @@ main {
 }
 
 /* css for animation for news */
-.news-content {
-    position: absolute;
-    top: 100px;
-    display: flex;
-    justify-content: center;
+.news-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 320px;
 }
 
+.news-content {
+    display: flex;
+    animation: spin 12s linear infinite reverse;
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+}
+
+/* Each item */
 .image-text {
-    position: relative;
     width: 400px;
     height: 320px;
-    animation: spin 12s linear infinite reverse;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .image-text img {
@@ -362,10 +370,15 @@ main {
 
 @keyframes spin {
     0% {
-        left: -900px;
+        transform: translateX(-100%);
     }
 
     100% {
-        left: 100vw;
+        transform: translateX(100vw);
     }
+}
+
+html,
+body {
+    overflow-x: hidden;
 }

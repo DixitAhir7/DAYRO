@@ -30,7 +30,6 @@ export class Loginvalidation {
             const logoutBtn = document.querySelector('.user-info .Logout button');
             const emailerror = document.querySelector('#emailerror');
             const passworderror = document.querySelector('#passworderror');
-            const passworderrorregex = document.querySelector('#passwordregex');
             const emailregexerror = document.querySelector('#emailregex');
             const seepassword = document.querySelector('#toggleIcon');
 
@@ -42,7 +41,6 @@ export class Loginvalidation {
 
                 const obj = { emailvaluestore: emailValue, passwordValuestore: passwordValue };
                 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                // const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
 
                 // email validation
                 if (!obj.emailvaluestore) {

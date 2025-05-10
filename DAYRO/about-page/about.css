@@ -74,9 +74,9 @@ body.modal-open {
 }
 
 .purpose-header {
-    padding: 1.2rem;
-    font-size: 1.5rem;
-    background-color: green;
+    padding: 0.5rem;
+
+    background-color: rgb(0, 128, 0);
     color: white;
     display: flex;
     align-items: center;
@@ -84,6 +84,7 @@ body.modal-open {
 
 .purpose-header h3 {
     margin-top: 10px;
+    font-size: 1.4rem;
 }
 
 .purpose-content {
@@ -91,7 +92,7 @@ body.modal-open {
 }
 
 .close-btn {
-    font-size: 36px;
+    font-size: 31px;
     line-height: 1;
     background-color: transparent;
     border: none;
@@ -100,7 +101,6 @@ body.modal-open {
 
 .mission li,
 .folk-music p,
-.mission-section p,
 .purpose-content span,
 strong {
     font-size: 18px;
@@ -114,10 +114,26 @@ strong {
 .welcome-section .welocme-message,
 .heading,
 .welcome-quote {
-    padding: 8px;
+    padding: 30px;
     border-radius: 8px;
 }
 
 .width-33 {
-    width: 33%;
+    width: 20%;
+}
+
+.heading p,
+.welocme-message p,
+.welcome-quote p {
+    height: 100px;
+}
+
+footer {
+    background-color: rgb(81, 78, 78);
+    padding: 8px;
+    height: 100px;
+}
+
+.footer-section {
+    margin-top: 183px;
 }
