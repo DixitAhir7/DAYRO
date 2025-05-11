@@ -58,36 +58,20 @@
         height: 100vh;
     }
 
-    .logo-div {
+    .readers,
+    .kalakar,
+    .ReligionalHistory,
+    .for-artist,
+    .about-page {
         display: flex;
-        justify-content: center;
+        justify-content: start;
     }
 
-    main {
-        margin-left: 30px;
-    }
 
-    .display-icon .close-sidebar {
-        left: 320px;
-        margin-top: 10px;
-    }
-
-    .user-info .account,
-    .user-info .Logout,
-    .user-info .login-btn,
-    .user-info .share,
-    .user-info .translate {
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-list a {
-        width: 250px !important;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px !important;
-    }
-
-    main .news-content .image-text img {
-        width: 170px;
-        height: 150px;
+    .news-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        height: 320px;
     }
 }

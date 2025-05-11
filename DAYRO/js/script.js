@@ -1,4 +1,4 @@
-import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight } from "../functions-flie/functions.js";
+import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight,fetchjson } from "../functions-flie/functions.js";
 import { themechange } from "../theme-js/theme.js";
 
 const useremail = new Loginvalidation();
@@ -13,3 +13,4 @@ addanimationclass(); //animate css class auto
 themechange();
 labels(); //whensidebarcolllapse
 fontweight(); //fontweight
+fetchjson() //translate function

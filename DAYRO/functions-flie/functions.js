@@ -156,7 +156,6 @@ export function sidebarBtn() {
         const sidebarclass = 'sidebar-collapse';
 
         document.addEventListener('DOMContentLoaded', () => {
-            updateIcon();
             collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 sidebar.classList.remove(sidebarclass);
@@ -188,7 +187,7 @@ export function sidebarBtn() {
 
             closeBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                sidebar.classList.add('sidebar-collapse');
+                sidebar.classList.add(sidebarclass);
                 updateIcon();
                 savingstate();
             });
@@ -282,6 +281,31 @@ export function fontweight() {
     atags_font.forEach((tag, index) => {
         if (![0, 4, 5, 8, 9, 10, 11, 12].includes(Number(index))) {
             tag.classList.add('fw-medium');
+        }
+    })
+};
+
+// for translating to gujrati
+export async function fetchjson() {
+    const translate = document.querySelector('.translate select');
+    translate.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const translatevalue = translate.value;
+        if (translatevalue === 'ગુજરાતી') {
+            const response = await fetch('lang.json', {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                credentials: 'omit'
+            })
+            if (!response.ok) console.log("status:", response.status);
+            const data = await response.json();
+            const datatag = document.querySelector('[data-i18n="title"]');
+            datatag.innerHTML = data.title;
+            localStorage.setItem('language', 'gujrati')
+        } else {
+            localStorage.setItem('language', 'english')
         }
     })
 };

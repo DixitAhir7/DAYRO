@@ -76,6 +76,7 @@ button {
     background-color: var(--kesri);
     height: 100vh;
     width: 250px;
+    user-select: none;
     padding: 25px;
     overflow: auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
@@ -207,6 +208,15 @@ button {
 /* nav-list css  */
 /* about css */
 
+.readers,
+.kalakar,
+.ReligionalHistory,
+.for-artist,
+.about-page {
+    display: flex;
+    justify-content: center;
+}
+
 .readers a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
@@ -251,7 +261,7 @@ button {
 }
 
 /* all artists css */
-.nav-list .menu-item a {
+.nav-list .kalakar a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
@@ -333,7 +343,7 @@ main {
 }
 
 /* css for animation for news */
-.news-wrapper {
+.sidebar-collapse .news-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -366,11 +376,12 @@ main {
 .image-text span {
     margin-top: 5px;
     font-size: 18px;
+    font-weight: bold;
 }
 
 @keyframes spin {
     0% {
-        transform: translateX(-100%);
+        transform: translate(-900px);
     }
 
     100% {
@@ -380,5 +391,5 @@ main {
 
 html,
 body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
