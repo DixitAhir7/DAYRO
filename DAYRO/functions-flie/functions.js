@@ -1,3 +1,5 @@
+"use strict";
+
 // all validation here
 // login-form validation
 
@@ -120,9 +122,7 @@ function logouthandle() {
                 logoutButton.style.display = 'none';
             }
         })
-    } catch (e) {
-        console.log('logout button error:', e);
-    }
+    } catch (e) { console.log('logout button error:', e); }
 }
 
 logouthandle()
@@ -307,5 +307,69 @@ export async function fetchjson() {
         } else {
             localStorage.setItem('language', 'english')
         }
+    })
+};
+
+
+// adjustable height
+export function setheight() {
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.webinfo .weblink .webtags');
+
+        cards.forEach((paragraphs) => {
+            paragraphs.addEventListener("mouseup", () => {
+                const selection = window.getSelection();
+                const selectedText = selection.toString().trim();
+                if (!selectedText) return;
+
+                const selectedNode = selection.anchorNode;
+                const paragraph = selectedNode && selectedNode.nodeType === 3
+                    ? selectedNode.parentElement.closest('p')
+                    : selectedNode.closest && selectedNode.closest('p');
+
+                if (!paragraph) return;
+
+                if (!paragraph.hasSlider) {
+                    const inputrange = document.createElement('input');
+                    inputrange.className = 'setinput'
+                    inputrange.type = 'range';
+                    inputrange.min = '100';
+                    inputrange.max = '200';
+                    inputrange.value = '16';
+                    inputrange.style.display = 'block';
+                    inputrange.addEventListener('input', () => {
+                        paragraph.style.height = inputrange.value + 'px';
+                        localStorage.setItem('height', Number(inputrange.value));
+                        if (!paragraph.hasSetHeightButton && !paragraph.hasresetbtn) {
+                            const createbtn = document.createElement('button');
+                            const resetbtn = document.createElement('button');
+                            createbtn.className = 'setheight';
+                            createbtn.innerHTML = 'set height';
+                            resetbtn.className = 'resetheight';
+                            resetbtn.innerHTML = 'reset height';
+                            paragraph.appendChild(createbtn);
+                            paragraph.appendChild(resetbtn);
+                            paragraph.hasSetHeightButton = true;
+                            paragraph.hasresetbtn = true;
+                        }
+                    });
+
+                    paragraph.appendChild(inputrange);
+                    paragraph.hasSlider = true;
+                }
+            });
+        })
+    })
+};
+
+// loadmore content in about
+export function hidingcontent() {
+    const content = document.querySelectorAll('.webinfo .weblink div');
+    const loadbtn = document.querySelector('.loadmorebtn button');
+    content.forEach((descriptiton, index) => {
+        loadbtn.addEventListener('click', () => {
+            ![0, 1, 2, 3].includes(index) ? descriptiton.classList.toggle('forload') : 'failed'
+        })
     })
 };

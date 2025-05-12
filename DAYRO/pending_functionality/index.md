@@ -16,6 +16,10 @@
 --> my prediction is that 90% will be seeing this in phone,
  so make it perfect responsive for phone on your own
 
+# 3d art gallery
+--> where i'll show dayro historical images,
+--> will make kind of theatre where users can watch video about history and culture if posssible
+
  <!-- language -->
 --> adding gujrati language
 

@@ -20,3 +20,11 @@ section form input[type="submit"] {
 .user-Data {
     margin-top: 10px;
 }
+
+/* user-image css */
+
+.useraccount .account img {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}

@@ -56,3 +56,14 @@ button {
 .replydivbtns button {
     display: none;
 }
+
+.replydiv form textarea {
+    display: none;
+}
+
+.displayuserviews img {
+    width: 60px;
+    height: 50px;
+    display: none;
+    border-radius: 50%;
+}

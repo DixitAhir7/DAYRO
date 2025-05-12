@@ -96,7 +96,6 @@ function extractingemail() {
         const ptagforlogout = document.createElement('p');
         ptagforlogout.className = 'nameerror';
         document.body.appendChild(ptagforlogout);
-        ptagforlogout.innerHTML = "sorry i didn't find any names"
         ptagforlogout.innerHTML = atagforemail.innerHTML;
     }
 };
@@ -174,6 +173,4 @@ function updateText() {
         index = (index + 1) % words.length;
     }, 300);
 }
-
-updateText();
 setInterval(updateText, 2500);

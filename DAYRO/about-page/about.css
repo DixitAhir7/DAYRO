@@ -4,6 +4,14 @@
     --orange: rgb(230, 126, 34);
 }
 
+a {
+    color: black;
+}
+
+button {
+    border: none;
+}
+
 /*  main heading css  */
 .main-heading h2 {
     color: var(--orange);
@@ -115,6 +123,7 @@ strong {
 .welcome-quote {
     padding: 30px;
     border-radius: 8px;
+    background-color: wheat;
 }
 
 .heading p,
@@ -123,8 +132,103 @@ strong {
     height: 100px;
 }
 
+
 footer {
     background-color: rgb(81, 78, 78);
     padding: 8px;
     height: 100px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.footer-section {
+    margin-top: 200px;
+}
+
+/* animation css for header of weblinks */
+.highlight {
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    transition: all 0.4s ease;
+    opacity: 1;
+    transform: translateX(-20px);
+}
+
+.highlight.active {
+    color: black;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background: gray;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.highlight.active::after {
+    transform: scaleX(1);
+}
+
+.usersviews .forhighlight {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.usersviews:hover .forhighlight {
+    color: rgb(216, 144, 8);
+}
+
+/* weblinks,webinfo css */
+.webinformation .weblink {
+    margin-top: 25px;
+}
+
+.weblink span a {
+    padding-left: 10px;
+}
+
+.webinformation .weblink .webtags {
+    height: auto;
+    background-color: wheat;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.webinformation .weblink .webtags h3 {
+    font-weight: normal;
+}
+
+.webinformation .weblink .webtags .guide,
+.welcome-section .welocme-message a {
+    font-weight: bold;
+}
+
+/* load more btn */
+.loadmorebtn {
+    margin-top: 10px;
+}
+
+.weblink .forload {
+    display: none;
+}
+
+/* adjust height buttons css*/
+.resetheight,
+.setheight {
+    margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.582);
+    color: white;
+    margin-top: 8px;
 }

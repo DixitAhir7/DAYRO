@@ -74,3 +74,8 @@
     background-color: #f0f0f0;
     color: rgba(0, 0, 0, 0.741);
 }
+
+.jsfunctions .no-result,
+.jsfunctions .show-suggestions {
+    display: none;
+}

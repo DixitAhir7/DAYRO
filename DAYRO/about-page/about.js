@@ -1,10 +1,14 @@
-import { addanimationclass } from '../functions-flie/functions.js';
+"use stricg";
+
+import { addanimationclass, setheight, hidingcontent } from '../functions-flie/functions.js';
 import { themechange } from '../theme-js/theme.js';
 
 addanimationclass();
 themechange();
-// purpose modal script
+setheight();
+hidingcontent();
 
+// purpose modal script
 try {
     function openPurposeModal() {
         const purposeModal = document.querySelector('.btnmodal');
@@ -33,3 +37,18 @@ try {
     closeModal()
 
 } catch (e) { console.warn('while opening modal:', e); }
+
+const words = ['blogs', 'articles'];
+const highlight = document.getElementById('dynamic-text');
+let index = 0;
+
+function updateText() {
+    highlight.classList.remove('active');
+
+    setTimeout(() => {
+        highlight.textContent = words[index];
+        highlight.classList.add('active');
+        index = (index + 1) % words.length;
+    }, 300);
+}
+setInterval(updateText, 2500);

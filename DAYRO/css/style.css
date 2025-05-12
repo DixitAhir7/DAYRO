@@ -205,6 +205,10 @@ button {
     background-color: white;
 }
 
+.modal form p {
+    display: none;
+}
+
 /* nav-list css  */
 /* about css */
 
@@ -227,9 +231,6 @@ button {
 }
 
 /* this is dropdown for history */
-.ReligionalHistory {
-    user-select: none;
-}
 
 .dropdown-content {
     display: none;
@@ -309,6 +310,10 @@ button {
         background-color: var(--white);
         border-radius: 7px;
     }
+}
+
+.user-info .Logout a {
+    display: none;
 }
 
 /* account css */
