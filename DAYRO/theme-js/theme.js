@@ -1,7 +1,6 @@
 const theme = document.querySelector('.theme-mode');
-const body = document.body;
 
-export function themechange() {
+function themechange() {
     try {
         if (localStorage.getItem('dark-mode') === 'enabled') {
             document.body.classList.add('dark-mode');

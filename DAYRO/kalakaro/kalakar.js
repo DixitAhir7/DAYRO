@@ -7,9 +7,17 @@ const show_content = document.querySelector('.show-content');
 const iNPUT_SUBMIT = document.createElement('input');
 iNPUT_SUBMIT.type = "submit";
 iNPUT_SUBMIT.value = "Search";
-iNPUT_SUBMIT.style.borderRadius = '10px'
+iNPUT_SUBMIT.style.borderRadius = '10px';
 form.appendChild(iNPUT_SUBMIT);
 
+
+// footer fixed while search
+function footerPosition() {
+    const footer = document.querySelector('footer');
+    footer.style.position = 'fixed';
+    footer.style.bottom = '0px';
+    footer.style.width = '1200px';
+}
 
 // Script for searching artists with images
 function displayImages() {
@@ -27,6 +35,7 @@ function displayImages() {
                 if (altText.includes(search)) {
                     divImg.style.display = "block";
                     found = true;
+                    footerPosition();
                 } else {
                     divImg.style.display = "none";
                 }
@@ -41,7 +50,6 @@ function displayImages() {
 displayImages();
 
 // suggestions for searching artist
-
 try {
     function showsuggestions() {
         const inputSearchsuggestion = document.querySelector('input[type="text"]');

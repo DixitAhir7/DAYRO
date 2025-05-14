@@ -1,12 +1,11 @@
 "use stricg";
 
-import { addanimationclass, setheight, hidingcontent } from '../functions-flie/functions.js';
-import { themechange } from '../theme-js/theme.js';
+import { addanimationclass, loadmorecontent } from '../functions-flie/functions.js';
+// import { themechange } from '../theme-js/theme.js';
 
 addanimationclass();
-themechange();
-setheight();
-hidingcontent();
+// themechange();
+loadmorecontent();
 
 // purpose modal script
 try {
@@ -38,6 +37,8 @@ try {
 
 } catch (e) { console.warn('while opening modal:', e); }
 
+
+// animation for weblinks
 const words = ['blogs', 'articles'];
 const highlight = document.getElementById('dynamic-text');
 let index = 0;
@@ -52,3 +53,53 @@ function updateText() {
     }, 300);
 }
 setInterval(updateText, 2500);
+
+// adjustable height
+function setheight() {
+    document.addEventListener('DOMContentLoaded', () => {
+        const cards = document.querySelectorAll('.webinfo .weblink .webtags');
+
+        cards.forEach((paragraphs) => {
+            paragraphs.addEventListener("mouseup", () => {
+                const selection = window.getSelection();
+                const selectedText = selection.toString().trim();
+                if (!selectedText) return;
+
+                const selectedNode = selection.anchorNode;
+                const paragraph = selectedNode && selectedNode.nodeType === 3
+                    ? selectedNode.parentElement.closest('p')
+                    : selectedNode.closest && selectedNode.closest('p');
+
+                if (!paragraph) return;
+
+                if (!paragraph.hasSlider) {
+                    const inputrange = document.createElement('input');
+                    inputrange.className = 'setinput'
+                    inputrange.type = 'range';
+                    inputrange.min = '100';
+                    inputrange.max = '200';
+                    inputrange.value = '16';
+                    inputrange.style.display = 'block';
+                    inputrange.addEventListener('input', () => {
+                        paragraph.style.height = inputrange.value + 'px';
+                        localStorage.setItem('height', Number(inputrange.value));
+                        if (!paragraph.hasSetHeightButton && !paragraph.hasresetbtn) {
+                            const createbtn = document.createElement('button');
+                            const resetbtn = document.createElement('button');
+                            createbtn.className = 'setheight';
+                            createbtn.innerHTML = 'set height';
+                            resetbtn.className = 'resetheight';
+                            resetbtn.innerHTML = 'reset height';
+                            paragraph.appendChild(createbtn);
+                            paragraph.appendChild(resetbtn);
+                            paragraph.hasSetHeightButton = true;
+                            paragraph.hasresetbtn = true;
+                        }
+                    });
+                    paragraph.appendChild(inputrange);
+                    paragraph.hasSlider = true;
+                }
+            });
+        })
+    })
+};

@@ -1,20 +1,23 @@
-/* image-file css */
+a {
+    text-decoration: none;
+}
 
-section form input[type="file"] {
+/* image-file css */
+.useraccount form input[type="file"] {
     display: none;
 }
 
-section form input[type="submit"] {
+.useraccount form input[type="submit"] {
     margin-top: 14px;
     background: none;
     border: none;
 }
 
-.user-Data a {
+.user-Data .user-btn a {
     color: white;
-    background-color: rgba(0, 0, 0, 0.479);
     padding: 5px;
     border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.479);
 }
 
 .user-Data {
@@ -22,7 +25,6 @@ section form input[type="submit"] {
 }
 
 /* user-image css */
-
 .useraccount .account img {
     border-radius: 50%;
     height: 100px;

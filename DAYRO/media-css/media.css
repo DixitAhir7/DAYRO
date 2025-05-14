@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 992px) {
-    .sidebar {
+    header .sidebar {
         height: 100vh;
     }
 
@@ -29,7 +29,7 @@
         border-radius: 12px;
     }
 
-    .close {
+    .modal .modal-content .close {
         top: 20px;
         right: 22px;
         font-size: 1.5rem;
@@ -45,14 +45,14 @@
         padding: 1rem;
     }
 
-    .modal-content {
+    .modal .modal-content {
         width: 100%;
         height: auto;
         padding: 2rem 1.2rem 1.5rem;
         border-radius: 12px;
     }
 
-    .sidebar {
+    header .sidebar {
         width: 100%;
         background-color: rgba(248, 166, 13, 0.925);
         height: 100vh;
@@ -67,11 +67,7 @@
         justify-content: start;
     }
 
-
-    .news-wrapper {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
+    main .news-wrapper {
         height: 320px;
     }
 }

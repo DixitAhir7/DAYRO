@@ -43,7 +43,7 @@
     .welcome-section .welcome-quote,
     .heading,
     .welcome-section .welocme-message {
-       height: 20px;
+        height: 20px;
     }
 }
 
@@ -66,11 +66,22 @@
     .welcome-section .welocme-message {
         margin-top: 10px;
         padding: 8px 12px 2px 12px;
-        height: 100px;
+        height: 120px;
     }
 
     .welcome-section .welcome-quote p,
     .heading p {
         margin-top: 2px;
+    }
+
+    .webinformation .weblink .webtags {
+        height: 150px;
+        background-color: wheat;
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .webinformation .weblink {
+        margin-top: 8px;
     }
 }

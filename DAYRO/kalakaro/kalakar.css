@@ -3,38 +3,38 @@
     --black: rgb(0, 0, 0);
 }
 
+a {
+    text-decoration: none;
+}
+
 .kalakro {
     margin-top: 24px;
 }
 
 /* artists-images css */
-
 /* howto use css */
-
-.artist-img img {
+.kalakro .artist-img img {
     border-radius: 50%;
     transition: transform 0.3s ease;
 }
 
-.artist-img:hover img {
+.kalakro .artist-img:hover img {
     transform: scale(1.1);
 }
 
-.artist-img img:nth-child(1) {
+.kalakro .artist-img img:nth-child(1) {
     width: 240px;
     height: 225px;
 }
 
 /* artist-contnet css */
-.artists-content a {
+.kalakro .artists-content a {
     color: var(--black);
     font-size: 20px;
 }
 
 /* search css */
-
-
-.search-sec form input[type="text"] {
+.search-section .search-sec form input[type="text"] {
     border-radius: 10px;
     text-align: center;
 }
@@ -48,7 +48,7 @@
 }
 
 /* search suggestions css */
-.show-suggestions {
+.jsfunctions .show-suggestions {
     max-width: 340px;
     margin-top: 5px;
     padding: 5px;
@@ -59,7 +59,7 @@
     border-radius: 8px;
 }
 
-.show-suggestions div {
+.jsfunctions.show-suggestions div {
     padding: 4px;
     cursor: pointer;
 }
@@ -78,4 +78,14 @@
 .jsfunctions .no-result,
 .jsfunctions .show-suggestions {
     display: none;
+}
+
+footer {
+    margin-top: 20px;
+    background-color: rgb(81, 78, 78);
+    padding: 15px;
+}
+
+footer a {
+    color: white;
 }

@@ -40,7 +40,6 @@ button {
 }
 
 /* theme-mode css */
-
 .theme-mode {
     max-width: 100px;
 }
@@ -64,13 +63,12 @@ button {
 }
 
 /* text-disappear when sidebar-collapsed */
-
 .sidebar-collapse .labels {
     opacity: 0;
     overflow: hidden;
 }
 
-.sidebar {
+header .sidebar {
     position: fixed;
     z-index: 100;
     background-color: var(--kesri);
@@ -193,12 +191,12 @@ button {
     left: 80%;
 }
 
-#loginForm .submit:hover {
-    background-color: var(--kesri);
-}
-
 #loginForm .submit {
     background: white;
+
+    &:hover {
+        background-color: var(--kesri);
+    }
 }
 
 #loginForm #reset:hover {
@@ -212,16 +210,16 @@ button {
 /* nav-list css  */
 /* about css */
 
-.readers,
-.kalakar,
-.ReligionalHistory,
-.for-artist,
-.about-page {
+header .sidebar .readers,
+header .sidebar .kalakar,
+header .sidebar .ReligionalHistory,
+header .sidebar .for-artist,
+header .sidebar .about-page {
     display: flex;
     justify-content: center;
 }
 
-.readers a {
+header .sidebar .readers a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
@@ -231,14 +229,13 @@ button {
 }
 
 /* this is dropdown for history */
-
 .dropdown-content {
     display: none;
     flex-direction: column;
     margin-top: 5px;
 }
 
-.dropdown-content a {
+header .sidebar .dropdown-content a {
     padding: 5px 10px;
     color: black;
 }
@@ -261,36 +258,16 @@ button {
     padding-bottom: 5px;
 }
 
-/* all artists css */
-.nav-list .kalakar a {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 5px;
-    width: 200px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 18px;
-}
-
-/* Religional History css*/
-
-.ReligionalHistory a {
-    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-    border-radius: 5px;
-    width: 200px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    font-size: 18px;
-}
-
-/* for-artist-css */
-
+/* all artists,Religional History css */
+.nav-list .kalakar a,
+.ReligionalHistory a,
 .for-artist a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-radius: 5px;
+    font-size: 18px;
 }
 
 /* user-info css */
@@ -300,10 +277,12 @@ button {
     margin-top: 45px;
 }
 
-/* login-btn css */
+/* login,logout,account,share button css */
 
 .user-info .login-btn a,
-.user-info .Logout button {
+.user-info .Logout button,
+.user-info .account a,
+.user-info .share a {
     font-size: 18px;
 
     &:hover {
@@ -314,18 +293,6 @@ button {
 
 .user-info .Logout a {
     display: none;
-}
-
-/* account css */
-
-.user-info .account a,
-.user-info .share a {
-    border-radius: 7px;
-    font-size: 18px;
-
-    &:hover {
-        background-color: var(--white);
-    }
 }
 
 /* translate css */
@@ -342,13 +309,12 @@ option {
 }
 
 /* main-content css */
-
 main {
     margin-left: 280px;
 }
 
 /* css for animation for news */
-.sidebar-collapse .news-wrapper {
+.sidebar-collapse.news-wrapper {
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -365,7 +331,6 @@ main {
     will-change: transform;
 }
 
-/* Each item */
 .image-text {
     width: 400px;
     height: 320px;
@@ -382,6 +347,11 @@ main {
     margin-top: 5px;
     font-size: 18px;
     font-weight: bold;
+}
+
+.news-wrapper a,
+span {
+    display: block;
 }
 
 @keyframes spin {

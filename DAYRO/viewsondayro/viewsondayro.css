@@ -1,5 +1,5 @@
 /* header animation by ai */
-.highlight {
+.infoaboutviews .highlight {
     color: #fff;
     position: relative;
     display: inline-block;
@@ -8,13 +8,13 @@
     transform: translateX(-20px);
 }
 
-.highlight.active {
+.infoaboutviews .highlight.active {
     color: rgb(228, 153, 13);
     opacity: 1;
     transform: translateX(0);
 }
 
-.highlight::after {
+.infoaboutviews .highlight::after {
     content: '';
     position: absolute;
     left: 0;
@@ -27,7 +27,7 @@
     transition: transform 0.4s ease;
 }
 
-.highlight.active::after {
+.infoaboutviews .highlight.active::after {
     transform: scaleX(1);
 }
 
@@ -43,14 +43,6 @@ span {
 }
 
 /* buttons css of views */
-button {
-    background-color: rgba(255, 166, 0, 0.618);
-
-    &:hover {
-        background-color: whitesmoke;
-    }
-}
-
 /* reply buttons */
 
 .replydivbtns button {
