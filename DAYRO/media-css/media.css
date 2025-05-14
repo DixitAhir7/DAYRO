@@ -52,7 +52,7 @@
         border-radius: 12px;
     }
 
-    header .sidebar {
+    .sidebar {
         width: 100%;
         background-color: rgba(248, 166, 13, 0.925);
         height: 100vh;
@@ -68,6 +68,6 @@
     }
 
     main .news-wrapper {
-        height: 320px;
+        height: 250px;
     }
 }

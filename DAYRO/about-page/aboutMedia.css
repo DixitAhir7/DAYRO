@@ -27,7 +27,7 @@
     }
 
     .purpose-modal {
-        height: 300px;
+        height: 200px;
         flex-direction: column;
     }
 
@@ -83,5 +83,11 @@
 
     .webinformation .weblink {
         margin-top: 8px;
+    }
+}
+
+@media (max-width:490px) {
+    .purpose-modal {
+        height: 300px;
     }
 }

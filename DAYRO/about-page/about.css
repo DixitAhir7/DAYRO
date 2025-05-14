@@ -44,7 +44,7 @@ button {
     opacity: 1;
 }
 
-.my-purpose .purpose-modal {
+.purpose-modal {
     border-radius: 16px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     width: 90%;
@@ -60,7 +60,7 @@ body.modal-open {
     overflow: hidden;
 }
 
-.my-purpose .purpose-modal .purpose-header {
+.purpose-header {
     padding: 0.5rem;
     background-color: rgb(0, 128, 0);
     color: white;
@@ -110,7 +110,6 @@ strong {
 .welcome-quote p {
     height: 100px;
 }
-
 
 footer {
     background-color: rgb(81, 78, 78);

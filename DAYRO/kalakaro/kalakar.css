@@ -11,6 +11,10 @@ a {
     margin-top: 24px;
 }
 
+.col-esm-6 {
+    width: 50%;
+}
+
 /* artists-images css */
 /* howto use css */
 .kalakro .artist-img img {
@@ -80,6 +84,7 @@ a {
     display: none;
 }
 
+/* footer css */
 footer {
     margin-top: 20px;
     background-color: rgb(81, 78, 78);
@@ -88,4 +93,29 @@ footer {
 
 footer a {
     color: white;
+}
+
+/* feedback section css */
+.feedback-section {
+    margin-top: 60px;
+}
+
+.feedback-section .feedbackdiv textarea {
+    width: 400px;
+    height: 100px;
+}
+
+.feedback-section .feedbackdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.feedbackbtns i:first-child {
+    margin-left: 35%;
+    font-size: 18px;
+}
+
+.feedbackbtns i:last-child {
+    margin-left: 15px;
+    font-size: 25px;
 }

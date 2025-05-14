@@ -68,7 +68,7 @@ button {
     overflow: hidden;
 }
 
-header .sidebar {
+.sidebar {
     position: fixed;
     z-index: 100;
     background-color: var(--kesri);
@@ -323,12 +323,11 @@ main {
 
 .news-content {
     display: flex;
-    animation: spin 12s linear infinite reverse;
     width: max-content;
+    animation: spin 12s linear infinite reverse;
     position: absolute;
     top: 0;
     left: 0;
-    will-change: transform;
 }
 
 .image-text {
@@ -356,15 +355,14 @@ span {
 
 @keyframes spin {
     0% {
-        transform: translate(-900px);
+        transform: translateX(-900px);
     }
 
     100% {
-        transform: translateX(100vw);
+        transform: translateX(100%);
     }
 }
 
-html,
 body {
     overflow: hidden;
 }

@@ -1,16 +1,9 @@
-import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight,fetchjson } from "../functions-flie/functions.js";
-// import { themechange } from "../theme-js/theme.js";
+import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight } from "../functions-flie/functions.js";
 
-const useremail = new Loginvalidation();
-useremail.validatelogin();
+/*
+functionsdefinationinorder
+sidebar,loginmodal,whenuservisitfirsttime,sharetomedia,hoverwhiteonsidebaratags,animate_css,whensidebarcollapsed all textnone,fw-mediumto atgas
+*/
 
-sidebarBtn();
-popup();
-firstTime();
-shareDayro();
-addhoverbackground(); //hover background
-addanimationclass(); //animate css class auto
-// themechange();
-labels(); //whensidebarcolllapse
-fontweight(); //fontweight
-fetchjson() //translate function
+const useremail = new Loginvalidation(); useremail.validatelogin();
+sidebarBtn(); popup(); firstTime(); shareDayro(); addhoverbackground(); addanimationclass(); labels(); fontweight(); 
