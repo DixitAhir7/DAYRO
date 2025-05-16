@@ -38,25 +38,55 @@ a {
 }
 
 /* search css */
+.search-section {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.search-sec {
+    position: relative;
+}
+
+.search-sec i {
+    position: absolute;
+    left: 66%;
+    top: 3px;
+}
+
 .search-section .search-sec form input[type="text"] {
     border-radius: 10px;
-    text-align: center;
+    width: 600px;
+}
+
+.search-section .search-sec {
+    display: flex;
+    justify-content: center;
+}
+
+.search-section .search-sec form input[type="text"]::placeholder {
+    padding-left: 10px;
 }
 
 /* dropdown for kalakars css */
-.sort-artsits select,
-.sort-artsits input[type="submit"] {
+.sort-artsits select {
     margin-top: 15px;
     border-radius: 8px;
     padding: 0 12px 0 12px;
 }
 
+.sort-artsits input[type="submit"],
+.search-sec input[type="submit"] {
+    background: none;
+    border: none;
+}
+
 /* search suggestions css */
 .jsfunctions .show-suggestions {
-    max-width: 340px;
-    margin-top: 5px;
-    padding: 5px;
+    width: 340px;
+    text-align: center;
+    margin-top: 2px;
     position: absolute;
+    left: 530px;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.83);
     color: white;
@@ -69,14 +99,9 @@ a {
 }
 
 .suggestion-item {
-    padding: 4px;
+    padding: 8px;
     cursor: pointer;
     border-radius: 8px;
-}
-
-.show-suggestions div:hover {
-    background-color: #f0f0f0;
-    color: rgba(0, 0, 0, 0.741);
 }
 
 .jsfunctions .no-result,

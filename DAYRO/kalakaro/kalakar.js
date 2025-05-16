@@ -1,7 +1,6 @@
 // searching scrpt for artists
 // search selectors form
-const form = document.querySelector('form'); const inputSearch = form.querySelector('input[type="text"]'); const result = document.querySelector('.no-result'); const content = document.querySelectorAll('.artist-img'); const show_content = document.querySelector('.show-content'); const iNPUT_SUBMIT = document.createElement('input'); iNPUT_SUBMIT.type = "submit"; iNPUT_SUBMIT.value = "Search";
-iNPUT_SUBMIT.style.borderRadius = '10px'; form.appendChild(iNPUT_SUBMIT);
+const form = document.querySelector('form'); const inputSearch = form.querySelector('input[type="text"]'); const result = document.querySelector('.no-result'); const content = document.querySelectorAll('.artist-img'); const show_content = document.querySelector('.show-content'); const searchicon = document.querySelector('#search-icon');
 
 // feedback when search not found
 const feedbacktext = document.querySelector('.feedback-section textarea'); const feedbackaddbtn = document.querySelector('.feedback-section .feedbackbtns #send'); const skipfeedback = document.querySelector('.feedback-section .feedbackbtns #skip'); const feedbackdiv = document.querySelector('.feedback-section');
@@ -16,10 +15,11 @@ function footerPosition() {
     const footer = document.querySelector('footer'); footer.style.position = 'fixed'; footer.style.bottom = '0px'; footer.style.width = '1200px';
 };
 
+
 // Script for searching artists with images
 function displayImages() {
     try {
-        form.addEventListener('submit', (e) => {
+        searchicon.addEventListener('click', (e) => {
             e.preventDefault(); const search = inputSearch.value.toLowerCase().trim(); let found = false; content.forEach((divImg) => {
                 const img = divImg.querySelector("img"); const altText = img.getAttribute('alt').toLowerCase().trim(); if (altText.includes(search)) {
                     divImg.style.display = "block"; found = true;
@@ -52,17 +52,6 @@ try {
         });
     } showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };
-
-// script for sorting based on datatype of artists
-function sortingArtists() {
-    try {
-        const sortform = document.querySelector('.sortForm'); const select = document.querySelector('#selected'); const allartist = document.querySelectorAll('.artist-img'); sortform.addEventListener('submit', (e) => {
-            e.preventDefault(); const selectvalue = select.value; allartist.forEach(artist => {
-                const type = artist.getAttribute('data-type'); if (selectvalue === "kalakaro") { artist.style.display = "block"; } else if (selectvalue === "hasya kalakaro" && type === "hasya") artist.style.display = "block"; else if (selectvalue === "folk singers" && type === "folk") artist.style.display = "block"; else if (selectvalue === "singers" && type === "singers") artist.style.display = "block"; else if (selectvalue === "santvani" && type === "santvani") artist.style.display = "block"; else { artist.style.display = "none"; }
-            });
-        });
-    } catch (e) { console.warn('sorting error:', e); };
-}; sortingArtists();
 
 // for adding atribute in all images loading
 try {

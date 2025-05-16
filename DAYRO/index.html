@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css-bt/bootstrap.min.css">
     <script defer src="js-bt/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="theme-js/theme.js"></script>
+    <!-- <script defer src="theme-js/theme.js"></script> -->
     <script type="module" defer src="js/script.js"></script>
     <link rel="stylesheet" href="media-css/media.css">
     <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
@@ -23,25 +23,26 @@
                     <a class="logo fs-4 d-block">D A Y R O</a>
                 </div>
 
-                <nav>
+                <aside>
                     <div class="nav-list mt-4">
                         <div class="readers mt-3">
-                            <a class="text-center" href="readers/reader.html">For Readers</a>
+                            <a class="text-center" href="readers/reader.html" data-i18n="reader">For Readers</a>
                         </div>
 
-                        <div class="kalakar  mt-3">
-                            <a class="text-center" data-i18n="title" href="kalakaro/kalakar.html">Kalakaro</a>
+                        <div class="kalakar mt-3">
+                            <a class="text-center" data-i18n="kalakar"
+                                href="kalakarhomefile/kalakarhome.html">Kalakaro</a>
                         </div>
 
                         <!-- for history of some communities:maharas,talvarras
                             in this include city history too 
                             -->
                         <div class="ReligionalHistory  text-center mt-3" onclick="toggleDropdown()">
-                            <a>History</a>
+                            <a data-i18n="history">History</a>
                         </div>
                         <div id="historyDropdown" class="dropdown-content">
-                            <a href="community/communities.html">Community History</a>
-                            <a href="cityhistory/cityhistory.html">City History</a>
+                            <a data-i18n="community" href="community/communities.html">Community History</a>
+                            <a data-i18n="city" href="cityhistory/cityhistory.html">City History</a>
 
                             <script>
                                 function toggleDropdown() {
@@ -51,13 +52,13 @@
                         </div>
 
                         <div class="for-artist  text-center mt-3">
-                            <a class="" href="artist/artists.html">For Artist</a>
+                            <a data-i18n="artist" class="" href="artist/artists.html">For Artist</a>
                         </div>
 
                         <!-- in about all about this web -->
                         <div class="about-page  mt-3">
                             <i class="fas fa-info-circle about-icon"></i>
-                            <a class="" href="about-page/about.html">About dayro</a>
+                            <a data-i18n="about" class="" href="about-page/about.html">About dayro</a>
                         </div>
                     </div>
 
@@ -94,7 +95,7 @@
                             </form>
                         </div>
                     </div>
-                </nav>
+                </aside>
             </div>
         </div>
     </header>

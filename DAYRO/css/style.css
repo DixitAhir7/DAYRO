@@ -26,7 +26,7 @@ button {
 }
 
 a {
-    color: black;
+    color: var(--black);
 }
 
 ul,
@@ -133,7 +133,7 @@ button {
     top: 38px;
     right: 32px;
     font-size: 1.7rem;
-    color: #d70b37;
+    color: var(--red);
     cursor: pointer;
 }
 
@@ -156,15 +156,15 @@ button {
     width: 100%;
     padding: 0.5rem 0.8rem;
     margin: 0.5rem 0 1rem 0;
-    border: 1px solid #cbd5e1;
+    border: 1px solid rgb(203, 213, 225);
     border-radius: 8px;
     font-size: 1rem;
     transition: border 0.2s, box-shadow 0.2s;
 
     &:focus {
-        border: 1.5px solid #6366f1;
+        border: 1.5px solid rgb(99, 102, 241);
         outline: none;
-        box-shadow: 0 0 0 2px #6366f133;
+        box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
     }
 }
 
@@ -192,7 +192,7 @@ button {
 }
 
 #loginForm .submit {
-    background: white;
+    background: var(--white);
 
     &:hover {
         background-color: var(--kesri);
@@ -200,7 +200,7 @@ button {
 }
 
 #loginForm #reset:hover {
-    background-color: white;
+    background-color: var(--white);
 }
 
 .modal form p {
@@ -237,7 +237,7 @@ header .sidebar .readers a {
 
 header .sidebar .dropdown-content a {
     padding: 5px 10px;
-    color: black;
+    color: var(--black);
 }
 
 .show {

@@ -34,7 +34,7 @@ function viewedit() {
 // displaying email 
 function extractingemail() {
     const atagforemail = document.querySelector('.displayuserviews a'); const useremail = new Loginvalidation(); useremail.getemail(); const emailvalue = useremail.getvalue(); atagforemail.innerHTML = emailvalue;
-    
+
     // if user haven't loggedin then show random names
     const royalNames = ["Aryavir", "Rajendra", "Vikrant", "Samrat", "Mahadevan", "Raghunandan", "Veerendra", "Suryadev", "Indrajeet", "Harshvardhan", "Karanveer", "Rudransh", "Adityanandan", "Parthiv", "Rajas", "Pradyumna", "Janardan", "Rajdeep", "Bhavya", "Pratikraj", "Kirtan", "Smitraj", "Tirth", "Ramendra", "Bhishma", "Arindam", "Shatrughna", "Dasharath", "Suryansh", "Raghavendra", "KrishnaKant", "Vibhishan", "Vasudev", "Nakulraj", "Yudhveer", "Bharata", "Balaram", "Shreeval", "Vasuman", "Viduraj", "Achyut", "Shaurya", "Rudraansh", "Dheeraj", "Tanmayraj", "Veerang", "Aryanraj", "Devraj", "Arnavraj", "Divyaraj", "Shubhransh", "Mitradev", "Shravanraj", "Amarjeet", "Harinarayan", "Someshwar", "Devarshi", "Sahastrajit", "Vrajraj", "Hridayraj", "Shivtej"]; if (useremail.getlogoutinfo() && royalNames.length > 0) {
         const randomIndex = Math.floor(Math.random() * royalNames.length); const randomName = royalNames[randomIndex]; atagforemail.innerHTML = randomName;

@@ -12,6 +12,20 @@
     .kalakro .artists-content a {
         font-size: 18px;
     }
+
+    .jsfunctions .show-suggestions {
+        left: 15px;
+    }
+
+    .search-section .search-sec form input[type="text"] {
+        border-radius: 10px;
+        width: 300px;
+    }
+
+    .search-sec i {
+        left: 78%;
+    }
+
 }
 
 /*for more smaller phones */

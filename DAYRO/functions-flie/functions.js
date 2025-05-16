@@ -27,21 +27,14 @@ export class Loginvalidation {
                     console.log('login succesful welcome'); localStorage.setItem('login', JSON.stringify(obj.emailvaluestore)); loginBtn.style.display = "none"; logoutBtn.style.display = "inline-block"; localStorage.removeItem('logout');
                 }
             });
-
             // show password
             seepassword.addEventListener('click', (e) => {
                 e.preventDefault(); const pwdInput = passwordInput; if (pwdInput.type === 'password') pwdInput.type = 'text'; else pwdInput.type = 'password';
             });
-
             // on refresh
             window.addEventListener('DOMContentLoaded', () => {
-                const getlogininfo = localStorage.getItem('login')
-                const logoutinfo = localStorage.getItem('logout');
-                if (getlogininfo) { loginBtn.style.display = "none"; logoutBtn.style.display = "inline-block"; } if (logoutinfo) {
-                    loginBtn.style.display = "inline-block"; logoutBtn.style.display = "none";
-                }
-            })
-            modal.style.display = "none";
+                const getlogininfo = localStorage.getItem('login'); const logoutinfo = localStorage.getItem('logout'); if (getlogininfo) { loginBtn.style.display = "none"; logoutBtn.style.display = "inline-block"; } if (logoutinfo) { loginBtn.style.display = "inline-block"; logoutBtn.style.display = "none"; }
+            }); modal.style.display = "none";
         } catch (error) { console.error("Login error:", error.message); }
     }
 };
@@ -51,8 +44,7 @@ function logouthandle() {
     const loginBtn = document.querySelector('.user-info .login-btn'); const logoutButton = document.querySelector('.Logout button');
     try {
         logoutButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            const userans_logout = prompt('are you sure? (yes,no)'); if (userans_logout === 'yes'.toLowerCase().trim()) {
+            e.preventDefault(); const userans_logout = prompt('are you sure? (yes,no)'); if (userans_logout === 'yes'.toLowerCase().trim()) {
                 loginBtn.style.display = 'inline'; localStorage.setItem('logout', 'added'); localStorage.removeItem('login'); logoutButton.style.display = 'none';
             }
         })
@@ -79,41 +71,24 @@ export function sidebarBtn() {
 
         document.addEventListener('DOMContentLoaded', () => {
             collapseBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                sidebar.classList.remove(sidebarclass);
-                sidebar.classList.remove(overflowclass);
-                updateIcon();
-                savingstate();
+                e.preventDefault(); sidebar.classList.remove(sidebarclass); sidebar.classList.remove(overflowclass); updateIcon(); savingstate();
             });
 
             function savingstate() {
-                const issidebaropen = sidebar.classList.contains(sidebarclass);
-                issidebaropen ? localStorage.setItem('sidebar', 'collapsed') : localStorage.setItem('sidebar', 'expanded')
+                const issidebaropen = sidebar.classList.contains(sidebarclass); issidebaropen ? localStorage.setItem('sidebar', 'collapsed') : localStorage.setItem('sidebar', 'expanded')
             };
 
             // sidebar stays as it is on exploring to any page
             window.addEventListener('DOMContentLoaded', () => {
-                const sidebar = document.querySelector('.sidebar');
-                const sidebarState = localStorage.getItem('sidebar');
-                if (sidebarState === 'expanded') {
-                    sidebar.classList.remove(sidebarclass); sidebar.classList.remove(overflowclass);
-                } else { sidebar.classList.add(sidebarclass); sidebar.classList.add(overflowclass); }
-                updateIcon();
+                const sidebar = document.querySelector('.sidebar'); const sidebarState = localStorage.getItem('sidebar'); if (sidebarState === 'expanded') { sidebar.classList.remove(sidebarclass); sidebar.classList.remove(overflowclass); } else { sidebar.classList.add(sidebarclass); sidebar.classList.add(overflowclass); } updateIcon();
             });
             closeBtn.addEventListener('click', (e) => {
-                e.preventDefault(); sidebar.classList.add(sidebarclass);
-                updateIcon();
-                savingstate();
+                e.preventDefault(); sidebar.classList.add(sidebarclass); updateIcon(); savingstate();
             });
             function updateIcon() {
-                const isCollapsed = sidebar.classList.contains('sidebar-collapse');
-                if (isCollapsed) {
-                    collapseBtn.style.display = 'inline';
-                    closeBtn.style.display = 'none'
-                } else if (!isCollapsed) {
-                    collapseBtn.style.display = 'none';
-                    closeBtn.style.display = 'inline'
-                }
+                const isCollapsed = sidebar.classList.contains('sidebar-collapse'); if (isCollapsed) {
+                    collapseBtn.style.display = 'inline'; closeBtn.style.display = 'none'
+                } else if (!isCollapsed) { collapseBtn.style.display = 'none'; closeBtn.style.display = 'inline' }
             }
         });
     } catch (e) { console.info("sidebar didn't opened", e); }
@@ -123,7 +98,7 @@ export function sidebarBtn() {
 export function firstTime() {
     try {
         document.addEventListener("DOMContentLoaded", () => {
-            if (!localStorage.getItem("visited")) { console.log("User visiting for the first time!"); localStorage.setItem("visited", "true"); } else { console.log("Welcome back!"); }
+            !localStorage.getItem('visited') ? console.log('User visiting for the first time!') : console.log('welcome back');
         });
     } catch (e) { console.log(e); }
 };
@@ -132,34 +107,20 @@ export function firstTime() {
 export function shareDayro() {
     const sharebtn = document.querySelector('#forshare');
     sharebtn.addEventListener('click', (E) => {
-        E.preventDefault();
-        if (navigator.share) {
-            navigator.share({
-                url: window.location.href,
-            })
-                .then(() => console.log('Shared successfully'))
+        E.preventDefault(); if (navigator.share) {
+            navigator.share({ url: window.location.href, }).then(() => console.log('Shared successfully'))
                 .catch((error) => console.log('Error sharing', error));
-        } else {
-            console.log('error while sharing');
-        }
+        } else { console.log('error while sharing'); }
     })
 };
 
 // hoverbackground in sidebar
 export function addhoverbackground() {
-    const sidebarelements = document.querySelectorAll('nav a');
-
+    const sidebarelements = document.querySelectorAll('aside a');
     sidebarelements.forEach(elements => {
         elements.addEventListener('mouseenter', () => {
-            elements.style.color = 'black';
-            elements.style.backgroundColor = 'white';
-            elements.style.borderRadius = '7px';
-        });
-
-        elements.addEventListener('mouseleave', () => {
-            elements.style.color = '';
-            elements.style.backgroundColor = '';
-        });
+            elements.style.color = 'black'; elements.style.backgroundColor = 'white'; elements.style.borderRadius = '7px';
+        }); elements.addEventListener('mouseleave', () => { elements.style.color = ''; elements.style.backgroundColor = ''; });
     })
 };
 
@@ -168,23 +129,19 @@ export function addhoverbackground() {
 export function addanimationclass() {
     document.querySelectorAll('*').forEach(el => {
         for (let cls of el.classList) {
-            if (cls.startsWith('animate__')) {
-                el.classList.add('animate__animated');
-                break;
-            }
+            if (cls.startsWith('animate__')) { el.classList.add('animate__animated'); break; }
         }
     });
 };
 
 // hiding text when sidebar collapsed
 export function labels() {
-    const allatags = document.querySelectorAll('a');
-    allatags.forEach((atags) => { atags.classList.add('labels') })
+    const allatags = document.querySelectorAll('a'); allatags.forEach((atags) => { atags.classList.add('labels') })
 };
 
 // addingclass
 export function fontweight() {
-    const atags_font = document.querySelectorAll(' a'); atags_font.forEach((tag, index) => {
+    const atags_font = document.querySelectorAll('a'); atags_font.forEach((tag, index) => {
         if (![0, 4, 5, 8, 9, 10, 11, 12].includes(Number(index))) { tag.classList.add('fw-medium'); }
     })
 };
@@ -196,8 +153,11 @@ export async function fetchjson() {
         e.preventDefault();
         const translatevalue = translate.value;
         if (translatevalue === 'ગુજરાતી') {
-            const response = await fetch('lang.json', { method: 'GET', headers: { 'Accept': 'application/json', }, credentials: 'omit' }); if (!response.ok) console.log("status:", response.status); const data = await response.json(); const datatag = document.querySelector('[data-i18n="title"]'); datatag.innerHTML = data.title; localStorage.setItem('language', 'gujrati')
-        } else { localStorage.setItem('language', 'english') }
+            const response = await fetch('lang.json', { method: 'GET', headers: { 'Accept': 'application/json', }, credentials: 'omit' }); if (!response.ok) console.log("status:", response.status);
+            const data = await response.json(); const datatag = document.querySelectorAll('aside a'); datatag.forEach((dataatribute) => {
+                const keys = dataatribute.getAttribute('data-i18n'); if (data[keys]) { dataatribute.innerHTML = data[keys] } localStorage.setItem('language', 'gujrati');
+            });
+        } else { localStorage.setItem('language', 'english') };
     })
 };
 

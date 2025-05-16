@@ -1,0 +1,56 @@
+a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* search suggestions css */
+.show-suggestions {
+    width: 500px;
+    position: absolute;
+    left: 130px;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.788);
+}
+
+.show-suggestions a {
+    padding: 4px;
+    cursor: pointer;
+}
+
+.show-suggestions {
+    display: none;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* search section css */
+.search-sec {
+    position: relative;
+}
+
+.search-sec i {
+    position: absolute;
+    left: 469px;
+    top: 4px;
+}
+
+.search-section {
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.search-section .search-sec form input[type="text"] {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 500px;
+}
+
+.borderstyle {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.search-section .search-sec form input[type="text"]::placeholder {
+    padding-left: 20px;
+}
