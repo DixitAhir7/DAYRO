@@ -77,7 +77,7 @@ function deletereply() {
 
 // animation for header
 try {
-    const words = ['views', 'stories', 'thoughts']; const highlight = document.getElementById('dynamic-text'); let index = 0; function updateText() {
+    const words = ['views', 'stories', 'thoughts', 'discuss']; const highlight = document.getElementById('dynamic-text'); let index = 0; function updateText() {
         highlight.classList.remove('active'); setTimeout(() => { highlight.textContent = words[index]; highlight.classList.add('active'); index = (index + 1) % words.length; }, 300);
     } setInterval(updateText, 2500);
 } catch (e) { console.log('animation error:', e); }

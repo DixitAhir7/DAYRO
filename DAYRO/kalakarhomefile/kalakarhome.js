@@ -2,13 +2,13 @@
 
 const suggestionobj = [
     { 'kirtidan gadhvi': '../individualkalakaro/kirtidan/kirtidan.html' },
-    { 'mayabhai ahir': 'individualkalakaro/mayaAhir/Mayaahir.html' },
-    { 'ishardan gadhvi': 'Ishardan' },
-    { 'devayt khavad': 'Devayt Khavad' },
-    { 'bhikhudan gadhvi': 'Bhikhudan Gadhvi' },
-    { 'Dhirubhai Sarvaiya': 'Dhirubhai ' },
-    { 'gaman santhal': '' },
-    { 'sairam Dave': 'Sairam ' },
+    { 'mayabhai ahir': '../individualkalakaro/mayaAhir/Mayaahir.html' },
+    { 'ishardan gadhvi': '../individualkalakaro/ishardan/ishardan.html' },
+    { 'devayt khavad': '../individualkalakaro/khavad/khavad.html' },
+    { 'bhikhudan gadhvi': '../individualkalakaro/bhikhudan/bhikhudan.html' },
+    { 'Dhirubhai Sarvaiya': '../individualkalakaro/dhirubhai/dhirubhai.html' },
+    { 'gaman santhal': '../individualkalakaro/bhuvaji/bhuvaji.html' },
+    { 'sairam Dave': '' },
     { 'falguni pathak': 'Falguni Pathak' },
     { 'rajbha Gadhvi': 'Rajbha ' },
     { 'aditya Gadhvi': 'aditya gadhvi' },
@@ -43,43 +43,33 @@ const suggestionobj = [
 // suggestions for searching artist
 try {
     function showsuggestions() {
+        const form = document.querySelector('.search-sec form');
         const inputSearchsuggestion = document.querySelector('.search-sec input[type="text"]'); const searchsection = document.querySelector('.search-sec'); const showsuggestions = document.querySelector('.show-suggestions');
         inputSearchsuggestion.addEventListener('input', (e) => {
             inputSearchsuggestion.classList.remove('borderstyle')
             e.preventDefault(); showsuggestions.style.display = 'block'; let searchvalue = inputSearchsuggestion.value.toLowerCase().trim(); showsuggestions.innerHTML = ""; if (!searchvalue) {
                 showsuggestions.style.display = 'none'; inputSearchsuggestion.classList.add('borderstyle')
-                return
+                return;
             }; const kalakardata = suggestionobj.map(obj => Object.keys(obj)[0]);
             const filterednames = kalakardata.filter(name => name.toLowerCase().includes(searchvalue));
             filterednames.forEach(match => {
                 const suggestion = document.createElement('a'); suggestion.textContent = match; suggestion.classList.add('suggestion-item');
                 const searchicon = document.querySelector('#search-icon');
                 searchicon.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const clickedartisturl = suggestionobj.find((data) => {
+                    e.preventDefault(); const clickedartisturl = suggestionobj.find((data) => {
                         if (data[inputSearchsuggestion.value]) return true
-                    });
-
-                    let url = Object.values(clickedartisturl)[0]
-                    window.location.assign(url)
-                })
+                    }); let url = Object.values(clickedartisturl)[0]; window.location.assign(url);
+                });
                 suggestion.addEventListener('click', () => {
-                    inputSearchsuggestion.value = match; showsuggestions.innerHTML = ""; showsuggestions.style.display = 'none';
-                    const clickedartisturl = suggestionobj.find((data) => {
-                        if (data[inputSearchsuggestion.value]) return true
-                    });
-
-                    let url = Object.values(clickedartisturl)[0]
-                    window.location.assign(url)
+                    inputSearchsuggestion.value = match; showsuggestions.innerHTML = ""; showsuggestions.style.display = 'none'; const clickedartisturl = suggestionobj.find((data) => {
+                        if (data[inputSearchsuggestion.value]) form.reset(); return true;
+                    }); let url = Object.values(clickedartisturl)[0]; window.location.assign(url)
                 }); showsuggestions.appendChild(suggestion);
             });
 
             document.addEventListener('click', (event) => {
                 if (!showsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) { showsuggestions.innerHTML = ''; showsuggestions.style.display = 'none'; }
             });
-        });
-        inputSearchsuggestion.classList.add('borderstyle')
-
-
+        }); inputSearchsuggestion.classList.add('borderstyle')
     } showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };

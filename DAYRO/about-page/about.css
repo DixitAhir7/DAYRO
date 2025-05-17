@@ -106,6 +106,7 @@ strong {
     height: 100px;
 }
 
+/* footer css */
 footer {
     background-color: rgb(81, 78, 78);
     padding: 15px;
@@ -159,7 +160,7 @@ footer a {
     text-decoration: none;
 }
 
-.usersviews:hover .forhighlight {
+.forhighlight:hover {
     color: rgb(216, 144, 8);
 }
 
@@ -183,7 +184,7 @@ footer a {
     border-radius: 8px;
 }
 
-.webinformation .weblink .webtags h4 {
+.webinformation .weblink .webtags h3 {
     font-weight: normal;
 }
 

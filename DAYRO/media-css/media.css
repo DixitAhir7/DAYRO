@@ -1,7 +1,5 @@
 /* media for login modal */
-@media (max-width: 1200px),
-(max-width:1250px),
-(max-width:1300px) {
+@media (max-width: 1200px) {
     .modal {
         left: 290px;
         top: 0;
@@ -11,7 +9,7 @@
 }
 
 @media (max-width: 992px) {
-    header .sidebar {
+    .sidebar {
         height: 100vh;
     }
 
@@ -37,6 +35,11 @@
 }
 
 @media (max-width: 576px) {
+
+    .sidebar {
+        width: 400px;
+    }
+
     .modal {
         left: 0;
         top: 0;
@@ -50,12 +53,6 @@
         height: auto;
         padding: 2rem 1.2rem 1.5rem;
         border-radius: 12px;
-    }
-
-    .sidebar {
-        width: 100%;
-        background-color: rgba(248, 166, 13, 0.925);
-        height: 100vh;
     }
 
     .readers,

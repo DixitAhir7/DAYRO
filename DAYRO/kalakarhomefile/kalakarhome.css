@@ -6,7 +6,7 @@ a {
 
 /* search suggestions css */
 .show-suggestions {
-    width: 500px;
+    width: 200px;
     position: absolute;
     left: 130px;
     z-index: 10;
@@ -31,7 +31,7 @@ a {
 
 .search-sec i {
     position: absolute;
-    left: 469px;
+    left: 270px;
     top: 4px;
 }
 
@@ -43,7 +43,7 @@ a {
 .search-section .search-sec form input[type="text"] {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    width: 500px;
+    width: 300px;
 }
 
 .borderstyle {

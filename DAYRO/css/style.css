@@ -51,23 +51,6 @@ button {
 }
 
 /* sidebar css and nav-list */
-
-.sidebar-collapse {
-    width: 0 !important;
-    overflow: hidden !important;
-    padding: 0 !important;
-}
-
-.sidebar-collapse.overflow {
-    overflow: hidden;
-}
-
-/* text-disappear when sidebar-collapsed */
-.sidebar-collapse .labels {
-    opacity: 0;
-    overflow: hidden;
-}
-
 .sidebar {
     position: fixed;
     z-index: 100;
@@ -77,7 +60,24 @@ button {
     user-select: none;
     padding: 25px;
     overflow: auto;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow:
+        rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px,
+        rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+/* sidebar when collapsed */
+.sidebar.sidebar-collapse {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sidebar.sidebar-collapse .labels {
+    opacity: 0;
+    overflow: hidden;
 }
 
 /* close button of sidebar */
@@ -90,7 +90,6 @@ button {
 }
 
 /* login modal css */
-
 .modal {
     display: flex;
     align-items: center;
@@ -355,7 +354,7 @@ span {
 
 @keyframes spin {
     0% {
-        transform: translateX(-900px);
+        transform: translateX(-100%);
     }
 
     100% {

@@ -16,16 +16,17 @@ export class Loginvalidation {
                     emailerror.style.display = 'block'; emailerror.innerHTML = 'please enter valid email'; emailerror.style.color = 'white'
                 } else if (!emailRegex.test(obj.emailvaluestore)) {
                     emailerror.innerHTML = ''; emailerror.style.display = 'none'; emailregexerror.innerHTML = 'please check your email ex:royal@gmail.com'; emailregexerror.style.display = 'block'; emailregexerror.style.color = 'white'
-                } else if (obj.emailvaluestore) { emailerror.style.display = 'none'; emailregexerror.style.display = 'none'; }
+                } else if (obj.emailvaluestore) { emailerror.style.display = 'none'; emailregexerror.style.display = 'none'; };
+                logouthandle();
                 // password validation
                 if (!obj.passwordValuestore) {
                     passworderror.style.display = 'block'; passworderror.innerHTML = 'please set strong password'; passworderror.style.color = 'white'
-                } else if (obj.passwordValuestore) { passworderror.style.display = 'none'; }
+                } else if (obj.passwordValuestore) { passworderror.style.display = 'none'; };
 
                 // conformation of logininfo
                 if (emailRegex.test(obj.emailvaluestore) && obj.passwordValuestore) {
                     console.log('login succesful welcome'); localStorage.setItem('login', JSON.stringify(obj.emailvaluestore)); loginBtn.style.display = "none"; logoutBtn.style.display = "inline-block"; localStorage.removeItem('logout');
-                }
+                };
             });
             // show password
             seepassword.addEventListener('click', (e) => {
@@ -51,7 +52,6 @@ function logouthandle() {
     } catch (e) { console.log('logout button error:', e); }
 }
 
-logouthandle()
 // function for loginmodal
 export function popup() {
     const modal = document.querySelector('#loginModal'); const sidebarloginbtn = document.querySelector('#sidebarmodal'); const sidebarclosebtn = document.querySelector('.close');
@@ -128,9 +128,7 @@ export function addhoverbackground() {
 // *checks html elements
 export function addanimationclass() {
     document.querySelectorAll('*').forEach(el => {
-        for (let cls of el.classList) {
-            if (cls.startsWith('animate__')) { el.classList.add('animate__animated'); break; }
-        }
+        for (let cls of el.classList) { if (cls.startsWith('animate__')) { el.classList.add('animate__animated'); break; } }
     });
 };
 
@@ -154,7 +152,7 @@ export async function fetchjson() {
         const translatevalue = translate.value;
         if (translatevalue === 'ગુજરાતી') {
             const response = await fetch('lang.json', { method: 'GET', headers: { 'Accept': 'application/json', }, credentials: 'omit' }); if (!response.ok) console.log("status:", response.status);
-            const data = await response.json(); const datatag = document.querySelectorAll('aside a'); datatag.forEach((dataatribute) => {
+            const data = await response.json(); const datatag = document.querySelectorAll('aside a'); datatag.forEach(dataatribute => {
                 const keys = dataatribute.getAttribute('data-i18n'); if (data[keys]) { dataatribute.innerHTML = data[keys] } localStorage.setItem('language', 'gujrati');
             });
         } else { localStorage.setItem('language', 'english') };
