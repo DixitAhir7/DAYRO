@@ -55,12 +55,7 @@ function logouthandle() {
 // function for loginmodal
 export function popup() {
     const modal = document.querySelector('#loginModal'); const sidebarloginbtn = document.querySelector('#sidebarmodal'); const sidebarclosebtn = document.querySelector('.close');
-    sidebarloginbtn.addEventListener('click', (e) => {
-        e.preventDefault(); modal.style.display = 'block'; localStorage.setItem('modal', 'opened');
-    })
-    sidebarclosebtn.addEventListener('click', (e) => {
-        e.preventDefault(); modal.style.display = 'none'; localStorage.setItem('modal', 'closed');
-    })
+    sidebarloginbtn.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'block'; localStorage.setItem('modal', 'opened'); }); sidebarclosebtn.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'none'; localStorage.setItem('modal', 'closed'); })
 };
 
 // this script is for sidebar
@@ -87,8 +82,8 @@ export function sidebarBtn() {
             });
             function updateIcon() {
                 const isCollapsed = sidebar.classList.contains('sidebar-collapse'); if (isCollapsed) {
-                    collapseBtn.style.display = 'inline'; closeBtn.style.display = 'none'
-                } else if (!isCollapsed) { collapseBtn.style.display = 'none'; closeBtn.style.display = 'inline' }
+                    collapseBtn.style.display = 'block'; closeBtn.style.display = 'none'
+                } else if (!isCollapsed) { collapseBtn.style.display = 'none'; closeBtn.style.display = 'block' }
             }
         });
     } catch (e) { console.info("sidebar didn't opened", e); }
@@ -168,3 +163,11 @@ export function loadmorecontent() {
         })
     })
 };
+
+
+export function toggleDropdown() {
+    const getdropdownbtn = document.querySelector('.ReligionalHistory');
+    getdropdownbtn.addEventListener('click', (e) => {
+        e.preventDefault(); document.getElementById("historyDropdown").classList.toggle("show");
+    })
+}

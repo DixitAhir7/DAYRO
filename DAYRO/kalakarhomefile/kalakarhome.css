@@ -54,3 +54,58 @@ a {
 .search-section .search-sec form input[type="text"]::placeholder {
     padding-left: 20px;
 }
+
+/* feedback when searchnotfound  css*/
+.feedback-section {
+    margin-top: 60px;
+}
+
+.feedback-section .feedbackdiv textarea {
+    width: 400px;
+    height: 100px;
+}
+
+.feedback-section .feedbackdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.feedbackbtns i:first-child {
+    margin-left: 35%;
+    font-size: 18px;
+}
+
+.feedbackbtns i:last-child {
+    margin-left: 15px;
+    font-size: 25px;
+}
+
+.msg h1 {
+    text-align: center;
+    font-weight: normal;
+}
+
+.msgdiv {
+    display: flex;
+    justify-content: center;
+}
+
+.msgdiv {
+    position: fixed;
+    top: 30px;
+    right: 800px;
+    background-color: #323232;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s, transform 0.3s;
+}
+
+.msgdiv.hide {
+    opacity: 0;
+    transform: translateY(20px);
+}

@@ -45,4 +45,47 @@ textElement.innerHTML = textElement.textContent
 //     localStorage.setItem('username:', JSON.stringify(EmailValue))
 //     localStorage.setItem('password:', JSON.stringify(passwordValue))
 
-// })
+// })   
+
+/*
+recursion:function calls it self,
+ untill it reaches the target
+*/
+
+String.toString().toLocaleUpperCase
+function findSolution(target) {
+    function find(current, history) {
+        if (current == target) {
+            return history;
+        } else if (current > target) {
+            return null;
+        } else {
+            // debugger
+            return (
+                find(current + 5, `(${history} + 5)`)
+            );
+        }
+    }
+    return find(1, "1");
+}
+console.log(findSolution(24));
+// find(current * 3, `(${history} * 3)`)
+
+function isEven(number) {
+    function find() {
+        if (number > 0) {
+            if (number % 2 == 0) {
+                console.log('number is even')
+            } else {
+                console.log('odd')
+            }
+        }
+    }
+    return find;
+}
+
+const result = isEven(50);
+result();
+
+function sum(a, b) { return a + b };
+new Range()

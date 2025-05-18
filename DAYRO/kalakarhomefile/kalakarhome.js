@@ -20,6 +20,7 @@ const suggestionobj = [
     { 'jignesh barot': 'Jignesh Barot' },
     { 'rasmitaben rabari': 'Rasmita Rabari' },
     { 'praful dave': 'praful dave' },
+    { 'uday dhandhal': 'uday dhandhal' },
     { 'birju barot': 'Birju Barot' },
     { 'sagardan Gadhvi': 'Sagardan Gadhvi' },
     { 'raj Gadhvi': 'Raj Gadhvi' },
@@ -57,13 +58,21 @@ try {
                 const searchicon = document.querySelector('#search-icon');
                 searchicon.addEventListener('click', (e) => {
                     e.preventDefault(); const clickedartisturl = suggestionobj.find((data) => {
-                        if (data[inputSearchsuggestion.value]) return true
-                    }); let url = Object.values(clickedartisturl)[0]; window.location.assign(url);
+                        if (data[inputSearchsuggestion.value]) { return true };
+                    }); let url = null; if (clickedartisturl && typeof clickedartisturl === 'object') { url = Object.values(clickedartisturl)[0] }
+                    if (url) { window.location.assign(url); } else {
+                        feedbackdiv.style.display = 'block'; createfeedbackbox();
+                    }
                 });
                 suggestion.addEventListener('click', () => {
                     inputSearchsuggestion.value = match; showsuggestions.innerHTML = ""; showsuggestions.style.display = 'none'; const clickedartisturl = suggestionobj.find((data) => {
-                        if (data[inputSearchsuggestion.value]) form.reset(); return true;
-                    }); let url = Object.values(clickedartisturl)[0]; window.location.assign(url)
+                        if (data[inputSearchsuggestion.value]) { form.reset(); return true };
+                        let url = null; if (clickedartisturl && typeof clickedartisturl === 'object') { url = Object.values(clickedartisturl)[0] };
+                    }
+                    ); let url = Object.values(clickedartisturl)[0]; window.location.assign(url);
+                    if (url) { window.location.assign(url); } else {
+                        createfeedbackbox();
+                    }
                 }); showsuggestions.appendChild(suggestion);
             });
 
@@ -73,3 +82,19 @@ try {
         }); inputSearchsuggestion.classList.add('borderstyle')
     } showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };
+
+
+// feedback when search not found
+const feedbacktext = document.querySelector('.feedback-section textarea'); const feedbackaddbtn = document.querySelector('.feedback-section .feedbackbtns #send'); const skipfeedback = document.querySelector('.feedback-section .feedbackbtns #skip'); const feedbackdiv = document.querySelector('.feedback-section');
+feedbackdiv.style.display = 'none';
+
+//forstoring feedback value
+function createfeedbackbox() { feedbackaddbtn.addEventListener('click', gettingvaluefeedback) };
+feedbackaddbtn.addEventListener('click', function () {
+    const inputSearchsuggestion = document.querySelector('.search-sec input[type="text"]'); const msgdiv = document.createElement('div'); msgdiv.className = 'msgdiv'; const icon = document.createElement('i'); icon.classList.add('fa-solid'); const ptag_msg = document.createElement('p'); ptag_msg.className = 'ptagformsg'; ptag_msg.innerHTML = 'Thanks for feedback'; document.body.appendChild(msgdiv).appendChild(ptag_msg); feedbackdiv.style.display = 'none';
+    setTimeout(() => {
+        msgdiv.classList.add('hide'); msgdiv.addEventListener('transitionend', () => { msgdiv.remove() })
+    }, 3000); inputSearchsuggestion.value = null;
+});
+
+function gettingvaluefeedback() { const feedbackvalue = feedbacktext.value; if (feedbackvalue) { console.log(feedbackvalue); feedbacktext.value = null; } };

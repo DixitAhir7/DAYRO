@@ -1,4 +1,4 @@
-import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight, fetchjson } from "../functions-flie/functions.js";
+import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight, fetchjson, toggleDropdown } from "../functions-flie/functions.js";
 
 /*
 functionsdefinationinorder
@@ -6,4 +6,4 @@ sidebar,loginmodal,whenuservisitfirsttime,sharetomedia,hoverwhiteonsidebaratags,
 */
 
 const useremail = new Loginvalidation(); useremail.validatelogin();
-sidebarBtn(); popup(); firstTime(); shareDayro(); addhoverbackground(); addanimationclass(); labels(); fontweight(); fetchjson();
+sidebarBtn(); popup(); firstTime(); shareDayro(); addhoverbackground(); addanimationclass(); labels(); fontweight(); fetchjson(); toggleDropdown();

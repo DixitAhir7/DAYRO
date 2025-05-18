@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <script defer src="theme-js/theme.js"></script> -->
     <script type="module" defer src="js/script.js"></script>
-    <link rel="stylesheet" href="media-css/media.css">
     <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="media-css/media.css">
 </head>
 
 <body>
@@ -34,28 +34,18 @@
                                 href="kalakarhomefile/kalakarhome.html">Kalakaro</a>
                         </div>
 
-                        <!-- for history of some communities:maharas,talvarras
-                            in this include city history too 
-                            -->
-                        <div class="ReligionalHistory  text-center mt-3" onclick="toggleDropdown()">
+                        <div class="ReligionalHistory text-center mt-3">
                             <a data-i18n="history">History</a>
                         </div>
                         <div id="historyDropdown" class="dropdown-content">
                             <a data-i18n="community" href="community/communities.html">Community History</a>
                             <a data-i18n="city" href="cityhistory/cityhistory.html">City History</a>
-
-                            <script>
-                                function toggleDropdown() {
-                                    document.getElementById("historyDropdown").classList.toggle("show");
-                                }   
-                            </script>
                         </div>
 
                         <div class="for-artist  text-center mt-3">
                             <a data-i18n="artist" class="" href="artist/artists.html">For Artist</a>
                         </div>
 
-                        <!-- in about all about this web -->
                         <div class="about-page  mt-3">
                             <i class="fas fa-info-circle about-icon"></i>
                             <a data-i18n="about" class="" href="about-page/about.html">About dayro</a>
