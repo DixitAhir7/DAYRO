@@ -86,6 +86,3 @@ function isEven(number) {
 
 const result = isEven(50);
 result();
-
-function sum(a, b) { return a + b };
-new Range()

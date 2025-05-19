@@ -92,17 +92,13 @@ strong {
 }
 
 /* welcome-section */
-.welcome-section .welocme-message,
-.heading,
-.welcome-quote {
+.div_mediaquerry div {
     padding: 30px;
     border-radius: 8px;
     background-color: wheat;
 }
 
-.heading p,
-.welocme-message p,
-.welcome-quote p {
+.div_mediaquerry div p {
     height: 100px;
 }
 

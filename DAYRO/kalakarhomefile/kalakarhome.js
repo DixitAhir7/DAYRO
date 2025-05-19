@@ -1,14 +1,14 @@
 // for suggestions object
 
 const suggestionobj = [
-    { 'kirtidan gadhvi': '../individualkalakaro/kirtidan/kirtidan.html' },
-    { 'mayabhai ahir': '../individualkalakaro/mayaAhir/Mayaahir.html' },
-    { 'ishardan gadhvi': '../individualkalakaro/ishardan/ishardan.html' },
-    { 'devayt khavad': '../individualkalakaro/khavad/khavad.html' },
-    { 'bhikhudan gadhvi': '../individualkalakaro/bhikhudan/bhikhudan.html' },
-    { 'Dhirubhai Sarvaiya': '../individualkalakaro/dhirubhai/dhirubhai.html' },
-    { 'gaman santhal': '../individualkalakaro/bhuvaji/bhuvaji.html' },
-    { 'sairam Dave': '' },
+    { 'kirtidan gadhvi': { name: 'kirtidan Gadhvi', age: 58, significantWork: 'singer' } },
+    { 'mayabhai ahir': { name: 'Mayabhai Ahir', age: 60, significantWork: 'comedy' }, },
+    { 'ishardan gadhvi': { name: 'ishardan Gadhvi', age: 58, significantWork: 'folk Music' } },
+    { 'devayt khavad': { name: 'devayt khavad', age: 58, significantWork: 'folk Music' } },
+    { 'bhikhudan gadhvi': { name: 'bhikhudan gadhvi', age: 58, significantWork: 'folk Music' } },
+    { 'Dhirubhai Sarvaiya': { name: 'dhirubhai sarvaiya', age: 58, significantWork: 'comedy' } },
+    { 'gaman santhal': { name: 'gaman santhal', age: 58, significantWork: 'singer' } },
+    { 'sairam Dave': { name: 'sairam dave', age: 58, significantWork: 'comedy' } },
     { 'falguni pathak': 'Falguni Pathak' },
     { 'rajbha Gadhvi': 'Rajbha ' },
     { 'aditya Gadhvi': 'aditya gadhvi' },
@@ -45,42 +45,69 @@ const suggestionobj = [
 try {
     function showsuggestions() {
         const form = document.querySelector('.search-sec form');
-        const inputSearchsuggestion = document.querySelector('.search-sec input[type="text"]'); const searchsection = document.querySelector('.search-sec'); const showsuggestions = document.querySelector('.show-suggestions');
+        const inputSearchsuggestion = document.querySelector('.search-sec input[type="text"]');
+        const showsuggestions = document.querySelector('.show-suggestions');
+
         inputSearchsuggestion.addEventListener('input', (e) => {
             inputSearchsuggestion.classList.remove('borderstyle')
-            e.preventDefault(); showsuggestions.style.display = 'block'; let searchvalue = inputSearchsuggestion.value.toLowerCase().trim(); showsuggestions.innerHTML = ""; if (!searchvalue) {
-                showsuggestions.style.display = 'none'; inputSearchsuggestion.classList.add('borderstyle')
+            e.preventDefault();
+            showsuggestions.style.display = 'block';
+            let searchvalue = inputSearchsuggestion.value.toLowerCase().trim();
+            showsuggestions.innerHTML = "";
+            if (!searchvalue) {
+                showsuggestions.style.display = 'none';
+                inputSearchsuggestion.classList.add('borderstyle')
                 return;
-            }; const kalakardata = suggestionobj.map(obj => Object.keys(obj)[0]);
+            };
+            const kalakardata = suggestionobj.map(obj => Object.keys(obj)[0]);
             const filterednames = kalakardata.filter(name => name.toLowerCase().includes(searchvalue));
             filterednames.forEach(match => {
-                const suggestion = document.createElement('a'); suggestion.textContent = match; suggestion.classList.add('suggestion-item');
+                const suggestion = document.createElement('a');
+                suggestion.textContent = match;
+                suggestion.classList.add('suggestion-item');
                 const searchicon = document.querySelector('#search-icon');
                 searchicon.addEventListener('click', (e) => {
-                    e.preventDefault(); const clickedartisturl = suggestionobj.find((data) => {
-                        if (data[inputSearchsuggestion.value]) { return true };
-                    }); let url = null; if (clickedartisturl && typeof clickedartisturl === 'object') { url = Object.values(clickedartisturl)[0] }
-                    if (url) { window.location.assign(url); } else {
+                    e.preventDefault();
+                    const clickedartisturl = suggestionobj.find((data) => {
+                        if (data[inputSearchsuggestion.value]) {
+                            return true;    
+                        };
+                    });
+                    let url = null;
+                    if (clickedartisturl && typeof clickedartisturl === 'object') {
+                        url = Object.values(clickedartisturl)[0];
+                    } else {
                         feedbackdiv.style.display = 'block'; createfeedbackbox();
                     }
+
                 });
                 suggestion.addEventListener('click', () => {
-                    inputSearchsuggestion.value = match; showsuggestions.innerHTML = ""; showsuggestions.style.display = 'none'; const clickedartisturl = suggestionobj.find((data) => {
-                        if (data[inputSearchsuggestion.value]) { form.reset(); return true };
-                        let url = null; if (clickedartisturl && typeof clickedartisturl === 'object') { url = Object.values(clickedartisturl)[0] };
+                    inputSearchsuggestion.value = match; showsuggestions.innerHTML = "";
+                    showsuggestions.style.display = 'none';
+                    const clickedartisturl = suggestionobj.find(data => {
+                        if (data[inputSearchsuggestion.value]) {
+                            return true;
+                        };
                     }
-                    ); let url = Object.values(clickedartisturl)[0]; window.location.assign(url);
-                    if (url) { window.location.assign(url); } else {
+                    );
+                    let url = null;
+                    if (clickedartisturl && typeof clickedartisturl === 'object') {
+                        url = Object.values(clickedartisturl)[0];
+                        console.log(url);
+                    } else {
                         createfeedbackbox();
                     }
-                }); showsuggestions.appendChild(suggestion);
+                });
+                showsuggestions.appendChild(suggestion);
             });
 
             document.addEventListener('click', (event) => {
                 if (!showsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) { showsuggestions.innerHTML = ''; showsuggestions.style.display = 'none'; }
             });
-        }); inputSearchsuggestion.classList.add('borderstyle')
-    } showsuggestions();
+        });
+        inputSearchsuggestion.classList.add('borderstyle')
+    }
+    showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };
 
 

@@ -127,7 +127,6 @@ function displayVideo() {
 // it's for pausing video 
 
 function pauseAllExcept(currentVideo) {
-
     /*
     will get all video, and loop inside all videos,
     only one video plays at a time
@@ -139,7 +138,6 @@ function pauseAllExcept(currentVideo) {
         }
     });
 };
-
 
 // clearing video
 
@@ -153,7 +151,6 @@ function deleteVideo(id, container) {
 
     deleteRequest.onsuccess = () => {
         container.remove();
-        console.log(`Video with ID ${id} deleted.`);
     };
 
     deleteRequest.onerror = (e) => {

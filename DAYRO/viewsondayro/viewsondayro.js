@@ -5,10 +5,18 @@ try {
     function submittingviews() {
         const viewstextarea = document.querySelector('.usersviews textarea'); const displayhtml = document.querySelector('.displayuserviews p'); const submitviews = document.querySelector('#viewssubmit'); submitviews.addEventListener('click', (e) => {
             e.preventDefault(); const textareavalue = viewstextarea.value.trim(); if (textareavalue) {
-                displayhtml.innerHTML = ''; displayhtml.innerHTML += `${textareavalue} <br>`; displayhtml.style.display = 'block'; reply(); extractingemail(); extractingimage(); localStorage.setItem('deletedview', JSON.stringify(textareavalue)); viewstextarea.value = null;
+                displayhtml.innerHTML = ''; displayhtml.innerHTML += `${textareavalue} <br>`; displayhtml.style.display = 'block';
+                reply();
+                extractingemail();
+                extractingimage();
+                localStorage.setItem('deletedview', JSON.stringify(textareavalue)); viewstextarea.value = null;
             } else if (!textareavalue) { displayhtml.innerHTML = 'please enter something'; } else { return 'failed to add value' }
         })
-    }; submittingviews(); deleteviews(); undoviews(); viewedit();
+    };
+    submittingviews();
+    deleteviews();
+    undoviews();
+    viewedit();
 } catch (e) { console.log('error while submitting views', e); };
 
 // delete view 
@@ -33,13 +41,19 @@ function viewedit() {
 
 // displaying email 
 function extractingemail() {
-    const atagforemail = document.querySelector('.displayuserviews a'); const useremail = new Loginvalidation(); useremail.getemail(); const emailvalue = useremail.getvalue(); atagforemail.innerHTML = emailvalue;
+    const atagforemail = document.querySelector('.displayuserviews a'); const useremail = new Loginvalidation(); useremail.getemail(); const emailvalue = useremail.getvalue(); atagforemail.innerHTML = emailvalue; const userlogout = useremail.getlogoutinfo();
 
     // if user haven't loggedin then show random names
-    const royalNames = ["Aryavir", "Rajendra", "Vikrant", "Samrat", "Mahadevan", "Raghunandan", "Veerendra", "Suryadev", "Indrajeet", "Harshvardhan", "Karanveer", "Rudransh", "Adityanandan", "Parthiv", "Rajas", "Pradyumna", "Janardan", "Rajdeep", "Bhavya", "Pratikraj", "Kirtan", "Smitraj", "Tirth", "Ramendra", "Bhishma", "Arindam", "Shatrughna", "Dasharath", "Suryansh", "Raghavendra", "KrishnaKant", "Vibhishan", "Vasudev", "Nakulraj", "Yudhveer", "Bharata", "Balaram", "Shreeval", "Vasuman", "Viduraj", "Achyut", "Shaurya", "Rudraansh", "Dheeraj", "Tanmayraj", "Veerang", "Aryanraj", "Devraj", "Arnavraj", "Divyaraj", "Shubhransh", "Mitradev", "Shravanraj", "Amarjeet", "Harinarayan", "Someshwar", "Devarshi", "Sahastrajit", "Vrajraj", "Hridayraj", "Shivtej"]; if (useremail.getlogoutinfo() && royalNames.length > 0) {
-        const randomIndex = Math.floor(Math.random() * royalNames.length); const randomName = royalNames[randomIndex]; atagforemail.innerHTML = randomName;
+    const royalNames = ["Aryavir", "Rajendra", "Vikrant", "Samrat", "Mahadevan", "Raghunandan", "Suryadev", "Indrajeet", "Harshvardhan", "Karanveer", "Rudransh", "Adityanandan", "Parthiv", "Rajas", "Pradyumna", "Janardan", "Rajdeep", "Bhavya", "Pratikraj", "Kirtan", "Tirth", "Ramendra", "Bhishma", "Shatrughna", "Dasharath", "Suryansh", "Raghavendra", "KrishnaKant", "Vibhishan", "Vasudev", "Nakulraj", "Yudhveer", "ganesh", "Bharata", "Balaram", "Shreeval", "Vasuman", "Viduraj", "Achyut", "Shaurya", "Rudraansh", "Dheeraj", "Tanmayraj", "Veerang", "Aryanraj", "Devraj", "Arnavraj", "Divyaraj", "Shubhransh", "Mitradev", "Shravanraj", "Harinarayan", "Someshwar", "Devarshi", "Sahastrajit", "Vrajraj", "Hridayraj", "Shivtej"];
+
+    if (userlogout && royalNames.length > 0) {
+        const randomIndex = Math.floor(Math.random() * royalNames.length);
+        const randomName = royalNames[randomIndex]; atagforemail.innerHTML = randomName;
     } else {
-        const ptagforlogout = document.createElement('p'); ptagforlogout.className = 'nameerror'; document.body.appendChild(ptagforlogout); ptagforlogout.innerHTML = atagforemail.innerHTML;
+        const ptagforlogout = document.createElement('p');
+        ptagforlogout.className = 'nameerror';
+        document.body.appendChild(ptagforlogout);
+        // ptagforlogout.innerHTML = atagforemail.innerHTML;
     }
 };
 

@@ -54,17 +54,4 @@
         padding: 2rem 1.2rem 1.5rem;
         border-radius: 12px;
     }
-
-    .readers,
-    .kalakar,
-    .ReligionalHistory,
-    .for-artist,
-    .about-page {
-        display: flex;
-        justify-content: start;
-    }
-
-    main .news-wrapper {
-        height: 250px;
-    }
 }

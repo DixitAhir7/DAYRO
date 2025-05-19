@@ -275,7 +275,7 @@ header .sidebar .dropdown-content a {
 /* login,logout,account,share button css */
 
 .user-info .login-btn a,
-.user-info .Logout button,
+.user-info .Logout a,
 .user-info .account a,
 .user-info .share a {
     font-size: 18px;
@@ -313,7 +313,7 @@ main {
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 320px;
+    /* height: 320px; */
 }
 
 .news-content {
@@ -327,7 +327,7 @@ main {
 
 .image-text {
     width: 400px;
-    height: 320px;
+    /* height: 320px; */
     display: flex;
     flex-direction: column;
 }

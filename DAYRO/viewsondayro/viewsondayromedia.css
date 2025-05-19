@@ -7,24 +7,14 @@
         /* field-sizing: content; */
         width: 90%;
         height: 60px;
-        text-align: center;
-        margin-left: 14px;
     }
 
-    .btnsfordisplay,
-    .replydivbtns {
-        display: flex;
-        justify-content: center;
-    }
-
-    .btnsfordisplay button,
-    .replydivbtns button {
-        margin-left: 4px;
+    .displayuserviews {
+        margin-top: 20px;
     }
 
     .infoaboutviews,
     span {
         font-size: 20px;
-        text-align: center;
     }
 }

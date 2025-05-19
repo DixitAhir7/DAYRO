@@ -1,7 +1,7 @@
 import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight, fetchjson, toggleDropdown } from "../functions-flie/functions.js";
 
 /*
-functionsdefinationinorder
+functions defination inorder
 sidebar,loginmodal,whenuservisitfirsttime,sharetomedia,hoverwhiteonsidebaratags,animate_css,whensidebarcollapsed all textnone,fw-mediumto atgas,translate
 */
 
