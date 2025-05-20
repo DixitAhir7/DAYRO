@@ -1,27 +1,6 @@
-// function initMap() {
-//     const gujarat = { lat: 22.3094, lng: 72.1362 };
-//     const map = new google.maps.Map(document.getElementById("map"), {
-//         zoom: 5,
-//         center: gujarat,
-//     });
-
-//     const junagadh = { lat: 21.5222, lng: 70.4579 };
-//     const marker = new google.maps.Marker({
-//         position: junagadh,
-//         map: map,
-//         title: "Junagadh",
-//     });
-
-//     marker.addListener("click", () => {
-//         console.log('clicked junagadh');
-//     });
-// }
+"use strict"
 
 function initMap() {
-    const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 7,
-        center: { lat: 22.3094, lng: 72.1362 },
-    });
 
     const cities = [
         {
@@ -34,7 +13,7 @@ function initMap() {
             name: "Lothal",
             lat: 22.5215,
             lng: 72.2483,
-            history: "Lothal was one of the most prominent cities of the Indus Valley Civilization.",
+            history: "Lothal was one of the most prominent cities of the India Valley Civilization.",
         },
         {
             name: "Somnath",
@@ -44,16 +23,22 @@ function initMap() {
         },
     ];
 
-    cities.forEach((citynames) => {
-        const marker = new google.maps.Marker({
-            position: { lattitude: citynames.lat, longitude: citynames.lng }, map,
-            Name: citynames.name
-        });
+    const gujarat = { lat: 22.3094, lng: 72.1362 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 7,
+        center: gujarat,
+    });
 
+    cities.forEach((city) => {
+        const marker = new google.maps.Marker({
+            position: { lattidute: city.lat, langitude: city.lng, },
+            map: map,
+            title: "Junagadh",
+        });
         marker.addListener("click", () => {
-            console.log(`clicked ${citynames.name}`);
+            console.log('clicked junagadh');
         });
     })
-}
+};
 
 initMap();

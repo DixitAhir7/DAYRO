@@ -1,6 +1,8 @@
+"use strict"
+
 // script for image upload of user
 
-const imgInput = document.querySelector('form input[type="file"]'); const defaultImg = document.querySelector('form img') || document.querySelector('.displayuserviews img'); const updateImg = document.querySelector('#updateImg'); const updateBtn = document.querySelector('.uploadImg'); const deleteImg = document.querySelector('input[type="submit"]');
+const imgInput = document.querySelector('form input[type="file"]'); const defaultImg = document.querySelector('form img') || document.querySelector('.displayuserviews img'); const updateImg = document.querySelector('#updateImg'); const updateBtn = document.querySelector('.uploadImg'); const deleteImg = document.querySelector('#deleteimage');
 
 // when user click default-img it opens file
 export class Imageupload {
@@ -46,3 +48,65 @@ export function deleteImage() {
         });
     } catch (e) { console.log('error while deleting image', e); }
 };
+
+// show user's data modal
+
+try {
+    function showData() {
+        const modal = document.getElementById("modal");
+        const openBtn = document.querySelector(".open-modal");
+        const closeBtn = document.getElementById("closeBtn");
+        const modalData = document.querySelector('.modal_data');
+        const email = document.querySelector('.modal_data a:first-child');
+        const password = document.querySelector('.modal_data a:nth-child(2)');
+        const username = document.querySelector('.modal_data a:last-child');
+
+        openBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            modal.style.display = "block";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        document.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        //modal_chaining method to see email
+        email.onclick = (e) => {
+            e.preventDefault();
+            const get_email = JSON.parse(localStorage.getItem('email'));
+
+            modalData.innerHTML = `
+            <i id="back" class="fa-solid fa-left-long"></i>
+                <a href="">${get_email}</a>
+            `
+
+            const BACK = document.getElementById('back').onclick = (e) => {
+                e.preventDefault();
+                modalData.innerHTML = `
+                     <div class="modal_data" id="modalBody">
+                    <a href="#" id="emailLink">Email</a>
+                    <a href="#" id="passwordLink">Password</a>
+                    <a href="#" id="usernameLink">Username</a>
+                </div>
+                `
+                document.querySelector('.modal_data a:first-child').onclick = email.onclick;
+            }
+        };
+
+        password.onclick = (e) => {
+            e.preventDefault();
+            // show password 
+        }
+        username.onclick = (e) => {
+            e.preventDefault();
+            // show username 
+        }
+    };
+    showData();
+} catch (e) { console.log('modal_data error:', e); }

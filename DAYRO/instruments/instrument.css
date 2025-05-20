@@ -1,3 +1,17 @@
-.instruments-details .tabla-details p span {
+.instruments-details .tabla-details p span,
+.dholak-details p span,
+.benjo-details p span {
     background-color: gray;
+    color: white;
+    padding: 2px;
+}
+
+.dholak-details,
+.manjira-details,
+.benjo-details {
+    margin-top: 14px;
+}
+
+.audiodiv {
+    display: none;
 }

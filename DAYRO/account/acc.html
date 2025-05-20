@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="acc.css">
     <script defer src="accountjs/acc.js"></script>
     <script defer type="module" src="account.js"></script>
+    <link rel="stylesheet" href="/bootstrap-icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
     <!-- in this i'll store user's account data :) -->
     <div class="container">
         <section class="useraccount">
@@ -22,18 +25,30 @@
                     <img class="d-block" src="img/user-default image.jpg" alt="upload your image">
                     <input type="file">
                     <input type="file" id="updateImg" class="hidden" />
-                    <a class="text-black uploadImg" href="">update image</a>
-                    <input type="submit" value="delte image">
+                    <a class="text-black uploadImg" href=""><i class="bi bi-card-image"></i></a>
+                    <i id="deleteimage" class="bi bi-trash3"></i>
                 </form>
             </div>
-
         </section>
 
         <section class="user-Data">
             <div class="user-btn">
-                <a href="/loginInfo/login.html">login information</a>
+                <a href="" class="open-modal">Manage Account</a>
             </div>
         </section>
+
+        <!-- Single Modal Container -->
+        <div class="login_data" id="modal">
+            <div class="modal-content">
+                <span class="close-button" id="closeBtn">&times;</span>
+                <div class="modal_data" id="modalBody">
+                    <a href="#" id="emailLink">Email</a>
+                    <a href="#" id="passwordLink">Password</a>
+                    <a href="#" id="usernameLink">Username</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </body>
 

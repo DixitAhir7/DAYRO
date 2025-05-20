@@ -1,3 +1,5 @@
+"use strict"
+
 import { Imageupload, deleteImage, updateImage, } from '../account/accountjs/acc.js';
 
 // functions for useraccimages

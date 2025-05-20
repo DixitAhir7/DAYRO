@@ -1,3 +1,5 @@
+"use strict"
+
 import { Loginvalidation } from '../functions-flie/functions.js'; import { Imageupload } from '../account/accountjs/acc.js';
 
 // mainfunction for addingviews

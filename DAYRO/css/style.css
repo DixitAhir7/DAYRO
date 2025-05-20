@@ -190,7 +190,8 @@ button {
     left: 80%;
 }
 
-#loginForm .submit {
+#loginForm .submit,
+#loginForm #reset:hover {
     background: var(--white);
 
     &:hover {
@@ -198,18 +199,14 @@ button {
     }
 }
 
-#loginForm #reset:hover {
-    background-color: var(--white);
-}
-
 /* nav-list css  */
 /* about css */
 
-header .sidebar .readers,
-header .sidebar .kalakar,
-header .sidebar .ReligionalHistory,
-header .sidebar .for-artist,
-header .sidebar .about-page {
+.sidebar .readers,
+.sidebar .kalakar,
+.sidebar .ReligionalHistory,
+.sidebar .for-artist,
+.sidebar .about-page {
     display: flex;
     justify-content: center;
 }
@@ -283,6 +280,7 @@ header .sidebar .dropdown-content a {
     &:hover {
         background-color: var(--white);
         border-radius: 7px;
+        max-width: 100px; 
     }
 }
 

@@ -6,15 +6,12 @@
 <!-- for better experience -->
 --> location of user
 --> uesr data
---> first target of site is to make this,
- for only related to dayro content it includes everything
 
  --> add video in background with pure music,
   of combined all artists of gujrat include only main
 
 --> make this site entertaining
---> my prediction is that 90% will be seeing this in phone,
- so make it perfect responsive for phone on your own
+--> so make it perfect responsive for phone
 
 # 3d art gallery
 --> where i'll show dayro historical images,
@@ -23,7 +20,7 @@
  <!-- language -->
 --> adding gujrati language
 
-<!-- importance of gir contribution to DAYRO -->
+# importance of gir contribution to DAYRO
 
 * bhajan,santvani,
 * hasya,
@@ -46,7 +43,7 @@
 
 --> in home page live section will be added  
 
-<!-- video-functionality -->
+<!-- video-functionality -->  
 
 -> where user can add their videos: not just related to dayro like where users can have fun and all 
 

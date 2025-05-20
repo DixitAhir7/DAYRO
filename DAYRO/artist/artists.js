@@ -1,3 +1,5 @@
+"use strict"
+
 const requestdb = indexedDB.open('database', 1);
 
 const form = document.querySelector('form');

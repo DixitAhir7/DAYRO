@@ -1,3 +1,5 @@
+"use strict"
+
 // getting artist data to display data of searched artists
 
 const getArtistData = JSON.parse(localStorage.getItem('searchedArtist')) || [];

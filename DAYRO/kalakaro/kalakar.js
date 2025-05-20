@@ -1,3 +1,5 @@
+"use strict"
+
 // searching scrpt for artists
 // search selectors form
 const form = document.querySelector('form'); const inputSearch = form.querySelector('input[type="text"]'); const result = document.querySelector('.no-result'); const content = document.querySelectorAll('.artist-img'); const show_content = document.querySelector('.show-content'); const searchicon = document.querySelector('#search-icon');

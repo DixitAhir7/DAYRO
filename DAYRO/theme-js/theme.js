@@ -1,3 +1,5 @@
+"use strict"
+
 const theme = document.querySelector('.theme-mode');
 function themechange() {
     try {

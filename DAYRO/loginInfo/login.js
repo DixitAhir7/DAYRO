@@ -1,1 +1,2 @@
-// import { validatelogin } from "../../validation-file/validate.js";
+"use strict"
+

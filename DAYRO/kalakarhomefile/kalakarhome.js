@@ -1,3 +1,6 @@
+"use strict"
+
+
 // for suggestions object
 
 const suggestionobj = [
@@ -44,7 +47,6 @@ const suggestionobj = [
 // suggestions for searching artist
 try {
     function showsuggestions() {
-        const form = document.querySelector('.search-sec form');
         const inputSearchsuggestion = document.querySelector('.search-sec input[type="text"]');
         const showsuggestions = document.querySelector('.show-suggestions');
 
