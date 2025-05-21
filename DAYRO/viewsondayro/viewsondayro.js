@@ -1,18 +1,22 @@
 "use strict"
 
-import { Loginvalidation } from '../functions-flie/functions.js'; import { Imageupload } from '../account/accountjs/acc.js';
+import { Loginvalidation } from '../functions-flie/functions.js';
+import { Imageupload } from '../account/accountjs/acc.js';
 
 // mainfunction for addingviews
 try {
     function submittingviews() {
         const viewstextarea = document.querySelector('.usersviews textarea'); const displayhtml = document.querySelector('.displayuserviews p'); const submitviews = document.querySelector('#viewssubmit'); submitviews.addEventListener('click', (e) => {
-            e.preventDefault(); const textareavalue = viewstextarea.value.trim(); if (textareavalue) {
-                displayhtml.innerHTML = ''; displayhtml.innerHTML += `${textareavalue} <br>`; displayhtml.style.display = 'block';
+            e.preventDefault(); const textareavalue = viewstextarea.value.trim();
+            if (textareavalue && textareavalue.length > 50) {
+                displayhtml.innerHTML = '';
+                displayhtml.innerHTML += `${textareavalue} <br>`; displayhtml.style.display = 'block';
                 reply();
                 extractingemail();
                 extractingimage();
                 localStorage.setItem('deletedview', JSON.stringify(textareavalue)); viewstextarea.value = null;
-            } else if (!textareavalue) { displayhtml.innerHTML = 'please enter something'; } else { return 'failed to add value' }
+            } else if (!textareavalue) { displayhtml.innerHTML = 'please enter something'; }
+            else { return 'failed to add value' }
         })
     };
     submittingviews();
@@ -31,13 +35,14 @@ function deleteviews() {
 // user can bring back the deleted text
 function undoviews() {
     const undobtn = document.querySelector('#undoview'); const displayhtml = document.querySelector('.displayuserviews p'); undobtn.addEventListener('click', (e) => {
-        e.preventDefault(); const getdeletedview = localStorage.getItem('deletedview'); if (getdeletedview) { displayhtml.innerHTML = getdeletedview; }
+        e.preventDefault(); const getdeletedview = JSON.parse(localStorage.getItem('deletedview'));
+        getdeletedview ? displayhtml.innerHTML = getdeletedview : '';
     })
 };
 // for edit text
 function viewedit() {
     const editbtn = document.querySelector('#viewedit'); const viewstextarea = document.querySelector('.usersviews textarea'); editbtn.addEventListener('click', (e) => {
-        e.preventDefault(); const getdeletedview = localStorage.getItem('deletedview'); viewstextarea.value = getdeletedview;
+        e.preventDefault(); const getdeletedview = JSON.parse(localStorage.getItem('deletedview')); viewstextarea.value = getdeletedview;
     });
 };
 
@@ -61,7 +66,8 @@ function extractingemail() {
 
 // function for dispaly image in view
 function extractingimage() {
-    const imgtagforimage = document.querySelector('.displayuserviews img'); let extractimg = new Imageupload(); extractimg.displayimage(); if (extractimg) {
+    const imgtagforimage = document.querySelector('.displayuserviews img'); let extractimg = new Imageupload(); extractimg.displayimage();
+    if (extractimg) {
         imgtagforimage.style.display = 'block';
         // parse: converting data in js object
         imgtagforimage.src = JSON.parse(localStorage.getItem('base64str'));
@@ -78,22 +84,31 @@ function reply() {
 // displayreply
 function addreply() {
     const submitreply = document.querySelector('.replydivbtns #submitreply'); const displayreply = document.querySelector('.replydiv #viewreplytouser'); const replytextarea = document.querySelector('.replydiv textarea'); submitreply.addEventListener('click', (e) => {
-        e.preventDefault(); if (replytextarea.value) { displayreply.innerHTML = replytextarea.value; } deletereply();
+        e.preventDefault();
+        replytextarea.value ? displayreply.innerHTML = replytextarea.value : '';
+        deletereply();
     })
 } addreply();
 
 // to delete reply
 function deletereply() {
     const displayreply = document.querySelector('.replydiv #viewreplytouser'); const replytextarea = document.querySelector('.replydiv textarea'); const deletereplybtn = document.querySelector('.replydivbtns #deletereply'); deletereplybtn.addEventListener('click', (e) => {
-        e.preventDefault(); if (replytextarea) {
-            replytextarea.value = ''; displayreply.innerHTML = '';
-        }
+        e.preventDefault();
+        if (replytextarea) replytextarea.value = ''; displayreply.innerHTML = '';
     })
 };
 
 // animation for header
 try {
-    const words = ['views', 'stories', 'thoughts', 'discuss']; const highlight = document.getElementById('dynamic-text'); let index = 0; function updateText() {
-        highlight.classList.remove('active'); setTimeout(() => { highlight.textContent = words[index]; highlight.classList.add('active'); index = (index + 1) % words.length; }, 300);
-    } setInterval(updateText, 2500);
-} catch (e) { console.log('animation error:', e); }
+    const words = ['views', 'stories', 'thoughts', 'discuss']; const highlight = document.getElementById('dynamic-text');
+    let index = 0;
+    function updateText() {
+        highlight.classList.remove('active');
+        setTimeout(() => {
+            highlight.textContent = words[index];
+            highlight.classList.add('active');
+            index = (index + 1) % words.length;
+        }, 300);
+    }
+    setInterval(updateText, 2500);
+} catch (e) { console.log('animation error:', e) };

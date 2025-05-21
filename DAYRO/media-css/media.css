@@ -35,6 +35,10 @@
 }
 
 @media (max-width: 576px) {
+    .news-content {
+        position: relative;
+        animation: spin 1s linear infinite reverse;
+    }
 
     .sidebar {
         width: 400px;

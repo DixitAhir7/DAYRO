@@ -8,32 +8,25 @@
     <link rel="stylesheet" href="/css-bt/bootstrap.min.css">
     <link rel="stylesheet" href="/js-bt/bootstrap.bundle.min.js">
     <link rel="stylesheet" href="acc.css">
-    <script defer src="accountjs/acc.js"></script>
     <script defer type="module" src="account.js"></script>
     <link rel="stylesheet" href="/bootstrap-icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="accmedia.css">
 </head>
 
 <body>
     <!-- in this i'll store user's account data :) -->
     <div class="container">
-        <section class="useraccount">
+        <section class="useraccount_display">
             <div class="account">
-                <form action="">
-                    <img class="d-block" src="img/user-default image.jpg" alt="upload your image">
-                    <input type="file">
-                    <input type="file" id="updateImg" class="hidden" />
-                    <a class="text-black uploadImg" href=""><i class="bi bi-card-image"></i></a>
-                    <i id="deleteimage" class="bi bi-trash3"></i>
-                </form>
+                <img class="d-block" src="img/user-default image.jpg">
             </div>
         </section>
 
         <section class="user-Data">
             <div class="user-btn">
-                <a href="" class="open-modal">Manage Account</a>
+                <a href="" class="open-modal">Edit Profile</a>
+                <a href="/seeviewsinacc/seeviews.html">See your views</a>
             </div>
         </section>
 
@@ -41,14 +34,26 @@
         <div class="login_data" id="modal">
             <div class="modal-content">
                 <span class="close-button" id="closeBtn">&times;</span>
+                <section class="useraccount">
+                    <div class="account" id="editAccout">
+                        <form action="">
+                            <img class="d-block" src="img/user-default image.jpg" alt="upload your image">
+                            <input type="file" id="updateImg" title="upload image" class="hidden d-none" />
+                            <div class="changingimagescss">
+                                <a class="text-black uploadImg" href=""><i class="bi bi-card-image"></i></a>
+                                <i id="deleteimage" class="bi bi-trash3"></i>
+                            </div> 
+                        </form>
+                    </div>
+                </section>
                 <div class="modal_data" id="modalBody">
                     <a href="#" id="emailLink">Email</a>
                     <a href="#" id="passwordLink">Password</a>
                     <a href="#" id="usernameLink">Username</a>
+                    <button id="uploadUpdated_profile">Done</button>
                 </div>
             </div>
         </div>
-
     </div>
 </body>
 

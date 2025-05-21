@@ -3,7 +3,7 @@
 // login-form validation
 export class Loginvalidation {
     getemail() {
-        const getemailvalue = localStorage.getItem('login');
+        const getemailvalue = localStorage.getItem('email');
         if (getemailvalue) {
             const parsedemail = JSON.parse(getemailvalue);
             return parsedemail;
@@ -21,7 +21,7 @@ export class Loginvalidation {
 
     validatelogin() {
         try {
-            const form = document.querySelector('#loginModal form'); const emailInput = form.querySelector(".email"); const passwordInput = form.querySelector("#loginModal input[type='password']"); const modal = document.getElementById("loginModal"); const loginBtn = document.querySelector('.user-info .login-btn a'); const logoutBtn = document.querySelector('.user-info .Logout a'); const emailerror = form.querySelector('#emailerror'); const passworderror = form.querySelector('#passworderror'); const emailregexerror = form.querySelector('#emailregex'); const seepassword = form.querySelector('#toggleIcon'); const getlogininfo = localStorage.getItem('login');
+            const form = document.querySelector('#loginModal form'); const emailInput = form.querySelector(".email"); const passwordInput = form.querySelector("#loginModal input[type='password']"); const modal = document.getElementById("loginModal"); modal.style.display = 'none'; const loginBtn = document.querySelector('.user-info .login-btn a'); const logoutBtn = document.querySelector('.user-info .Logout a'); const emailerror = form.querySelector('#emailerror'); const passworderror = form.querySelector('#passworderror'); const emailregexerror = form.querySelector('#emailregex'); const seepassword = form.querySelector('#toggleIcon'); const getlogininfo = localStorage.getItem('email');
             const logoutinfo = localStorage.getItem('logout');
 
             form.addEventListener("submit", function (event) {
@@ -40,23 +40,22 @@ export class Loginvalidation {
                 } else if (obj.emailvaluestore) {
                     emailerror.style.display = 'none';
                     emailregexerror.style.display = 'none';
-                };
+                }
 
                 // password validation
                 if (!obj.passwordValuestore) {
                     passworderror.style.display = 'block';
                     passworderror.innerHTML = 'please set strong password';
-                    passworderror.style.color = 'white'
+                    passworderror.style.color = 'white';
                 } else if (obj.passwordValuestore) { passworderror.style.display = 'none'; };
 
                 // login conformed
                 if (emailRegex.test(obj.emailvaluestore) && obj.passwordValuestore) {
                     localStorage.setItem('email', JSON.stringify(obj.emailvaluestore));
-                    localStorage.setItem('password', JSON.stringify(obj.passwordValuestore));
+                    // localStorage.setItem('password', JSON.stringify(obj.passwordValuestore));
                     loginBtn.style.display = "none";
                     logoutBtn.style.display = "block";
                     localStorage.removeItem('logout');
-                    modal.style.display = 'none';
                 };
             });
 
@@ -68,18 +67,15 @@ export class Loginvalidation {
             });
 
             window.addEventListener('DOMContentLoaded', () => {
-
                 if (getlogininfo) {
                     loginBtn.style.display = "none";
                     logoutBtn.style.display = "inline-block";
-
                 }
                 if (logoutinfo) {
                     loginBtn.style.display = "inline-block";
                     logoutBtn.style.display = "none";
                 }
             });
-            modal.style.display = "none";
         } catch (error) { console.error("Login error:", error.message); }
     }
 };
@@ -100,6 +96,10 @@ function logouthandle() {
     } catch (e) { console.log('logout button error:', e); }
 };
 
+function setUsername() {
+
+}
+
 // function for loginmodal
 export function popup() {
     const modal = document.querySelector('#loginModal'); const sidebarloginbtn = document.querySelector('#sidebarmodal'); const sidebarclosebtn = document.querySelector('.close');
@@ -109,30 +109,50 @@ export function popup() {
 // this script is for sidebar
 export function sidebarBtn() {
     try {
-        const sidebar = document.querySelector('.sidebar'); const collapseBtn = document.querySelector('.sidebarToggle'); const closeBtn = document.querySelector('.close-sidebar'); const overflowclass = 'overflow'; const sidebarclass = 'sidebar-collapse';
+        const sidebar = document.querySelector('.sidebar');
+        const collapseBtn = document.querySelector('.sidebarToggle');
+        const closeBtn = document.querySelector('.close-sidebar');
+        const sidebarclass = 'sidebar-collapse';
 
         document.addEventListener('DOMContentLoaded', () => {
             collapseBtn.addEventListener('click', (e) => {
-                e.preventDefault(); sidebar.classList.remove(sidebarclass); sidebar.classList.remove(overflowclass); updateIcon(); savingstate();
+                e.preventDefault();
+                sidebar.classList.remove(sidebarclass);
+                updateIcon();
+                savingstate();
             });
 
             function savingstate() {
-                const issidebaropen = sidebar.classList.contains(sidebarclass); issidebaropen ? localStorage.setItem('sidebar', 'collapsed') : localStorage.setItem('sidebar', 'expanded')
+                const issidebaropen = sidebar.classList.contains(sidebarclass);
+                issidebaropen ? localStorage.setItem('sidebar', 'collapsed') : localStorage.setItem('sidebar', 'expanded')
             };
 
             // sidebar stays as it is on exploring to any page
             window.addEventListener('DOMContentLoaded', () => {
-                const sidebar = document.querySelector('.sidebar'); const sidebarState = localStorage.getItem('sidebar'); if (sidebarState === 'expanded') { sidebar.classList.remove(sidebarclass); sidebar.classList.remove(overflowclass); } else { sidebar.classList.add(sidebarclass); sidebar.classList.add(overflowclass); } updateIcon();
+                const sidebar = document.querySelector('.sidebar');
+                const sidebarState = localStorage.getItem('sidebar');
+                if (sidebarState === 'expanded') sidebar.classList.remove(sidebarclass);
+                else sidebar.classList.add(sidebarclass);
+                updateIcon();
             });
 
             closeBtn.addEventListener('click', (e) => {
-                e.preventDefault(); sidebar.classList.add(sidebarclass); updateIcon(); savingstate();
+                e.preventDefault();
+                sidebar.classList.add(sidebarclass);
+                updateIcon();
+                savingstate();
             });
 
             function updateIcon() {
-                const isCollapsed = sidebar.classList.contains('sidebar-collapse'); if (isCollapsed) {
-                    collapseBtn.style.display = 'block'; closeBtn.style.display = 'none'
-                } else if (!isCollapsed) { collapseBtn.style.display = 'none'; closeBtn.style.display = 'block' }
+                const isCollapsed = sidebar.classList.contains('sidebar-collapse');
+                if (isCollapsed) {
+                    collapseBtn.style.display = 'block';
+                    closeBtn.style.display = 'none';
+                }
+                else if (!isCollapsed) {
+                    collapseBtn.style.display = 'none';
+                    closeBtn.style.display = 'block'
+                }
             }
         });
     } catch (e) { console.info("sidebar didn't opened", e); }
@@ -202,7 +222,7 @@ export async function fetchjson() {
             const translatevalue = translate.value;
             if (translatevalue === 'ગુજરાતી') {
                 const response = await fetch('lang.json', { method: 'GET', headers: { 'Accept': 'application/json', }, credentials: 'omit' }); if (!response.ok) console.log("status:", response.status);
-                const data = await response.json(); const datatag = document.querySelectorAll('aside a'); datatag.forEach(dataatribute => {
+                const data = await response.json(); const datatag = document.querySelectorAll('*'); datatag.forEach(dataatribute => {
                     const keys = dataatribute.getAttribute('data-i18n'); if (data[keys]) { dataatribute.innerHTML = data[keys] } localStorage.setItem('language', 'gujrati');
                 });
             } else { localStorage.setItem('language', 'english') };

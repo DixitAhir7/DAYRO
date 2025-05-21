@@ -1,0 +1,69 @@
+/* general css */
+:root {
+    --whitefont: white;
+    --bgblack: rgba(36, 26, 26, 0.842);
+    --black: black;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+
+/* userviews section */
+.user_views .see_views p {
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: 15px;
+}
+
+.user_views {
+    margin-top: 10px;
+}
+
+.user_views .see_views {
+    border-bottom: 1px solid var(--black);
+}
+
+.viewsbox {
+    width: 100%;
+    height: auto;
+    background-color: var(--bgblack);
+    color: var(--whitefont);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.views-section {
+    margin-top: 10px;
+}
+
+/* reply section css in acc */
+.reply-section {
+    margin-left: 60px;
+    /* display: none; */
+}
+
+.reply-section img {
+    width: 25px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.reply-section img {
+    margin-top: 3px;
+}
+
+.reply-section .user-replies {
+    margin-left: 6px;
+}
+
+.reply-section {
+    display: flex;
+    margin-top: 16px;
+}
+
+.see_reply a{
+    margin-top: 10px;
+}

@@ -89,6 +89,13 @@ button {
     z-index: 999;
 }
 
+.display-icon .sidebarToggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+
 /* login modal css */
 .modal {
     display: flex;
@@ -111,7 +118,7 @@ button {
     width: 450px;
     height: 600px;
     position: relative;
-    animation: popIn 0.3s cubic-bezier(.68, -0.55, .27, 1.55);
+    animation: popIn 0.2s cubic-bezier(.68, -0.55, .27, 1.55);
 }
 
 @keyframes popIn {
@@ -280,7 +287,7 @@ header .sidebar .dropdown-content a {
     &:hover {
         background-color: var(--white);
         border-radius: 7px;
-        max-width: 100px; 
+        max-width: 100px;
     }
 }
 
@@ -311,21 +318,18 @@ main {
     position: relative;
     width: 100%;
     overflow: hidden;
-    /* height: 320px; */
 }
 
 .news-content {
     display: flex;
-    width: max-content;
     animation: spin 12s linear infinite reverse;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
 }
 
 .image-text {
     width: 400px;
-    /* height: 320px; */
     display: flex;
     flex-direction: column;
 }

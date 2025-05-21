@@ -1,0 +1,17 @@
+/* media-querry for account manage */
+
+@media (max-width:992px) {
+    .modal-content {
+        width: 310px;
+        height: 420px;
+    }
+}
+
+@media (max-width:577px) {
+    .modal-content {
+        margin: 20% auto;
+        padding: 16px;
+        width: 280px;
+        height: 390px;
+    }
+}

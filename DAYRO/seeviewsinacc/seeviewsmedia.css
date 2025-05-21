@@ -1,0 +1,14 @@
+/* media-querry for see views in account */
+
+@media (max-width:993px) {
+    .viewsbox {
+        padding: 12px;
+    }
+}
+
+@media (max-width:577px) {
+    .viewsbox {
+        padding: 16px;
+        margin-top: 18px;
+    }
+}
