@@ -89,6 +89,12 @@
 
 @media (max-width:490px) {
     .purpose-modal {
-        height: 300px;
+        height: 290px;
+    }
+
+    .div_mediaquerry div {
+        margin-top: 10px;
+        height: 150px;
+        padding: 2px;
     }
 }

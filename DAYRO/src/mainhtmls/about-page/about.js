@@ -1,6 +1,7 @@
 "use strict";
-import { addanimationclass } from "../../../modules/functions-flie/functions";
+import { addanimationclass, refresh, fetchjson } from "../../../modules/functions-flie/functions.js";
 addanimationclass();
+fetchjson();
 
 // purposeinaboutpage
 try {

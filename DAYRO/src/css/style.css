@@ -323,7 +323,7 @@ main {
 .news-content {
     display: flex;
     animation: spin 12s linear infinite reverse;
-    position: relative;
+    position: absolute;
     top: 0;
     left: 0;
 }
