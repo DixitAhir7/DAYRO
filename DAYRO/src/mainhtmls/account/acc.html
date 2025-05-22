@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="acc.css">
+    <script defer type="module" src="account.js"></script>
+    <link rel="stylesheet" href="/assets/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="accmedia.css">
+</head>
+
+<body>
+    <!-- in this i'll store user's account data :) -->
+    <div class="container">
+        <section class="useraccount_display">
+            <div class="account">
+                <img class="d-block" src="/public/IMG/user-default image.jpg">
+            </div>
+        </section>
+
+        <section class="user-Data">
+            <div class="user-btn">
+                <a href="" class="open-modal">Edit Profile</a>
+                <a href="seeviewsinacc/seeviews.html">See your views</a>
+            </div>
+        </section>
+
+        <!-- Single Modal Container -->
+        <div class="login_data" id="modal">
+            <div class="modal-content">
+                <span class="close-button" id="closeBtn">&times;</span>
+                <section class="useraccount">
+                    <div class="account" id="editAccout">
+                        <form action="">
+                            <img class="d-block" src="/public/IMG/user-default image.jpg" alt="upload your image">
+                            <input type="file" id="updateImg" title="upload image" class="hidden d-none" />
+                            <div class="changingimagescss">
+                                <a class="text-black uploadImg" href=""><i class="bi bi-card-image"></i></a>
+                                <i id="deleteimage" class="bi bi-trash3"></i>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+                <div class="modal_data" id="modalBody">
+                    <a href="#" id="emailLink">Email</a>
+                    <a href="#" id="passwordLink">Password</a>
+                    <a href="#" id="usernameLink">Username</a>
+                    <button id="uploadUpdated_profile">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

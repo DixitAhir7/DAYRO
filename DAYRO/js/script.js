@@ -1,6 +1,6 @@
 "use strict"
 
-import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight, fetchjson, toggleDropdown } from "../functions-flie/functions.js";
+import { firstTime, sidebarBtn, popup, addanimationclass, Loginvalidation, shareDayro, addhoverbackground, labels, fontweight, fetchjson, toggleDropdown } from ".././modules/functions-flie/functions.js";
 
 /*
 functions defination inorder

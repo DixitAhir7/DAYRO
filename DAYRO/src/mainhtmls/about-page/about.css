@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Heebo:wght@100..900&family=Hind+Mysuru:wght@300;400;500;600;700&family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Teko&display=swap');
+
+:root {
+    --orange: rgb(230, 126, 34);
+}
+
+button {
+    border: none;
+}
+
+/*  main heading css  */
+.hero-section .main-heading h2 {
+    color: var(--orange);
+}
+
+.hero-section .main-heading p {
+    color: black;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+/* my-purpose modal css */
+.my-purpose {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    z-index: 9999;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.my-purpose.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.purpose-modal {
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.purpose-header {
+    padding: 0.2rem;
+    background-color: rgb(0, 128, 0);
+    color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+}
+
+.my-purpose .purpose-modal .purpose-header h3 {
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+.purpose-content {
+    padding: 18px;
+    color: white;
+    background-image: url(/public/about-images/hope_img_2.avif);
+    background-position: 0px;
+    height: 240px;
+}
+
+.my-purpose .purpose-modal .close-btn {
+    font-size: 31px;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.mission li,
+.folk-music p,
+.purpose-content span,
+strong {
+    font-size: 18px;
+}
+
+.my-purpose .purpose-modal .purpose-content span {
+    font-weight: medium;
+}
+
+/* welcome-section */
+.div_mediaquerry div {
+    padding: 30px;
+    border-radius: 8px;
+    background-color: wheat;
+}
+
+.div_mediaquerry div p {
+    height: 100px;
+}
+.welcome-section a{
+    color: black;
+}
+
+/* footer css */
+footer {
+    background-color: rgb(81, 78, 78);
+    padding: 15px;
+    height: 100px;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+.footer-section {
+    margin-top: 200px;
+}
+
+/* animation css for header of weblinks */
+.highlight {
+    color: #fff;
+    position: relative;
+    display: inline-block;
+    transition: all 0.4s ease;
+    opacity: 1;
+    transform: translateX(-20px);
+}
+
+.highlight.active {
+    color: var(--orange);
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1px;
+    background: gray;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.highlight.active::after {
+    transform: scaleX(1);
+}
+
+.usersviews .forhighlight {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.forhighlight:hover {
+    color: rgb(216, 144, 8);
+}
+
+/* weblinks,webinfo css */
+.webinformation .weblink {
+    margin-top: 25px;
+}
+
+.webinformation a{
+    color: black;
+}
+
+.webinformation .webinfo div {
+    margin-top: 10px;
+}
+
+.webinformation .weblink span a {
+    padding-left: 10px;
+}
+
+.webinformation .weblink .webtags {
+    height: 200px;
+    background-color: wheat;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.webinformation .weblink .webtags h3 {
+    font-weight: normal;
+}
+
+.webinformation .weblink .webtags .guide,
+.welcome-section .welocme-message a {
+    font-weight: bold;
+}
+
+/* load more btn */
+.loadmorebtn {
+    margin-top: 10px;
+}
+
+.loadmorebtn button {
+    background: none;
+}
+
+.webinformation .webinfo .forload {
+    display: none;
+}
+
+/* adjust height buttons css*/
+.resetheight,
+.setheight {
+    margin-left: 5px;
+    background-color: rgba(0, 0, 0, 0.582);
+    color: white;
+    margin-top: 8px;
+}

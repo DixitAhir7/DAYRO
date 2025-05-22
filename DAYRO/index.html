@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DAYRO</title>
-    <link rel="stylesheet" href="css-bt/bootstrap.min.css">
-    <script defer src="js-bt/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <!-- <script defer src="theme-js/theme.js"></script> -->
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <script defer src="assets/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script defer src="modules/theme.js"></script>
     <script type="module" defer src="js/script.js"></script>
-    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="media-css/media.css">
+    <link rel="stylesheet" href="assets/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="src/css/media.css">
 </head>
 
 <body>
@@ -26,12 +26,13 @@
                 <aside>
                     <div class="nav-list mt-4">
                         <div class="readers mt-3">
-                            <a class="text-center" href="readers/reader.html" data-i18n="reader">For Readers</a>
+                            <a class="text-center" href="src/mainhtmls/readers/reader.html" data-i18n="reader">For
+                                Readers</a>
                         </div>
 
                         <div class="kalakar mt-3">
                             <a class="text-center" data-i18n="kalakar"
-                                href="kalakarhomefile/kalakarhome.html">Kalakaro</a>
+                                href="src/mainhtmls/kalakarhomefile/kalakarhome.html">Kalakaro</a>
                         </div>
 
                         <div class="ReligionalHistory text-center mt-3">
@@ -39,17 +40,18 @@
                         </div>
 
                         <div id="historyDropdown" class="dropdown-content">
-                            <a data-i18n="community" href="community/communities.html">Community History</a>
-                            <a data-i18n="city" href="cityhistory/cityhistory.html">City History</a>
+                            <a data-i18n="community" href="src/mainhtmls/community/communities.html">Community
+                                History</a>
+                            <a data-i18n="city" href="src/mainhtmls/cityhistory/cityhistory.html">City History</a>
                         </div>
 
                         <div class="for-artist text-center mt-3">
-                            <a data-i18n="artist" class="" href="artist/artists.html">For Artist</a>
+                            <a data-i18n="artist" class="" href="src/mainhtmls/artist/artists.html">For Artist</a>
                         </div>
 
                         <div class="about-page mt-3">
                             <i class="fas fa-info-circle about-icon"></i>
-                            <a data-i18n="about" class="" href="about-page/about.html">About dayro</a>
+                            <a data-i18n="about" class="" href="src/mainhtmls/about-page/about.html">About dayro</a>
                         </div>
                     </div>
 
@@ -67,7 +69,7 @@
 
                         <!-- in this i'll store user's account data :) -->
                         <div class="account">
-                            <a href="account/acc.html">Account</a>
+                            <a href="src/mainhtmls/account/acc.html">Account</a>
                         </div>
 
                         <!-- for_share button -->
@@ -103,20 +105,20 @@
             <div class="news-content">
                 <div class="image-text">
                     <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=MNN7vOIwVbNef4QS">
-                        <img src="IMG/Screenshot 2025-05-12 194518.png" alt="">
+                        <img src="public/IMG/Screenshot 2025-05-12 194518.png" alt="">
                         <span>Magnificient dayro
                             event was held at mangaldham bhaguda watch</span>
                     </a>
                 </div>
                 <div class="image-text">
                     <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=MNN7vOIwVbNef4QS">
-                        <img src="/kalakaro/kalakaro-img/kirtidan-gadhvi.jpeg" alt="">
+                        <img src="public/kalakaro-img/kirtidan-gadhvi.jpeg" alt="">
                         <span>kirtidan and many more great kalakar was there</span>
                     </a>
                 </div>
                 <div class="image-text">
                     <a href="https://youtube.com/shorts/dAscOeohseU?si=Etzk3m962B41TsmM">
-                        <img src="kalakaro/kalakaro-img/gaman santhal.jpg" alt="">
+                        <img src="public/kalakaro-img/gaman santhal.jpg" alt="">
                         <span>watch gaman santhal
                             new
                             car</span>
@@ -145,7 +147,6 @@
                     <button type="submit" class="submit">Login</button>
                     <input type="reset" value="reset" id="reset">
                 </form>
-                <!-- <img width="100%" height="70px" class="mt-5" src="/IMG/music_image.jpg" alt=""> -->
             </div>
         </div>
     </div>
