@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="assets/bootstrap.min.css">
     <script defer src="assets/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="src/css/style.css">
-    <script defer src="modules/theme.js"></script>
-    <script type="module" defer src="js/script.js"></script>
+    <!-- <script defer src="modules/theme.js"></script> -->
+    <script type="module" defer src="modules/script.js"></script>
     <link rel="stylesheet" href="assets/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="src/css/media.css">
 </head>
@@ -93,47 +93,45 @@
 
     <!-- sidebar icons -->
     <div class="display-icon">
-        <a class="close-sidebar"><i class="bi bi-x-circle-fill"></i></a>
         <a class="sidebarToggle fs-4"><i class="bi bi-list"></i></a>
     </div>
 
     <!-- in this i'll add daily news about Gujrat's culture and everything if possible -->
-    <main>
-        <div class="news-wrapper">
-            <div class="news-content">
-                <div class="image-text">
-                    <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=MNN7vOIwVbNef4QS">
+    <section class="news-section">
+        <div class="row">
+            <div class="col-4">
+                <div class="contentdiv">
+                    <a href="">
                         <img src="public/IMG/Screenshot 2025-05-12 194518.png" alt="">
-                        <span>Magnificient dayro
-                            event was held at mangaldham bhaguda watch</span>
+                        <p>Religious Dayro was held at mangaldham bhaguda</p>
                     </a>
                 </div>
-                <div class="image-text">
-                    <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=MNN7vOIwVbNef4QS">
+            </div>
+            <div class="col-4">
+                <div class="contentdiv">
+                    <a href="">
                         <img src="public/kalakaro-img/kirtidan-gadhvi.jpeg" alt="">
-                        <span>kirtidan and many more great kalakar was there</span>
                     </a>
                 </div>
-                <div class="image-text">
-                    <a href="https://youtube.com/shorts/dAscOeohseU?si=Etzk3m962B41TsmM">
+            </div>
+            <div class="col-4">
+                <div class="contentdiv">
+                    <a href="">
                         <img src="public/kalakaro-img/gaman santhal.jpg" alt="">
-                        <span>watch gaman santhal
-                            new
-                            car</span>
                     </a>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!--login modal -->
+    <!--login-->
     <div id="loginModal" class="modal">
         <div class="modal-content">
             <span class="close text-danger">&times;</span>
             <h2 class="text-white" data-i18n="logo">DAYRO</h2>
             <div class="loginbg">
                 <form id="loginForm" class="mt-2">
-                    <input type="text" class="email" placeholder="enter your email"><br>
+                       <input type="text" class="email" placeholder="enter your email"><br>
                     <p id="emailerror"></p>
                     <p id="emailregex"></p>
                     <div class="password d-flex">

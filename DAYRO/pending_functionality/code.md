@@ -134,7 +134,3 @@ function suggestionDefault() {
         "શાહબુદ્દીન રાઠોડ",
         "જીતુભાઈ દ્વારકવાડા"
     ]
-
-
-<style>
-</style>

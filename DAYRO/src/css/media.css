@@ -10,14 +10,14 @@
 
 @media (max-width: 992px) {
     .sidebar {
-        height: 100svh;
+        height: 100vh;
     }
 
     .modal {
         left: 200px;
         top: 0;
         width: 48vw;
-        height: 100svh;
+        height: 100vh;
         padding: 1rem;
     }
 
@@ -35,20 +35,11 @@
 }
 
 @media (max-width: 576px) {
-    .news-content {
-        position: relative;
-        animation: spin 1s linear infinite reverse;
-    }
-
-    .sidebar {
-        width: 400px;
-    }
-
     .modal {
         left: 0;
         top: 0;
         width: 100vw;
-        height: 100svh;
+        height: 100vh;
         padding: 1rem;
     }
 
@@ -57,5 +48,24 @@
         height: auto;
         padding: 2rem 1.2rem 1.5rem;
         border-radius: 12px;
+    }
+
+    .contentdiv img {
+        width: 260px;
+        height: 180px;
+    }
+
+    .contentdiv {
+        animation: move 10s linear infinite;
+    }
+
+    @keyframes move {
+        0% {
+            transform: translateX(100%);
+        }
+
+        100% {
+            transform: translateX(-200%);
+        }
     }
 }

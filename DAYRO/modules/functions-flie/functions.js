@@ -1,7 +1,7 @@
 "use strict";
 
 // login-form validation
-export class Loginvalidation {
+class Loginvalidation {
     getemail() {
         const getemailvalue = localStorage.getItem('email');
         if (getemailvalue) {
@@ -90,37 +90,35 @@ function logouthandle() {
             if (userans_logout === 'yes'.toLowerCase().trim()) {
                 loginBtn.style.display = 'block';
                 logoutButton.style.display = 'none';
-                return refresh('logout', 'added');
+                refresh('logout', 'added');
             }
         })
     } catch (e) { console.log('logout button error:', e); }
 };
 
 // function for loginmodal
-export function popup() {
+function popup() {
     const modal = document.querySelector('#loginModal'); const sidebarloginbtn = document.querySelector('#sidebarmodal'); const sidebarclosebtn = document.querySelector('.close');
     sidebarloginbtn.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'block'; refresh('modal', 'opened'); }); sidebarclosebtn.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'none'; return refresh('modal', 'closed'); })
 };
 
 // this script is for sidebar
-export function sidebarBtn() {
+function sidebarBtn() {
     try {
         const sidebar = document.querySelector('.sidebar');
         const collapseBtn = document.querySelector('.sidebarToggle');
-        const closeBtn = document.querySelector('.close-sidebar');
         const sidebarclass = 'sidebar-collapse';
 
         document.addEventListener('DOMContentLoaded', () => {
             collapseBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                sidebar.classList.remove(sidebarclass);
-                updateIcon();
+                sidebar.classList.toggle(sidebarclass);
                 savingstate();
             });
 
             function savingstate() {
                 const issidebaropen = sidebar.classList.contains(sidebarclass);
-                issidebaropen ? localStorage.setItem('sidebar', 'collapsed') : localStorage.setItem('sidebar', 'expanded')
+                issidebaropen ? refresh('sidebar', 'collapsed') : refresh('sidebar', 'expanded')
             };
 
             // sidebar stays as it is on exploring to any page
@@ -129,41 +127,21 @@ export function sidebarBtn() {
                 const sidebarState = localStorage.getItem('sidebar');
                 if (sidebarState === 'expanded') sidebar.classList.remove(sidebarclass);
                 else sidebar.classList.add(sidebarclass);
-                updateIcon();
             });
-
-            closeBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                sidebar.classList.add(sidebarclass);
-                updateIcon();
-                savingstate();
-            });
-
-            function updateIcon() {
-                const isCollapsed = sidebar.classList.contains('sidebar-collapse');
-                if (isCollapsed) {
-                    collapseBtn.style.display = 'block';
-                    closeBtn.style.display = 'none';
-                }
-                else if (!isCollapsed) {
-                    collapseBtn.style.display = 'none';
-                    closeBtn.style.display = 'block'
-                }
-            }
         });
     } catch (e) { console.info("sidebar didn't opened", e); }
 };
 
 // when user enter first time
-export function firstTime() {
+function firstTime() {
     try {
         document.addEventListener("DOMContentLoaded", () => {
-            !localStorage.getItem('visited') ? console.log('User visiting for the first time!') : ''
+            !localStorage.getItem('visited') ? console.log('User visiting for the first time!') : console.log('hello')
         });
     } catch (e) { console.log(e); }
 };
 
-export function shareDayro() {
+function shareDayro() {
     const sharebtn = document.querySelector('#forshare');
     sharebtn.addEventListener('click', (E) => {
         E.preventDefault(); if (navigator.share) {
@@ -174,7 +152,7 @@ export function shareDayro() {
 };
 
 // hoverbackground in sidebar
-export function addhoverbackground() {
+function addhoverbackground() {
     const sidebarelements = document.querySelectorAll('aside a');
     sidebarelements.forEach(elements => {
         elements.addEventListener('mouseenter', () => {
@@ -185,7 +163,7 @@ export function addhoverbackground() {
 
 // function for adding animation class
 // *checks html elements
-export function addanimationclass() {
+function addanimationclass() {
     try {
         document.querySelectorAll('*').forEach(el => {
             for (let cls of el.classList) { if (cls.startsWith('animate__')) { el.classList.add('animate__animated'); break; } }
@@ -194,14 +172,14 @@ export function addanimationclass() {
 };
 
 // hiding text when sidebar collapsed
-export function labels() {
+function labels() {
     try {
         const allatags = document.querySelectorAll('a'); allatags.forEach((atags) => { atags.classList.add('labels') })
     } catch (e) { console.log(e); }
 };
 
 // addingclass
-export function fontweight() {
+function fontweight() {
     try {
         const atags_font = document.querySelectorAll('a'); atags_font.forEach((tag, index) => {
             if (![0, 4, 5, 8, 9, 10, 11, 12].includes(Number(index))) { tag.classList.add('fw-medium'); }
@@ -210,7 +188,7 @@ export function fontweight() {
 };
 
 // for translating to gujrati
-export async function fetchjson() {
+async function fetchjson() {
     try {
         const translate = document.querySelector('.translate select');
         translate.addEventListener('click', async (e) => {
@@ -228,7 +206,7 @@ export async function fetchjson() {
     } catch (e) { console.log(e); }
 };
 
-export function toggleDropdown() {
+function toggleDropdown() {
     try {
         const getdropdownbtn = document.querySelector('.ReligionalHistory');
         getdropdownbtn.addEventListener('click', (e) => {
@@ -238,10 +216,12 @@ export function toggleDropdown() {
 };
 
 // function for setitem localstorage
-export function refresh(setItemname, item) {
+function refresh(setItemname, item) {
     try {
         if (setItemname && item) {
             localStorage.setItem(setItemname, item);
         }
     } catch (e) { console.log(e); }
 };
+
+export { Loginvalidation, popup, addanimationclass, addhoverbackground, fetchjson, firstTime, fontweight, labels, shareDayro, sidebarBtn, toggleDropdown };

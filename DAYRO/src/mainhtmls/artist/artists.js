@@ -7,7 +7,6 @@ const submit = form.querySelector('input[type="submit"]');
 const videoFile = form.querySelector('input[type="file"]');
 const videoSection = document.querySelector('.add-video');
 
-
 // media-querry for video
 const mediaQuerry = window.matchMedia("(max-width: 768px)")
 const mediaQuerry2 = window.matchMedia("(max-width: 400px)")
@@ -80,7 +79,6 @@ requestdb.onsuccess = (e) => {
 // this is for creating database objectStores
 requestdb.onupgradeneeded = (e) => {
     let db = e.target.result;
-
     if (!db.objectStoreNames.contains('Data')) {
         const createObj = db.createObjectStore('Data', { keyPath: 'id', autoIncrement: true });
         createObj.createIndex('videos', 'video', { unique: false });
@@ -107,23 +105,15 @@ function displayVideo() {
         videoElem.style.display = 'block';
         videoElem.style.marginBottom = '10px';
         videoElem.addEventListener('play', () => pauseAllExcept(videoElem));
-        if (videoElem) { form.reset() };
+        videoElem ? form.reset() : ''
         videoSection.appendChild(videoElem);
 
         const transaction = db.transaction('Data', 'readwrite');
         const storeObj = transaction.objectStore('Data');
 
-        storeObj.add({
-            video: videoURL,
-        });
+        storeObj.add({ video: videoURL });
     };
-
-
-    if (file) {
-        reader.readAsDataURL(file);
-    } else {
-        alert('Please select a video file.');
-    }
+    file ? reader.readAsDataURL(file) : '';
 };
 
 // it's for pausing video 
@@ -135,29 +125,29 @@ function pauseAllExcept(currentVideo) {
     */
     const allVideos = document.querySelectorAll('video');
     allVideos.forEach((video) => {
-        if (video !== currentVideo) {
-            video.pause();
-        }
+        video !== currentVideo ? video.pause() : '';
     });
 };
 
 // clearing video
 
 function deleteVideo(id, container) {
-    const db = requestdb.result;
-    const transaction = db.transaction('Data', 'readwrite');
-    const store = transaction.objectStore('Data');
+    try {
+        const db = requestdb.result;
+        const transaction = db.transaction('Data', 'readwrite');
+        const store = transaction.objectStore('Data');
 
-    // deleting based on stored id in indexdb
-    const deleteRequest = store.delete(id);
+        // deleting based on stored id in indexdb
+        const deleteRequest = store.delete(id);
 
-    deleteRequest.onsuccess = () => {
-        container.remove();
-    };
+        deleteRequest.onsuccess = () => {
+            container.remove();
+        };
 
-    deleteRequest.onerror = (e) => {
-        console.error('Delete failed', e);
-    };
-};
+        deleteRequest.onerror = (e) => {
+            console.error('Delete failed', e);
+        };
+    } catch (e) { console.log(e); }
+}
 
 deleteVideo();

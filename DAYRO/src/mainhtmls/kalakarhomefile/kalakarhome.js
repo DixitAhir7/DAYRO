@@ -77,13 +77,11 @@ try {
                     let url = null;
                     if (clickedartisturl && typeof clickedartisturl === 'object') {
                         url = Object.values(clickedartisturl)[0];
-                    } else {
-                        feedbackdiv.style.display = 'block'; createfeedbackbox();
-                    }
-
+                    } else { feedbackdiv.style.display = 'block'; createfeedbackbox(); }
                 });
                 suggestion.addEventListener('click', () => {
-                    inputSearchsuggestion.value = match; showsuggestions.innerHTML = "";
+                    inputSearchsuggestion.value = match;
+                    showsuggestions.innerHTML = "";
                     showsuggestions.style.display = 'none';
                     const clickedartisturl = suggestionobj.find(data => {
                         if (data[inputSearchsuggestion.value]) {
@@ -95,9 +93,8 @@ try {
                     if (clickedartisturl && typeof clickedartisturl === 'object') {
                         url = Object.values(clickedartisturl)[0];
                         console.log(url);
-                    } else {
-                        createfeedbackbox();
                     }
+                    createfeedbackbox();
                 });
                 showsuggestions.appendChild(suggestion);
             });
@@ -113,16 +110,29 @@ try {
 
 
 // feedback when search not found
-const feedbacktext = document.querySelector('.feedback-section textarea'); const feedbackaddbtn = document.querySelector('.feedback-section .feedbackbtns #send'); const skipfeedback = document.querySelector('.feedback-section .feedbackbtns #skip'); const feedbackdiv = document.querySelector('.feedback-section');
+const feedbacktext = document.querySelector('.feedback-section textarea');
+const feedbackaddbtn = document.querySelector('.feedback-section .feedbackbtns #send');
+const skipfeedback = document.querySelector('.feedback-section .feedbackbtns #skip');
+const feedbackdiv = document.querySelector('.feedback-section');
 feedbackdiv.style.display = 'none';
 
 //forstoring feedback value
 function createfeedbackbox() { feedbackaddbtn.addEventListener('click', gettingvaluefeedback) };
 feedbackaddbtn.addEventListener('click', function () {
-    const inputSearchsuggestion = document.querySelector('.search-sec input[type="text"]'); const msgdiv = document.createElement('div'); msgdiv.className = 'msgdiv'; const icon = document.createElement('i'); icon.classList.add('fa-solid'); const ptag_msg = document.createElement('p'); ptag_msg.className = 'ptagformsg'; ptag_msg.innerHTML = 'Thanks for feedback'; document.body.appendChild(msgdiv).appendChild(ptag_msg); feedbackdiv.style.display = 'none';
+    const inputSearchsuggestion = document.querySelector('.search-sec input[type="text"]');
+    const msgdiv = document.createElement('div');
+    msgdiv.className = 'msgdiv';
+    const icon = document.createElement('i');
+    icon.classList.add('fa-solid');
+    const ptag_msg = document.createElement('p');
+    ptag_msg.className = 'ptagformsg';
+    ptag_msg.innerHTML = 'Thanks for feedback';
+    document.body.appendChild(msgdiv).appendChild(ptag_msg);
+    feedbackdiv.style.display = 'none';
     setTimeout(() => {
-        msgdiv.classList.add('hide'); msgdiv.addEventListener('transitionend', () => { msgdiv.remove() })
-    }, 3000); inputSearchsuggestion.value = null;
+        msgdiv.classList.add('hide');
+        msgdiv.addEventListener('transitionend', () => { msgdiv.remove() })
+    }, 1200); inputSearchsuggestion.value = null;
 });
 
 function gettingvaluefeedback() {
