@@ -4,20 +4,20 @@
         left: 290px;
         top: 0;
         width: 39vw;
-        height: 100vh;
+        height: 100svh;
     }
 }
 
 @media (max-width: 992px) {
     .sidebar {
-        height: 100vh;
+        height: 100svh;
     }
 
     .modal {
         left: 200px;
         top: 0;
         width: 48vw;
-        height: 100vh;
+        height: 100svh;
         padding: 1rem;
     }
 
@@ -48,7 +48,7 @@
         left: 0;
         top: 0;
         width: 100vw;
-        height: 100vh;
+        height: 100svh;
         padding: 1rem;
     }
 

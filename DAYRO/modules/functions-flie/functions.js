@@ -228,8 +228,6 @@ export async function fetchjson() {
     } catch (e) { console.log(e); }
 };
 
-
-
 export function toggleDropdown() {
     try {
         const getdropdownbtn = document.querySelector('.ReligionalHistory');
@@ -241,8 +239,9 @@ export function toggleDropdown() {
 
 // function for setitem localstorage
 export function refresh(setItemname, item) {
-    if (setItemname && item) {
-        localStorage.setItem(setItemname, item);
-    }
-    console.log('Invalid key or value');
+    try {
+        if (setItemname && item) {
+            localStorage.setItem(setItemname, item);
+        }
+    } catch (e) { console.log(e); }
 };

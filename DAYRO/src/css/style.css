@@ -11,7 +11,7 @@
     --blue50: rgb(15, 23, 43);
     --whitesmoke: rgb(245, 245, 245);
     --red: rgb(255, 0, 0);
-    --kesri: rgba(248, 166, 13, 0.873);
+    --kesri: rgb(248, 166, 13);
     --accent: #f9c74f;
     --bg-light: #fff5e1;
     --bg-overlay: rgba(0, 0, 0, 0.5);
@@ -55,7 +55,7 @@ button {
     position: fixed;
     z-index: 100;
     background-color: var(--kesri);
-    height: 100vh;
+    height: 100svh;
     width: 250px;
     user-select: none;
     padding: 25px;
@@ -106,7 +106,7 @@ button {
     left: 540px;
     top: 40px;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
 }
 
 /* Modal Content */
@@ -218,7 +218,7 @@ button {
     justify-content: center;
 }
 
-header .sidebar .readers a {
+.sidebar .readers a {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
     width: 200px;
@@ -234,7 +234,7 @@ header .sidebar .readers a {
     margin-top: 5px;
 }
 
-header .sidebar .dropdown-content a {
+.sidebar .dropdown-content a {
     padding: 5px 10px;
     color: var(--black);
 }
