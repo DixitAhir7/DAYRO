@@ -60,6 +60,7 @@ try {
                 inputSearchsuggestion.classList.add('borderstyle')
                 return;
             };
+
             const kalakardata = suggestionobj.map(obj => Object.keys(obj)[0]);
             const filterednames = kalakardata.filter(name => name.toLowerCase().includes(searchvalue));
             filterednames.forEach(match => {
@@ -67,6 +68,7 @@ try {
                 suggestion.textContent = match;
                 suggestion.classList.add('suggestion-item');
                 const searchicon = document.querySelector('#search-icon');
+
                 searchicon.addEventListener('click', (e) => {
                     e.preventDefault();
                     const clickedartisturl = suggestionobj.find((data) => {
@@ -75,9 +77,17 @@ try {
                         };
                     });
                     let url = null;
-                    if (clickedartisturl && typeof clickedartisturl === 'object') {
+                    if (clickedartisturl && typeof clickedartisturl === 'object' && e.key === 'enter') {
                         url = Object.values(clickedartisturl)[0];
                     } else { feedbackdiv.style.display = 'block'; createfeedbackbox(); }
+
+
+                    // function enterKey() {
+                    //     document.addEventListener('keydown', (e) => {
+                    //         if (e.key === 'enter') url = Object.values(clickedartisturl)[0];
+                    //     })
+                    // }
+
                 });
                 suggestion.addEventListener('click', () => {
                     inputSearchsuggestion.value = match;
@@ -92,7 +102,7 @@ try {
                     let url = null;
                     if (clickedartisturl && typeof clickedartisturl === 'object') {
                         url = Object.values(clickedartisturl)[0];
-                        console.log(url);
+                        // console.log(url);
                     }
                     createfeedbackbox();
                 });
@@ -107,7 +117,6 @@ try {
     }
     showsuggestions();
 } catch (e) { console.log('suggestion error:', e); };
-
 
 // feedback when search not found
 const feedbacktext = document.querySelector('.feedback-section textarea');

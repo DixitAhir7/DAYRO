@@ -6,5 +6,5 @@ share to media,hover white on sidebaratags,animate_css,when sidebar collapsed te
 
 try {
     const useremail = new Loginvalidation(); useremail.validatelogin();
-    sidebarBtn(); popup(); firstTime(); shareDayro(); addhoverbackground(); addanimationclass(); labels(); fontweight(); fetchjson(); toggleDropdown();
+    sidebarBtn(); popup(); shareDayro(); addhoverbackground(); addanimationclass(); labels(); fontweight(); fetchjson(); toggleDropdown();
 } catch (e) { console.log('error while calling functions', e); }

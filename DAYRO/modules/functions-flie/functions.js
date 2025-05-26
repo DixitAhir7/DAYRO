@@ -224,4 +224,4 @@ function refresh(setItemname, item) {
     } catch (e) { console.log(e); }
 };
 
-export { Loginvalidation, popup, addanimationclass, addhoverbackground, fetchjson, firstTime, fontweight, labels, shareDayro, sidebarBtn, toggleDropdown };
+export { Loginvalidation, popup, addanimationclass, addhoverbackground, fetchjson, firstTime, fontweight, labels, shareDayro, sidebarBtn, toggleDropdown, refresh };
