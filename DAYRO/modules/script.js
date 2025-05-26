@@ -3,7 +3,6 @@ import { Loginvalidation, addanimationclass, addhoverbackground, fetchjson, firs
 /*
 share to media,hover white on sidebaratags,animate_css,when sidebar collapsed textnone,fw-mediumto atgas,translate
 */
-
 try {
     const useremail = new Loginvalidation(); useremail.validatelogin();
     sidebarBtn(); popup(); shareDayro(); addhoverbackground(); addanimationclass(); labels(); fontweight(); fetchjson(); toggleDropdown();

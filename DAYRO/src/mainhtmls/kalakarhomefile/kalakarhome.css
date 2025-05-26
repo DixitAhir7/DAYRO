@@ -7,7 +7,7 @@ a {
 /* search suggestions css */
 .show-suggestions {
     width: 200px;
-    position: absolute;
+    position: fixed;
     left: 130px;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.788);
@@ -25,14 +25,11 @@ a {
 }
 
 /* search section css */
-.search-sec {
-    position: relative;
-}
 
 .search-sec i {
-    position: absolute;
-    left: 270px;
-    top: 4px;
+    position: relative;
+    right: 30px;
+    top: 2px;
 }
 
 .search-section {

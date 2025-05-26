@@ -281,20 +281,22 @@ option {
 
 /* news section css */
 .contentdiv img {
-    width: 360px;
-    height: 280px;
+    width: 320px;
+    height: 250px;
+    border-radius: 5px;
 }
 
 .contentdiv {
     margin-top: 39px;
+    user-select: none;
 }
 
 .contentdiv p {
-    font-size: 18px;
+    font-size: 17px;
 }
 
 .contentdiv {
-    animation: move 9s linear infinite;
+    animation: move 11s linear infinite;
 }
 
 @keyframes move {
@@ -309,4 +311,16 @@ option {
 
 body {
     overflow: hidden;
+}
+
+/* username css */
+#user_name {
+    width: 100px;
+    background-color: var(--gray);
+    border-radius: 8px;
+    text-align: center;
+
+    &:hover {
+        background-color: var(--kesri);
+    }
 }

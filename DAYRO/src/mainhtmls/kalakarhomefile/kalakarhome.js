@@ -72,21 +72,12 @@ try {
                 searchicon.addEventListener('click', (e) => {
                     e.preventDefault();
                     const clickedartisturl = suggestionobj.find((data) => {
-                        if (data[inputSearchsuggestion.value]) {
-                            return true;
-                        };
+                        return data[inputSearchsuggestion.value] ? true : '';
                     });
                     let url = null;
-                    if (clickedartisturl && typeof clickedartisturl === 'object' && e.key === 'enter') {
+                    if (clickedartisturl && typeof clickedartisturl === 'object') {
                         url = Object.values(clickedartisturl)[0];
                     } else { feedbackdiv.style.display = 'block'; createfeedbackbox(); }
-
-
-                    // function enterKey() {
-                    //     document.addEventListener('keydown', (e) => {
-                    //         if (e.key === 'enter') url = Object.values(clickedartisturl)[0];
-                    //     })
-                    // }
 
                 });
                 suggestion.addEventListener('click', () => {
@@ -94,15 +85,13 @@ try {
                     showsuggestions.innerHTML = "";
                     showsuggestions.style.display = 'none';
                     const clickedartisturl = suggestionobj.find(data => {
-                        if (data[inputSearchsuggestion.value]) {
-                            return true;
-                        };
+                        return data[inputSearchsuggestion.value] ? true : '';
                     }
                     );
                     let url = null;
                     if (clickedartisturl && typeof clickedartisturl === 'object') {
                         url = Object.values(clickedartisturl)[0];
-                        // console.log(url);
+                        console.log(url);
                     }
                     createfeedbackbox();
                 });
@@ -110,7 +99,10 @@ try {
             });
 
             document.addEventListener('click', (event) => {
-                if (!showsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) { showsuggestions.innerHTML = ''; showsuggestions.style.display = 'none'; }
+                if (!showsuggestions.contains(event.target) && event.target !== inputSearchsuggestion) {
+                    showsuggestions.innerHTML = '';
+                    showsuggestions.style.display = 'none';
+                }
             });
         });
         inputSearchsuggestion.classList.add('borderstyle')
@@ -147,4 +139,5 @@ feedbackaddbtn.addEventListener('click', function () {
 function gettingvaluefeedback() {
     const feedbackvalue = feedbacktext.value;
     feedbackvalue ? console.log(feedbackvalue) : feedbacktext.value = null;
+    feedbacktext.value = null;
 };

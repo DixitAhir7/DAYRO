@@ -4,12 +4,14 @@ import { refresh } from "../../modules/functions-flie/functions.js";
 
 // script for image upload of user
 
-const imgInput = document.querySelector('.useraccount form input[type="file"]');
-const defaultImg = document.querySelector('.useraccount form img') || document.querySelector('.displayuserviews img');
-const updateImg = document.querySelector('#updateImg'); const updateBtn = document.querySelector('.uploadImg'); const deleteImg = document.querySelector('#deleteimage');
-const UPDATE_PROFILEBTN = document.querySelector('#uploadUpdated_profile');
+const imgInput = document.querySelector('.login_data .modal-content .useraccount form input[type="file"]');
+const defaultImg = document.querySelector('.login_data .modal-content .useraccount form img') || document.querySelector('.displayuserviews img');
+const updateImg = document.querySelector('#updateImg');
+const updateBtn = document.querySelector('.uploadImg');
+const deleteImg = document.querySelector('#deleteimage');
+const UPDATE_PROFILEBTN = document.querySelector('.modal_data #uploadUpdated_profile');
 
-// user account images
+//account image upload
 export class Imageupload {
     validImage() {
         try {
@@ -80,12 +82,11 @@ export function deleteImage() {
     } catch (e) { console.log('error while deleting image', e); }
 };
 
-
 // show user's data modal
 export function showData() {
     try {
-        const modal = document.getElementById("modal");
-        const openBtn = document.querySelector(".open-modal");
+        const dataModal = document.getElementById("modal");
+        const openBtn = document.querySelector(".user-Data .open-modal");
         const closeBtn = document.getElementById("closeBtn");
         const modalData = document.querySelector('.modal_data');
         const email = document.querySelector('.modal_data a:first-child');
@@ -96,16 +97,16 @@ export function showData() {
 
         openBtn.addEventListener("click", (e) => {
             e.preventDefault();
-            modal.style.display = "block";
+            dataModal.style.display = "block";
         });
 
         closeBtn.addEventListener("click", () => {
-            modal.style.display = "none";
+            dataModal.style.display = "none";
         });
 
         document.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.style.display = "none";
+            if (e.target === dataModal) {
+                dataModal.style.display = "none";
             }
         });
 
@@ -151,14 +152,17 @@ export function showData() {
 
         };
 
-        // password.onclick = (e) => {
-        //     e.preventDefault();
-        //     // show password 
-        // }
-        // username.onclick = (e) => {
-        //     e.preventDefault();
-        //     // show username 
-        // }
+        /*
+        password.onclick = (e) => {
+            e.preventDefault();
+            // show password 
+        }
+        username.onclick = (e) => {
+            e.preventDefault();
+            // show username 
+        }
+        */
+
     } catch (e) { console.log('error while', e); }
 };
 
