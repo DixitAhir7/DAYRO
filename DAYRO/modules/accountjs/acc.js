@@ -143,8 +143,8 @@ export function showData() {
                     <a href="#" id="emailLink">Email</a>
                     <a href="#" id="passwordLink">Password</a>
                     <a href="#" id="usernameLink">Username</a>
-                </div>
-                `
+                    <button id="doneupdate">Done</button>
+                </div>`
                     document.querySelector('.modal_data a:first-child').onclick = email.onclick;
                 }
             }
@@ -161,6 +161,7 @@ export function showData() {
             e.preventDefault();
             // show username 
         }
+            
         */
 
     } catch (e) { console.log('error while', e); }
@@ -168,9 +169,11 @@ export function showData() {
 
 // show when done 
 const comepleteImage = document.querySelector('.useraccount_display img');
-export function doneUpdatingProfile() {
+function doneUpdatingProfile() {
     UPDATE_PROFILEBTN.addEventListener('click', (e) => {
         e.preventDefault();
         comepleteImage.src = JSON.parse(localStorage.getItem('base64str'));
     })
-};  
+};
+
+doneUpdatingProfile();

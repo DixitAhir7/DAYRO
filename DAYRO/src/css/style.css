@@ -205,7 +205,6 @@ section {
 .sidebar .for-artist,
 .sidebar .about-page {
     display: flex;
-    justify-content: center;
 }
 
 .sidebar .readers a,

@@ -14,18 +14,31 @@ class Loginvalidation {
 
     getlogoutinfo() {
         const logoutstore = localStorage.getItem('logout');
-        if (logoutstore) {
-            return logoutstore;
-        }
+        return logoutstore ? logoutstore : ''
     }
 
     validatelogin() {
         try {
-            const form = document.querySelector('#loginModal form'); const emailInput = form.querySelector(".email"); const passwordInput = form.querySelector("#loginModal input[type='password']"); const modal = document.getElementById("loginModal"); modal.style.display = 'none'; const loginBtn = document.querySelector('.user-info .login-btn a'); const logoutBtn = document.querySelector('.user-info .Logout a'); const emailerror = form.querySelector('#emailerror'); const passworderror = form.querySelector('#passworderror'); const emailregexerror = form.querySelector('#emailregex'); const seepassword = form.querySelector('#toggleIcon'); const getlogininfo = localStorage.getItem('email');
+            const form = document.querySelector('#loginModal form');
+            const emailInput = form.querySelector(".email");
+            const passwordInput = form.querySelector("#loginModal input[type='password']");
+            const modal = document.getElementById("loginModal");
+            modal.style.display = 'none';
+            const loginBtn = document.querySelector('.user-info .login-btn a');
+            const logoutBtn = document.querySelector('.user-info .Logout a');
+            const emailerror = document.getElementById('emailerror');
+            const passworderror = document.getElementById('passworderror');
+            const emailregexerror = document.getElementById('emailregex');
+            const seepassword = document.getElementById('toggleIcon');
+            const getlogininfo = localStorage.getItem('email');
             const logoutinfo = localStorage.getItem('logout');
 
             form.addEventListener("submit", function (event) {
-                event.preventDefault(); const emailValue = emailInput.value.trim(); const passwordValue = passwordInput.value.trim(); const obj = { emailvaluestore: emailValue, passwordValuestore: passwordValue }; const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                event.preventDefault();
+                const emailValue = emailInput.value.trim();
+                const passwordValue = passwordInput.value.trim();
+                const obj = { emailvaluestore: emailValue, passwordValuestore: passwordValue };
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
                 // email validation
                 if (!obj.emailvaluestore) {
@@ -42,28 +55,39 @@ class Loginvalidation {
                     emailregexerror.style.display = 'none';
                 }
 
+
+
                 // password validation
                 if (!obj.passwordValuestore) {
                     passworderror.style.display = 'block';
                     passworderror.innerHTML = 'please set strong password';
                     passworderror.style.color = 'white';
-                } else if (obj.passwordValuestore) { passworderror.style.display = 'none'; };
+                } else if (obj.passwordValuestore) passworderror.style.display = 'none';
 
                 // login conformed
                 if (emailRegex.test(obj.emailvaluestore) && obj.passwordValuestore) {
                     localStorage.setItem('email', JSON.stringify(obj.emailvaluestore));
-                    // localStorage.setItem('password', JSON.stringify(obj.passwordValuestore));
                     loginBtn.style.display = "none";
                     logoutBtn.style.display = "block";
                     localStorage.removeItem('logout');
+                    setUsername();
                 };
+
+                function setUsername() {
+                    form.innerHTML = `
+                    <input type="text" placeholder="set Username">
+                    <button type="submit" id="user_name">Set</button>
+                    `
+                }
             });
 
             logouthandle();
 
             // show password
             seepassword.addEventListener('click', (e) => {
-                e.preventDefault(); const pwdInput = passwordInput; if (pwdInput.type === 'password') pwdInput.type = 'text'; else pwdInput.type = 'password';
+                e.preventDefault();
+                const pwdInput = passwordInput;
+                if (pwdInput.type === 'password') pwdInput.type = 'text'; else pwdInput.type = 'password';
             });
 
             window.addEventListener('DOMContentLoaded', () => {
@@ -82,7 +106,8 @@ class Loginvalidation {
 
 // logout function
 function logouthandle() {
-    const loginBtn = document.querySelector('.user-info .login-btn'); const logoutButton = document.querySelector('.Logout a');
+    const loginBtn = document.querySelector('.user-info .login-btn');
+    const logoutButton = document.querySelector('.Logout a');
     try {
         logoutButton.addEventListener('click', (e) => {
             e.preventDefault();
@@ -98,8 +123,20 @@ function logouthandle() {
 
 // function for loginmodal
 function popup() {
-    const modal = document.querySelector('#loginModal'); const sidebarloginbtn = document.querySelector('#sidebarmodal'); const sidebarclosebtn = document.querySelector('.close');
-    sidebarloginbtn.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'block'; refresh('modal', 'opened'); }); sidebarclosebtn.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'none'; return refresh('modal', 'closed'); })
+    const modal = document.getElementById('loginModal');
+    const sidebarloginbtn = document.getElementById('sidebarmodal');
+    const sidebarclosebtn = document.querySelector('.close');
+    sidebarloginbtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'block';
+        refresh('modal', 'opened');
+    });
+
+    sidebarclosebtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'none';
+        return refresh('modal', 'closed');
+    })
 };
 
 // this script is for sidebar
@@ -142,7 +179,7 @@ function firstTime() {
 };
 
 function shareDayro() {
-    const sharebtn = document.querySelector('#forshare');
+    const sharebtn = document.getElementById('forshare');
     sharebtn.addEventListener('click', (E) => {
         E.preventDefault(); if (navigator.share) {
             navigator.share({ url: window.location.href, }).then(() => console.log('Shared successfully'))
@@ -156,8 +193,14 @@ function addhoverbackground() {
     const sidebarelements = document.querySelectorAll('aside a');
     sidebarelements.forEach(elements => {
         elements.addEventListener('mouseenter', () => {
-            elements.style.color = 'black'; elements.style.backgroundColor = 'white'; elements.style.borderRadius = '7px';
-        }); elements.addEventListener('mouseleave', () => { elements.style.color = ''; elements.style.backgroundColor = ''; });
+            elements.style.color = 'black';
+            elements.style.backgroundColor = 'white';
+            elements.style.borderRadius = '7px';
+        });
+        elements.addEventListener('mouseleave', () => {
+            elements.style.color = '';
+            elements.style.backgroundColor = '';
+        });
     })
 };
 
@@ -166,7 +209,12 @@ function addhoverbackground() {
 function addanimationclass() {
     try {
         document.querySelectorAll('*').forEach(el => {
-            for (let cls of el.classList) { if (cls.startsWith('animate__')) { el.classList.add('animate__animated'); break; } }
+            for (let cls of el.classList) {
+                if (cls.startsWith('animate__')) {
+                    el.classList.add('animate__animated');
+                    break;
+                }
+            }
         });
     } catch (e) { console.log(e); }
 };
@@ -174,7 +222,8 @@ function addanimationclass() {
 // hiding text when sidebar collapsed
 function labels() {
     try {
-        const allatags = document.querySelectorAll('a'); allatags.forEach((atags) => { atags.classList.add('labels') })
+        const allatags = document.querySelectorAll('a');
+        allatags.forEach((atags) => { atags.classList.add('labels') })
     } catch (e) { console.log(e); }
 };
 
@@ -195,9 +244,17 @@ async function fetchjson() {
             e.preventDefault();
             const translatevalue = translate.value;
             if (translatevalue === 'ગુજરાતી') {
-                const response = await fetch('lang.json', { method: 'GET', headers: { 'Accept': 'application/json', }, credentials: 'omit' }); if (!response.ok) console.log("status:", response.status);
-                const data = await response.json(); const datatag = document.querySelectorAll('*'); datatag.forEach(dataatribute => {
-                    const keys = dataatribute.getAttribute('data-i18n'); if (data[keys]) { dataatribute.innerHTML = data[keys] } refresh('language', 'gujrati');
+                const response = await fetch('lang.json', {
+                    method: 'GET',
+                    headers: { 'Accept': 'application/json', },
+                    credentials: 'omit'
+                });
+                if (!response.ok) console.log("status:", response.status);
+                const data = await response.json();
+                const datatag = document.querySelectorAll('*');
+                datatag.forEach(dataatribute => {
+                    const keys = dataatribute.getAttribute('data-i18n');
+                    if (data[keys]) { dataatribute.innerHTML = data[keys] } refresh('language', 'gujrati');
                 });
             } else {
                 refresh('language', 'english')
