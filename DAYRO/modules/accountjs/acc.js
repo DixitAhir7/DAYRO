@@ -18,21 +18,6 @@ export class Imageupload {
             window.addEventListener('DOMContentLoaded', () => {
                 let savedImage = localStorage.getItem('base64str');
                 savedImage ? defaultImg.src = JSON.parse(savedImage) : 'faild to add image';
-
-                defaultImg.addEventListener('click', () => imgInput.click());
-
-                imgInput.addEventListener('change', () => {
-                    let img = imgInput.files[0];
-                    const validTypes = ['image/jpeg', 'image/png', 'image/gif'];
-                    if (!img | !validTypes.includes(img.type)) console.info('Please choose a valid image (JPEG, PNG, GIF)');
-                    const reader = new FileReader();
-                    reader.onload = () => {
-                        let base64 = reader.result;
-                        defaultImg.src = base64;
-                        refresh('base64str', JSON.stringify(base64));
-                    };
-                    reader.readAsDataURL(img);
-                });
             });
         } catch (e) { console.log('while uploading image', e); }
     }
@@ -168,12 +153,15 @@ export function showData() {
 };
 
 // show when done 
-const comepleteImage = document.querySelector('.useraccount_display img');
-function doneUpdatingProfile() {
-    UPDATE_PROFILEBTN.addEventListener('click', (e) => {
-        e.preventDefault();
-        comepleteImage.src = JSON.parse(localStorage.getItem('base64str'));
-    })
-};
 
-doneUpdatingProfile();
+try {
+    const comepleteImage = document.querySelector('.useraccount_display img');
+    function doneUpdatingProfile() {
+        UPDATE_PROFILEBTN.addEventListener('click', (e) => {
+            e.preventDefault();
+            comepleteImage.src = JSON.parse(localStorage.getItem('updatedImg'));
+        })
+    };
+
+    doneUpdatingProfile()
+} catch (e) { console.log('error while updating profile', e); }

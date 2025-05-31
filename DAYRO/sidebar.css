@@ -1,0 +1,12 @@
+/* in this all sidebar css to use it in all pages */
+
+/* sidebar css and nav-list */
+.sidebar {
+    background-color: orange;
+    height: 100vh;
+    width: 250px;
+    user-select: none;
+    padding: 25px;
+    overflow: auto;
+    position: fixed;
+}

@@ -50,6 +50,15 @@
         border-radius: 12px;
     }
 
+    .sidebar .readers a,
+    .nav-list .about-page a,
+    .nav-list .kalakar a,
+    .ReligionalHistory a,
+    .for-artist a {
+        box-shadow: none;
+       
+    }
+
     .contentdiv img {
         width: 260px;
         height: 180px;

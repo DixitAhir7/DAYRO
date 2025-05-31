@@ -79,7 +79,6 @@ section {
     overflow: hidden;
 }
 
-
 .display-icon .sidebarToggle {
     position: absolute;
     top: 10px;
@@ -205,6 +204,7 @@ section {
 .sidebar .for-artist,
 .sidebar .about-page {
     display: flex;
+    justify-content: center;
 }
 
 .sidebar .readers a,

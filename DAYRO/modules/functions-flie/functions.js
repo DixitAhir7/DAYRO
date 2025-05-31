@@ -231,7 +231,7 @@ function labels() {
 function fontweight() {
     try {
         const atags_font = document.querySelectorAll('a'); atags_font.forEach((tag, index) => {
-            if (![0, 4, 5, 8, 9, 10, 11, 12].includes(Number(index))) { tag.classList.add('fw-medium'); }
+            if (![0, 3, 4, 7, 8, 9, 10, 11].includes(Number(index))) { tag.classList.add('fw-medium'); }
         })
     } catch (e) { console.log(e); }
 };

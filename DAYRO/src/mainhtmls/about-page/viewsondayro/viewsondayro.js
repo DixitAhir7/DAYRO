@@ -1,7 +1,7 @@
 "use strict"
 
 import { Loginvalidation, refresh } from '../../../../modules/functions-flie/functions.js';
-import { Imageupload } from '../../../../modules/accountjs/acc.js';
+import { updateImage } from '../../../../modules/accountjs/acc.js';
 
 // mainfunction for addingviews
 try {
@@ -55,6 +55,8 @@ function undoviews() {
         e.preventDefault();
         const getdeletedview = JSON.parse(localStorage.getItem('deletedview'));
         getdeletedview ? displayhtml.innerHTML = getdeletedview : '';
+        extractingemail();
+        extractingimage();
     })
 };
 // for edit text
@@ -94,13 +96,12 @@ function extractingemail() {
 // function for dispaly image in view
 function extractingimage() {
     const imgtagforimage = document.querySelector('.displayuserviews img');
-    let extractimg = new Imageupload();
-    extractimg.displayimage();
-    if (extractimg) {
-        imgtagforimage.style.display = 'block';
-        // parse: converting data in js object
-        imgtagforimage.src = JSON.parse(localStorage.getItem('base64str'));
-    }
+    // let extractimg = new Imageupload();
+    // extractimg.displayimage();
+    updateImage();
+    imgtagforimage.style.display = 'block';
+    // parse: converting data in js object
+    imgtagforimage.src = JSON.parse(localStorage.getItem('updatedImg'));
 };
 const replybtn = document.querySelector('.btnsfordisplay #viewreply');
 

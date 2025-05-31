@@ -1,8 +1,12 @@
 "use strict";
 
 import { addanimationclass, refresh, fetchjson } from "../../../modules/functions-flie/functions.js";
-addanimationclass();
-fetchjson();
+
+try {
+    addanimationclass();
+    fetchjson();
+} catch (e) { console.log('got an error while calling functions in about', e); }
+
 
 // purpose-modal
 try {
