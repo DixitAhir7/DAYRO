@@ -146,26 +146,25 @@ function sidebarBtn() {
         const collapseBtn = document.querySelector('.sidebarToggle');
         const sidebarclass = 'sidebar-collapse';
 
-        document.addEventListener('DOMContentLoaded', () => {
-            collapseBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                sidebar.classList.toggle(sidebarclass);
-                savingstate();
-            });
-
-            function savingstate() {
-                const issidebaropen = sidebar.classList.contains(sidebarclass);
-                issidebaropen ? refresh('sidebar', 'collapsed') : refresh('sidebar', 'expanded')
-            };
-
-            // sidebar stays as it is on exploring to any page
-            window.addEventListener('DOMContentLoaded', () => {
-                const sidebar = document.querySelector('.sidebar');
-                const sidebarState = localStorage.getItem('sidebar');
-                if (sidebarState === 'expanded') sidebar.classList.remove(sidebarclass);
-                else sidebar.classList.add(sidebarclass);
-            });
+        collapseBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            sidebar.classList.toggle(sidebarclass);
+            savingstate();
         });
+
+        function savingstate() {
+            const issidebaropen = sidebar.classList.contains(sidebarclass);
+            issidebaropen ? refresh('sidebar', 'collapsed') : refresh('sidebar', 'expanded')
+        };
+
+        // sidebar stays as it is on exploring to any page
+        window.addEventListener('DOMContentLoaded', () => {
+            const sidebar = document.querySelector('.sidebar');
+            const sidebarState = localStorage.getItem('sidebar');
+            if (sidebarState === 'expanded') sidebar.classList.remove(sidebarclass);
+            else sidebar.classList.add(sidebarclass);
+        });
+
     } catch (e) { console.info("sidebar didn't opened", e); }
 };
 

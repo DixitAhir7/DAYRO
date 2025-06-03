@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Heebo:wght@100..900&family=Hind+Mysuru:wght@300;400;500;600;700&family=Inconsolata:wght@200..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Teko&display=swap');
 
-.forflex {
-    display: flex;
-}
-
 :root {
     --orange: rgb(230, 126, 34);
 }
@@ -220,4 +216,8 @@ footer a {
     background-color: rgba(0, 0, 0, 0.582);
     color: white;
     margin-top: 8px;
+}
+
+#sidebarDiv{
+    position: fixed;
 }

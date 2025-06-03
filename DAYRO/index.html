@@ -11,6 +11,7 @@
     <script type="module" defer src="modules/script.js"></script>
     <link rel="stylesheet" href="assets/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="src/css/media.css">
+    <script src="modules/react/Sidebar.jsx" defer type="module"></script>
 </head>
 
 <body>
@@ -21,6 +22,8 @@
                 <div class="logo-div">
                     <a class="logo fs-4 d-block" data-i18n="logo">D A Y R O</a>
                 </div>
+
+                <div id="app"></div>
                 <aside>
                     <div class="nav-list">
                         <div class="kalakar">
@@ -89,36 +92,6 @@
         <a class="sidebarToggle fs-4"><i class="bi bi-list"></i></a>
     </div>
 
-    <!-- i'll add daily news about Gujrat's culture and everything if possible -->
-    <!-- <section class="news-section">
-        <div class="row">
-            <div class="col-4">
-                <div class="contentdiv">
-                    <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=Mr5XiOLRGxp3SYVx">
-                        <img src="public/IMG/Screenshot 2025-05-12 194518.png" alt="">
-                        <p>Religious Dayro was held at mangaldham bhaguda</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="contentdiv">
-                    <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=Mr5XiOLRGxp3SYVx">
-                        <img src="public/kalakaro-img/kirtidan-gadhvi.jpeg" alt="">
-                        <p>kirtidan gadhvi and many more kalakar was there</p>
-                    </a>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="contentdiv">
-                    <a href="https://youtube.com/shorts/dAscOeohseU?si=8E8UWP87hP4DInaC">
-                        <img src="public/kalakaro-img/gaman santhal.jpg" alt="">
-                        <p>watch bhuvaji buy his new car</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
     <!--login-->
     <div id="loginModal" class="modal">
         <div class="modal-content">
@@ -131,7 +104,7 @@
                     <p id="emailregex"></p>
                     <div class="password d-flex">
                         <input class="password" type="password" placeholder="enter password"><br>
-                        <span id="toggleIcon" class=" style="cursor:pointer;"><i class="bi bi-eye-fill"></i></span>
+                        <span id="toggleIcon" style="cursor: pointer;"><i class="bi bi-eye-fill"></i></span>
                     </div>
                     <p id="passworderror"></p>
                     <p id="passwordregex"></p>

@@ -292,11 +292,35 @@ function deleteVideo(id, container) {
 deleteVideo();
 </script>
 
-
-<!-- reader -->
 <html>
- <div class="readers mt-3">
-                            <a class="text-center" href="src/mainhtmls/readers/reader.html" data-i18n="reader">For
-                                Readers</a>
-                        </div>
+ <!-- i'll add daily news about Gujrat's culture and everything if possible -->
+     <section class="news-section">
+        <div class="row">
+            <div class="col-4">
+                <div class="contentdiv">
+                    <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=Mr5XiOLRGxp3SYVx">
+                        <img src="public/IMG/Screenshot 2025-05-12 194518.png" alt="">
+                        <p>Religious Dayro was held at mangaldham bhaguda</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="contentdiv">
+                    <a href="https://www.youtube.com/live/0mPmTMYK8-I?si=Mr5XiOLRGxp3SYVx">
+                        <img src="public/kalakaro-img/kirtidan-gadhvi.jpeg" alt="">
+                        <p>kirtidan gadhvi and many more kalakar was there</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="contentdiv">
+                    <a href="https://youtube.com/shorts/dAscOeohseU?si=8E8UWP87hP4DInaC">
+                        <img src="public/kalakaro-img/gaman santhal.jpg" alt="">
+                        <p>watch bhuvaji buy his new car</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> 
+
 </html>

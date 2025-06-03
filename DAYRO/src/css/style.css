@@ -184,6 +184,7 @@ section {
 .password span {
     position: absolute;
     left: 80%;
+    top: 218px;
 }
 
 #loginForm .submit,

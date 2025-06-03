@@ -1,0 +1,123 @@
+:root {
+    --white: rgb(255, 255, 255);
+    --orange: rgb(255, 165, 0);
+    --wheat: rgb(255, 228, 196);
+    --wheat200: rgb(194, 150, 68);
+    --white: rgb(255, 255, 255);
+    --black: rgb(0, 0, 0);
+    --black500: rgba(0, 0, 0, 0.358);
+    --gray: rgb(128, 128, 128);
+    --blue: rgb(84, 84, 125);
+    --blue50: rgb(15, 23, 43);
+    --whitesmoke: rgb(245, 245, 245);
+    --red: rgb(255, 0, 0);
+    --kesri: rgb(248, 166, 13);
+    --accent: #f9c74f;
+    --bg-light: #fff5e1;
+    --bg-overlay: rgba(0, 0, 0, 0.5);
+    --text-dark: #333;
+}
+
+a,
+button {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a {
+    color: var(--black);
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+button {
+    border: none;
+    background: none;
+}
+
+section {
+    margin-left: 270px;
+}
+
+.theme-mode {
+    max-width: 100px;
+}
+
+.dark-mode {
+    background-color: var(--black);
+    color: var(--white) !important;
+}
+
+.sidebar {
+    position: fixed;
+    z-index: 100;
+    background-color: var(--kesri);
+    height: 100vh;
+    width: 250px;
+    user-select: none;
+    padding: 25px;
+    overflow: auto;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+.sidebar.sidebar-collapse {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.sidebar.sidebar-collapse .labels {
+    opacity: 0;
+    overflow: hidden;
+}
+
+.display-icon .sidebarToggle {
+    position: absolute;
+    top: 10px;
+    left: 240px;
+}
+
+.sidebar .readers,
+.sidebar .kalakar,
+.sidebar .ReligionalHistory,
+.sidebar .for-artist,
+.sidebar .about-page {
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .readers a,
+.nav-list .about-page a,
+.nav-list .kalakar a,
+.ReligionalHistory a,
+.for-artist a {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 18px;
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.sidebar .dropdown-content a {
+    padding: 5px 10px;
+    color: var(--black);
+}
+
+.show {
+    display: flex;
+}
+
+.nav-list a {
+    font-size: 18px;
+}

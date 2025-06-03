@@ -106,3 +106,16 @@ a {
     opacity: 0;
     transform: translateY(20px);
 }
+
+.feedback-section {
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.feedback-section.hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
