@@ -96,8 +96,6 @@ function extractingemail() {
 // function for dispaly image in view
 function extractingimage() {
     const imgtagforimage = document.querySelector('.displayuserviews img');
-    // let extractimg = new Imageupload();
-    // extractimg.displayimage();
     updateImage();
     imgtagforimage.style.display = 'block';
     // parse: converting data in js object

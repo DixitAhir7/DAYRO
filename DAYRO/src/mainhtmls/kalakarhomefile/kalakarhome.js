@@ -82,7 +82,6 @@ try {
                         feedbackdiv.style.display = 'block';
                         createfeedbackbox();
                     }
-
                 });
                 suggestion.addEventListener('click', () => {
                     inputSearchsuggestion.value = match;
@@ -97,8 +96,10 @@ try {
                         url = Object.values(clickedartisturl)[0];
                         console.log(url);
                     }
-                    feedbackdiv.style.display = 'block';
-                    createfeedbackbox();
+                    else {
+                        feedbackdiv.style.display = 'block';
+                        createfeedbackbox();
+                    }
                 });
                 showsuggestions.appendChild(suggestion);
             });

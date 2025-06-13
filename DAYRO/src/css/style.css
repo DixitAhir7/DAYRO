@@ -39,9 +39,6 @@ button {
     background: none;
 }
 
-section {
-    margin-left: 270px;
-}
 
 /* theme-mode css */
 .theme-mode {
@@ -65,6 +62,16 @@ section {
     padding: 25px;
     overflow: auto;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+}
+
+main {
+    width: calc(100% - 250px);
+    margin-left: auto;
+}
+
+.main-resize {
+    width: 100%;
+    margin-left: 0;
 }
 
 /* sidebar when collapsed */
@@ -234,10 +241,6 @@ section {
     color: var(--black);
 }
 
-.show {
-    display: flex;
-}
-
 .nav-list a {
     font-size: 18px;
 }
@@ -277,36 +280,6 @@ option {
 
     &:hover {
         background-color: var(--white);
-    }
-}
-
-/* news section css */
-.contentdiv img {
-    width: 320px;
-    height: 250px;
-    border-radius: 5px;
-}
-
-.contentdiv {
-    margin-top: 39px;
-    user-select: none;
-}
-
-.contentdiv p {
-    font-size: 17px;
-}
-
-.contentdiv {
-    animation: move 11s linear infinite;
-}
-
-@keyframes move {
-    0% {
-        transform: translateX(100vw);
-    }
-
-    100% {
-        transform: translateX(-400%);
     }
 }
 

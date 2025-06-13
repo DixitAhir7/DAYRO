@@ -143,12 +143,14 @@ function popup() {
 function sidebarBtn() {
     try {
         const sidebar = document.querySelector('.sidebar');
+        const main = document.querySelector('main');
         const collapseBtn = document.querySelector('.sidebarToggle');
         const sidebarclass = 'sidebar-collapse';
 
         collapseBtn.addEventListener('click', (e) => {
             e.preventDefault();
             sidebar.classList.toggle(sidebarclass);
+            main.classList.toggle("main-resize");
             savingstate();
         });
 

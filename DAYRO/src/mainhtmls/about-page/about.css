@@ -66,7 +66,7 @@ button {
 .purpose-content {
     padding: 18px;
     color: white;
-    background-image: url(/public/about-images/hope_img_2.avif);
+    background-image: url(/about-images/hope_img_2.avif);
     background-position: 0px;
     height: 240px;
 }
@@ -207,17 +207,4 @@ footer a {
 
 .webinformation .webinfo .forload {
     display: none;
-}
-
-/* adjust height buttons css*/
-.resetheight,
-.setheight {
-    margin-left: 5px;
-    background-color: rgba(0, 0, 0, 0.582);
-    color: white;
-    margin-top: 8px;
-}
-
-#sidebarDiv{
-    position: fixed;
 }

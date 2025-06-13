@@ -11,19 +11,20 @@
     <script type="module" defer src="modules/script.js"></script>
     <link rel="stylesheet" href="assets/bootstrap-icons-1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="src/css/media.css">
-    <script src="modules/react/Sidebar.jsx" defer type="module"></script>
 </head>
 
 <body>
     <header>
         <div class="row">
+            <div class="display-icon">
+                <a class="sidebarToggle fs-4"><i class="bi bi-list"></i></a>
+            </div>
             <!-- Sidebar -->
             <div class="sidebar col-md-2" id="sidebar">
                 <div class="logo-div">
                     <a class="logo fs-4 d-block" data-i18n="logo">D A Y R O</a>
                 </div>
 
-                <div id="app"></div>
                 <aside>
                     <div class="nav-list">
                         <div class="kalakar">
@@ -46,7 +47,6 @@
                         </div>
 
                         <div class="about-page">
-                            <i class="fas fa-info-circle about-icon"></i>
                             <a data-i18n="about" href="src/mainhtmls/about-page/about.html">About dayro</a>
                         </div>
                     </div>
@@ -71,16 +71,16 @@
                             <a title="sharing is caring" id="forshare">share</a>
                         </div>
 
-                        <!-- translator -->
-                        <div class="translate">
-                            <form>
-                                <select class="border-0">
-                                    <option value="language">language</option>
-                                    <option class="guj" value="ગુજરાતી">ગુજરાતી</option>
-                                    <option value="english">english</option>
-                                </select>
-                            </form>
-                        </div>
+                            <!-- translator -->
+                            <div class="translate">
+                                <form>
+                                    <select class="border-0">
+                                        <option value="language">language</option>
+                                        <option class="guj" value="ગુજરાતી">ગુજરાતી</option>
+                                        <option value="english">english</option>
+                                    </select>
+                                </form>
+                            </div>
                     </div>
                 </aside>
             </div>
@@ -88,9 +88,18 @@
     </header>
 
     <!-- sidebar icons -->
-    <div class="display-icon">
-        <a class="sidebarToggle fs-4"><i class="bi bi-list"></i></a>
-    </div>
+
+    <main>
+
+        <section>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi omnis itaque reiciendis! Quam ea,
+                deserunt
+                neque sint aspernatur quas facilis officiis omnis, dolorem, doloremque dolores sunt alias quaerat nam
+                repellendus?
+            </p>
+        </section>
+    </main>
 
     <!--login-->
     <div id="loginModal" class="modal">
@@ -111,7 +120,7 @@
                     <button type="submit" class="submit">Login</button>
                     <input type="reset" value="reset" id="reset">
                 </form>
-            </div>
+            </div>ooooo
         </div>
     </div>
 

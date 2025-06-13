@@ -11,6 +11,7 @@ a {
     left: 130px;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.788);
+    color: white;
 }
 
 .show-suggestions a {
@@ -24,8 +25,11 @@ a {
     border-bottom-right-radius: 8px;
 }
 
-/* search section css */
+.suggestion-item {
+    color: white;
+}
 
+/* search section css */
 .search-sec i {
     position: relative;
     right: 30px;
@@ -108,14 +112,14 @@ a {
 }
 
 .feedback-section {
-  transition: opacity 0.5s ease, visibility 0.5s ease;
-  opacity: 1;
-  visibility: visible;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 1;
+    visibility: visible;
 }
 
 .feedback-section.hidden {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
 }
