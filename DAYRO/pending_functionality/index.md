@@ -1,5 +1,5 @@
 # DAYRO Website - Pending Functionality Plan
-# makeing site responsive and accuratae
+# makeing site responsive and accuratae 
 
 * sidebar for every page
 
@@ -9,7 +9,7 @@
 
  --> add video in background with pure music,
   of combined all artists of gujrat include only main
-
+  
 --> make this site entertaining
 --> so make it perfect responsive for phone
 
@@ -22,7 +22,7 @@
 
 # importance of gir contribution to DAYRO
 
-* bhajan,santvani,
+* bhajan,santvani,1
 * hasya,
 * lokSahitya,
 * Mandli
@@ -64,7 +64,10 @@
 
 -> adding social media sharing where users can share to apps whereever they want to 
 
--> threejs in community walls
 -> map:where users can select any city and watch their history and all
 
 # daily news
+
+-> questions are rising now,ideas are vanished when i came here
+
+# use react querry

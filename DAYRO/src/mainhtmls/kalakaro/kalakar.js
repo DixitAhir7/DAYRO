@@ -57,5 +57,9 @@ try {
 
 // for adding atribute in all images loading
 try {
-    function loadImg() { const allimages = document.querySelectorAll('img'); allimages.forEach((imagesdata) => { imagesdata.setAttribute('loading', 'lazy'); }) }; loadImg();
+    function loadImg() {
+        const allimages = document.querySelectorAll('img');
+        allimages.forEach((imagesdata) => { imagesdata.setAttribute('loading', 'lazy'); })
+    };
+    loadImg();
 } catch (e) { console.log('while adding loading atribute:', e); }
